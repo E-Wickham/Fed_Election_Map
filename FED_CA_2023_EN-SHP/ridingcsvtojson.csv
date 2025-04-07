@@ -1,0 +1,348 @@
+riding_id,riding_name
+207,Abbotsford
+16,Abitibi--Baie-James--Nunavik--Eeyou
+17,Abitibi--Témiscamingue
+218,Acadie--Bathurst
+21,Ahuntsic-Cartierville
+68,Ajax
+22,Alfred-Pellan
+69,Algoma--Manitoulin--Kapuskasing
+23,Argenteuil--La Petite-Nation
+70,Aurora--Oak Ridges--Richmond Hill
+9,Avalon
+24,Avignon--La Mitis--Matane--Matapédia
+95,Banff--Airdrie
+71,Barrie--Innisfil
+112,Barrie--Springwater--Oro-Medonte
+96,Battle River--Crowfoot
+254,Battlefords--Lloydminster
+113,Bay of Quinte
+114,Beaches--East York
+25,Beauce
+39,Beauport--Côte-de-Beaupré--Île d’Orléans--Charlevoix
+34,Beauport--Limoilou
+217,Beauséjour
+26,Bécancour--Nicolet--Saurel
+27,Bellechasse--Les Etchemins--Lévis
+28,Beloeil--Chambly
+29,Berthier--Maskinongé
+11,Bonavista--Burin--Trinity
+35,Bourassa
+97,Bow River
+115,Brampton Centre
+126,Brampton East
+127,Brampton North
+128,Brampton South
+129,Brampton West
+227,Brandon--Souris
+231,Brandon--Souris
+144,Brantford--Brant
+36,Brome--Missisquoi
+37,Brossard--Saint-Lambert
+130,Bruce--Grey--Owen Sound
+131,Burlington
+208,Burnaby North--Seymour
+209,Burnaby South
+125,Calgary Centre
+124,Calgary Confederation
+143,Calgary Forest Lawn
+142,Calgary Heritage
+98,Calgary Midnapore
+150,Calgary Nose Hill
+151,Calgary Rocky Ridge
+99,Calgary Shepard
+158,Calgary Signal Hill
+159,Calgary Skyview
+145,Cambridge
+101,Cape Breton--Canso
+235,Cardigan
+210,Cariboo--Prince George
+315,Carleton
+257,Carlton Trail--Eagle Creek
+102,Central Nova
+211,Central Okanagan--Similkameen--Nicola
+51,Charlesbourg--Haute-Saint-Charles
+228,Charleswood--St. James--Assiniboia--Headingley
+236,Charlottetown
+40,Châteauguay--Lacolle
+132,Chatham-Kent--Leamington
+41,Chicoutimi--Le Fjord
+168,Chilliwack--Hope
+229,Churchill--Keewatinook Aski
+166,Cloverdale--Langley City
+12,Coast of Bays--Central--Notre Dame
+42,Compton--Stanstead
+169,Coquitlam--Port Coquitlam
+170,Courtenay--Alberni
+171,Courtenay--Alberni
+172,Cowichan--Malahat--Langford
+103,Cumberland--Colchester
+255,Cypress Hills--Grasslands
+100,Dartmouth--Cole Harbour
+230,Dauphin--Swan River--Neepawa
+152,Davenport
+7,Delta
+256,Desnethé--Missinippi--Churchill River
+154,Don Valley East
+153,Don Valley North
+285,Don Valley West
+50,Dorval--Lachine--LaSalle
+43,Drummond
+289,Dufferin--Caledon
+290,Durham
+167,Edmonton Centre
+179,Edmonton Griesbach
+180,Edmonton Manning
+181,Edmonton Mill Woods
+193,Edmonton Riverbend
+47,Edmonton Strathcona
+48,Edmonton West
+49,Edmonton--Wetaskiwin
+306,Eglinton--Lawrence
+237,Egmont
+291,Elgin--Middlesex--London
+232,Elmwood--Transcona
+64,Esquimalt--Saanich--Sooke
+286,Essex
+266,Etobicoke Centre
+280,Etobicoke North
+270,Etobicoke--Lakeshore
+281,Flamborough--Glanbrook
+8,Fleetwood--Port Kells
+182,Foothills
+183,Fort McMurray--Cold Lake
+219,Fredericton
+220,Fundy Royal
+72,Gaspésie--Les Îles-de-la-Madeleine
+76,Gaspésie--Les Îles-de-la-Madeleine
+73,Gatineau
+282,Glengarry--Prescott--Russell
+197,Grande Prairie--Mackenzie
+292,Guelph
+283,Haldimand--Norfolk
+284,Haliburton--Kawartha Lakes--Brock
+104,Halifax
+105,Halifax
+106,Halifax West
+296,Hamilton Centre
+293,Hamilton East--Stoney Creek
+294,Hamilton Mountain
+295,Hamilton West--Ancaster--Dundas
+297,Hastings--Lennox and Addington
+74,Hochelaga
+75,Honoré-Mercier
+77,Hull--Aylmer
+91,Humber River--Black Creek
+298,Huron--Bruce
+78,Joliette
+79,Jonquière
+272,Kamloops--Thompson--Cariboo
+312,Kanata--Carleton
+274,Kelowna--Lake Country
+299,Kenora
+241,Kildonan--St. Paul
+300,King--Vaughan
+107,Kings--Hants
+313,Kingston and the Islands
+321,Kitchener Centre
+318,Kitchener South--Hespeler
+317,Kitchener--Conestoga
+273,Kootenay--Columbia
+80,La Pointe-de-l'Île
+117,La Prairie
+13,Labrador
+81,Lac-Saint-Jean
+116,Lac-Saint-Louis
+271,Lakeland
+319,Lambton--Kent--Middlesex
+320,Lanark--Frontenac--Kingston
+275,Langley--Aldergrove
+118,LaSalle--Émard--Verdun
+147,Laurentides--Labelle
+148,Laurier--Sainte-Marie
+155,Laval--Les Îles
+322,Leeds--Grenville--Thousand Islands and Rideau Lakes
+194,Lethbridge
+157,Lévis--Lotbinière
+326,London North Centre
+302,London West
+301,London--Fanshawe
+10,Long Range Mountains
+156,Longueuil--Charles-LeMoyne
+160,Longueuil--Saint-Hubert
+161,Louis-Hébert
+162,Louis-Saint-Laurent
+221,Madawaska--Restigouche
+244,Malpeque
+163,Manicouagan
+164,Manicouagan
+165,Manicouagan
+1,Marc-Aurèle-Fortin
+303,Markham--Stouffville
+327,Markham--Thornhill
+222,Markham--Unionville
+195,Medicine Hat--Cardston--Warner
+174,Mégantic--L'Érable
+223,Milton
+173,Mirabel
+213,Miramichi--Grand Lake
+276,Mission--Matsqui--Fraser Canyon
+226,Mississauga Centre
+224,Mississauga East--Cooksville
+225,Mississauga--Erin Mills
+233,Mississauga--Lakeshore
+234,Mississauga--Malton
+238,Mississauga--Streetsville
+212,Moncton--Riverview--Dieppe
+175,Montarville
+176,Montcalm
+177,Montmagny--L'Islet--Kamouraska--Rivière-du-Loup
+258,Moose Jaw--Lake Centre--Lanigan
+178,Mount Royal
+277,Nanaimo--Ladysmith
+239,Nepean
+214,New Brunswick Southwest
+278,New Westminster--Burnaby
+240,Newmarket--Aurora
+133,Niagara Centre
+134,Niagara Falls
+149,Niagara West
+267,Nickel Belt
+135,Nipissing--Timiskaming
+121,North Island--Powell River
+279,North Okanagan--Shuswap
+46,North Vancouver
+136,Northumberland--Peterborough South
+93,Northwest Territories
+184,Notre-Dame-de-Grâce--Westmount
+94,Nunavut
+146,Oakville
+33,Oakville North--Burlington
+331,Orléans
+31,Oshawa
+52,Ottawa Centre
+332,Ottawa South
+342,Ottawa West--Nepean
+341,Ottawa--Vanier
+185,Outremont
+304,Oxford
+186,Papineau
+305,Parkdale--High Park
+307,Parry Sound--Muskoka
+196,Peace River--Westlock
+308,Perth--Wellington
+309,Peterborough--Kawartha
+310,Pickering--Uxbridge
+30,Pierre-Boucher--Les Patriotes--Verchères
+187,Pierrefonds--Dollard
+54,Pitt Meadows--Maple Ridge
+188,Pontiac
+62,Port Moody--Coquitlam
+242,Portage--Lisgar
+189,Portneuf--Jacques-Cartier
+259,Prince Albert
+55,Prince George--Peace River--Northern Rockies
+243,Provencher
+204,Québec
+199,Red Deer--Lacombe
+198,Red Deer--Mountain View
+262,Regina--Lewvan
+260,Regina--Qu'Appelle
+261,Regina--Wascana
+311,Renfrew--Nipissing--Pembroke
+190,Repentigny
+63,Richmond Centre
+314,Richmond Hill
+191,Richmond--Arthabaska
+38,Rimouski-Neigette--Témiscouata--Les Basques
+192,Rivière-des-Mille-Îles
+205,Rivière-du-Nord
+206,Rosemont--La Petite-Patrie
+65,Saanich--Gulf Islands
+108,Sackville--Preston--Chezzetcook
+245,Saint Boniface--Saint Vital
+215,Saint John--Rothesay
+2,Saint-Hyacinthe--Bagot
+3,Saint-Jean
+19,Saint-Laurent
+4,Saint-Léonard--Saint-Michel
+5,Saint-Maurice--Champlain
+6,Salaberry--Suroît
+324,Sarnia--Lambton
+287,Saskatoon West
+263,Saskatoon--Grasswood
+264,Saskatoon--University
+268,Sault Ste. Marie
+328,Scarborough Centre
+330,Scarborough North
+333,Scarborough Southwest
+325,Scarborough--Agincourt
+329,Scarborough--Guildwood
+334,Scarborough--Rouge Park
+246,Selkirk--Interlake--Eastman
+247,Selkirk--Interlake--Eastman
+249,Selkirk--Interlake--Eastman
+250,Selkirk--Interlake--Eastman
+18,Shefford
+20,Sherbrooke
+201,Sherwood Park--Fort Saskatchewan
+336,Simcoe North
+335,Simcoe--Grey
+83,Skeena--Bulkley Valley
+288,Souris--Moose Mountain
+84,South Okanagan--West Kootenay
+109,South Shore--St. Margarets
+85,South Surrey--White Rock
+337,Spadina--Fort York
+200,St. Albert--Edmonton
+316,St. Catharines
+14,St. John's East
+15,St. John's South--Mount Pearl
+86,Steveston--Richmond East
+338,Stormont--Dundas--South Glengarry
+202,Sturgeon River--Parkland
+339,Sudbury
+82,Surrey Centre
+120,Surrey--Newton
+110,Sydney--Victoria
+61,Terrebonne
+60,Thérèse-De Blainville
+343,Thornhill
+340,Thunder Bay--Rainy River
+269,Thunder Bay--Superior North
+344,Timmins--James Bay
+216,Tobique--Mactaquac
+345,Toronto Centre
+346,Toronto--Danforth
+323,Toronto--St. Paul's
+32,Trois-Rivières
+347,University--Rosedale
+122,Vancouver Centre
+123,Vancouver East
+119,Vancouver Granville
+137,Vancouver Kingsway
+138,Vancouver Quadra
+139,Vancouver South
+59,Vaudreuil--Soulanges
+56,Vaughan--Woodbridge
+140,Victoria
+44,Ville-Marie--Le Sud-Ouest--Île-des-Soeurs
+45,Vimy
+57,Waterloo
+58,Wellington--Halton Hills
+111,West Nova
+141,West Vancouver--Sunshine Coast--Sea to Sky Country
+66,Whitby
+67,Willowdale
+88,Windsor West
+87,Windsor--Tecumseh
+251,Winnipeg Centre
+253,Winnipeg North
+248,Winnipeg South
+252,Winnipeg South Centre
+203,Yellowhead
+90,York Centre
+53,York South--Weston
+89,York--Simcoe
+265,Yorkton--Melville
+92,Yukon

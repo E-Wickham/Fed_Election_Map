@@ -1,0 +1,344 @@
+"FED_NUM,N,5,0","ED_NAMEE,C,100","ED_NAMEF,C,100","REP_ORDER,C,4","SHAPE_AREA,N,19,11","SHAPE_LEN,N,19,11"
+10001,Avalon,Avalon,2023,8020017126.44,422619.235867
+10002,Cape Spear,Cape Spear,2023,195273845.265,82278.0916262
+10003,Central Newfoundland,Central Newfoundland,2023,57535533683,1116157.56585
+10004,Labrador,Labrador,2023,334056287749,5831256.33875
+10005,Long Range Mountains,Long Range Mountains,2023,57888760921.2,1489363.13103
+10006,St. John's East,St. John’s-Est,2023,905358970.298,131759.09777
+10007,Terra Nova—The Peninsulas,Terra Nova—Les Péninsules,2023,37814372987.6,1156696.90028
+11001,Cardigan,Cardigan,2023,4089404183.35,288146.721985
+11002,Charlottetown,Charlottetown,2023,55173797.2428,39581.9693859
+11003,Egmont,Egmont,2023,2289341800.04,265720.881244
+11004,Malpeque,Malpeque,2023,2514132006.53,259789.454017
+12001,Acadie—Annapolis,Acadie—Annapolis,2023,12269951083.8,573273.375133
+12002,Cape Breton—Canso—Antigonish,Cape Breton—Canso—Antigonish,2023,20565331006.9,817039.157442
+12003,Central Nova,Nova-Centre,2023,11811363069.2,680355.017649
+12004,Cumberland—Colchester,Cumberland—Colchester,2023,11078185377.3,558850.759996
+12005,Dartmouth—Cole Harbour,Dartmouth—Cole Harbour,2023,171937784.755,60798.4082611
+12006,Halifax,Halifax,2023,662559136.93,206116.893837
+12007,Halifax West,Halifax-Ouest,2023,712635110.057,121921.094639
+12008,Kings—Hants,Kings—Hants,2023,5814964012.37,368456.432932
+12009,Sackville—Bedford—Preston,Sackville—Bedford—Preston,2023,655546325.304,136251.623609
+12010,South Shore—St. Margarets,South Shore—St. Margarets,2023,11715237548.1,559853.922059
+12011,Sydney—Glace Bay,Sydney—Glace Bay,2023,751701649.569,148712.513989
+13001,Acadie—Bathurst,Acadie—Bathurst,2023,6321960013.26,492176.241623
+13002,Beauséjour,Beauséjour,2023,5138054673.85,524813.515647
+13003,Fredericton—Oromocto,Fredericton—Oromocto,2023,288932373.525,148142.140179
+13004,Fundy Royal,Fundy Royal,2023,7655086863.95,553831.448029
+13005,Madawaska—Restigouche,Madawaska—Restigouche,2023,13721962393.9,879938.215614
+13006,Miramichi—Grand Lake,Miramichi—Grand Lake,2023,19781463676,945548.391909
+13007,Moncton—Dieppe,Moncton—Dieppe,2023,170686269.544,71300.5678938
+13008,Saint John—Kennebecasis,Saint John—Kennebecasis,2023,418296902.002,128446.645893
+13009,Saint John—St. Croix,Saint John—St. Croix,2023,11172815914,793652.990789
+13010,Tobique—Mactaquac,Tobique—Mactaquac,2023,15388621587.4,828507.977455
+24001,Abitibi—Baie-James—Nunavik—Eeyou,Abitibi—Baie-James—Nunavik—Eeyou,2023,858585391811,8105691.65346
+24002,Abitibi—Témiscamingue,Abitibi—Témiscamingue,2023,37659879004.9,1379024.5662
+24003,Ahuntsic-Cartierville,Ahuntsic-Cartierville,2023,24003308.6781,31689.8883826
+24004,Alfred-Pellan,Alfred-Pellan,2023,128967253.719,56370.8205538
+24005,Argenteuil—La Petite-Nation,Argenteuil—La Petite-Nation,2023,5404881268.18,488337.37799
+24006,Beauce,Beauce,2023,4244243161.44,402841.244279
+24007,Beauharnois—Salaberry—Soulanges—Huntingdon,Beauharnois—Salaberry—Soulanges—Huntingdon,2023,1987219357.74,242006.211171
+24008,Beauport—Limoilou,Beauport—Limoilou,2023,54836295.5067,34192.4131164
+24009,Bécancour—Nicolet—Saurel—Alnôbak,Bécancour—Nicolet—Saurel—Alnôbak,2023,3131636317.57,389299.479351
+24010,Bellechasse—Les Etchemins—Lévis,Bellechasse—Les Etchemins—Lévis,2023,3344614818.87,343189.630637
+24011,Beloeil—Chambly,Beloeil—Chambly,2023,345363049.141,104673.662322
+24012,Berthier—Maskinongé,Berthier—Maskinongé,2023,4695300029.15,505285.213125
+24013,Bourassa,Bourassa,2023,16191026.5626,19606.8402943
+24014,Brome—Missisquoi,Brome—Missisquoi,2023,3033699716.61,345753.873817
+24015,Brossard—Saint-Lambert,Brossard—Saint-Lambert,2023,65307073.9481,43439.9710352
+24016,Charlesbourg—Haute-Saint-Charles,Charlesbourg—Haute-Saint-Charles,2023,124501403.908,70030.9629007
+24017,Châteauguay—Les Jardins-de-Napierville,Châteauguay—Les Jardins-de-Napierville,2023,1553475286.33,219081.874222
+24018,Chicoutimi—Le Fjord,Chicoutimi—Le Fjord,2023,3988532374.08,379977.089603
+24019,Compton—Stanstead,Compton—Stanstead,2023,4814791227.64,432640.49795
+24020,Côte-du-Sud—Rivière-du-Loup—Kataskomiq—Témiscouata,Côte-du-Sud—Rivière-du-Loup—Kataskomiq—Témiscouata,2023,13479764732.3,712221.280675
+24021,Côte-Nord—Kawawachikamach—Nitassinan,Côte-Nord—Kawawachikamach—Nitassinan,2023,313029572869,5097755.91705
+24022,Dorval—Lachine—LaSalle,Dorval—Lachine—LaSalle,2023,66445311.1736,49746.8816596
+24023,Drummond,Drummond,2023,1669833248.51,251778.449646
+24024,Gaspésie—Les Îles-de-la-Madeleine—Listuguj,Gaspésie—Les Îles-de-la-Madeleine—Listuguj,2023,29960986859,1404041.95176
+24025,Gatineau,Gatineau,2023,96151578.9925,64743.5609022
+24026,Hochelaga—Rosemont-Est,Hochelaga—Rosemont-Est,2023,24252693.2738,24541.4410114
+24027,Honoré-Mercier,Honoré-Mercier,2023,44887867.4256,42182.3376826
+24028,Hull—Aylmer,Hull—Aylmer,2023,78263141.1681,63263.234035
+24029,Joliette—Manawan,Joliette—Manawan,2023,8086976683.59,734156.883249
+24030,Jonquière,Jonquière,2023,59261026258.2,1735894.63702
+24031,La Pointe-de-l'Île,La Pointe-de-l'Île,2023,50805155.7273,43471.3380726
+24032,La Prairie—Atateken,La Prairie—Atateken,2023,316786240.51,94796.3164073
+24033,Lac-Saint-Jean,Lac-Saint-Jean,2023,42429849437.6,1427279.53025
+24034,Lac-Saint-Louis,Lac-Saint-Louis,2023,127103692.037,53341.6491894
+24035,LaSalle—Émard—Verdun,LaSalle—Émard—Verdun,2023,37599181.4248,36011.8742077
+24036,Laurentides—Labelle,Laurentides—Labelle,2023,20010987156,1004063.2225
+24037,Laurier—Sainte-Marie,Laurier—Sainte-Marie,2023,20758551.7124,21257.06846
+24038,Laval—Les Îles,Laval—Les Îles,2023,53497069.363,35603.1099556
+24039,Les Pays-d'en-Haut,Les Pays-d'en-Haut,2023,1804086698.24,276283.490984
+24040,Lévis—Lotbinière,Lévis—Lotbinière,2023,1195662041.98,204497.908653
+24041,Longueuil—Charles-LeMoyne,Longueuil—Charles-LeMoyne,2023,38977876.0115,44450.3198506
+24042,Longueuil—Saint-Hubert,Longueuil—Saint-Hubert,2023,63172679.7299,42148.4273755
+24043,Louis-Hébert,Louis-Hébert,2023,101204597.35,58519.9899143
+24044,Louis-Saint-Laurent—Akiawenhrahk,Louis-Saint-Laurent—Akiawenhrahk,2023,128425875.337,72657.2520714
+24045,Marc-Aurèle-Fortin,Marc-Aurèle-Fortin,2023,57576331.7978,34572.5862897
+24046,Mégantic—L’Érable—Lotbinière,Mégantic—L’Érable—Lotbinière,2023,7332348765.42,668577.220859
+24047,Mirabel,Mirabel,2023,756543366.367,180384.563993
+24048,Mount Royal,Mont-Royal,2023,23550234.7511,27082.8412234
+24049,Mont-Saint-Bruno—L’Acadie,Mont-Saint-Bruno—L’Acadie,2023,214742550.568,95969.2594175
+24050,Montcalm,Montcalm,2023,755767520.308,164459.190368
+24051,Montmorency—Charlevoix,Montmorency—Charlevoix,2023,13397364505.8,603553.30681
+24052,Notre-Dame-de-Grâce—Westmount,Notre-Dame-de-Grâce—Westmount,2023,17359060.7138,25203.0842299
+24053,Outremont,Outremont,2023,13267541.9144,20009.1610615
+24054,Papineau,Papineau,2023,10203407.6854,16666.86255
+24055,Pierre-Boucher—Les Patriotes—Verchères,Pierre-Boucher—Les Patriotes—Verchères,2023,779349587.412,192480.208629
+24056,Pierrefonds—Dollard,Pierrefonds—Dollard,2023,65685269.5866,43887.1512601
+24057,Pontiac—Kitigan Zibi,Pontiac—Kitigan Zibi,2023,30321891287.9,1342110.80433
+24058,Portneuf—Jacques-Cartier,Portneuf—Jacques-Cartier,2023,7547832084.39,505358.714668
+24059,Québec Centre,Québec-Centre,2023,44674895.4003,35887.8877727
+24060,Repentigny,Repentigny,2023,156325239.312,80772.2321283
+24061,Richmond—Arthabaska,Richmond—Arthabaska,2023,3572314809.82,429796.188212
+24062,Rimouski—La Matapédia,Rimouski—La Matapédia,2023,14002090124.8,790521.736578
+24063,Rivière-des-Mille-Îles,Rivière-des-Mille-Îles,2023,105312675.656,73849.790706
+24064,Rivière-du-Nord,Rivière-du-Nord,2023,305667611.12,111101.692592
+24065,Rosemont—La Petite-Patrie,Rosemont—La Petite-Patrie,2023,11025715.0298,15572.7951161
+24066,Saint-Hyacinthe—Bagot—Acton,Saint-Hyacinthe—Bagot—Acton,2023,1949182949.15,268444.963825
+24067,Saint-Jean,Saint-Jean,2023,734289244.003,196753.692382
+24068,Saint-Laurent,Saint-Laurent,2023,45314601.6178,37727.1213318
+24069,Saint-Léonard—Saint-Michel,Saint-Léonard—Saint-Michel,2023,19802232.6863,20802.7504615
+24070,Saint-Maurice—Champlain,Saint-Maurice—Champlain,2023,38967283904.1,1180212.0219
+24071,Shefford,Shefford,2023,1433534916.07,281191.342782
+24072,Sherbrooke,Sherbrooke,2023,101816033.769,52121.279379
+24073,Terrebonne,Terrebonne,2023,160172341.123,104380.979324
+24074,Thérèse-De Blainville,Thérèse-De Blainville,2023,80475725.429,43793.9109321
+24075,Trois-Rivières,Trois-Rivières,2023,145263218.601,62935.5053721
+24076,Vaudreuil,Vaudreuil,2023,430543725.563,132212.854144
+24077,Ville-Marie—Le Sud-Ouest—Île-des-Soeurs,Ville-Marie—Le Sud-Ouest—Île-des-Soeurs,2023,27208645.4275,34411.1490918
+24078,Vimy,Vimy,2023,33498830.317,27975.3217955
+35001,Ajax,Ajax,2023,70828585.6832,37692.8809049
+35002,Algonquin—Renfrew—Pembroke,Algonquin—Renfrew—Pembroke,2023,12778428999.2,633451.855404
+35003,Aurora—Oak Ridges—Richmond Hill,Aurora—Oak Ridges—Richmond Hill,2023,101665552.895,45669.8341338
+35004,Barrie South—Innisfil,Barrie-Sud—Innisfil,2023,407087314.201,87673.4784226
+35005,Barrie—Springwater—Oro-Medonte,Barrie—Springwater—Oro-Medonte,2023,1365505029.49,168195.469853
+35006,Bay of Quinte,Bay of Quinte,2023,2946019927.65,317880.233846
+35007,Beaches—East York,Beaches—East York,2023,18779834.0876,21461.6730128
+35008,Bowmanville—Oshawa North,Bowmanville—Oshawa-Nord,2023,411665312.871,94280.0922478
+35009,Brampton Centre,Brampton-Centre,2023,31208193.2824,26236.7063769
+35010,Brampton—Chinguacousy Park,Brampton—Chinguacousy Park,2023,38875395.3689,29391.1508737
+35011,Brampton East,Brampton-Est,2023,85558318.7133,40705.6906789
+35012,Brampton North—Caledon,Brampton-Nord—Caledon,2023,159625702.893,63764.6159262
+35013,Brampton South,Brampton-Sud,2023,57324785.7409,39067.6519066
+35014,Brampton West,Brampton-Ouest,2023,40020183.1244,28514.3110048
+35015,Brantford—Brant South—Six Nations,Brantford—Brant-Sud—Six Nations,2023,956839390.523,156166.367759
+35016,Bruce—Grey—Owen Sound,Bruce—Grey—Owen Sound,2023,10250809372.2,522194.909771
+35017,Burlington,Burlington,2023,85192583.6736,52936.2378759
+35018,Burlington North—Milton West,Burlington-Nord—Milton-Ouest,2023,397304472.277,104078.024995
+35019,Cambridge,Cambridge,2023,273948799.473,75877.2007875
+35020,Carleton,Carleton,2023,1988636871.1,320496.040038
+35021,Chatham-Kent—Leamington,Chatham-Kent—Leamington,2023,4158021654.81,438169.728232
+35022,Davenport,Davenport,2023,15349833.029,18435.9264336
+35023,Don Valley North,Don Valley-Nord,2023,27901330.6017,26649.5692907
+35024,Don Valley West,Don Valley-Ouest,2023,33728539.5127,31567.597988
+35025,Dufferin—Caledon,Dufferin—Caledon,2023,2161482751.58,241036.167338
+35026,Eglinton—Lawrence,Eglinton—Lawrence,2023,23756973.4354,21299.1490846
+35027,Elgin—St. Thomas—London South,Elgin—St. Thomas—London-Sud,2023,3343999193.74,354435.543351
+35028,Essex,Essex,2023,2425899447.08,263207.088175
+35029,Etobicoke Centre,Etobicoke-Centre,2023,39871719.6311,33775.8886043
+35030,Etobicoke—Lakeshore,Etobicoke—Lakeshore,2023,49462382.3888,32566.6363715
+35031,Etobicoke North,Etobicoke-Nord,2023,50909540.0977,37834.1528612
+35032,Flamborough—Glanbrook—Brant North,Flamborough—Glanbrook—Brant-Nord,2023,1166490062.12,251177.091268
+35033,Guelph,Guelph,2023,68335435.7638,42484.197422
+35034,Haldimand—Norfolk,Haldimand—Norfolk,2023,4562549595.78,362768.017601
+35035,Haliburton—Kawartha Lakes,Haliburton—Kawartha Lakes,2023,10379983144.4,550488.049615
+35036,Hamilton Centre,Hamilton-Centre,2023,66014202.4703,50208.8599808
+35037,Hamilton East—Stoney Creek,Hamilton-Est—Stoney Creek,2023,79687974.6001,62335.872878
+35038,Hamilton Mountain,Hamilton Mountain,2023,39960997.7159,26996.7158263
+35039,Hamilton West—Ancaster—Dundas,Hamilton-Ouest—Ancaster—Dundas,2023,108313652.991,52503.6507761
+35040,Hastings—Lennox and Addington—Tyendinaga,Hastings—Lennox and Addington—Tyendinaga,2023,9664663501.36,564612.913114
+35041,Humber River—Black Creek,Humber River—Black Creek,2023,32245128.2067,32419.5881017
+35042,Huron—Bruce,Huron—Bruce,2023,6267628484.21,419301.676125
+35043,Kanata,Kanata,2023,232544940.346,73504.6918634
+35044,Kapuskasing—Timmins—Mushkegowuk,Kapuskasing—Timmins—Mushkegowuk,2023,276430567988,3718742.55481
+35045,Kenora—Kiiwetinoong,Kenora—Kiiwetinoong,2023,289400348299,2942954.82106
+35046,Kingston and the Islands,Kingston et les Îles,2023,981366187.903,163560.919156
+35047,King—Vaughan,King—Vaughan,2023,485251044.351,120435.527649
+35048,Kitchener Centre,Kitchener-Centre,2023,51486628.283,42742.7352461
+35049,Kitchener—Conestoga,Kitchener—Conestoga,2023,950635625.138,196973.774488
+35050,Kitchener South—Hespeler,Kitchener-Sud—Hespeler,2023,111414651.61,54624.3358812
+35051,Lanark—Frontenac,Lanark—Frontenac,2023,7024640696.3,461915.074618
+35052,Leeds—Grenville—Thousand Islands—Rideau Lakes,Leeds—Grenville—Thousand Islands—Rideau Lakes,2023,3897880741.49,325424.605951
+35053,London Centre,London-Centre,2023,52778165.4699,35567.7887195
+35054,London—Fanshawe,London—Fanshawe,2023,115217437.729,59169.0396483
+35055,London West,London-Ouest,2023,66680660.1903,41736.4420119
+35056,Markham—Stouffville,Markham—Stouffville,2023,82518617.3041,42163.3326979
+35057,Markham—Thornhill,Markham—Thornhill,2023,61572982.9695,47511.6366552
+35058,Markham—Unionville,Markham—Unionville,2023,86314865.6121,39441.5348801
+35059,Middlesex—London,Middlesex—London,2023,3108923975.35,395067.070091
+35060,Milton East—Halton Hills South,Milton-Est—Halton Hills-Sud,2023,256524790.34,79163.5645594
+35061,Mississauga Centre,Mississauga-Centre,2023,24623938.9715,23762.6788094
+35062,Mississauga East—Cooksville,Mississauga-Est—Cooksville,2023,32186033.9044,27939.6145752
+35063,Mississauga—Erin Mills,Mississauga—Erin Mills,2023,33829214.1787,26123.4479796
+35064,Mississauga—Lakeshore,Mississauga—Lakeshore,2023,92759652.2649,42549.6862546
+35065,Mississauga—Malton,Mississauga—Malton,2023,105493499.186,51117.1337862
+35066,Mississauga—Streetsville,Mississauga—Streetsville,2023,48166787.5441,36246.3241229
+35067,Nepean,Nepean,2023,85633258.495,40112.5803412
+35068,Newmarket—Aurora,Newmarket—Aurora,2023,56500778.721,32073.5782924
+35069,New Tecumseth—Gwillimbury,New Tecumseth—Gwillimbury,2023,754077333.655,168078.765998
+35070,Niagara Falls—Niagara-on-the-Lake,Niagara Falls—Niagara-on-the-Lake,2023,389024250.824,103915.343119
+35071,Niagara South,Niagara-Sud,2023,823469987.598,149609.289467
+35072,Niagara West,Niagara-Ouest,2023,1205063069.35,187436.322226
+35073,Nipissing—Timiskaming,Nipissing—Timiskaming,2023,19212007994.4,950987.078343
+35074,Northumberland—Clarke,Northumberland—Clarke,2023,2629342167.89,272783.211134
+35075,Oakville East,Oakville-Est,2023,81152582.4988,48964.8196501
+35076,Oakville West,Oakville-Ouest,2023,81127830.5279,44707.0235695
+35077,Orléans,Orléans,2023,74206502.1399,43344.6398072
+35078,Oshawa,Oshawa,2023,85414680.0484,38632.287859
+35079,Ottawa Centre,Ottawa-Centre,2023,41978012.4288,33630.3485715
+35080,Ottawa South,Ottawa-Sud,2023,99836375.6854,48973.4923627
+35081,Ottawa—Vanier—Gloucester,Ottawa—Vanier—Gloucester,2023,56558748.8591,37346.9808663
+35082,Ottawa West—Nepean,Ottawa-Ouest—Nepean,2023,60662802.3598,40485.7470513
+35083,Oxford,Oxford,2023,2164451156.83,228908.68297
+35084,Parry Sound—Muskoka,Parry Sound—Muskoka,2023,19902485652.4,691894.092976
+35085,Perth—Wellington,Perth—Wellington,2023,3781910675.05,357966.38704
+35086,Peterborough,Peterborough,2023,2183082099.64,251906.324116
+35087,Pickering—Brooklin,Pickering—Brooklin,2023,307233349.631,94432.2403337
+35088,Prescott—Russell—Cumberland,Prescott—Russell—Cumberland,2023,2478958655.14,296591.31264
+35089,Richmond Hill South,Richmond Hill-Sud,2023,46518700.6638,28124.5408578
+35090,Sarnia—Lambton—Bkejwanong,Sarnia—Lambton—Bkejwanong,2023,4172614244.89,398660.817093
+35091,Sault Ste. Marie—Algoma,Sault Ste. Marie—Algoma,2023,51608694169.8,1395950.32757
+35092,Scarborough—Agincourt,Scarborough—Agincourt,2023,27827479.7673,21348.7667851
+35093,Scarborough Centre—Don Valley East,Scarborough-Centre—Don Valley-Est,2023,31186918.2122,28945.530529
+35094,Scarborough—Guildwood—Rouge Park,Scarborough—Guildwood—Rouge Park,2023,64447363.3233,48963.6720922
+35095,Scarborough North,Scarborough-Nord,2023,36202927.0633,26901.5045651
+35096,Scarborough Southwest,Scarborough-Sud-Ouest,2023,34200451.1985,28407.0360807
+35097,Scarborough—Woburn,Scarborough—Woburn,2023,25393975.4693,22194.5602498
+35098,Simcoe—Grey,Simcoe—Grey,2023,2544908158.56,348471.806009
+35099,Simcoe North,Simcoe-Nord,2023,2977990247.87,352526.313512
+35100,Spadina—Harbourfront,Spadina—Harbourfront,2023,18841648.9002,22537.0190823
+35101,St. Catharines,St. Catharines,2023,96050068.5423,51135.852456
+35102,Stormont—Dundas—Glengarry,Stormont—Dundas—Glengarry,2023,3586797289.43,296266.517659
+35103,Sudbury,Sudbury,2023,997849460.618,199145.210483
+35104,Sudbury East—Manitoulin—Nickel Belt,Sudbury-Est—Manitoulin—Nickel Belt,2023,45432669284.1,1621392.11738
+35105,Taiaiako'n—Parkdale—High Park,Taiaiako'n—Parkdale—High Park,2023,19680969.8164,22880.2955398
+35106,Thornhill,Thornhill,2023,70230071.98,41699.4784601
+35107,Thunder Bay—Rainy River,Thunder Bay—Rainy River,2023,40065774378,1648962.20026
+35108,Thunder Bay—Superior North,Thunder Bay—Supérieur-Nord,2023,169756227980,2255832.50134
+35109,Toronto Centre,Toronto-Centre,2023,6735959.43766,10844.0819601
+35110,Toronto—Danforth,Toronto—Danforth,2023,27845251.622,27533.84261
+35111,Toronto—St. Paul's,Toronto—St. Paul's,2023,16307015.8856,19461.2917627
+35112,University—Rosedale,University—Rosedale,2023,14514049.3776,19889.8639134
+35113,Vaughan—Woodbridge,Vaughan—Woodbridge,2023,92262066.7469,43047.9693621
+35114,Waterloo,Waterloo,2023,68445706.9168,41929.9027851
+35115,Wellington—Halton Hills North,Wellington—Halton Hills-Nord,2023,1454136296.06,252279.002338
+35116,Whitby,Whitby,2023,93487859.7097,43703.0270398
+35117,Willowdale,Willowdale,2023,20712387.9686,18353.5141726
+35118,Windsor—Tecumseh—Lakeshore,Windsor—Tecumseh—Lakeshore,2023,309855174.702,93968.0218099
+35119,Windsor West,Windsor-Ouest,2023,87951451.6955,43651.7358888
+35120,York Centre,York-Centre,2023,37039905.6932,30352.0258342
+35121,York—Durham,York—Durham,2023,2326570298.48,282885.222031
+35122,York South—Weston—Etobicoke,York-Sud—Weston—Etobicoke,2023,25076224.1993,25949.7304729
+46001,Brandon—Souris,Brandon—Souris,2023,19684113047,795370.209643
+46002,Churchill—Keewatinook Aski,Churchill—Keewatinook Aski,2023,494571804716,4996252.32775
+46003,Elmwood—Transcona,Elmwood—Transcona,2023,172018785.338,70853.2310939
+46004,Kildonan—St. Paul,Kildonan—St. Paul,2023,300642493.616,95348.8769857
+46005,Portage—Lisgar,Portage—Lisgar,2023,10648522054.6,659902.689866
+46006,Provencher,Provencher,2023,18519063128.8,714911.281592
+46007,Riding Mountain,Mont-Riding,2023,57442086060.3,1560389.17223
+46008,St. Boniface—St. Vital,Saint-Boniface—Saint-Vital,2023,67032723.3418,49217.8166233
+46009,Selkirk—Interlake—Eastman,Selkirk—Interlake—Eastman,2023,25694176542.2,1708717.14752
+46010,Winnipeg Centre,Winnipeg-Centre,2023,31813865.1391,30593.9758736
+46011,Winnipeg North,Winnipeg-Nord,2023,36377451.5558,29893.5739513
+46012,Winnipeg South,Winnipeg-Sud,2023,97315224.9343,47862.5196146
+46013,Winnipeg South Centre,Winnipeg-Centre-Sud,2023,46389264.7549,39012.4650016
+46014,Winnipeg West,Winnipeg-Ouest,2023,651343155.795,143334.926581
+47001,Battlefords—Lloydminster—Meadow Lake,Battlefords—Lloydminster—Meadow Lake,2023,36268487472.5,1046477.47908
+47002,Carlton Trail—Eagle Creek,Sentier Carlton—Eagle Creek,2023,24156761671,976206.383076
+47003,Desnethé—Missinippi—Churchill River,Desnethé—Missinippi—Rivière Churchill,2023,311621194167,2635603.92544
+47004,Moose Jaw—Lake Centre—Lanigan,Moose Jaw—Lake Centre—Lanigan,2023,40909635513.4,995721.476417
+47005,Prince Albert,Prince Albert,2023,27771832834.5,1019958.58255
+47006,Regina—Lewvan,Regina—Lewvan,2023,83836322.1724,57341.4334443
+47007,Regina—Qu'Appelle,Regina—Qu'Appelle,2023,12672253779.3,577949.547665
+47008,Regina—Wascana,Regina—Wascana,2023,53358316.0832,36618.12977
+47009,Saskatoon South,Saskatoon-Sud,2023,53125248.2597,44506.3666747
+47010,Saskatoon—University,Saskatoon—University,2023,70688611.8934,42462.9671557
+47011,Saskatoon West,Saskatoon-Ouest,2023,108223573.22,80068.6437294
+47012,Souris—Moose Mountain,Souris—Moose Mountain,2023,48634101303,1276468.51866
+47013,Swift Current—Grasslands—Kindersley,Swift Current—Grasslands—Kindersley,2023,82479869343.6,1320966.82002
+47014,Yorkton—Melville,Yorkton—Melville,2023,47161785679.5,1543346.45118
+48001,Airdrie—Cochrane,Airdrie—Cochrane,2023,578967394.335,150601.997459
+48002,Battle River—Crowfoot,Battle River—Crowfoot,2023,54542697702,1327179.44452
+48003,Bow River,Bow River,2023,21493819590,843724.846217
+48004,Calgary Centre,Calgary-Centre,2023,44591375.0145,32781.7826387
+48005,Calgary Confederation,Calgary Confederation,2023,53038498.7496,44732.4594375
+48006,Calgary Crowfoot,Calgary Crowfoot,2023,72507952.6326,56346.7144428
+48007,Calgary East,Calgary-Est,2023,110902574.645,57777.0916762
+48008,Calgary Heritage,Calgary Heritage,2023,73426106.6256,50498.4668121
+48009,Calgary McKnight,Calgary McKnight,2023,74331853.6629,36268.8003164
+48010,Calgary Midnapore,Calgary Midnapore,2023,83068472.0652,54066.6141432
+48011,Calgary Nose Hill,Calgary Nose Hill,2023,61164513.887,44995.812063
+48012,Calgary Shepard,Calgary Shepard,2023,112010190.434,52575.5950537
+48013,Calgary Signal Hill,Calgary Signal Hill,2023,63574986.0667,49435.8397925
+48014,Calgary Skyview,Calgary Skyview,2023,88216227.9715,55772.1673847
+48015,Edmonton Centre,Edmonton-Centre,2023,45546303.9404,33597.3543688
+48016,Edmonton Gateway,Edmonton Gateway,2023,63157060.1801,46762.5014748
+48017,Edmonton Griesbach,Edmonton Griesbach,2023,45161537.6822,39440.7122394
+48018,Edmonton Manning,Edmonton Manning,2023,151839420.839,61739.9243132
+48019,Edmonton Northwest,Edmonton-Nord-Ouest,2023,102751601.605,57461.5451348
+48020,Edmonton Riverbend,Edmonton Riverbend,2023,122713512.405,75544.4207468
+48021,Edmonton Southeast,Edmonton-Sud-Est,2023,69922701.7181,38723.8593203
+48022,Edmonton Strathcona,Edmonton Strathcona,2023,83822630.0908,53707.3287863
+48023,Edmonton West,Edmonton-Ouest,2023,75241978.0893,50942.2800635
+48024,Foothills,Foothills,2023,19368978981,964742.702551
+48025,Fort McMurray—Cold Lake,Fort McMurray—Cold Lake,2023,147514487260,2316494.23503
+48026,Grande Prairie,Grande Prairie,2023,56997409433.5,1479516.05007
+48027,Lakeland,Lakeland,2023,31773735461.9,1196996.68796
+48028,Leduc—Wetaskiwin,Leduc—Wetaskiwin,2023,6182037752.96,540944.326036
+48029,Lethbridge,Lethbridge,2023,3028291412.25,299294.477101
+48030,Medicine Hat—Cardston—Warner,Medicine Hat—Cardston—Warner,2023,28589065879,1091145.73125
+48031,Parkland,Parkland,2023,10160137855.2,801222.527643
+48032,Peace River—Westlock,Peace River—Westlock,2023,158122412818,3019425.71144
+48033,Ponoka—Didsbury,Ponoka—Didsbury,2023,9688449918.4,691472.916459
+48034,Red Deer,Red Deer,2023,2089921391.54,256999.812625
+48035,Sherwood Park—Fort Saskatchewan,Sherwood Park—Fort Saskatchewan,2023,1271836338.29,196562.324817
+48036,St. Albert—Sturgeon River,St. Albert—Sturgeon River,2023,4476915231.72,485027.761139
+48037,Yellowhead,Yellowhead,2023,82452565778.6,2309514.67814
+59001,Abbotsford—South Langley,Abbotsford—Langley-Sud,2023,233732435.383,86624.7888123
+59002,Burnaby Central,Burnaby Central,2023,38164515.7605,35575.5962126
+59003,Burnaby North—Seymour,Burnaby-Nord—Seymour,2023,155666955.432,68147.1342681
+59004,Cariboo—Prince George,Cariboo—Prince George,2023,90045729788.6,2001786.17706
+59005,Chilliwack—Hope,Chilliwack—Hope,2023,6954965721.41,670479.356506
+59006,Cloverdale—Langley City,Cloverdale—Langley City,2023,47588679.6476,42446.7623688
+59007,Columbia—Kootenay—Southern Rockies,Columbia—Kootenay—Southern Rockies,2023,41086322465.6,1367311.81168
+59008,Coquitlam—Port Coquitlam,Coquitlam—Port Coquitlam,2023,636606060.512,132814.667996
+59009,Courtenay—Alberni,Courtenay—Alberni,2023,12083649598.8,774249.480915
+59010,Cowichan—Malahat—Langford,Cowichan—Malahat—Langford,2023,5324796923.59,498538.837026
+59011,Delta,Delta,2023,412117256.834,102106.650932
+59012,Esquimalt—Saanich—Sooke,Esquimalt—Saanich—Sooke,2023,974824729.544,226751.737193
+59013,Fleetwood—Port Kells,Fleetwood—Port Kells,2023,53364065.2442,34385.4337291
+59014,Kamloops—Shuswap—Central Rockies,Kamloops—Shuswap—Central Rockies,2023,33573733152.2,1372919.40191
+59015,Kamloops—Thompson—Nicola,Kamloops—Thompson—Nicola,2023,50083386455,1882071.16371
+59016,Kelowna,Kelowna,2023,2691999067.56,346627.646363
+59017,Langley Township—Fraser Heights,Langley Township—Fraser Heights,2023,210880509.899,82281.1311211
+59018,Mission—Matsqui—Abbotsford,Mission—Matsqui—Abbotsford,2023,4813755305.86,562069.677901
+59019,Nanaimo—Ladysmith,Nanaimo—Ladysmith,2023,2744978484.72,403394.225682
+59020,New Westminster—Burnaby—Maillardville,New Westminster—Burnaby—Maillardville,2023,29864353.992,31566.3071289
+59021,North Island—Powell River,North Island—Powell River,2023,72388942920.2,1475880.10182
+59022,North Vancouver—Capilano,North Vancouver—Capilano,2023,330197620.901,107189.349624
+59023,Okanagan Lake West—South Kelowna,Okanagan Lake-Ouest—Kelowna-Sud,2023,2064094951.96,339570.465074
+59024,Pitt Meadows—Maple Ridge,Pitt Meadows—Maple Ridge,2023,2358643488.02,358503.448149
+59025,Port Moody—Coquitlam,Port Moody—Coquitlam,2023,130936800.83,63439.8927707
+59026,Prince George—Peace River—Northern Rockies,Prince George—Peace River—Northern Rockies,2023,243277306530,3585529.9324
+59027,Richmond Centre—Marpole,Richmond-Centre—Marpole,2023,132886964.615,55100.3998501
+59028,Richmond East—Steveston,Richmond-Est—Steveston,2023,125132609.783,74108.8638992
+59029,Saanich—Gulf Islands,Saanich—Gulf Islands,2023,1576980154.99,199984.995568
+59030,Similkameen—South Okanagan—West Kootenay,Similkameen—Okanagan-Sud—Kootenay-Ouest,2023,17156807509.8,1017913.92442
+59031,Skeena—Bulkley Valley,Skeena—Bulkley Valley,2023,374680636326,5343131.04664
+59032,South Surrey—White Rock,Surrey-Sud—White Rock,2023,192787801.333,60850.0153331
+59033,Surrey Centre,Surrey-Centre,2023,42481523.2641,28233.2495708
+59034,Surrey Newton,Surrey Newton,2023,29155808.6274,23307.2433188
+59035,Vancouver Centre,Vancouver-Centre,2023,16967786.6695,18888.5248209
+59036,Vancouver East,Vancouver-Est,2023,25892364.1441,21630.5766619
+59037,Vancouver Fraserview—South Burnaby,Vancouver Fraserview—Burnaby-Sud,2023,33517602.3904,30637.7484071
+59038,Vancouver Granville,Vancouver Granville,2023,24199013.8875,26432.8760223
+59039,Vancouver Kingsway,Vancouver Kingsway,2023,16768128.3974,18853.2220789
+59040,Vancouver Quadra,Vancouver Quadra,2023,56987264.0577,38500.637956
+59041,Vernon—Lake Country—Monashee,Vernon—Lake Country—Monashee,2023,15146736183,791611.132991
+59042,Victoria,Victoria,2023,431237833.723,95894.5454902
+59043,West Vancouver—Sunshine Coast—Sea to Sky Country,West Vancouver—Sunshine Coast—Sea to Sky Country,2023,15127506070.7,874632.033661
+60001,Yukon,Yukon,2023,456664827522,4126710.79816
+61001,Northwest Territories,Territoires du Nord-Ouest,2023,2484318940550,10173596.8848
+62001,Nunavut,Nunavut,2023,4739816525440,14975610.6524

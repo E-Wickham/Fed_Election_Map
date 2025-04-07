@@ -10,70 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 <script>
 
-
-function info_show(element, riding) {
-    console.log(element)
-    let cardData;
-    //remove fill from all other ridings
-    let svgRdg = document.querySelectorAll("path")
-    console.log(svgRdg)
-    svgRdg.forEach(elem => {
-        elem.style.fill = ""
-    })
-    //show active riding
-    element.style.fill = "red"
-    //use argument to pass in data-attr from the specific riding
-    fetch("CAN_electoral_map_data1.csv")
-    .then(response => response.text())
-    .then(csvText => {
-        const rows = csvText.split("\n").map(row => row.split(","));
-        //console.log(rows); // Array of arrays
-        rows.forEach(row => {
-            if (row[0] == riding) {
-                cardData = row
-                console.log(cardData)
-            } 
-        })
-        let rName = document.querySelector(".riding_name")
-        let rInc = document.querySelector(".riding_inc")
-        let rNote = document.querySelector(".riding_note_text")
-        let rNoteTitle = document.querySelector(".riding_note")
-        //Articles
-        let rArt1 = document.querySelector(".riding_art1_link")
-        rName.innerHTML = cardData[1]
-        rInc.innerHTML = `Incumbent: ${cardData[2]} ${cardData[3]}`
-        rNote.innerHTML = cardData[4]
-        rNoteTitle.innerHTML = 'Notes'
-        try {
-            rArt1.innerHTML = cardData[6]
-            rArt1.href = cardData[5]
-        } catch {
-            console.log('no article')
-        }
-        try {
-            rArt2.innerHTML = cardData[8]
-            rArt2.href = cardData[7]
-        } catch {
-            console.log('no 2nd article')
-
-        }
-        try {
-            rArt3.innerHTML = cardData[10]
-            rArt3.href = cardData[9]
-        } catch {
-            console.log('no 3rd article')
-        }
-        console.log(rArt1)
-        rArtSectTitle = document.querySelector(".article_section_title")
-        if (rArt1!="") {
-            rArtSectTitle.innerHTML = "Related Articles"
-            rArtSectTitle.style.marginTop = '0.5rem'
-        }
-    })
-    .catch(error => console.error("Error loading CSV:", error));
-}
 
 //function to find width of screen, if below certain width, resize map to take entire screen
         // also resize dataholder to the entire screen
@@ -115,6 +54,18 @@ function calcResize() {
 </script>
 <style>
 
+    .map-btn {
+        padding: 0.5rem;
+        border-radius:0.5rem;
+        background-color:#c9c9c9;
+        border: 1px solid #969696;
+        width: fit-content;
+    }
+    .map-btn:hover {
+        filter: brightness(0.9);
+        cursor: pointer;
+    } 
+
     .mcg:hover path {
         fill:rgb(241, 132, 132);
         cursor: pointer;
@@ -124,8 +75,8 @@ function calcResize() {
         border: 2px solid #c9c9c9;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;        
         border-radius: 0.25rem;
-        background-color: #f8f3f3;
-        font-family: "Adelle", "Aleo", serif;
+        background-color: #fffdfd;
+        font-family: "Arial";
         padding: 0.25rem 1rem;
     }
 
@@ -169,21 +120,1485 @@ function calcResize() {
         text-decoration: none;
     }
 </style>
-<div class="page-flex" style="background-color:#0f5685">
+<div class="search_ridings">
+    <script>
+        const ridingData = [
+ {
+   "riding_id": 207,
+   "riding_name": "Abbotsford"
+ },
+ {
+   "riding_id": 16,
+   "riding_name": "Abitibi--Baie-James--Nunavik--Eeyou"
+ },
+ {
+   "riding_id": 17,
+   "riding_name": "Abitibi--Témiscamingue"
+ },
+ {
+   "riding_id": 218,
+   "riding_name": "Acadie--Bathurst"
+ },
+ {
+   "riding_id": 21,
+   "riding_name": "Ahuntsic-Cartierville"
+ },
+ {
+   "riding_id": 68,
+   "riding_name": "Ajax"
+ },
+ {
+   "riding_id": 22,
+   "riding_name": "Alfred-Pellan"
+ },
+ {
+   "riding_id": 69,
+   "riding_name": "Algoma--Manitoulin--Kapuskasing"
+ },
+ {
+   "riding_id": 23,
+   "riding_name": "Argenteuil--La Petite-Nation"
+ },
+ {
+   "riding_id": 70,
+   "riding_name": "Aurora--Oak Ridges--Richmond Hill"
+ },
+ {
+   "riding_id": 9,
+   "riding_name": "Avalon"
+ },
+ {
+   "riding_id": 24,
+   "riding_name": "Avignon--La Mitis--Matane--Matapédia"
+ },
+ {
+   "riding_id": 95,
+   "riding_name": "Banff--Airdrie"
+ },
+ {
+   "riding_id": 71,
+   "riding_name": "Barrie--Innisfil"
+ },
+ {
+   "riding_id": 112,
+   "riding_name": "Barrie--Springwater--Oro-Medonte"
+ },
+ {
+   "riding_id": 96,
+   "riding_name": "Battle River--Crowfoot"
+ },
+ {
+   "riding_id": 254,
+   "riding_name": "Battlefords--Lloydminster"
+ },
+ {
+   "riding_id": 113,
+   "riding_name": "Bay of Quinte"
+ },
+ {
+   "riding_id": 114,
+   "riding_name": "Beaches--East York"
+ },
+ {
+   "riding_id": 25,
+   "riding_name": "Beauce"
+ },
+ {
+   "riding_id": 39,
+   "riding_name": "Beauport--Côte-de-Beaupré--Île d’Orléans--Charlevoix"
+ },
+ {
+   "riding_id": 34,
+   "riding_name": "Beauport--Limoilou"
+ },
+ {
+   "riding_id": 217,
+   "riding_name": "Beauséjour"
+ },
+ {
+   "riding_id": 26,
+   "riding_name": "Bécancour--Nicolet--Saurel"
+ },
+ {
+   "riding_id": 27,
+   "riding_name": "Bellechasse--Les Etchemins--Lévis"
+ },
+ {
+   "riding_id": 28,
+   "riding_name": "Beloeil--Chambly"
+ },
+ {
+   "riding_id": 29,
+   "riding_name": "Berthier--Maskinongé"
+ },
+ {
+   "riding_id": 11,
+   "riding_name": "Bonavista--Burin--Trinity"
+ },
+ {
+   "riding_id": 35,
+   "riding_name": "Bourassa"
+ },
+ {
+   "riding_id": 97,
+   "riding_name": "Bow River"
+ },
+ {
+   "riding_id": 115,
+   "riding_name": "Brampton Centre"
+ },
+ {
+   "riding_id": 126,
+   "riding_name": "Brampton East"
+ },
+ {
+   "riding_id": 127,
+   "riding_name": "Brampton North"
+ },
+ {
+   "riding_id": 128,
+   "riding_name": "Brampton South"
+ },
+ {
+   "riding_id": 129,
+   "riding_name": "Brampton West"
+ },
+ {
+   "riding_id": 227,
+   "riding_name": "Brandon--Souris"
+ },
+ {
+   "riding_id": 231,
+   "riding_name": "Brandon--Souris"
+ },
+ {
+   "riding_id": 144,
+   "riding_name": "Brantford--Brant"
+ },
+ {
+   "riding_id": 36,
+   "riding_name": "Brome--Missisquoi"
+ },
+ {
+   "riding_id": 37,
+   "riding_name": "Brossard--Saint-Lambert"
+ },
+ {
+   "riding_id": 130,
+   "riding_name": "Bruce--Grey--Owen Sound"
+ },
+ {
+   "riding_id": 131,
+   "riding_name": "Burlington"
+ },
+ {
+   "riding_id": 208,
+   "riding_name": "Burnaby North--Seymour"
+ },
+ {
+   "riding_id": 209,
+   "riding_name": "Burnaby South"
+ },
+ {
+   "riding_id": 125,
+   "riding_name": "Calgary Centre"
+ },
+ {
+   "riding_id": 124,
+   "riding_name": "Calgary Confederation"
+ },
+ {
+   "riding_id": 143,
+   "riding_name": "Calgary Forest Lawn"
+ },
+ {
+   "riding_id": 142,
+   "riding_name": "Calgary Heritage"
+ },
+ {
+   "riding_id": 98,
+   "riding_name": "Calgary Midnapore"
+ },
+ {
+   "riding_id": 150,
+   "riding_name": "Calgary Nose Hill"
+ },
+ {
+   "riding_id": 151,
+   "riding_name": "Calgary Rocky Ridge"
+ },
+ {
+   "riding_id": 99,
+   "riding_name": "Calgary Shepard"
+ },
+ {
+   "riding_id": 158,
+   "riding_name": "Calgary Signal Hill"
+ },
+ {
+   "riding_id": 159,
+   "riding_name": "Calgary Skyview"
+ },
+ {
+   "riding_id": 145,
+   "riding_name": "Cambridge"
+ },
+ {
+   "riding_id": 101,
+   "riding_name": "Cape Breton--Canso"
+ },
+ {
+   "riding_id": 235,
+   "riding_name": "Cardigan"
+ },
+ {
+   "riding_id": 210,
+   "riding_name": "Cariboo--Prince George"
+ },
+ {
+   "riding_id": 315,
+   "riding_name": "Carleton"
+ },
+ {
+   "riding_id": 257,
+   "riding_name": "Carlton Trail--Eagle Creek"
+ },
+ {
+   "riding_id": 102,
+   "riding_name": "Central Nova"
+ },
+ {
+   "riding_id": 211,
+   "riding_name": "Central Okanagan--Similkameen--Nicola"
+ },
+ {
+   "riding_id": 51,
+   "riding_name": "Charlesbourg--Haute-Saint-Charles"
+ },
+ {
+   "riding_id": 228,
+   "riding_name": "Charleswood--St. James--Assiniboia--Headingley"
+ },
+ {
+   "riding_id": 236,
+   "riding_name": "Charlottetown"
+ },
+ {
+   "riding_id": 40,
+   "riding_name": "Châteauguay--Lacolle"
+ },
+ {
+   "riding_id": 132,
+   "riding_name": "Chatham-Kent--Leamington"
+ },
+ {
+   "riding_id": 41,
+   "riding_name": "Chicoutimi--Le Fjord"
+ },
+ {
+   "riding_id": 168,
+   "riding_name": "Chilliwack--Hope"
+ },
+ {
+   "riding_id": 229,
+   "riding_name": "Churchill--Keewatinook Aski"
+ },
+ {
+   "riding_id": 166,
+   "riding_name": "Cloverdale--Langley City"
+ },
+ {
+   "riding_id": 12,
+   "riding_name": "Coast of Bays--Central--Notre Dame"
+ },
+ {
+   "riding_id": 42,
+   "riding_name": "Compton--Stanstead"
+ },
+ {
+   "riding_id": 169,
+   "riding_name": "Coquitlam--Port Coquitlam"
+ },
+ {
+   "riding_id": 170,
+   "riding_name": "Courtenay--Alberni"
+ },
+ {
+   "riding_id": 171,
+   "riding_name": "Courtenay--Alberni"
+ },
+ {
+   "riding_id": 172,
+   "riding_name": "Cowichan--Malahat--Langford"
+ },
+ {
+   "riding_id": 103,
+   "riding_name": "Cumberland--Colchester"
+ },
+ {
+   "riding_id": 255,
+   "riding_name": "Cypress Hills--Grasslands"
+ },
+ {
+   "riding_id": 100,
+   "riding_name": "Dartmouth--Cole Harbour"
+ },
+ {
+   "riding_id": 230,
+   "riding_name": "Dauphin--Swan River--Neepawa"
+ },
+ {
+   "riding_id": 152,
+   "riding_name": "Davenport"
+ },
+ {
+   "riding_id": 7,
+   "riding_name": "Delta"
+ },
+ {
+   "riding_id": 256,
+   "riding_name": "Desnethé--Missinippi--Churchill River"
+ },
+ {
+   "riding_id": 154,
+   "riding_name": "Don Valley East"
+ },
+ {
+   "riding_id": 153,
+   "riding_name": "Don Valley North"
+ },
+ {
+   "riding_id": 285,
+   "riding_name": "Don Valley West"
+ },
+ {
+   "riding_id": 50,
+   "riding_name": "Dorval--Lachine--LaSalle"
+ },
+ {
+   "riding_id": 43,
+   "riding_name": "Drummond"
+ },
+ {
+   "riding_id": 289,
+   "riding_name": "Dufferin--Caledon"
+ },
+ {
+   "riding_id": 290,
+   "riding_name": "Durham"
+ },
+ {
+   "riding_id": 167,
+   "riding_name": "Edmonton Centre"
+ },
+ {
+   "riding_id": 179,
+   "riding_name": "Edmonton Griesbach"
+ },
+ {
+   "riding_id": 180,
+   "riding_name": "Edmonton Manning"
+ },
+ {
+   "riding_id": 181,
+   "riding_name": "Edmonton Mill Woods"
+ },
+ {
+   "riding_id": 193,
+   "riding_name": "Edmonton Riverbend"
+ },
+ {
+   "riding_id": 47,
+   "riding_name": "Edmonton Strathcona"
+ },
+ {
+   "riding_id": 48,
+   "riding_name": "Edmonton West"
+ },
+ {
+   "riding_id": 49,
+   "riding_name": "Edmonton--Wetaskiwin"
+ },
+ {
+   "riding_id": 306,
+   "riding_name": "Eglinton--Lawrence"
+ },
+ {
+   "riding_id": 237,
+   "riding_name": "Egmont"
+ },
+ {
+   "riding_id": 291,
+   "riding_name": "Elgin--Middlesex--London"
+ },
+ {
+   "riding_id": 232,
+   "riding_name": "Elmwood--Transcona"
+ },
+ {
+   "riding_id": 64,
+   "riding_name": "Esquimalt--Saanich--Sooke"
+ },
+ {
+   "riding_id": 286,
+   "riding_name": "Essex"
+ },
+ {
+   "riding_id": 266,
+   "riding_name": "Etobicoke Centre"
+ },
+ {
+   "riding_id": 280,
+   "riding_name": "Etobicoke North"
+ },
+ {
+   "riding_id": 270,
+   "riding_name": "Etobicoke--Lakeshore"
+ },
+ {
+   "riding_id": 281,
+   "riding_name": "Flamborough--Glanbrook"
+ },
+ {
+   "riding_id": 8,
+   "riding_name": "Fleetwood--Port Kells"
+ },
+ {
+   "riding_id": 182,
+   "riding_name": "Foothills"
+ },
+ {
+   "riding_id": 183,
+   "riding_name": "Fort McMurray--Cold Lake"
+ },
+ {
+   "riding_id": 219,
+   "riding_name": "Fredericton"
+ },
+ {
+   "riding_id": 220,
+   "riding_name": "Fundy Royal"
+ },
+ {
+   "riding_id": 72,
+   "riding_name": "Gaspésie--Les Îles-de-la-Madeleine"
+ },
+ {
+   "riding_id": 76,
+   "riding_name": "Gaspésie--Les Îles-de-la-Madeleine"
+ },
+ {
+   "riding_id": 73,
+   "riding_name": "Gatineau"
+ },
+ {
+   "riding_id": 282,
+   "riding_name": "Glengarry--Prescott--Russell"
+ },
+ {
+   "riding_id": 197,
+   "riding_name": "Grande Prairie--Mackenzie"
+ },
+ {
+   "riding_id": 292,
+   "riding_name": "Guelph"
+ },
+ {
+   "riding_id": 283,
+   "riding_name": "Haldimand--Norfolk"
+ },
+ {
+   "riding_id": 284,
+   "riding_name": "Haliburton--Kawartha Lakes--Brock"
+ },
+ {
+   "riding_id": 104,
+   "riding_name": "Halifax"
+ },
+ {
+   "riding_id": 105,
+   "riding_name": "Halifax"
+ },
+ {
+   "riding_id": 106,
+   "riding_name": "Halifax West"
+ },
+ {
+   "riding_id": 296,
+   "riding_name": "Hamilton Centre"
+ },
+ {
+   "riding_id": 293,
+   "riding_name": "Hamilton East--Stoney Creek"
+ },
+ {
+   "riding_id": 294,
+   "riding_name": "Hamilton Mountain"
+ },
+ {
+   "riding_id": 295,
+   "riding_name": "Hamilton West--Ancaster--Dundas"
+ },
+ {
+   "riding_id": 297,
+   "riding_name": "Hastings--Lennox and Addington"
+ },
+ {
+   "riding_id": 74,
+   "riding_name": "Hochelaga"
+ },
+ {
+   "riding_id": 75,
+   "riding_name": "Honoré-Mercier"
+ },
+ {
+   "riding_id": 77,
+   "riding_name": "Hull--Aylmer"
+ },
+ {
+   "riding_id": 91,
+   "riding_name": "Humber River--Black Creek"
+ },
+ {
+   "riding_id": 298,
+   "riding_name": "Huron--Bruce"
+ },
+ {
+   "riding_id": 78,
+   "riding_name": "Joliette"
+ },
+ {
+   "riding_id": 79,
+   "riding_name": "Jonquière"
+ },
+ {
+   "riding_id": 272,
+   "riding_name": "Kamloops--Thompson--Cariboo"
+ },
+ {
+   "riding_id": 312,
+   "riding_name": "Kanata--Carleton"
+ },
+ {
+   "riding_id": 274,
+   "riding_name": "Kelowna--Lake Country"
+ },
+ {
+   "riding_id": 299,
+   "riding_name": "Kenora"
+ },
+ {
+   "riding_id": 241,
+   "riding_name": "Kildonan--St. Paul"
+ },
+ {
+   "riding_id": 300,
+   "riding_name": "King--Vaughan"
+ },
+ {
+   "riding_id": 107,
+   "riding_name": "Kings--Hants"
+ },
+ {
+   "riding_id": 313,
+   "riding_name": "Kingston and the Islands"
+ },
+ {
+   "riding_id": 321,
+   "riding_name": "Kitchener Centre"
+ },
+ {
+   "riding_id": 318,
+   "riding_name": "Kitchener South--Hespeler"
+ },
+ {
+   "riding_id": 317,
+   "riding_name": "Kitchener--Conestoga"
+ },
+ {
+   "riding_id": 273,
+   "riding_name": "Kootenay--Columbia"
+ },
+ {
+   "riding_id": 80,
+   "riding_name": "La Pointe-de-l'Île"
+ },
+ {
+   "riding_id": 117,
+   "riding_name": "La Prairie"
+ },
+ {
+   "riding_id": 13,
+   "riding_name": "Labrador"
+ },
+ {
+   "riding_id": 81,
+   "riding_name": "Lac-Saint-Jean"
+ },
+ {
+   "riding_id": 116,
+   "riding_name": "Lac-Saint-Louis"
+ },
+ {
+   "riding_id": 271,
+   "riding_name": "Lakeland"
+ },
+ {
+   "riding_id": 319,
+   "riding_name": "Lambton--Kent--Middlesex"
+ },
+ {
+   "riding_id": 320,
+   "riding_name": "Lanark--Frontenac--Kingston"
+ },
+ {
+   "riding_id": 275,
+   "riding_name": "Langley--Aldergrove"
+ },
+ {
+   "riding_id": 118,
+   "riding_name": "LaSalle--Émard--Verdun"
+ },
+ {
+   "riding_id": 147,
+   "riding_name": "Laurentides--Labelle"
+ },
+ {
+   "riding_id": 148,
+   "riding_name": "Laurier--Sainte-Marie"
+ },
+ {
+   "riding_id": 155,
+   "riding_name": "Laval--Les Îles"
+ },
+ {
+   "riding_id": 322,
+   "riding_name": "Leeds--Grenville--Thousand Islands and Rideau Lakes"
+ },
+ {
+   "riding_id": 194,
+   "riding_name": "Lethbridge"
+ },
+ {
+   "riding_id": 157,
+   "riding_name": "Lévis--Lotbinière"
+ },
+ {
+   "riding_id": 326,
+   "riding_name": "London North Centre"
+ },
+ {
+   "riding_id": 302,
+   "riding_name": "London West"
+ },
+ {
+   "riding_id": 301,
+   "riding_name": "London--Fanshawe"
+ },
+ {
+   "riding_id": 10,
+   "riding_name": "Long Range Mountains"
+ },
+ {
+   "riding_id": 156,
+   "riding_name": "Longueuil--Charles-LeMoyne"
+ },
+ {
+   "riding_id": 160,
+   "riding_name": "Longueuil--Saint-Hubert"
+ },
+ {
+   "riding_id": 161,
+   "riding_name": "Louis-Hébert"
+ },
+ {
+   "riding_id": 162,
+   "riding_name": "Louis-Saint-Laurent"
+ },
+ {
+   "riding_id": 221,
+   "riding_name": "Madawaska--Restigouche"
+ },
+ {
+   "riding_id": 244,
+   "riding_name": "Malpeque"
+ },
+ {
+   "riding_id": 163,
+   "riding_name": "Manicouagan"
+ },
+ {
+   "riding_id": 164,
+   "riding_name": "Manicouagan"
+ },
+ {
+   "riding_id": 165,
+   "riding_name": "Manicouagan"
+ },
+ {
+   "riding_id": 1,
+   "riding_name": "Marc-Aurèle-Fortin"
+ },
+ {
+   "riding_id": 303,
+   "riding_name": "Markham--Stouffville"
+ },
+ {
+   "riding_id": 327,
+   "riding_name": "Markham--Thornhill"
+ },
+ {
+   "riding_id": 222,
+   "riding_name": "Markham--Unionville"
+ },
+ {
+   "riding_id": 195,
+   "riding_name": "Medicine Hat--Cardston--Warner"
+ },
+ {
+   "riding_id": 174,
+   "riding_name": "Mégantic--L'Érable"
+ },
+ {
+   "riding_id": 223,
+   "riding_name": "Milton"
+ },
+ {
+   "riding_id": 173,
+   "riding_name": "Mirabel"
+ },
+ {
+   "riding_id": 213,
+   "riding_name": "Miramichi--Grand Lake"
+ },
+ {
+   "riding_id": 276,
+   "riding_name": "Mission--Matsqui--Fraser Canyon"
+ },
+ {
+   "riding_id": 226,
+   "riding_name": "Mississauga Centre"
+ },
+ {
+   "riding_id": 224,
+   "riding_name": "Mississauga East--Cooksville"
+ },
+ {
+   "riding_id": 225,
+   "riding_name": "Mississauga--Erin Mills"
+ },
+ {
+   "riding_id": 233,
+   "riding_name": "Mississauga--Lakeshore"
+ },
+ {
+   "riding_id": 234,
+   "riding_name": "Mississauga--Malton"
+ },
+ {
+   "riding_id": 238,
+   "riding_name": "Mississauga--Streetsville"
+ },
+ {
+   "riding_id": 212,
+   "riding_name": "Moncton--Riverview--Dieppe"
+ },
+ {
+   "riding_id": 175,
+   "riding_name": "Montarville"
+ },
+ {
+   "riding_id": 176,
+   "riding_name": "Montcalm"
+ },
+ {
+   "riding_id": 177,
+   "riding_name": "Montmagny--L'Islet--Kamouraska--Rivière-du-Loup"
+ },
+ {
+   "riding_id": 258,
+   "riding_name": "Moose Jaw--Lake Centre--Lanigan"
+ },
+ {
+   "riding_id": 178,
+   "riding_name": "Mount Royal"
+ },
+ {
+   "riding_id": 277,
+   "riding_name": "Nanaimo--Ladysmith"
+ },
+ {
+   "riding_id": 239,
+   "riding_name": "Nepean"
+ },
+ {
+   "riding_id": 214,
+   "riding_name": "New Brunswick Southwest"
+ },
+ {
+   "riding_id": 278,
+   "riding_name": "New Westminster--Burnaby"
+ },
+ {
+   "riding_id": 240,
+   "riding_name": "Newmarket--Aurora"
+ },
+ {
+   "riding_id": 133,
+   "riding_name": "Niagara Centre"
+ },
+ {
+   "riding_id": 134,
+   "riding_name": "Niagara Falls"
+ },
+ {
+   "riding_id": 149,
+   "riding_name": "Niagara West"
+ },
+ {
+   "riding_id": 267,
+   "riding_name": "Nickel Belt"
+ },
+ {
+   "riding_id": 135,
+   "riding_name": "Nipissing--Timiskaming"
+ },
+ {
+   "riding_id": 121,
+   "riding_name": "North Island--Powell River"
+ },
+ {
+   "riding_id": 279,
+   "riding_name": "North Okanagan--Shuswap"
+ },
+ {
+   "riding_id": 46,
+   "riding_name": "North Vancouver"
+ },
+ {
+   "riding_id": 136,
+   "riding_name": "Northumberland--Peterborough South"
+ },
+ {
+   "riding_id": 93,
+   "riding_name": "Northwest Territories"
+ },
+ {
+   "riding_id": 184,
+   "riding_name": "Notre-Dame-de-Grâce--Westmount"
+ },
+ {
+   "riding_id": 94,
+   "riding_name": "Nunavut"
+ },
+ {
+   "riding_id": 146,
+   "riding_name": "Oakville"
+ },
+ {
+   "riding_id": 33,
+   "riding_name": "Oakville North--Burlington"
+ },
+ {
+   "riding_id": 331,
+   "riding_name": "Orléans"
+ },
+ {
+   "riding_id": 31,
+   "riding_name": "Oshawa"
+ },
+ {
+   "riding_id": 52,
+   "riding_name": "Ottawa Centre"
+ },
+ {
+   "riding_id": 332,
+   "riding_name": "Ottawa South"
+ },
+ {
+   "riding_id": 342,
+   "riding_name": "Ottawa West--Nepean"
+ },
+ {
+   "riding_id": 341,
+   "riding_name": "Ottawa--Vanier"
+ },
+ {
+   "riding_id": 185,
+   "riding_name": "Outremont"
+ },
+ {
+   "riding_id": 304,
+   "riding_name": "Oxford"
+ },
+ {
+   "riding_id": 186,
+   "riding_name": "Papineau"
+ },
+ {
+   "riding_id": 305,
+   "riding_name": "Parkdale--High Park"
+ },
+ {
+   "riding_id": 307,
+   "riding_name": "Parry Sound--Muskoka"
+ },
+ {
+   "riding_id": 196,
+   "riding_name": "Peace River--Westlock"
+ },
+ {
+   "riding_id": 308,
+   "riding_name": "Perth--Wellington"
+ },
+ {
+   "riding_id": 309,
+   "riding_name": "Peterborough--Kawartha"
+ },
+ {
+   "riding_id": 310,
+   "riding_name": "Pickering--Uxbridge"
+ },
+ {
+   "riding_id": 30,
+   "riding_name": "Pierre-Boucher--Les Patriotes--Verchères"
+ },
+ {
+   "riding_id": 187,
+   "riding_name": "Pierrefonds--Dollard"
+ },
+ {
+   "riding_id": 54,
+   "riding_name": "Pitt Meadows--Maple Ridge"
+ },
+ {
+   "riding_id": 188,
+   "riding_name": "Pontiac"
+ },
+ {
+   "riding_id": 62,
+   "riding_name": "Port Moody--Coquitlam"
+ },
+ {
+   "riding_id": 242,
+   "riding_name": "Portage--Lisgar"
+ },
+ {
+   "riding_id": 189,
+   "riding_name": "Portneuf--Jacques-Cartier"
+ },
+ {
+   "riding_id": 259,
+   "riding_name": "Prince Albert"
+ },
+ {
+   "riding_id": 55,
+   "riding_name": "Prince George--Peace River--Northern Rockies"
+ },
+ {
+   "riding_id": 243,
+   "riding_name": "Provencher"
+ },
+ {
+   "riding_id": 204,
+   "riding_name": "Québec"
+ },
+ {
+   "riding_id": 199,
+   "riding_name": "Red Deer--Lacombe"
+ },
+ {
+   "riding_id": 198,
+   "riding_name": "Red Deer--Mountain View"
+ },
+ {
+   "riding_id": 262,
+   "riding_name": "Regina--Lewvan"
+ },
+ {
+   "riding_id": 260,
+   "riding_name": "Regina--Qu'Appelle"
+ },
+ {
+   "riding_id": 261,
+   "riding_name": "Regina--Wascana"
+ },
+ {
+   "riding_id": 311,
+   "riding_name": "Renfrew--Nipissing--Pembroke"
+ },
+ {
+   "riding_id": 190,
+   "riding_name": "Repentigny"
+ },
+ {
+   "riding_id": 63,
+   "riding_name": "Richmond Centre"
+ },
+ {
+   "riding_id": 314,
+   "riding_name": "Richmond Hill"
+ },
+ {
+   "riding_id": 191,
+   "riding_name": "Richmond--Arthabaska"
+ },
+ {
+   "riding_id": 38,
+   "riding_name": "Rimouski-Neigette--Témiscouata--Les Basques"
+ },
+ {
+   "riding_id": 192,
+   "riding_name": "Rivière-des-Mille-Îles"
+ },
+ {
+   "riding_id": 205,
+   "riding_name": "Rivière-du-Nord"
+ },
+ {
+   "riding_id": 206,
+   "riding_name": "Rosemont--La Petite-Patrie"
+ },
+ {
+   "riding_id": 65,
+   "riding_name": "Saanich--Gulf Islands"
+ },
+ {
+   "riding_id": 108,
+   "riding_name": "Sackville--Preston--Chezzetcook"
+ },
+ {
+   "riding_id": 245,
+   "riding_name": "Saint Boniface--Saint Vital"
+ },
+ {
+   "riding_id": 215,
+   "riding_name": "Saint John--Rothesay"
+ },
+ {
+   "riding_id": 2,
+   "riding_name": "Saint-Hyacinthe--Bagot"
+ },
+ {
+   "riding_id": 3,
+   "riding_name": "Saint-Jean"
+ },
+ {
+   "riding_id": 19,
+   "riding_name": "Saint-Laurent"
+ },
+ {
+   "riding_id": 4,
+   "riding_name": "Saint-Léonard--Saint-Michel"
+ },
+ {
+   "riding_id": 5,
+   "riding_name": "Saint-Maurice--Champlain"
+ },
+ {
+   "riding_id": 6,
+   "riding_name": "Salaberry--Suroît"
+ },
+ {
+   "riding_id": 324,
+   "riding_name": "Sarnia--Lambton"
+ },
+ {
+   "riding_id": 287,
+   "riding_name": "Saskatoon West"
+ },
+ {
+   "riding_id": 263,
+   "riding_name": "Saskatoon--Grasswood"
+ },
+ {
+   "riding_id": 264,
+   "riding_name": "Saskatoon--University"
+ },
+ {
+   "riding_id": 268,
+   "riding_name": "Sault Ste. Marie"
+ },
+ {
+   "riding_id": 328,
+   "riding_name": "Scarborough Centre"
+ },
+ {
+   "riding_id": 330,
+   "riding_name": "Scarborough North"
+ },
+ {
+   "riding_id": 333,
+   "riding_name": "Scarborough Southwest"
+ },
+ {
+   "riding_id": 325,
+   "riding_name": "Scarborough--Agincourt"
+ },
+ {
+   "riding_id": 329,
+   "riding_name": "Scarborough--Guildwood"
+ },
+ {
+   "riding_id": 334,
+   "riding_name": "Scarborough--Rouge Park"
+ },
+ {
+   "riding_id": 246,
+   "riding_name": "Selkirk--Interlake--Eastman"
+ },
+ {
+   "riding_id": 247,
+   "riding_name": "Selkirk--Interlake--Eastman"
+ },
+ {
+   "riding_id": 249,
+   "riding_name": "Selkirk--Interlake--Eastman"
+ },
+ {
+   "riding_id": 250,
+   "riding_name": "Selkirk--Interlake--Eastman"
+ },
+ {
+   "riding_id": 18,
+   "riding_name": "Shefford"
+ },
+ {
+   "riding_id": 20,
+   "riding_name": "Sherbrooke"
+ },
+ {
+   "riding_id": 201,
+   "riding_name": "Sherwood Park--Fort Saskatchewan"
+ },
+ {
+   "riding_id": 336,
+   "riding_name": "Simcoe North"
+ },
+ {
+   "riding_id": 335,
+   "riding_name": "Simcoe--Grey"
+ },
+ {
+   "riding_id": 83,
+   "riding_name": "Skeena--Bulkley Valley"
+ },
+ {
+   "riding_id": 288,
+   "riding_name": "Souris--Moose Mountain"
+ },
+ {
+   "riding_id": 84,
+   "riding_name": "South Okanagan--West Kootenay"
+ },
+ {
+   "riding_id": 109,
+   "riding_name": "South Shore--St. Margarets"
+ },
+ {
+   "riding_id": 85,
+   "riding_name": "South Surrey--White Rock"
+ },
+ {
+   "riding_id": 337,
+   "riding_name": "Spadina--Fort York"
+ },
+ {
+   "riding_id": 200,
+   "riding_name": "St. Albert--Edmonton"
+ },
+ {
+   "riding_id": 316,
+   "riding_name": "St. Catharines"
+ },
+ {
+   "riding_id": 14,
+   "riding_name": "St. John's East"
+ },
+ {
+   "riding_id": 15,
+   "riding_name": "St. John's South--Mount Pearl"
+ },
+ {
+   "riding_id": 86,
+   "riding_name": "Steveston--Richmond East"
+ },
+ {
+   "riding_id": 338,
+   "riding_name": "Stormont--Dundas--South Glengarry"
+ },
+ {
+   "riding_id": 202,
+   "riding_name": "Sturgeon River--Parkland"
+ },
+ {
+   "riding_id": 339,
+   "riding_name": "Sudbury"
+ },
+ {
+   "riding_id": 82,
+   "riding_name": "Surrey Centre"
+ },
+ {
+   "riding_id": 120,
+   "riding_name": "Surrey--Newton"
+ },
+ {
+   "riding_id": 110,
+   "riding_name": "Sydney--Victoria"
+ },
+ {
+   "riding_id": 61,
+   "riding_name": "Terrebonne"
+ },
+ {
+   "riding_id": 60,
+   "riding_name": "Thérèse-De Blainville"
+ },
+ {
+   "riding_id": 343,
+   "riding_name": "Thornhill"
+ },
+ {
+   "riding_id": 340,
+   "riding_name": "Thunder Bay--Rainy River"
+ },
+ {
+   "riding_id": 269,
+   "riding_name": "Thunder Bay--Superior North"
+ },
+ {
+   "riding_id": 344,
+   "riding_name": "Timmins--James Bay"
+ },
+ {
+   "riding_id": 216,
+   "riding_name": "Tobique--Mactaquac"
+ },
+ {
+   "riding_id": 345,
+   "riding_name": "Toronto Centre"
+ },
+ {
+   "riding_id": 346,
+   "riding_name": "Toronto--Danforth"
+ },
+ {
+   "riding_id": 323,
+   "riding_name": "Toronto--St. Paul's"
+ },
+ {
+   "riding_id": 32,
+   "riding_name": "Trois-Rivières"
+ },
+ {
+   "riding_id": 347,
+   "riding_name": "University--Rosedale"
+ },
+ {
+   "riding_id": 122,
+   "riding_name": "Vancouver Centre"
+ },
+ {
+   "riding_id": 123,
+   "riding_name": "Vancouver East"
+ },
+ {
+   "riding_id": 119,
+   "riding_name": "Vancouver Granville"
+ },
+ {
+   "riding_id": 137,
+   "riding_name": "Vancouver Kingsway"
+ },
+ {
+   "riding_id": 138,
+   "riding_name": "Vancouver Quadra"
+ },
+ {
+   "riding_id": 139,
+   "riding_name": "Vancouver South"
+ },
+ {
+   "riding_id": 59,
+   "riding_name": "Vaudreuil--Soulanges"
+ },
+ {
+   "riding_id": 56,
+   "riding_name": "Vaughan--Woodbridge"
+ },
+ {
+   "riding_id": 140,
+   "riding_name": "Victoria"
+ },
+ {
+   "riding_id": 44,
+   "riding_name": "Ville-Marie--Le Sud-Ouest--Île-des-Soeurs"
+ },
+ {
+   "riding_id": 45,
+   "riding_name": "Vimy"
+ },
+ {
+   "riding_id": 57,
+   "riding_name": "Waterloo"
+ },
+ {
+   "riding_id": 58,
+   "riding_name": "Wellington--Halton Hills"
+ },
+ {
+   "riding_id": 111,
+   "riding_name": "West Nova"
+ },
+ {
+   "riding_id": 141,
+   "riding_name": "West Vancouver--Sunshine Coast--Sea to Sky Country"
+ },
+ {
+   "riding_id": 66,
+   "riding_name": "Whitby"
+ },
+ {
+   "riding_id": 67,
+   "riding_name": "Willowdale"
+ },
+ {
+   "riding_id": 88,
+   "riding_name": "Windsor West"
+ },
+ {
+   "riding_id": 87,
+   "riding_name": "Windsor--Tecumseh"
+ },
+ {
+   "riding_id": 251,
+   "riding_name": "Winnipeg Centre"
+ },
+ {
+   "riding_id": 253,
+   "riding_name": "Winnipeg North"
+ },
+ {
+   "riding_id": 248,
+   "riding_name": "Winnipeg South"
+ },
+ {
+   "riding_id": 252,
+   "riding_name": "Winnipeg South Centre"
+ },
+ {
+   "riding_id": 203,
+   "riding_name": "Yellowhead"
+ },
+ {
+   "riding_id": 90,
+   "riding_name": "York Centre"
+ },
+ {
+   "riding_id": 53,
+   "riding_name": "York South--Weston"
+ },
+ {
+   "riding_id": 89,
+   "riding_name": "York--Simcoe"
+ },
+ {
+   "riding_id": 265,
+   "riding_name": "Yorkton--Melville"
+ },
+ {
+   "riding_id": 92,
+   "riding_name": "Yukon"
+ }
+];
+
+    </script>
+<div class="container mx-auto">
+    <input list="riding_list" id="riding_input" name="riding_input" placeholder="Find a riding"
+    autocomplete="off"  
+    on/>
+    
+    <datalist id="riding_list">
+        <datalist id="riding">
+            
+        </datalist>
+    </datalist>
+    <div class="search_riding map-btn" onclick="riding_search()">
+        Search
+    </div>
+    <div class="clear_search_riding map-btn" onclick="clear_riding_search()">
+        Clear Search
+    </div>
+<script>
+    riding_datalist_create()
+    function riding_datalist_create() {
+        let datalist = document.querySelector("#riding")
+        //<option value="Chocolate"></option>
+        ridingData.forEach((riding)=> {
+            let new_opt = document.createElement("option");
+            new_opt.setAttribute("value",riding.riding_name)
+            new_opt.setAttribute("id", "data-"+ riding.riding_id)
+            datalist.appendChild(new_opt)
+        })
+    }
+
+    function clear_riding_search() {
+        let input = document.getElementById("riding_input")
+        input.value= ""
+        input.innerHTML= ""
+    }
+    function riding_search() {
+        let input = document.querySelector("#riding_input")
+        console.log(input.value)
+        console.log(input)
+        //limit the input
+        let datalist = document.querySelectorAll("option")
+        //console.log(input.value)
+        let ridingID;
+        //get all the svg elements and regex the number for 
+        info_show_search(input.value)
+        /*
+        datalist.forEach((opt) => {
+            let elemID = ((opt.id).replace('data-',''));
+
+            //console.log(input.value)
+            if (opt.value = input.value) {
+                ridingID = elemID
+                console.log(opt.value)
+                console.log('HERE ',ridingID)
+                info_show("this",ridingID)
+            } else {
+                console.log('bebe')
+            }
+
+        }) */
+    }
+
+//event listener to track the change in the input
+
+</script>    
+
+	</div>
+</div>
+</div>
+<div class="reset map-btn">Reset Map    </div>
+<div class="page-flex" >
     <?xml version="1.0"?>
-    <svg id="canada_map" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="800" height="809" viewBox="0 0 800 868" stroke-linecap="round" stroke-linejoin="round"  fill="#fff" fill-opacity="0.7">
+    <svg id="canada_map" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="800" height="809" viewBox="0 0 800 868" stroke-linecap="round" stroke-linejoin="round"  fill="#cacaca" fill-opacity="0.7"
+    style="background-color: #1d1d1d;">
     <g id="ELECTORAL_DISTRICT">
-<path onclick="info_show(this,1)"  fill="blue" d="M590.36 720.25h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01-.01.01h-.01v.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01l-.01.01v.01h-.01v.02h-.01v.01h-.01v.02h-.01v.01h-.01v.01l-.01.01v.01h-.01l-.01.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01l-.01.01-.01.01-.01.01h-.01v.01l-.01.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01-.01h-.01l-.05-.03-.1-.08h-.01l-.05-.04-.01-.01-.01-.01-.09-.06-.08-.06-.04-.03v-.03l-.01-.02.01-.02v-.01l.01-.01v-.01l.01-.01v-.05l-.01-.02-.01-.02-.01-.03v-.01l.02-.04h.01l.02-.02.01-.01v-.03l-.01-.01-.01-.05-.02-.04v-.03l.01-.01v-.01l.02-.01h.05l.01-.01.05-.04.03-.03h.01l.04-.01.02-.02.02-.03.01-.04.01-.01.01-.01v-.01l.02-.01.01-.02v-.01l.01-.06v-.12l-.01-.02v-.03l.01-.02.01-.01.01-.02.01-.01.01-.01v-.03l.01-.03v-.01l.01-.01v-.04l-.01-.02v-.01l.01-.02.03-.05.02-.03.01-.02.01-.01.01-.02.01-.03v-.01l.04-.09.04-.1v.01h.02l.01.01.03.02.03.02h.01v.01h.01l.01.01h.01l.01.01.01.01.01.01.01.01.01.01.01.02.01.01.04.05.01.01v.01h.01v.01h.01v.01h.01l.01.01.01.01.01.01.03.02.07.05.02.02h.01v.01h-.01v.02h-.01v.01l-.01.02v.01l-.01.01-.01.01v.01H590v.01l-.01.01v.01l-.01.01v.01l-.01.02-.01.03v.01h-.01v.02h-.01v.01l-.02.02-.01.01.04.03.01.01.02.01.01.01.02.02h.01v.01h.01l.01.01.01.01v.01h.01v.01l.01.01h.01l.01.01.01.01.01.01h.01v.01h.01l.02.02.01.01h.01v.01h.01l.01.01.02.01.01.01.01.01.01.01h.01v.01h.01l.01.01.01.01.02.01.01.01h.01l.01.01.01.01h.02v.01Z"/>
-<path onclick="info_show(this,2)" d="m606.14 715.35-.23.05-.1.03v.04l.01.03-.07.02.03.09h-.03v.01h-.02l-.01.01h-.01l-.01.01h-.03l.01.01v.04l.01.01.01.03.01.03v.02l.01.02.01.03v.03l.01.03.01.01v.03l.01.01v.01l.01.04-.19.08.01.02v.01l.01.02v.01l.01.02v.02l.01.02v.02l.01.02.01.02v.03l.01.01v.02l.01.01v.02l.01.01v.02l.01.02v.01l.01.03.01.02v.01l.01.03.01.04v.01l.01.02.01.02v.02l.01.01v.03h.01v.02l-.19.08-.07.02.1.4.02.07v.02l.01.01v.03h.01v.04h.01v.02l.01.02v.01l.01.02v.02l.01.02v.01l.01.03.01.01v.02l.01.01v.01l.06.17.08.34h.01l-.16.04v.01l-.23.05-.17.05v-.01l-.09-.47-.06-.24-.35.11h-.02l-.01.01h-.03l-.01.01h-.02l-.01.01h-.03l-.01.01h-.02l-.01.01h-.03l-.01.01h-.03l-.01.01h-.03l-.01.01h-.03v.01h-.04l-.01.01h-.02l-.01.01h-.04v.01h-.01l-.31.08-.06.01-.02.01-.08.02-.22.05-.08.02-.01-.01v-.01l-.01-.03v-.02l-.03-.13-.05-.2-.01-.03v-.01l-.07.02h-.01l-.02.01-.11.03h-.01l-.02.01h-.01l-.07-.18-.08.02-.07.02-.22.06-.21.06h-.01l-.02.01h-.02l-.01.01h-.01v.01h-.01v-.01h-.01v.01h-.03v.01h-.03l-.05.02h-.01l.05.13-.17.04.03.12-.38.11-.17.06-.38.1-.01-.04-.01-.03-.01-.04-.01-.03-.01-.02V717.9l-.01.01h-.01l-.04.01-.04.01-.03.01-.04.01-.01.01h-.02v.01h-.03v.01l-.05.01-.02.01h-.01v.12l.01.03v.04l.02.27.01.06.01.03-.01.11.03.17.03.11.02.17-.11.02-.13.01-.02.04h-.25l-.05.03-.03.02-.05.04-.02.03-.01.04v.02l-.01.02-.01.01h-.05l-.01-.01h-.01l-.01-.01h-.01l-.03-.02h-.01v-.01h-.02v-.01h-.02v-.01h-.01l-.01-.01h-.01l-.04-.02v.02l-.02.07-.01.01v.03h-.01v.01l-.01.01h.01v.01h.01v.05l.01.05v.01l-.07.01h-.01l-.11.01.02.16.01.08h-.06l-.16.02v.01l-.13.01-.14.02.01-.01.01-.02.01-.01v-.03h-.01v-.04l-.01-.02v-.01l-.01-.01v-.01h-.01v-.01l-.01-.01v-.01h-.01v-.03l.01-.03.02-.04v-.02l-.23.03-.03.01h-.01l-.04.01-.06.01h-.03l-.03.01h-.04l-.02.01h-.04l-.01.03-.01.03v.02l-.01.01v.01l-.14-.07-.06-.03-.07-.03-.12-.06.01.19.01.07-.37.13.01-.12.02-.2-.13-.08-.12-.06v-.02l.01-.03V719.29l.01-.06v-.19l.01-.02v-.11l-.34-.21-.01-.01-.17-.1-.06-.03.01.01v.02l.01.01v.05l.01.01v.03l.01.01-.01.01v.01h.01v.02l.01.01v.02l-.01.02-.01.01v-.01h-.01v-.01h-.01l-.07-.03v-.01l-.04-.02-.05-.02-.04-.02-.01-.01v.03h.01v.03l-.21-.12v.01l-.06-.03v-.05l-.01-.01-.01-.13v-.01l-.01-.06.05.02.01-.02.02.01.02-.02-.11-.1h-.01l-.08-.11-.01-.01v-.01h-.01v-.01l-.01-.02-.01-.01-.01-.03h-.01v-.2l.01-.03v-.11h-.01v-.03h-.01v-.01l.21.12.13.07v-.03l.13.07v-.03h-.01v-.04l-.01-.01-.01-.03v-.01l-.01-.01v-.03h-.01v-.02l-.05-.13-.02-.09-.05-.13-.02-.07-.02-.04-.03-.1-.01-.01-.01-.04-.01-.02-.1-.06-.13-.08-.05-.19-.03-.12.01-.12.01-.26.08-.16.02-.13.04.02.07.04.01.01.11.06.01-.54-.03-.02-.16-.08-.31-.17.01-.07-.02-.01-.01-.03v-.01l-.05-.03-.04-.02-.09-.04.01-.03v-.06l.03-.1-.15-.08-.25-.15.01-.13.01-.01v-.01l.02-.05v-.01h.01v-.01h.01v-.01h.01l-.03-.03.07-.07-.04-.1-.01-.19V714h.01v.01l.13.07v-.04l-.01-.03.04.02.03.02.03.02.02-.12-.02-.26v-.05l-.02-.43.1.06.01-.01.09-.14.09-.15.04-.08.06.03.14.07.01.12.18.11-.01-.1v-.03l.06-.01.03-.01.01.01.08-.01h.09v.03l.18-.02.09-.01.01.11.26-.01.03.01.01-.02.02-.04v-.13l.01-.06-.02-.06.04-.01.21-.01v-.04l-.01-.09v-.3l.06.03.12.06.1.05.16.07.04.03.08.04.08.04.04.03.03.01.02.18.1.05.06.04.04.02.04.02.06.03.2.11.16.08.14.07.01.01.05.03.04.02.05.03.03.01.01.01.07.04.17.09.04.02.1.05.04.02.19.11.06.03.06.03.09.05.09.05.11.06h.01v.01l.05.02.07.04.04.02v-.01l.09-.16.03-.06.01-.01.06-.11.01.01h.01l.04.02.05.02.03.01.15.06.06.03h.01l.12.05.04-.11.05-.11.04-.08v-.01l.02-.06.01-.02.04-.08.01-.04.02-.04.02-.05.01-.02.01-.01v-.01l.03-.07.01-.03.18.07.06.03.11.04.02.01-.01.02v.01l-.01.01.02.01.18.09.03.01-.01.02-.07.16-.03.07.05.03h.01l.04.01.04.02h.01v.01h.01l.02.01.03.01h.01l.01.01.03.01h.01l.02.01.01.01h.01l.03.01v.01h.03v.01h.01l.02.01h.02l.01.01.02.01.02.01h.01l.02.01.04.02.04.01.01.01h.01l.01.01h.02l.01.01.03.01.01.01h.01l.02.01h.01l.02.01.01.01h.01l.02.01.02.01h.02l.01.01h.01l.02.01.01.01h.01l.06.03.05.01.1.05.04.01.02.01.05.02.03.02h.01l.02.01.02.01.06.02.01.01.02.01.03.01.02.01h.01l.02.01h.01l.02.01.02.01.02.01h.01l.02.01.06.02.02.02h.01l.03.01h.01v.01l.05.02h.01l.01.01h.01l.03.01.08.04.1.04.13.05.06.03.09.04.24.09.04.02.03.01.06.03h.02l.02.01.01.01h.01l.02.01h.01l.01.01.02.01h.01l.04.02.04.01.01.01h.01v.01h.02l.3.12.05.03.42.17.1.04Z"/>
-<path onclick="info_show(this,3)" d="m599.76 721.9-.17.05v.01l.01.01.01.04.01.06v.01h-.01l-.05.03-.01.01-.02.01h-.01l-.01.01-.02.02-.02.01-.01.01h-.01l-.04.03h-.01l-.01.01h-.01v.01h-.02l-.04.01-.01.01h-.03l-.02.01h-.03v.01h-.01l-.01.01v.01l.08.22.04.02.06.03.01.01h.02l.05.03.04.02.02.01.04.02.04.02.04.03h.01l.03.02.03.01.01.01h.02l.01.01h.01l.01-.01v.01l.01.05.01.06.04.17-.01-.01-.15-.08-.28-.14.01.07.03.17.01.01-.01.01v.02l.04.15-.13-.07.03.12-.06-.02v.01l.01.03v.01l.01.03v.01l.01.01v.03h.01v.04l.01.01v.02l.01.01v.02l.01.03v.03l.01.01.01.04v.04l-.01-.01-.03-.02.08.27.01.01-.02-.01h-.01l-.02.03-.01.02.11.08.03.02.01.01.08.05.02.01-.11.15-.04.06-.08.1-.07.1.04.02.04.03.03.1.03.06v.02l.05.14-.27.09-.21.07-.15-.39-.06-.16h-.01l-.2.07-.3.09.09.26-.24.07-.15.05.03.02.01.01.02.01.01.01-.27.07.01.04.01.02.01.02.01.03v.02l.01.01v.02l.01.02v.02l.01.02v.01l.01.01v.03l-.17.05-.05.02h-.01l-.09.03.02.06.06.14.03.09.02.07.01.09.02.02.01.01.03.03v.01l.01.02.01.06.01.04-.01.02v.02l-.01.04-.01.02-.03.06-.04.07-.03.05h-.01l-.01.03v.09l-.15.12v.01l-.02.06-.02.06-.02.03-.02.03-.02.02-.01.01-.02.01-.03.04-.02.05-.01.04-.01.03-.02.04v.02l-.01.02v.05l.02.04.01.01V727.36l-.02.02-.02.04-.01.01v.03l-.01.01v.03l.01.01v.01l.01.01v.01l.02.02.01.02.02.02v.03l.01.03.01.11-.01.06v.01l-.01.08-.02.09v.1l.06.26-.09.02-.01.01-.17.06-.03.01h-.02l-.02.01-.03.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03l-.01.01h-.02l-.01.01h-.03v.01h-.03l-.02.01-.05.02-.04.01-.07-.21-.1-.31.24-.07v-.01h-.01v-.03l-.01-.01v-.03h-.01v-.03l-.01-.01v-.02l-.01-.03v-.01l-.01-.01v-.01l-.01-.02v-.02l-.01-.01v-.01l-.01-.03v-.01l-.01-.03v-.01l-.01-.01v-.02l-.01-.03-.01-.02v-.01l-.02-.05-.01-.05-.01-.02-.01-.03v-.01l-.01-.02v-.02l-.06-.18v.01h-.02l-.04.01-.01.01h-.02l-.07-.21-.01-.03h.02v-.01h.03v-.01h.01l.04-.01-.07-.24h.03l.01-.01h.02l.01-.01h.04v-.01h.03l.01-.01-.02-.09-.02-.09.15-.04.05-.01h.01l.03-.01-.06-.21-.03-.13-.06-.22-.16-.16-.02-.01-.01-.08-.01-.23-.02-.01-.02-.01-.03-.02-.02-.01h-.01l-.01-.01-.02-.01h-.01l-.02-.01-.02-.01-.01-.01h-.01l-.03-.02-.07-.03-.01-.01.12-.22-.01-.01h-.01l.04-.06.01-.03.06-.11.01-.03-.08-.04-.07-.03-.07-.03-.01-.01v-.01l-.09-.04-.02-.01-.14-.08h-.02v-.02h.01v-.02h.01v-.01l-.02.01-.28.16.06-.21.13-.07.02-.12.02-.08.01-.04v-.02l-.06-.11-.01.01v-.03l-.01-.03-.01-.02-.01-.02.03-.03-.01-.02-.01-.02-.01-.02.05-.03-.02-.03.03-.01v-.01l-.01-.01.02-.02-.01-.02v-.03l.01-.03-.01-.04h-.01l-.02-.01-.08-.02h-.02l-.04-.01-.1-.03-.02-.01h-.02l-.01-.01-.2-.05-.03-.05v-.04h.01v-.07l-.01-.02v-.04l-.01-.07v-.02l.02-.03.04-.02.03-.02.01-.01v-.03l.01-.02v-.03l.01-.01v-.04l.01-.01v-.02l-.06-.01-.04-.09v-.01l-.04-.09-.05-.01.03-.08.02-.07.02-.05-.01-.03v-.03l-.02-.13-.01-.02-.01-.03v-.01l-.01-.01.04-.01.02-.03-.02-.01-.18-.09.03-.01.07-.02-.02-.03-.01-.01.06.03.02.01h.01v.01h.02l.11.06v.01l.02.01.06.03.07.04.19.11v-.08l.08.04.04.01h.14l.01-.09v-.02l-.01-.02v-.03l.09-.19.01-.02-.01-.04.01-.02h.01l.03.02.03.01.01.01.04.02.02.01.02.01.03.02.04.02h.01l.04.02.02.02.19.09v.01h.02l.03-.01h.01l.04-.01.02-.01.04-.01.03-.01h.02l.02-.04v-.01l.01-.01h.01l.05.06.03-.03v.01h.01l.01.01h.02l.01.01.02.01.01.01.01.01h.02v.01l.02.01.01.01h.02l.02.01v.01h.02v.01h.02l.01.01h.01l.01.01.01.01h.01l.01.01.02.01.02.01.01.01.02.01h.01l.01.01.02.01h.01v-.03l-.01-.01v-.02l-.01-.01-.01-.02-.01-.03-.01-.02-.01-.01-.01-.02v-.01l.01-.02.02-.03.11.06.08-.15.16-.29.22.11.08.05.15.07.01.01.23.11v-.01l.01-.01v-.01l.01-.02.02-.03.01-.03.01-.02.01-.01v-.01h.01v-.01l.01-.02v-.01l.01-.01v-.01h.01v-.01l.01-.01h.01l.02.01.02.01.05.03.07.03v.01h.01v-.01h.01v-.01h-.01v-.04l-.01-.01v-.01l.24.13.02-.05v-.01h.01v-.02h.01v-.02l.01-.01v-.02h.01v-.02h.01v-.02l.01-.01v-.02h.01v-.02h.01v-.02l.01-.01v-.02h.01v-.02h.01v-.02l.01-.02.01-.01v-.02l.01-.02v-.01h.01v-.02l.01-.01v-.01l.01-.01v-.01l.01-.01.01-.01h.01v-.02h.01v-.01l.01-.01v-.01h.01v-.02h.01v-.01l.01-.01v-.01h.01v-.01l.01-.01v-.02h.01v-.02h.01v-.01h.01v.01h.02l.01.01.01.01.02.01.02.01h.01l.01.01.01.01h.01l.02.01.02.01h.01v.01h.02v.01h.05v.01h.01l.01.01h.01v.01l.01.02h.01l.04-.02.02-.02.01-.01h.01l.08-.05.07.06.06.23.03.15.07.03.05.03.09.05Z"/>
-<path onclick="info_show(this,4)" d="M592.05 719.79h.01l.02.02.03.01v.02l.01.01v.01l-.01.02.01.01-.03.04h.01-.03v.01h-.01v.01h-.02l-.01-.01v.04l-.01.01v.03l-.01.02v.02l-.01.04-.01.01v.03h-.01v.03l-.01.01v.03l-.01.01v.02h-.01l-.04-.01-.04-.01-.04-.01-.03-.02h-.01v.01l-.04-.01v.03l-.01.01v.02l-.01.01v.03l-.01.01v.02l-.01.01v.02l-.01.02v.02l-.01.01v.02l-.01.02v.02h-.01v.01l-.01.01-.01.02-.01.01-.01.01-.01.01h-.01v.01h-.02l-.01-.01h-.03l-.02-.01h-.01l-.03-.01-.04-.01-.03-.01-.02-.01h-.03l-.01-.01h-.03l-.02-.01h-.01v-.03l.01-.02v-.02l.01-.02v-.03l.01-.01v-.01l.01-.03v-.03l.01-.01.01-.03v-.04l.01-.01v.01-.02l.01-.01v-.02l.02-.02h-.01v-.01h-.01.01v-.04l.03-.1v-.01l.01-.01v-.02l.01-.03v-.01l.01-.04v-.02h.01l.01-.04v-.02l.01-.03v-.03l.01-.04.01-.01v-.02l.01-.01v-.01l.01-.02v-.01h.01l.01.02.01-.01v-.02h.02l.11.04h.02l.04.01.04.01h.01l.03.01.02.01h.03l.03.01.04.02h.02l.01.01h.03l.01.03.02.02.02.05Z"/>
-<path onclick="info_show(this,5)" d="m567.08 669.07.21.11.5.29.33.16h.02l.02.02.09.04.06.04.43.23h.02l.11.06.06.04.24.13.04.01.23.13.03.01.79.43h.01l.01.01h.01l.05.03.05.03.04.02.05.02.05.03.25.13.01.01.06.03.42.22.05.03.02.01.24.13.01.01.07.03.07.04.11.06.02.01.01.01h.01l.2.11.08.04.39.21.23.12.06.03.04.03.11.05.04.03.03.01.24.13.51.27.05.03.03.02.23.11.02.02.29.15.01.01.35.18.02.01.45.24.43.24.31.16.1.05.05.03.57.3.35.19.02.01.19.1.39.21.06.03.44.24.02.01.05.03.05.02.04.02.22.12.01.01.02.01.03.01.16.09.03.01v.01l.06.02.32.18.02.01.05.03.05.02.08.04.21.12.06.03.04.02.07.04.08.04.11.06.07.04.02.01.1.05.03.02.18.09.05.03h.01l.03.02.1.05.17.09.16.09.1.05.01.01.14.07.16.09.03.02.47.25.32.16.13.08.02.01.02.01.1.05.05.02.03.02.01.01.6.32.02.01.24.12.02.02.05.02.17.09.18.1.2.1.02.02.01.01.25.13.02.01.09.04.48.26.03.02.08.04.03.02.1.05.58.31.02.01.09.05.15.08.04.02.04.02.11.06.01.01.03.01.33.18.05.03.03.01.16-.05h.02l.01-.01.13-.04.16-.05.05-.01.23-.07.15-.05h.02v-.01h.02l.02-.01.56-.17h.02l.35-.11.23-.07.25-.08.22-.07.37-.11.02-.01.19-.06.59-.18.06-.02 1.07-.35.02-.01.37-.11.2-.07h.01l.17-.06h.01l.18-.06.04-.01.09-.03.12-.04.04-.01.19-.06 1.12-.33.79-.27.05-.02.11-.03.02-.01.28-.08.12-.04.03-.01.01-.01h.01l.34-.11.08-.02.2-.06.34.25.23.19.05.04.16.12.08.06.01.02.06.04.04.03.06.05.34.26.1.08.22.17.02.01.04.03.07.06.11.08.13.1.05.04.35.27.02.01.31.24.03.03.28.21.01.01.51.39-.04.07-.16.32-.01.01v.02l-.03.05-.04.07-.07.15-.1.18-.08.18-.09.17-.06.12-.07.13-.01.02-.02.03-.07.15-.07.13-.07.15-.06.11-.16.32-.01.02-.01.01-.01.03-.05.09-.03.06-.01.02-.01.01-.04.1-.16.3v.01l-.04.08-.06.12-.05.08-.01.04-.08.14v.01l-.02.04-.12.24-.1.19-.15.31-.02.02-.06.13-.04.07-.03.06-.01.02-.11.22-.06.12v.01l-.01.01.02.01.03.01.05.02.01.01.03.02.03.03v.02l.03.03h.05l.01.01.01.01.01.01h.01l.02.02.01.01v.01l.01.01.02.01.02.01.01.01v.03l.01.01.01.01h.01l.02.02.05.04.02.02.02.02.01.02.01.01h.03v-.01h.01l.01-.01.01-.01h.01v-.01h.03v.01h.01v.01h.01v.01l.01.01v.02l.01.01v.01h.01V684.74l-.01.01h-.02v.05h-.01v.05l.01.01v.01h.01l.01.01v-.01l.01.01h.03v.01h.03l.01.01H597.96v-.01l.01.01h.01v.01h.02l.01.01.01.01.02.01.01.01.02-.01.01-.02.01-.01h.01l.03-.01.01.01h.02l.03.01.04.03.05.04.02.01.03.04.02.03-.02.01-.05.01-.03.04v.08l.01.02.02.03.01.02h.01l.02.01.01.03v.01l-.01.03.01.06v.01l.01.01v.03l-.01.03v.02l.03.01.03.02.02.03.04.05h.04l.01.01.01.03.02.02.04.04.01.01.02.01.02-.01h.1l.03.01h.02v.01l.01.02.02.01.01.04.02.02.01.03-.01.05-.01.05.01.04.01.02-.01.02-.02.02-.01.01-.02.03-.01.03-.05.06v.02l.01.01.01.02-.01.02.01.02v.01l-.01.01-.01.01-.01.01h-.01l-.01.01v.01l-.01.01v.01l-.01.01v.02l-.01.01-.01.02v.01l-.01.01-.01.01v.03l-.01.02v.03l-.01.02v.02l-.01.01-.01.01V686.72h-.02l-.04.05-.01.02-.03.02-.01.01-.04.03v.13l.01.03.02.03.03.01.01.03v.03l-.01.06v.05l.01.01v.03l.02.05v.03l.02.03-.01.03.01.03-.01.02v.04l-.01.04-.01.02V687.64l-.01.01-.01.02v.03l-.02.03-.01.03v.02l-.01.01v.05l-.01.05-.01.03h-.04l-.01.02v.01l-.01.01.01.02.01.03v.05l-.01.02v.03l-.01.02-.01.01-.01.03v.01l-.01.01v.01h-.01l-.03.01-.02.01-.02.01-.01.02-.01.02-.01.03-.01.02.01.02.01.02.01.01.01.01h.01l.03.01.02.01.03.01.02.01.01.01.01.01v.02l-.01.02-.01.01-.01.02v.04l-.01.01V688.62h-.01l-.01-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.02v-.01h-.01v.01h-.01l-.01.01h-.02l-.01-.02-.01-.01-.01.01h-.01v.01h-.01.01v.01h-.01v-.01.02h-.01v.01h-.01l-.01.01-.03.02-.12.02-.46-.15-.03-.01-.05.02h-.02l-.14.05-.34.02h-.08l-.29.02h-.05l-.14-.01H596.31v-.09l.01-.57v-.28l-.05-.03-.03-.02-.04-.02-.38-.22-.01-.01-.02-.01-.12-.07v-.03l-.01-.12-.01-.11-.12.19-.19.31.03.06.01.01v.02l.01.02.01.01.02.05.13.32.01.01.01.03.07.14v.01h-.01l-.12.1-.13.11-.02.02-.01.01-.01.02-.02.01-.08.09-.19.2-.09.09-.01.01.09.26.01.04.04.11v.02l.02.07.02.06.03.09.02.06.01.04.02.05.01.03.03.09v.02l.13.41.1.32.22.29.38.53.05.02.16-.05.06-.02.04-.01.02-.01.29-.09.12-.03.1-.03.26.12.05.03.01.01.02-.01h.01l.07-.02.19-.05.09.09.03.03.14.13.02.01.09.09-.21.41-.04.08-.02.04v.01l-.11.21-.1.18.25.13.03.01.03.02.1.05.04.02.34.17.38.19.05.03.05.02.01.02.15.07.11.06.09.05.06.03.04.02.06.03.05.03.01.01.1.05.11.06.25.13.01.01v-.01h.01l.17.09.43.22.23.12h.01v.01h.02l.15.08.04.02.09.05.07.03.12.07.11.05.02.01.02.01.01.01h.01l.01.01-.07.12-.02.03-.01.03-.1.17-.03.06-.18.34-.04.07v.02l-.02-.01-.03-.02-.02-.01-.07.12-.04.09-.17-.1-.02-.01-.02-.01-.04-.03-.02-.01-.07-.04-.01-.01-.02.04-.12.22-.01.01v.01l-.05.08-.02.03v.01l-.01-.01-.02-.01-.04-.03-.01-.01h-.01l-.11.2-.02.04-.04.09-.04.06-.03-.02-.04-.02-.03-.01-.02-.02-.04-.02-.04.08-.02.02v.02l-.01.01v.02h-.01l-.05.1-.04.06-.03.05-.17.29.08.05.02.01.02.01.26.13.12.07h.01l.06.04.09.05h.01l.14.08.05.02.13.07.06.04h.02l.03.02h.01l.01.01.03.01.08.05.15.08h.01l.11.06.04.02.36.2.05.03.14.08.02.01.12.06.08.04.13.07.11.06.06.03.08.05.14.07h.01l.38.22.02.01.02.01.27.14.05.03.27.15.01.01.04.02.16.08.17.09.31.17-.34.14-.03.01-.08.04-.05.03-.06.04-.02.01-.01.01-.03.03-.04.04-.02.02-.02.02-.15.14-.09.12-.06.08-.04.09-.01.02-.02.03-.06.12-.02.05-.03.08-.02.12-.02.08-.02.11-.01.1-.01.09v.03l.01.21v.04l.03.16.01.08.01.31v.1l-.03.07-.05.11-.01.02-.03.03v.02l-.02.02-.04.05-.06.05-.05.04-.11.08-.07.06h-.01l-.06.05-.03.03-.03.02-.03.02-.11.09-.03.02-.14.11-.01.01-.04.03-.04.04-.08.06-.02.02-.17.04-.07.07.03.05-.07.06-.06.05-.06.05-.03.03-.16.14-.02.02-.03.02-.15.11-.07.03-.06.02-.02.01-.06.15-.03.07-.02.05-.02.05h-.01l-.14-.08h-.01l-.02-.01v.02l-.01.01v.02l-.02-.02-.04-.02-.03-.01-.01-.01-.11-.06-.03-.01-.04-.03-.01.02v.02h-.02l-.09-.04-.01-.01-.04-.02v.01l-.01.01-.13-.07-.01-.01v.01l-.01-.01v-.02h-.01l-.01-.02-.01-.02v-.02h-.01l-.01-.02-.01-.03v-.01.01l-.03.07-.02-.01-.07.13-.02-.01-.03-.01-.03-.01-.03-.02v.09l.01.23V703.72l.01.07v.05h.02v.02h.01v.01h.01v.04h.01l-.01.02h-.05l-.03-.01-.03-.01-.03-.01h-.04l-.02-.01h-.06l-.04.01-.04.02-.04.01h-.02l-.01-.01-.01-.02-.02-.02-.04-.06-.02-.03-.08-.05-.04-.02-.03-.02-.06-.05-.04.02-.02.02-.05.05-.05.04-.05.01-.01-.01h-.02l-.06-.04-.09-.06-.04-.01-.05-.01-.09-.01-.1-.04-.07-.07-.03-.03-.03-.01-.02-.01-.01-.01-.08.01H597.55l-.09-.02-.04-.01-.03-.02-.01-.02-.01-.01-.04-.04-.04-.03-.05-.03-.04-.02-.08-.07-.07-.04-.01-.01-.05-.02-.13-.05-.09-.04-.02-.02-.03-.03-.05-.08-.04-.05-.05-.04-.01-.04-.02-.07-.02-.1-.03-.08-.01-.03-.03-.08v-.02l-.01-.03-.01-.08v-.1l-.01-.02-.02-.02-.05-.04-.02-.03-.02-.03-.01-.03-.01-.01-.01-.03.01-.03.01-.04.02-.01h.01l-.01-.01h-.01l-.04-.02-.03-.01-.03-.01.01-.05v-.01h.01l.12-.05-.14-.08-.07-.05-.03-.01h-.01l-.14-.08-.43-.23-.1-.06-.02-.01h-.02l-.01-.01-.02-.01-.04-.03h-.01l-.01-.01h-.01v-.01h-.02l-.2-.13-.09-.04-.15-.08.02-.02.01-.03.03-.04.09-.17.01-.01-.09-.05-.55-.28h-.01l-.01-.01v-.01h-.01v.01l.01-.05.02.01.09.03.07.04.03-.06.09-.05.07.03.04-.06-.03-.02-.05-.03-.15-.08-.02.04-.18-.22-.02-.02-.14-.15-.15-.2-.11-.12-.04-.01-.08-.03-.02-.01-.02-.01-.02-.01-.05-.02h-.08l-.23.01h-.04l-.29.01-.13.01-.04.01-.04.06-.02.03-.07.11.02.04.24.36.11.18.08.1.03.04.03.05.02.05.01.04.06.17-.01.12-.02.09v.04l-.01.04v.01l-.01.03h-.01l-.33.03h-.05l-.18-.21-.06-.08-.13-.16-.04-.06-.03-.02-.02-.04-.13-.17-.25.1-.25.09-.52-.28-.32-.16-.01-.01-.02-.01-.1-.05-.02-.01.02-.14v-.05l.01-.06.09-.07.16-.11.02-.09.03-.24-.03-.07-.03-.11-.04-.13-.1-.3-.01-.05-.01-.03-.04-.02-.06-.04-.04-.01-.01.01h-.02l-.02-.01h-.06l-.01-.01v-.01l-.01-.01-.01-.01-.01-.01h-.01l-.01-.01h-.01l-.02.01h-.04l-.02.01h-.07l-.01.01-.02.01-.02.01-.02.03-.01.01-.01.02-.01.02-.01.03v.01l-.02.01h-.01l-.01.01h-.01l-.01.01-.03.01-.02.01h-.05l-.02-.01h-.04l-.02-.01-.01-.01h-.04l-.01-.01-.01-.01h-.02l-.02-.02v-.01l-.02-.01-.02-.01-.04-.01-.01-.01-.01-.01h-.02l-.01.01-.01.02h-.03l-.03-.02v-.01l-.01-.02v-.01l.01-.01-.01-.02-.01-.03-.01-.03-.02-.02-.02-.01h-.02l-.04-.01h-.02l-.04.01-.01.01h-.02l-.02.01-.01.01h-.01l-.02-.01h-.02l-.01-.01v-.04l-.01-.01v-.05l.01-.01.01-.04V698h-.01l-.02-.01h-.11l-.02.01h-.01l-.09-.02-.06.01h-.03l-.02.01v.03l-.01.01v.02l.01.02.01.03v.01h-.01v.01h-.03l-.02.01h-.01l-.01-.01h-.03l-.03.02-.02.01-.01.01v.03l-.01.01-.01.01-.01.01h-.01v.01l-.01.01-.01.02v.03l-.01.03v.02l-.03.04-.03.01h-.05l-.07-.02-.06-.01-.04-.02-.03-.05h-.03l-.03.02-.06.01h-.05l-.02.01h-.03l-.09-.01h-.03l-.03-.01h-.03l-.02-.01-.04-.02-.02.01h-.01l-.01.01-.02.01v.02h-.02l-.01.01h-.02l-.04-.01-.03-.01-.02.02v.01l.01.02-.01.01v.02h-.01l-.01.01v.01h-.01v.01h-.04l-.02.01-.01.01-.03.01-.01.01h-.02v.01h-.03l-.02.01-.01.01-.02.01-.01.04-.02.02h-.05l-.03-.02-.03-.02-.01-.02-.01-.01-.03-.04-.01-.02h-.01l-.01-.01-.02-.01h-.19l-.03-.01-.04-.01-.04-.02-.04-.02-.04-.04-.04-.02-.04-.02-.03.01-.06.03-.03.02-.03.01-.04.02h-.02l-.04.01-.04-.02-.06-.01-.03-.01-.01-.01h-.02l-.01.01.01.07-.01.01v.01l.01.01v.01l.01.01.01.01V698.54l-.01.02-.03.02-.02.01h-.02l-.01.01-.02.01-.02.02-.02.01v.02l.01.05-.01.02-.01.02-.01.02v.01l-.02.03v.02l-.01.05-.02.04-.01.03.01.01.01.03.02.03.01.02-.01.03-.01.03v.01l.03.05.01.02.02.01.02.01h.02v.02l-.01.02-.03.02h-.02l-.02-.01-.02-.02-.01-.01h-.08l-.02.02h-.04l-.05-.04-.05-.03-.02-.01-.01-.01h-.01l-.01-.01-.02-.02-.01-.01v-.04l-.01-.01-.01-.01-.01-.01-.01-.01h-.05l-.02.01-.01.01-.01.02-.01.02-.01.05.02.03.01.03v.03l-.01.03-.01.01-.02.01h-.03l-.02.01-.03-.01h-.02l-.02-.01h-.03l-.02.01h-.01l-.02.01h-.04v-.01h-.02v.01l-.02.01-.01.01-.01.01-.01.01-.01.02.01.03.01.05.01.02.01.02.01.01v.05l-.02.03-.02.02-.02.01h-.06l-.02.01h-.03l-.01-.01-.02-.01-.01-.02-.01-.02-.01-.01h-.02l-.02-.01-.02-.01h-.01l-.02.02-.03.02-.03.01-.02.02-.02.01-.02.01-.02-.01-.01.01h-.01l-.01.01h-.01l-.01-.01h-.01v-.01l-.01.01-.03.02-.02.01-.02.01v.02l-.01.01v.01h-.01v.02H585v-.05h-.01v-.03h-.02v-.02l-.01.01v-.01h-.01l-.01.01v.01h-.01v.01h-.01v.01h.01v.02-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01v.01l-.01-.01h.01l-.01-.01h-.01v-.01.01h-.01v-.01.01-.01l-.01.01v-.01h-.01v-.01h-.01v-.01.01h-.01v-.02l-.01-.01v-.01l-.01-.03-.01-.02v-.03l.01-.01v-.02l.01-.01v-.02h.01v-.01l.01.01v-.01h.01l.01-.01h.02v.01h.02v-.02l-.01-.01v-.02h-.02l-.01-.01v.01h-.01v-.03h-.01v-.01l-.01.01v.01h-.01l-.01-.01h-.01v-.01h.01l.01-.01v-.01h-.01v-.01h.01v-.01h.03l.02-.01v-.01l.01-.01h.02v-.02h-.01v-.02l-.01-.02-.01-.01-.01-.01h-.01l-.01-.01h-.01v-.01l-.01-.01-.01-.02-.02-.02-.12-.42.11-.21h.03v.01h.01v.01l.01.01h.01v-.01l-.01-.01h.01l-.01-.01v-.01h-.01v-.01h-.01v-.01h.01-.01v-.01h-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.02l-.42-.42-.11-.1-.11-.1-.13-.12-.03-.03-.11-.09-.04-.03-.06-.06-.1-.09-.48-.38-.11-.08v-.03h.01v-.02l.01-.02-.05-.05-.03-.03-.13-.11-.04-.04-.04-.02-.09-.08-.42-.27-.25-.16-.18-.08-.02-.01-.05-.02-.04-.02-.17-.07-.05.09-.02.04-.27.53-.01.03-.08.16-.01.01-.21-.13-.26-.14-.06-.03-.55-.3h-.01l-.02-.01v-.01l-.02-.01-.05-.02-.24-.14-.16-.08-.07-.04-.04-.02-.33-.19-.01-.01h-.01v-.01l-.02-.01-.1-.05-.08-.05-.02-.02h-.02l-.06-.03-.35-.21-.23-.11-.18-.1-.41-.22-.07-.04-.07-.04-.02-.01-.04-.02-.03-.02-.1-.06-.04-.02-.17-.09-.07-.04-.1-.06-.05-.03-.23-.13-.06-.03-.14-.08-.06-.03-.03-.02-.11-.06-.02-.01-.04-.02-.37-.21-.03-.02-.3-.17-.28-.15-.1-.06-.02-.01-.13-.07-.06-.04-.16-.09h-.01l-.55-.31-.01-.01-.52-.29h.01v-.01h.01v-.04h.02v-.01h.01v-.05h.01v-.09h-.03v.01h-.01l-.01-.01v-.01h-.01v-.01h-.01V692.19h.01v-.01h.01v-.04l.01-.01V692.06l.01-.01v-.02l.01-.01v-.01h.01V691.91h.01v-.02h.01v-.01h.01V691.82l.01-.01v-.04h-.01v-.02h.01v.01h.02v-.02h-.01v-.01h.01v-.02h-.01v-.03l-.01-.01v-.03h.02v-.02h.01v-.01h.01v-.01h.01v-.01h-.01.02l.01-.01v-.01h-.01v-.01h.01v-.01h-.01v-.01h.02v-.01l.01-.01-.01-.01v.02h-.01v.01h-.01v-.01h.01-.02v.02h.01v.01l-.01.01h-.01v.01h.01-.01l.01-.01v.01h-.01v.02h.01-.02v.02h-.01v-.01l-.01.01.01.01h-.02v.04l-.01.01v.01h.01v.02h-.01v.03l-.01.01h-.01v.01h-.01l-.01-.01v.01l-.01-.01h-.01v.01h-.01l-.01-.01-.01.01h-.03v.01l-.01.01h.01v.01h-.01v.01-.01h-.01v-.01h-.01v-.01h-.07v-.01h.01v-.01h.01v-.01h.02v-.02.01h-.01v-.01l.01-.01h-.01v-.01h-.01v-.02h-.01l.01-.01h.03l.01-.01h.02v-.01l.01-.01.01.01h.01v-.03l-.01-.01h-.04v-.01h.01v-.01h-.03v.01l-.01.01v.01h.01-.01v.01h-.02v.01h-.03v.01h.01-.01v.01l-.01.01h.01v.02h.01v.02h-.01v.04h.01l.01.01h-.01v.01h-.01v.02l-.01.01v.02h-.02v.02h-.01l-.01.01v.04h-.01l.01.01v.01h-.01v.02h-.03v-.01h-.01l-.01.01h-.01v.01l-.01-.01-.04-.01-.04-.01-.04-.01-.02.02v-.01l.01-.01v-.01h.01v-.01l-.01-.01v-.02h-.02v.03l-.01.01-.01.01v.02h-.01v-.01h-.01v.01h-.01l-.01.01v-.02h-.03v-.01l-.01-.01-.01-.01h-.01v.01h-.01v.01H573l-.02.02v.01l-.04.03-.04.06-.05.08-.06-.03h.01l-.01.01h.01l.01.01v.01h.01l-.01.01h.01v.01h.01-.01v.01h-.02v-.02h-.02v-.01H572.72v.01h-.01v-.01h-.01v-.01h-.01l-.02-.01h-.01v-.01h-.02v-.01h-.01v.01-.01h-.02l-.01-.01h-.07l-.01-.01H572.46v-.01h-.01.01-.01v-.01h-.02v.02h-.01v.01h-.01v-.03h-.01v-.01l-.01-.01v-.01h-.01v-.01h-.01l-.01-.01-.01-.01h-.02v-.01h-.02v-.01h-.02l-.01-.01h-.03v-.01h-.02v-.01h-.02v-.01l-.01-.01h-.01v-.01l-.01-.01h-.01v-.05l-.01-.01h.01v-.01l.01-.01v-.01h-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.03v-.01h-.02v-.01h.02v-.01h.01v-.01h-.01v.01h-.01v-.01h-.01.01v-.01h-.02v-.01h-.01v-.01h-.01v.01H572l-.01-.01-.01-.01h-.03v.01h-.04l-.01.01h-.02l-.01-.01h-.02v-.01h-.01v.01h-.02v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.04h-.01v-.01h-.01v-.02h-.01l-.01-.01v-.01h-.01l-.01-.01h-.01l-.01-.01h.01v-.01h-.01v-.01h-.02v-.01h-.01v-.01h-.02l.01.01v.02-.01l-.01.01-.01-.01h-.01v-.01h-.01l-.01-.01h-.04v-.01l-.01-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01l-.01-.01v-.01h-.03v-.03h-.01v-.01h-.01l-.01-.01-.01-.01h.01v-.01h-.03v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.02v-.01h-.01v-.01h-.01v-.01h-.01l-.02-.02h-.01l-.05-.03-.05-.03-.07-.04v-.01h-.01v-.02h-.01v-.02h-.01l-.01-.02-.03-.03-.01-.02h-.02v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01v-.02h-.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.02v-.01h-.01l-.01-.01h-.02v-.01h-.01l-.05-.03-.04-.03v-.01h-.01v-.02h-.01v-.03h-.01v-.02h-.01v-.01h-.01l-.01-.01h-.02v.01h-.04v-.01h-.03v-.01h-.04v-.01h-.01v.01h-.01v-.01h-.05l-.01-.01H570.35v-.01h-.05v-.01h-.02v-.01h-.02v-.01h-.01v-.01h-.01v-.03h-.01v-.02h-.01v-.01l-.01-.01v-.01l-.01-.01h.01v-.01h-.01v.01h-.02v.01h-.01v.01l-.01.01v.01h-.01l-.01.01v.01l-.2-.1-.02-.02-.04-.02-.06-.03-.16-.09-.18-.1-.12-.07-.04-.03-.25-.14-.02-.01-.02-.01-.13-.07-.01-.01-.17-.1-.01-.01-.11-.06-.04-.02-.14-.08-.19-.11-.04-.02-.06-.03-.11-.07-.04-.02-.22-.12-.02-.02h-.01l-.06-.03-.08-.05-.07-.04-.05.01-.13.03-.19.05-.23.06-.05.02h-.02l-.1.03-.17.05-.09.02-.18.05-.07.02-.04.01h-.02l-.23.06-.08.02-.04.02-.04.01h-.02l-.1.03-.19.05-.48.13h-.03v.01l-.05.01-.24.06-.04.01-.01.01h-.01l-.11.03-.19.05-.45.12h-.02l-.46.12-.03.01-.1.03h-.02l-.07.02-.03.01-.16.04-.01.01h-.02l-.09.02-.24.07-.02.01-.05.01-.17.04-.08.02-.17.05-.08.02-.04.01-.37.09-.03.01-.56.13h-.02l-.15.04-.19.04-.05.02-.09-.32-.04-.17-.01-.02-.05-.22-.03-.11-.06-.25-.05-.24-.02-.07-.05-.2-.02-.06-.02-.08-.05-.18v-.03l-.02-.05v-.03l-.02-.06-.01-.05-.01-.02-.06-.23-.05-.2-.01-.04-.01-.05-.01-.02v-.02l-.01-.04-.09-.34-.08-.29-.04-.14-.02-.09-.01-.03-.02-.07-.02-.08v-.01l-.03-.11-.02-.06-.14-.54-.01-.02-.1-.39-.01-.03-.05-.21-.01-.02-.01-.03-.01-.05-.01-.05-.01-.02v-.01l-.02-.08-.06-.23-.03-.08-.01-.07-.03-.09-.01-.02v-.04l-.07-.23-.02-.08-.03-.12v-.02l-.04-.15-.02-.07-.07-.24-.02-.11-.03-.09-.03-.12-.01-.02-.01-.04v-.02l-.01-.04-.01-.04-.01-.03-.01-.04-.01-.04-.01-.04-.01-.03-.05-.19-.01-.05-.02-.05-.01-.04-.01-.05-.03-.12-.2-.72-.04-.15v-.02l-.01-.03-.14-.54-.01-.02-.04-.18-.01-.02-.02-.07-.01-.03-.08-.29v-.04l-.01-.03-.01-.01v-.01l-.01-.04-.04-.16-.02-.05-.12-.46-.01-.07-.01-.04-.01-.02v-.01l-.02-.05-.01-.06-.02-.05-.02-.1-.02-.06-.06-.25-.04-.13-.01-.03v-.02l-.01-.03-.08-.3-.04-.16-.01-.02-.01-.06-.06-.2-.07-.27-.05-.17-.04-.16-.02-.09-.08-.3-.04-.16-.02-.07-.07-.27-.03-.12-.02-.07-.01-.04-.01-.03-.02-.07-.01-.03-.06-.22-.01-.04-.02-.1-.02-.07h-.01.01l-.01-.01V676l-.04-.15-.03-.11-.01-.04-.02-.08-.07-.25-.02-.08-.07-.25v-.02l-.01-.03-.12-.46-.01-.04v-.01l-.02-.05-.01-.04v-.01l-.01-.02v-.02l-.02-.06-.03-.11v-.01l-.02-.06-.01-.04-.02-.1-.09-.33-.19-.7-.08-.32-.01-.03-.09-.35-.12-.46-.02-.06-.02-.06-.03-.12-.08-.29v-.01l-.05-.2.14-.04.12-.03.17-.04.02-.01.05-.01.14-.04.04-.01.48-.13.08-.02.1-.03.05-.01.86-.23.57-.15.07-.02 2.49-.67.08-.02.05-.01.01-.01.08-.02h.01l.02-.01.48-.13h.03l1.05-.29.51-.14.33-.09.04-.01.07-.02h.01l.51-.15h.03v-.01l.06-.01.16-.05h.01l.01.04.02.04.24.13.01.01.02.01.01.01.03.01.14.07.15.09.04-.08.03-.07.06-.05.05.03.02.11.09.01.07-.08.04-.04.02-.01h.01l.06.09h.03l.05-.09.05-.12v-.01l.12-.07.13-.15.03-.07.06-.1.01-.08.09-.1.03-.01h.01l.02.03.04.04.03.1.1.07.01.01.02.01.02.02.01.01.06.1v.01l.01.01.1.02h.04l.07.03.03.01h.01l.09.03.08.02h.03l.05-.01.07-.06.03-.02.03-.01h.04l.03.01.03.01v.05l-.02.04-.09.06-.06.1-.02.1.08.1.09.04Z"/>
-<path onclick="info_show(this,7)" d="m589.93 724.49.02.05.03.04.03.05.02.06.01.01.02.02v.01l.01.01.01.01h.05l.03-.01.02-.01h.05v.01l.01.01v.02l-.02.05.06.04.01.01.04.03.02.01.01.01.05.02.03.02.01.01.11.06.04.03-.01.01.01.01-.01.01.03.08.01.01-.01.02v.01l-.01.01v.03h-.01v.04l-.01.03v.02l.01.04v.02l-.01.03-.01.03-.01.03v.06l.02.01.01.01.02.01-.03.09v.01h.04l.05-.01v.02l.01.01-.01.03h-.01l-.02.14-.04.23-.04.23-.01.11-.02.11h-.01v-.01h-.01l-.01-.01-.02-.01-.02-.01h-.01v-.01h-.01l-.01-.01h-.01l-.01-.01-.01.04-.02.15.13.08.15.09.02.01h.01l.01-.01v-.1l.01-.02v-.01l.01-.02v-.01h.03l.01.01.02.02h.02l.01.01h.02l.01.01v.01h.01l.01-.01.01.01h.01v.02l-.01.01-.01.01v.01l-.01.01.03.01.23.13.02-.05.06-.1.06.03.04.03.05.03.07.04.09.04-.1.17.17.09.16.09.1-.15.09.06.16.1.08.04.01-.01v-.01h.01v-.01l.18.1.06.04.16.07v.01h.02v.01h.02l.01.01.01.01h.01l.01.01.03.01.01.01.04.02-.06.12.17.1.27.15.02.01.04.03.02.01.14-.12.23-.21.05-.05.04-.04.02-.01.01-.01v-.01h.01l.01-.01.01-.01.01-.01h.01v-.01h.01v-.01h.01v-.01l.12-.1.12-.11v-.01h.01v-.01h.01v-.01h.01v-.01h.01l.02-.02.08-.08.04-.03v.01h.01l.02.01v.01l.03.01.01.01h.01l.01.01.01.01h.01l.02.01v.01h.01l.02.01.01.01.01.01h.01l.01.01.01.01h.02v.01h.02l.01.01.01.01h.01l.01.01h.01v.01l.02.01.02.01.04.02.01.01h.01v.01h.02l.01.01.01.01.02.01.02.01.02.01.01.01.01.01.02.01h.01l.01.01.01.01h.01l.01.01h.01l.01.01h.01l.01.01.15.08.13.08.02.26.01.12v.2l.01.05v.1l.01.1.02.45.01.12-.31.11-.16.05h-.01l-.26.09-.17.06-.23.08-.14.05-.25.08-.25.07-.1.02-.2.06-.3.09-.15.04-.32.1-.15.05-.05.01-.02.01-.12.03-.18.06-.18.06-.02.01-.08.02-.5.18-.41.13-.37.13-.12.05h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.02l-.13.05-.22.07-.2.07-.01.01-.03.01-.08.03-.22.07-.08.03-.03.01-.22.08-.21.07-.2.06-.07.03h-.01l-.13.04h-.01l-.22.06-.22.06-.21.05-.1.03-.34.09-.21.06-.21.07-.32.09-.06.02-.04.01-.25.05-.04.02-.14.02-.14.03-.2.04-.11.03-.17.04-.24.05-.21.06-.08.02-.13.02-.06.02-.11.03-.07.01h-.02l-.09.03h-.02l-.42.12-.15.03-.48.13H583l-.03.01-.11.03-.13.03-.13.04h-.01v.01h-.04v.01h-.02l-.04.01-.04.01-.04.01h-.01v.01h-.03v.01h-.03l-.02.01-.02.01-.09-.07.06-.19v-.01l.03-.05.02-.04.09-.08.06-.06.01-.01.03-.03.05-.06.04-.03.06-.06.05-.05.06-.05v-.01l.03-.02.07-.08.05-.02.09-.03.06-.03.03-.01.03-.01.02-.02.06-.01.01-.01h.04l.04-.02.04-.02.02-.02.08-.06.01-.01.14-.12.1-.11v-.01h.01l.15-.16.01-.01v-.01l.01-.02v-.01h.05l.03-.01v-.01l.01-.03.02-.07v-.01l.05-.2.01-.05.01-.03.01-.06.01-.02.01-.05.02-.1h.01v-.02l.05-.23h.01l.01-.08h.01l.02-.1v-.02l.01-.03.01-.05.02-.05.06-.07V730l.01-.01.06-.07.04-.04.03-.04.03-.02v-.01l.03-.02.03-.02.03-.03h.01l.09-.07v-.01h.01l.04-.04.05-.03v-.01l.05-.04.06-.04v-.02h.01l.03-.05.04-.05.01-.02.05-.07.02-.03.02-.03.01-.01.03-.05.02-.02.04-.06.03-.04v-.01l.04-.06h.01l.01-.02.03-.04v-.01l.05-.06v-.01l.05-.06v-.01l-.17-.1-.05-.03-.14-.09-.05-.04h-.01l-.37-.22-.02-.02-.03-.01-.16-.1-.02-.01v-.01l-.21-.12-.12-.08-.05-.03-.18-.11-.03-.02-.07-.04-.09-.06-.02-.01h-.01l-.01-.01-.01-.01h-.01l-.13-.08-.06-.04-.07-.03-.16-.11h-.01v-.04l-.01-.03v-.54l-.01-.31v-.23l-.01-.16V725.75l-.01-.14v-.39l-.01-.18v-.03l.01-.01.06-.03.02-.02h.01l.02-.02.15-.09.1-.06.01-.01h.01l.03-.02.03-.02.04-.03h.01l.14-.09.06-.04.05-.03.1-.06.04-.03h.01l.01.02h.01v.01l.01.01.02.04.01.02.04.05.01.01v.01l.01.01v.02l.03-.01h.15l.04-.01h.01l.11-.01.13-.01h.06l.49-.03v-.01h.02l.01-.01h.08l.07-.01v.02l.01.12v.05l.01.16v.02l.01.04v.11l.01.03.01.16.04-.01h.07l.04-.01h.02l.03-.01h.05l.06-.01h.02l.04-.01H585.77v-.01h.09l.02-.01h.03l.15.14.04.04.04.04.05.05.02.02.02.02.11.1.01.01.02.02.02.02.01.01-.01.01v.01l.1.09.01-.01.02.02.03.03.04.04.03.02.02.02-.01.01.05.06.01-.01.03.03h.01l.01.01h.01l.03.04.01.01.03.02.06.06.06.06.04.03.09.08.03.03.06-.04.07-.05.07-.03h.01l.05-.02h.05l.06.01.05.02.01.01.02.01.01.01.04.01h.08l.03-.02.02-.03.05-.03h.01l.02-.01h.01l.01.01h.01v.01h.01l.01.01.03.01.01-.01.02-.01v-.02l-.01-.03v-.01l.02.01h.1l.01-.01h.01l.01-.01.03-.04v-.01l.02-.03.01-.03.01-.04.02-.02.01-.01.02-.01h.03l.01-.01.02-.01.03-.02.02-.02.01-.01.01-.01.02-.02.03-.02.03-.02.03-.01.05-.02.03-.02.03-.02.04-.05.04-.04.01-.01.05-.06.03-.03.08-.08.17-.06h.02l.05-.02.05-.03.07-.06.15-.23.02-.01.06-.02.04-.02.02-.01.06-.04h.02v-.01h.01l.04-.03.04-.03.01-.01.04-.03.03-.02.01-.01.03-.03.03-.03v-.01l.03-.03.01-.01.03-.03.03-.05.03-.05.03-.04.02-.03Z"/>
-<path onclick="info_show(this,7)" d="M55.41 610.08h.03l.01.01h.15l.02-.01.01.01h.01l.01-.01h.02l.01-.01h.01l.01-.01h.01l.02-.01h.04l.02-.01h.01l.03-.01.01-.01h.02l.02-.01.02-.01v-.01h.02l.03.02.03.03h-.01l-.01.01-.02.01-.02.02h-.01l-.03.03-.04.03-.01.01-.02.02-.01.01-.02.01v.01l-.03.02v.01l.03.01v.01l.02.01h.03l.01.01v.01h.01l.02.01.01.01h.01l.02.01.05.03.04.02.01.01.02.01.03.01.01.01-.01.01-.01.02h-.01v.01l-.01.02-.01.02-.01.01v.01l-.01.01-.01.02-.01.02-.02.05-.01.01v.01l-.02.03-.01.01-.01.02v.01l-.01.01-.03.06-.01.01-.02.04-.03.06v.01l-.02.02-.01.03-.03.05-.02.04-.01.03-.02.03-.01.02-.02.03-.01.02-.01.02-.01.02-.02.05h-.01l-.02.05-.01.02-.01.01v.01l-.01.02-.02.03-.01.02-.01.01v.01l-.02.02v.02l-.01.01v.01l-.01.02-.06.13h-.01l-.01.01-.02.04-.01.02-.05.09-.03.06-.02.04-.1.18-.02.01-.02.01-.19.08-.17.06-.21.09-.05.01-.1.04-.15.06-.16.06v.02l-.05.09-.4-.21-.19-.1-.03-.02-.12-.06h-.01l-.01-.01-.02-.01-.01-.01-.13-.06-.03-.02-.06-.03-.02-.01-.02-.01-.01-.01-.09-.05-.1-.05h-.01v-.01h-.01l-.16-.09-.03-.02-.16-.08-.16-.09-.18-.09-.35-.19-.05-.12-.2-.47-.23-.53-.06-.13-.16-.39-.14-.32.62-.04H51.58l.68-.05.09.01.11.01.03.02.05.07.04.06.08.12.05.07.02.03.01.01.02.01.01.02.02.02v.01l.02.01.01.01v.01l.01.01h.01v.01h.01v.01l.01.01.01.01v.01h.01v.01h.01v.01h.01v.01h.01l.01.02.02.02.01.02.01.01.02.01.01.01v.01l.01.01h.01v.01l.01.01.04.03.02.02.01.01.01.1.01.29v.01l.01.01.01.01.02.02.02.02.02.01.03.02.04.02h.01l.02.01.04.01H53.39l.02-.01.03-.04.03-.03.03-.02.01-.02.01-.01.05-.04.06-.06.03-.03.02-.02.02-.03.02-.03.01-.02h.13l.04-.01h.04l.03-.01.04-.01.04-.01h.01l.06-.01h.01l.02-.01.03-.01.02-.01.02-.02.04-.02.03-.01.03-.01.04-.01.03-.01h.06l.05.01.01.01h.05l.04.01.04.01.02.01.12.03H54.84l.02.01h.03l.01.01h.02l.04.01v-.01l.01-.02.02-.01v-.01H55l.02-.01h.01v-.01h.01l.02-.01h.01l.01-.01.04.01h.06l.05.01h.02l.01.01.01-.01h.03v-.01h.01l.02-.01.01-.01.01-.01.01-.01h.04v-.01h.01Z"/>
-<path onclick="info_show(this,8)" d="m58.34 611.24-.01.02-.01.02h-.01v.01l-.04.01h-.03l-.02.01h-.05l-.01.03-.01.01-.02.04v.01h-.01v.01h-.01l-.01.02v.01l-.01.01v.01h-.01v.02l-.01.01v.01l-.01.01v.01l-.01.01-.02.04-.01.05v.01l-.01.01-.03.03-.02-.01h-.01l-.01-.01-.03-.01-.01-.01-.02-.01h-.01l-.02-.01-.01-.01h-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.01l-.02-.01-.02-.01-.01-.01h-.01l-.02-.01-.01-.01h-.01v-.01l-.02-.01-.11-.05-.11-.05-.11.21-.04.08h-.01v.01h-.01l-.02.01-.01.01h-.13l-.01.01h-.11l-.03.01h-.04l-.01-.01h-.01l-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.02-.01-.01H56.72l-.01.01-.01-.01-.01.01h-.02v-.01h-.02v.02-.01h-.02l-.05-.03-.04-.02-.01-.01-.03-.01-.03-.02-.02-.01-.02-.01-.01-.01h-.01l-.02-.01-.02-.01-.02-.01-.02-.01-.02-.01.01-.02.02-.03.01-.02.02-.04.01-.01.01-.03.01-.01v-.02l.02-.02v-.02h.01v-.01l.01-.01v-.02h.01v-.01l.01-.01v-.01l.02-.03.01-.03h.01v-.01l.01-.02.01-.01.01-.02.01-.02v-.01l.01-.01v-.01h.01v-.01l.01-.03h.01v-.02l.01-.01v-.01l.03.02.03.01.01.01h.01l.03.02.01-.03.02-.02.01-.03.01-.01v-.01l.01-.01.02-.04v-.01l.02-.02v-.01l.01-.01v-.01l.01-.02.02-.03.01-.01v-.02h.01v-.01l.01-.01h.01v.01h.01l.01.01.02.01.03.01.02.01.01.01.01-.03.02-.04.02-.04.02-.03v-.01l.01-.01.01-.02v-.01h.01l.01-.01.01-.01h.01v-.01h.01l.01-.01.01-.01-.01-.02v-.08l-.01-.06v-.02l-.01-.02v-.03l.01-.01v-.02l.01-.02v-.01l.01-.02v-.03l.02.01.01.01h.01v.01h.02v.01h.01l.01.01h.02l.01.03.03.05.05.04.03.04h.01l.04.04h.01l.07.05.02.01h.02l.12.04.04.01.01.01.01.01.01.01h.01l.02.02.03.03.02.03h.01v.01l.03.04v.01h.01l.01.01.01.01h.01l.01.01.03.02.03.02.01.01.03.02.02.02.02.03.02.03.01.02.01.01.01.03h.01l.01.02.01.02.01.01.02.03v.01l.01.01.01.02h.01l.01.02.01.01v.01h.01l.01.01.01.02.02.02.01.01.03.03.01.01.03.02v.01l.02.01Z"/>
-<path onclick="info_show(this,9)"  d="M792.34 587.29v.02l.01.01v.07l-.01.01v.01h-.01l-.01.01v.01h-.01v.02l.01.02v.01l.01.01v.05l.01.01v.04l.01.01v.04l.01.01.01.05v.03h-.01l-.02.01-.01.01-.01.01-.01.01h-.02v.01h-.01v.01h-.01l-.01.01-.01.01v.01l-.01.01-.01.01-.02.03-.01.02-.02.03-.02.03-.01.02-.01.01-.01.02-.01.01-.01.02-.03.04v.01l-.02.02-.01.01h-.01l-.02.01-.01.01-.04.01-.04.01h-.02l-.05.01-.02.01h-.02v.03l.01.08v.02l-.01.01v.02l.03.06.01.03.01.03v.01l.02.03.04.13v.02l-.1.13-.04.05-.07.1-.03.04-.03.03-.03.05h-.01v.01h-.01v.01l-.06.01-.06.03-.14.02-.01.02-.01.01-.03.03-.06.02h-.01l-.01.02-.02.06-.01.04-.01.02-.03.12h-.01l-.02.07v.01l.14.18.03-.02.01-.02h.01l.01.01h.01v.01h.02l.01.01h.01l.01-.01.02-.01h.01l.01-.01v.01h.05v-.01h.04l-.01.01h.01v-.01h.03v-.01h.01v.01h.02l.01-.01h.01l.01.01v.01h.01v.01h.01v-.02H791.68l.01.01v-.01l.01.01h.01v.01h.01v-.06h.05l.02-.01h.05v-.01l.01-.01h.04l.01.01h.01v.02h.01-.01v.01h.04l.01-.01.02-.01h.01l.02-.01.02-.01h.01l.01-.01.01-.01h.02l.02-.01h.01l.01-.01.01-.01h.02l.01-.01h.03v.01h.02l.02.01v.01h.02v.01h.04l.01.01.01.01.01.01v.02h.01v.01h.04l.01.01v.02h.01l.01.01.01.01h.05l.01.01.01.01.01.01v.01h.01l.01.01h.02v.01h.01v.01h.04l.01-.01.01.01h.02v.01h.01v.01h.01v.05l.01.01v.05l.01.01v.02h.01l.01.01.01.01.01.01h.01V589.9l.01-.01v-.01h.01v-.01l.01-.01h.01v-.01h.02l.01-.01h.02v.01h.03v.01h.01l.01.01h.01l.01.01h.02v.01h.02v-.01.01l.03.01H793l.02.01.01-.01h.02l.01-.01h.01l.01-.01.01-.01v-.01h.01l.01-.01h.04v-.01h.01v-.07l-.01-.01v-.02l-.01-.01v-.02l-.01-.01v-.04l-.01-.01v-.04l.01-.01V589.54l-.01-.01v-.02l.01-.01v-.02h-.01v-.01l-.01-.02-.01-.01v-.04l.01-.01.01-.01.01-.01.01-.01.01-.01.01-.01.01-.01.01-.01v-.01h.01v-.01h.01l.01-.01h.03l.01.01h.04l.01.01h.05l.02.01h.04l.01.01h.03l.02.01h.09l.03-.01h.08l.01-.01h.07l.01-.01H793.85l.02.04.01.02.01.01.01.02.01.01v.01l.01.01v.01l.01.01v.01l.01.01v.02l.01.01.01.01v.01l.02.03.01.01v.01h.04l.01-.01.02-.01.1-.04.01-.01.05-.01.08.06.01.05h-.03l-.01-.01v.01l-.01.01v.02h.01v.02h.01l-.01.17-.02.1v.05l-.01.1.01.01.01.02.01.01.02.02.01.02.01.01.01.01.01.01.01.01.01.01v.01l.02.01v.02l.01.02.01.02v.02l.01.02v.01l.01.03.02.04v.02h.01v.02l.01.04.02.04v.01l.01.03.01.03.01.01v.01l.05.16.07.17.09.09.01-.01.01.01h.01l.02-.01.01-.01h.01l.01-.01h.03v-.01h.01l.01-.01.01-.01h.01l.01-.01v-.03l-.01-.01h.04v.01l.15.02h.05l.05.01.12.01.02.01h.15l.47-.24.15.23.15.2.44.63.16.23.04.07.13.18.25.35.03.05.2.28.06.09.29.39.36.48.05.07.38.51.19.27.1.83.09.88.02.18-.15.58-.2.8-.21.79-.11.15-.03.06.25.49.02.15.22 1.9-.09.24-.69.5-1.35.91-.58.27-.89.43-.3.29-1.1 1.09-.75-.03-.95-.03-.08-.01-.32-.16-.43-.22-.22-.12-.22-.11-.13-.06-.16-.08-.07-.04-.05-.01h-.02l-.01-.01h-.1l-.18.11-1.28.95-.02.01-.64.31-.81.42-.63.01h-.16l-.29-.07-.38-.3-.33-.55-.29-.62-.2-.58-.27-.79-.01-.01-.01-.03-.01-.02-.08-.15-.3-.91-.24-.75-.06-.28-.13-.61v-.01l-.03-.26.01-.01-.09-.88-.02-.18-.15-.17-.04-.04-.01-.01-.11-.09-.04-.04-.67-.57-.27-.22-.14-.12-.25-.4-.06-.28-.08-.31-.09-.44.84-.69.72.17.15-.17.23-.26.1-.11.32-.36-.02-.01-.01.01h-.02l-.01.01h-.01v-.01l.01-.01v-.01l-.01-.03v-.02l.01-.01v-.01l-.01-.02.01-.01-.01-.01h.01v.01l.01.01h.01v-.02l.01-.01v-.02l.01-.01.01-.02v-.02h.01l.01.01v.01l.01.01.01-.01-.01-.02v-.01h.01v-.01l.01-.01v-.02l.01-.01h-.01v-.02l.01-.02v-.02h-.02v-.01h-.01v-.01h.02-.02v-.01h.02v.01h.01v-.03h.01v-.03l.01-.01v-.02h.01l.01-.01h.01v-.03l-.01.01v.01h-.01v-.01l-.01.01h-.01v.02l-.01.01h-.01v.01h-.01v.01h-.01v.02l-.01.01v.02h-.01v.01l-.01.01v.01l-.01.01v.01l-.01.01.01.01h-.01v.01h-.01l-.01.01h.01v.02l-.01.01v.02h-.01l-.01.02h-.01v.05l-.01.01v.01l-.01.01h-.01v.01l-.01.03v.01l-.01.01v.01l-.01.01-.01.02-.01.01v.01l-.01.01-.01.01h-.02.01v-.04h-.01l-.01.01v.02h-.01v.01l-.01.01v.01l-.01.01-.01.02h-.01v.01l-.01.01-.01.01h-.03l-.02.01H783.89l-.01.01v.01l-.01.01v.01h-.01v.01l-.01.01h-.01l-.02.01h-.01l-.01.01-.01.01h-.01l-.01.01h-.01v.03h-.01v.01h-.01l-.01-.01h-.01l-.01-.01h-.01v-.09l-.01-.01v-.01l-.01-.01v-.02l.01-.01.18-.07.02-.01.05-.02.13-.17.02-.03.01-.01.03-.04.04-.07.01-.01.01-.01.05-.09.06-.09.14-.22.01-.01v-.23l-.01-.01v-.29l.02.02v.01l.01.01.01.01v.01l.01.01v.01l.02.03v.01h.01v.01h.01l.01-.01h.03l.02-.01h.04l.02.01h.01v.01h.01l.02-.01.01-.01h.01l.02-.01h.01v-.01l.01-.01.01-.01.01-.01.01-.01h.01l.01-.01h.02-.01v.02h-.01.01l-.01.01h-.02v.03l.01.02v.02l-.01.01h-.01l-.01-.01v.03l.01.01h-.02v.01h-.01v.01h.01v.01h.01v.01l-.01.01.01.01v.02l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.02l.01.01-.01.02v.04h.01v.02h-.01l.01.01v.03h-.01v.03h.01l.01-.01v.04l-.01.01v.03l.43.32.5-.29.06-.03.88-.5.09-.07.03-.03.02-.01.03-.02.01-.02h.01l.01-.01.02-.01v-.01h.01l.01-.02h.01l.06-.05.02-.01.02-.02.02-.01.03-.03v.01l.01.01v.02l.01.01.02-.01.02-.02h.01l.02-.02.01-.01.04-.03v-.01l.13-.09v-.01h.01l.06-.05h.01l-.05-.06-.01-.02h-.01l-.06-.07-.02-.03-.05-.07-.01-.01-.04-.05-.26-.31v-1.19l.01-.97v-.24l-.01-.06-.03-.08-.01-.03h-.01l-.23-.18h-.21l-.04-.07-.02-.19-.05-.06-.01-.01v-.04l.02-.03.04-.05.02-.02.01-.02-.01-.02-.02-.03-.03-.06-.01-.01v-.01l-.02-.01-.04-.02-.01-.01-.02-.02-.01-.02v-.02l-.02-.03v-.02l-.05-.08-.06-.1-.14-.24-.08-.13-.01-.01-.01-.02-.02-.04v-.01l-.03-.04-.11-.18-.11-.18-.08-.14-.03-.05-.3-.51-.05-.08.15-.28.01-.01v-.01l.01-.02.12-.21.17-.31.04-.08.08-.13.09-.16.01-.02.08-.15.2-.36.17.16.2.17.08.08.17.15v.01l.01.02.06.04.02.02h.01l.01-.01h.01l.01-.01v-.01h.02l.01-.01v-.01h.03v.01l.02.01.01.01h.01v-.01l.06-.07.01-.04.01-.03v-.01l.02-.03.08-.14.03-.06.02-.04.01-.04v-.01l-.01-.01-.06-.03 1.55-.82v.08h.01v.08h.01V585.49h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01l-.01.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01l-.01.01-.01.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.02l.01.01v.01l.01.01v.02h.01v.02h.01v.02h.01v.02h.01v.02h.01v.02h.01l.18.4.27.58.04.09.22.52.02.09.08.49 1.14.38.12.04.05-.01.38-.07.24-.05v-.02l.03-.13.01-.03.01-.05-.01-.05v-.08l.01-.01.01-.04.03-.03.03-.03h.01v-.01l.01-.03v-.01l.02-.05.01-.02.04-.02.01-.01.02-.02.02-.02.02-.06.01-.05-.01-.05-.02-.04-.02-.03v-.02l.01-.02.02.04v-.03h-.01v-.01l-.01-.03v-.03h-.01v-.02l-.01-.01v-.02l-.01-.01v-.04h-.01v-.12h-.01v-.01l-.01-.01v-.01h-.01v-.08h-.01v-.04l-.01-.01v-.04h-.01v-.02h.04l.01.01h.01v.01l.06.02.06.03.06.03.02.02.02.03.02.01.01.01.02.03.03.04.03.01.06.04h.01l.02-.03h.01v.02h.01v.01h.01v.01l-.01.01h.03v.01h-.01l.01.02h.01v.02h.01l-.01.01v.01-.01h-.01l-.01.01v.02h-.01.01v.02h.01v.01h.01v.01h.01v.01l.01-.01h.02l.01-.01h.01v.01h.02v.01h.01v.01h.08v.01h.01l.02-.01.01.01h.01l.03.01.01.01h.01l.01-.01.02-.01.01-.01h.01v-.01h.01v-.02l.02-.03v-.01l.01-.01v-.01h.01v-.01l.01-.01.01-.01h.01l.01-.01h.02l.01-.01h.01l.02-.01h.01l.03-.01h.02Z"/>
-<path onclick="info_show(this,10)" d="m740.49 562.24-.62.81-.46.62-.23.31-.66.89-1.03 1.44-.34.46-.01.02-.48.66-.33 1.65-.05.24-.28 1.36v.04h-.01l-.12 2.31-.02.35.14 1.47.01.13.05.52v.01l.03.28.24 2.6.03.29v.17l.01.66v.77l.14.54.06.26.1.41.15.63.01.05.04.45v.11l.02.22.02.28h-.01l-.04.02h.01v.01l.01.01v.02l.01.01v.08h-.04v.01h-.01v.01h-.01v.03l-.01.01v.09l.01.01.01.01v.01h.01v.03l.01.01v.02h.01v.09l.01.02v.01l.01.01v.05h-.01v.05h.01l.02.04h.01v-.02h.03v-.01l.01-.01v-.01l.01-.01v-.01l.01-.01h-.01v-.02h.01v-.01h.01v-.03h.02l.01-.01.01-.01v.01h-.01.02v-.09l.06-.03h.02v.02l.01.01v.01l.01.01v.02l.01.01.01.01v.01l.01.01v.02l.01.01v.01l.01.01v.01l.01.01v.02l.01.01.01.02.01.01.01.01.02.04.01.04h.01v.02l.01.01.01.02.03.05.11.21.48 1.21.29.75.06.14.47 1.2.01.02.3.75.15.39.43 1.09 1.14 2.91.41 1.98.49 2.44.02.11.46 2.38.07.22.01.04.01.05v.02l.04.12.16.64.04.16.07.29.14.54.04.18.21.82.03.09.05.2.48 1.9.16.6.01.02v.01l.37 1.36 1.09 3.8h.01l-.01.01h.02v.01h.01v.01l.26.94h.01v.02l3.98-.76 2.3-.45 1.45-.26 1.06-.19h.01v.04l.08.07.07.09.05.05.1.07.18-.06.08.01.04.05.01.17.1.08.27.07.31-.03 3.78.4-.02.01-.25.3-.12.16-.06.11-.05.09-.36.33-.09.08-.48.6-.57.67-.04.04-.89 1.08-.17.12-.32.16-.52.27-.28.15-.59.12-.12.02-.69.1-.12.02-.84.25-1.38.41-1.35.41-1.17.34-.01.01-.19.05-1.81.54-.03.01-.36.09-2.46.4-.93.15-.02.01-1.33.84-1.78 1.14-.45.28-.16.1-.28.18-.43.28-.33.2-.24.16-1.31.82-.3.19-1.43.9-.03.04-.23.34-.04.06-.19.27-.06.09-.28.42-.28.38-.01.01-.26.14-.05.03-.06.03-.06.03-.07.04-.07.04-.07.04-.07.04-.07.04-.02.01-.05.03-.07.05-.08.04-.07.05-.07.05-.08.04-.02.02-.04.03-.07.05-.07.04-.06.05-.07.05-.07.05-.05.04-.02.02-.07.06-.07.06-.08.07-1.04-.43-.73-.28-.08-.04-.04-.02-.39-.21-.17-.23-.16-.21-.19-.28-.45-.7-.24-.4-.03-.12-.11-.07-.15-.11-.24-.17-.11-.09-.27-.24-.09-.09-.18-.15-.2-.17-.05-.04-.01-.01-.24-.2-.03-.02-.12-.11-.2-.27-.1-.13-.02-.02-.15-.49-.82-.52-.01.01-.02.01-.03-.2v-.12l.01-.12.01-.06v-.06l.01-.12.01-.11v-.11l.01-.11v-.03l.04-.17.02-.12.03-.12.02-.12.02-.11.03-.1.03-.13.03-.12.04-.12v-.01l.01-.05.02-.05.04-.12.03-.11.04-.12.03-.1.03-.1.25-.72.6-1.19.4-.78.13-.26.06-.09-.03.02-.07.04-.05-.01-.02-.02-.32-.13-.52-.12-.27-.06-.13-.04-.37-.14-.36-.13-.32-.11-.15-.04-.3-.09-.25-.15-.3-.21-.15-.17-.11-.12-.14-.16-.16-.1-.05-.05-.03-.06-.01-.09.04-.3.02-.21v-.02l-.01-.08-.04-.16-.12-.22-.08-.2-.06-.18-.03-.07-.05-.23-.03-.22-.01-.38-.01-.49.01-.18.01-.25.02-.16.02-.07.15-.31.17-.31.02-.03.12-.13.14-.14.05-.04.45-.48.12-.13v-.01l.1-.16.08-.15.22-.41.22-.4.02-.24.03-.39.1-.54.06-.27.01-.03.22-.93.35-.75.44-.89.14-.52.04-.15.25-1.17-.07-.13-.14-.24-.14-.23-.14-.24-.14-.24-.14-.24-.02-.04-.11-.2-.14-.24-.14-.24-.07-.11-.06-.11-.01-.02-.14-.23.02-.65-.04-.61-.01-.02-.09-1.71-.16-2.9-.12-2.03.12-.95.24-1.89.01-.06v-.01l-.26-.48-.24-.45-.17-.56-.08-.31-.09-.31-.22-.8-.08-.29-.03-.12-.02-.09-.16-.59-.03-.12.32-1.2.13-.55-.53-1.99v-.03l-.2-.71-.05-.2.02-.54.05-.99.03-1.77v-.08l.01-.79h.01-.01l-.77.37-.09-.32-.49-1.71-.15-.49-.06-.22-.02-.08v-.01l-.07-.3-.06-.29-.1-.4-.08-.36-.06-.28-.02-.11.08-.84.01-.13.07-.6.02-.15.04-.47.04-.4.04-.37.03-.37.03-.27.04-.41.03-.37.03-.23.01-.12.02-.24v-.01l-.01-.01-.17-.3-.16-.11-.15-.08-.05-.02-.02-.01-.06-.02-.08-.04-.88-.27-.24-.01-.28-.02-1.15.01h-.15l-1.15.01H716.87l.17-.21 1.27-1.52.25-.3.14-.17.44-.52.34-.4.29-.35.67-.81h.16l1.62.02-.1-.4-.04-.16.04-.12.11-.34.07-.18.16-.5.05-.15.02-.06.06-.17.03-.07.07-.21.05-.15.04-.13.1-.28.04-.14.04-.11.07-.21.07-.19.14-.41.01-.05.19-.56.13-.4.29-.85.35-1.02.01-.03.95-2.81.49-1.58.1-.31 1.73-1.22 1.53-1.1.25-.18.28-.2.16-.11 2.16-1.56.03.06.03.07.85 1.81.26.56.14.28.12.27.37.78.03.05.14.29.06.22.25.83.11.34.1.32.19.6.15.47.21.69.08.29.09.33.93 3.08.27.42.1.16.07.1 1.43 2.15.1-.02.38-.08.64 1.06.01.02.01.01-.25.48.07.12.7.98.95 1.58Z"/>
-<path onclick="info_show(this,11)"  d="M787.93 581.08v.02h.01v.04h.01v.04h.01v.04l.01.01v.04h.01v.04h.01v.04h.01v.05h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04l.01.01v.03l.01.01v.03l.01.01v.03l.01.01v.03l.01.01v.04h.01v.04l.01.01v.04h.01v.05h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04l.01.01v.03l.01.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04l.01.01v.04h.01v.04h.01v.04h.01v.04h.01v.05h.01v.05h.01v.05h.01V583.58h.01V583.86h.01V584.1h.01V584.29l.01.01v.15h.01V584.7h.01V584.97l-1.55.82.06.03.01.01v.01l-.01.04-.02.04-.03.06-.08.14-.02.03v.01l-.01.03-.01.04-.06.07v.01h-.01l-.01-.01-.02-.01v-.01h-.03v.01l-.01.01h-.02v.01l-.01.01h-.01l-.01.01h-.01l-.02-.02-.06-.04-.01-.02v-.01l-.17-.15-.08-.08-.2-.17-.17-.16-.2.36-.08.15-.01.02-.09.16-.08.13-.04.08-.17.31-.12.21-.01.02v.01l-.01.01-.15.28.05.08.3.51.03.05.08.14.11.18.11.18.03.04v.01l.02.04.01.02.01.01.08.13.14.24.06.1.05.08v.02l.02.03v.02l.01.02.02.02.01.01.04.02.02.01v.01l.01.01.03.06.02.03.01.02-.01.02-.02.02-.04.05-.02.03v.04l.01.01.05.06.02.19.04.07h.21l.23.18h.01l.01.03.03.08.01.06v.24l-.01.97V592.75l.26.31.04.05.01.01.05.07.02.03.06.07h.01l.01.02.05.06h-.01l-.06.05h-.01v.01l-.13.09v.01l-.04.03-.01.01-.02.02h-.01l-.02.02-.02.01-.01-.01v-.02l-.01-.01v-.01l-.03.03-.02.01-.02.02-.02.01-.06.05h-.01l-.01.02h-.01v.01l-.02.01-.01.01h-.01l-.01.02-.03.02-.02.01-.03.03-.09.07-.88.5-.06.03-.5.29-.43-.32v-.03l.01-.01v-.04l-.01.01h-.01v-.03h.01v-.03l-.01-.01h.01v-.02h-.01v-.04l.01-.02-.01-.01v-.02l.01-.01v-.01h.01v-.02h.01v-.01l.01-.01v-.02l-.01-.01.01-.01v-.01h-.01v-.01h-.01v-.01h.01V594h.02l-.01-.01v-.03l.01.01h.01l.01-.01v-.02l-.01-.02v-.03h.02l.01-.01h-.01.01v-.02h.01-.02l-.01.01h-.01l-.01.01-.01.01-.01.01-.01.01v.01h-.01l-.02.01h-.01l-.01.01-.02.01h-.01v-.01h-.01l-.02-.01h-.04l-.02.01h-.03l-.01.01h-.01v-.01h-.01v-.01l-.02-.03v-.01l-.01-.01v-.01l-.01-.01-.01-.01v-.01l-.02-.02V594.11l.01.01v.23l-.01.01-.14.22-.06.09-.05.09-.01.01-.01.01-.04.07-.03.04-.01.01-.02.03-.13.17-.05.02-.02.01-.18.07-.01.01v.02l.01.01v.01l.01.01V595.35h.01l.01.01h.01l.01.01h.01v-.01h.01v-.03h.01l.01-.01h.01l.01-.01.01-.01h.01l.02-.01h.01l.01-.01v-.01h.01v-.01l.01-.01v-.01l.01-.01H783.95l.02-.01h.03l.01-.01.01-.01v-.01h.01l.01-.02.01-.01v-.01l.01-.01v-.01h.01v-.02l.01-.01h.01v.04h-.01.02l.01-.01.01-.01v-.01l.01-.01.01-.02.01-.01v-.01l.01-.01v-.01l.01-.03V595h.01l.01-.01v-.01l.01-.01v-.05h.01l.01-.02h.01v-.02l.01-.01v-.02h-.01l.01-.01h.01v-.01h.01l-.01-.01.01-.01v-.01l.01-.01v-.01l.01-.01v-.01h.01v-.02l.01-.01v-.02h.01v-.01h.01v-.01h.01l.01-.01v-.02h.01l.01-.01v.01h.01v-.01l.01-.01v.03h-.01l-.01.01h-.01v.02l-.01.01v.03h-.01v.03h-.01v-.01h-.02v.01h.02-.02v.01h.01v.01h.02v.02l-.01.02v.02h.01l-.01.01v.02l-.01.01v.01h-.01v.01l.01.02-.01.01-.01-.01v-.01l-.01-.01h-.01v.02l-.01.02-.01.01v.02l-.01.01v.02h-.01l-.01-.01v-.01h-.01l.01.01-.01.01.01.02v.01l-.01.01v.02l.01.03v.01l-.01.01v.01h.01l.01-.01h.02l.01-.01.02.01-.32.36-.1.11-.23.26-.15.17-.72-.17-.84.69.09.44.08.31.06.28.25.4.14.12.27.22.67.57.04.04.11.09.01.01.04.04.15.17.02.18.09.88-.01.01.03.26v.01l.13.61.06.28.24.75.3.91.08.15-1.79.94.01.21.01.04.07.89.1 1.2.06.69-.02.11-.02.06-.01.02-.07.06-.23.24-.36.54-.08.11-.08.13-.21.32-.26.41-.65.41-.82.52-.09.06-.14.09-.15.09-.65.42-.14.09-.13.09-.13.08-.15.1-.01.01-.03.01-1.13.75v.01l-.59.38-.44.29-.65.42-.61.41-.81.52-.45.3-.1.06-.27.17-.67.45-.46.3-.5.33-.69.46-1.12.74-.66.44-.84-.41-.44-.7-.97-1.53v-.01l-.12-.18-1.79-2.87.74-.5 1-.69.19-.13.28-.59.1-.22.76-1.6.2-.43.33-.69.19-.39.53-1.21.78-1.75.06-.72.14-1.42-.1-.34-.07-.18-.16-.21-.02-.41.07-.07v-.08l-.1-.16.1-.54v-.08l-.12-.34-.08-.13.09-.46-.05-.31.01-.05.05-.22-.05-.31.01-.13-.04-.15-.01-.08-.82-4.15v-.01l-.01-.02-.01-.08-.19-.94-.06-.33-.5-2.46-.07-.35-.13-.73v-.01l-.05-.24-.2-1.08-.38-2.07v-.02l-.04-.21-.01-.06-.02-.11-.33-1.69-.1-.57-.19-.97-.07-.44-.06-.31-.15-.81-.01-.09-.02-.09v-.01h.01v-.01h-.01v-.01l.01-.01h-.01l-.04-.11-.01-.04-.01-.03-.06-.2-.04-.15-.04-.14-.45-1.51v-.01l-.06-.2-1.54-.95-.94-.59-.53-.33-.14-.27-.41-.99-.09-.23-.43-1.04-.11-.27-.08.06-.15.09-.03.01-.12.08-.07.04-.45.28-.01.01-.04.02-.34.18-.13.07-.05-.14-.05-.14-.01-.03-.01-.02-.02-.04-.13-.25-.02-.06-.22-.44-.12-.25-.16-.34-.24-.47.29-.24.55-.45.32-.27.58-.48.09-.08.09-.07.06-.06.08-.1.03-.03.06-.07.04-.07v-.01l.03-.09.11-.39.03-.12.16-.68.15-.56.09-.39.03-.09.06-.23.03-.14.12-.45.18-.75.05-.21.06-.27.01-.05.11-.31.17-.43.33-.88.05-.15.01-.59.02-.93.02-.92.02-.72.39-.06 2.07-.18 2.48-.56.26.19.06.09.74 1.12.42.77.01.02.39.73.45.98.61 1.31.51 1.38.5 1.23.34.84.22.53.19.46.35.88.13.32-.14.17-.22.25-.34.38-.32.41-.21.35-.09.28-.01.12v.1l.01.04.03.15.08.28.05.19.04.15.07.19.09.21.1.17.19.37.33.54.03.04.2.3.21.29.39.58.03.06.09.13.07.1.21.31.2.3.23.22.1.05.15.05h.02l.05-.03.11-.07.05-.04.02-.01.29-.39.26-.33.17-.24.32-.41.49-.64.08-.11 1.07-1.41.38-.2.12-.05.52-.25h.16l.06.08.13.16.3.4.28.38.16.21.09.14.1.13.02.03.1.12.03.04.09.12.25.33.03.04.04.07.07.12.06.09.08.13.06.09.03.04.06.11.02.03.02.05.07.12.03.05.03.07.46.67 1.64 2.34.22.3.06.09.37-.27.02-.01.13-.09.24.02 1.82-.19.12.15.7.89.26.92.04.14.11.38.06.22.05.16.03.11.01.06Z"/>
+<path data-riding-id="1" onclick="info_show(this,1)"  fill="blue" d="M590.36 720.25h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01-.01.01h-.01v.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.01h-.01v.01l-.01.01v.01l-.01.01v.01h-.01v.02h-.01v.01h-.01v.02h-.01v.01h-.01v.01l-.01.01v.01h-.01l-.01.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01l-.01.01-.01.01-.01.01h-.01v.01l-.01.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01-.01h-.01l-.05-.03-.1-.08h-.01l-.05-.04-.01-.01-.01-.01-.09-.06-.08-.06-.04-.03v-.03l-.01-.02.01-.02v-.01l.01-.01v-.01l.01-.01v-.05l-.01-.02-.01-.02-.01-.03v-.01l.02-.04h.01l.02-.02.01-.01v-.03l-.01-.01-.01-.05-.02-.04v-.03l.01-.01v-.01l.02-.01h.05l.01-.01.05-.04.03-.03h.01l.04-.01.02-.02.02-.03.01-.04.01-.01.01-.01v-.01l.02-.01.01-.02v-.01l.01-.06v-.12l-.01-.02v-.03l.01-.02.01-.01.01-.02.01-.01.01-.01v-.03l.01-.03v-.01l.01-.01v-.04l-.01-.02v-.01l.01-.02.03-.05.02-.03.01-.02.01-.01.01-.02.01-.03v-.01l.04-.09.04-.1v.01h.02l.01.01.03.02.03.02h.01v.01h.01l.01.01h.01l.01.01.01.01.01.01.01.01.01.01.01.02.01.01.04.05.01.01v.01h.01v.01h.01v.01h.01l.01.01.01.01.01.01.03.02.07.05.02.02h.01v.01h-.01v.02h-.01v.01l-.01.02v.01l-.01.01-.01.01v.01H590v.01l-.01.01v.01l-.01.01v.01l-.01.02-.01.03v.01h-.01v.02h-.01v.01l-.02.02-.01.01.04.03.01.01.02.01.01.01.02.02h.01v.01h.01l.01.01.01.01v.01h.01v.01l.01.01h.01l.01.01.01.01.01.01h.01v.01h.01l.02.02.01.01h.01v.01h.01l.01.01.02.01.01.01.01.01.01.01h.01v.01h.01l.01.01.01.01.02.01.01.01h.01l.01.01.01.01h.02v.01Z"/>
+<path data-riding-id="2" onclick="info_show(this,2)" d="m606.14 715.35-.23.05-.1.03v.04l.01.03-.07.02.03.09h-.03v.01h-.02l-.01.01h-.01l-.01.01h-.03l.01.01v.04l.01.01.01.03.01.03v.02l.01.02.01.03v.03l.01.03.01.01v.03l.01.01v.01l.01.04-.19.08.01.02v.01l.01.02v.01l.01.02v.02l.01.02v.02l.01.02.01.02v.03l.01.01v.02l.01.01v.02l.01.01v.02l.01.02v.01l.01.03.01.02v.01l.01.03.01.04v.01l.01.02.01.02v.02l.01.01v.03h.01v.02l-.19.08-.07.02.1.4.02.07v.02l.01.01v.03h.01v.04h.01v.02l.01.02v.01l.01.02v.02l.01.02v.01l.01.03.01.01v.02l.01.01v.01l.06.17.08.34h.01l-.16.04v.01l-.23.05-.17.05v-.01l-.09-.47-.06-.24-.35.11h-.02l-.01.01h-.03l-.01.01h-.02l-.01.01h-.03l-.01.01h-.02l-.01.01h-.03l-.01.01h-.03l-.01.01h-.03l-.01.01h-.03v.01h-.04l-.01.01h-.02l-.01.01h-.04v.01h-.01l-.31.08-.06.01-.02.01-.08.02-.22.05-.08.02-.01-.01v-.01l-.01-.03v-.02l-.03-.13-.05-.2-.01-.03v-.01l-.07.02h-.01l-.02.01-.11.03h-.01l-.02.01h-.01l-.07-.18-.08.02-.07.02-.22.06-.21.06h-.01l-.02.01h-.02l-.01.01h-.01v.01h-.01v-.01h-.01v.01h-.03v.01h-.03l-.05.02h-.01l.05.13-.17.04.03.12-.38.11-.17.06-.38.1-.01-.04-.01-.03-.01-.04-.01-.03-.01-.02V717.9l-.01.01h-.01l-.04.01-.04.01-.03.01-.04.01-.01.01h-.02v.01h-.03v.01l-.05.01-.02.01h-.01v.12l.01.03v.04l.02.27.01.06.01.03-.01.11.03.17.03.11.02.17-.11.02-.13.01-.02.04h-.25l-.05.03-.03.02-.05.04-.02.03-.01.04v.02l-.01.02-.01.01h-.05l-.01-.01h-.01l-.01-.01h-.01l-.03-.02h-.01v-.01h-.02v-.01h-.02v-.01h-.01l-.01-.01h-.01l-.04-.02v.02l-.02.07-.01.01v.03h-.01v.01l-.01.01h.01v.01h.01v.05l.01.05v.01l-.07.01h-.01l-.11.01.02.16.01.08h-.06l-.16.02v.01l-.13.01-.14.02.01-.01.01-.02.01-.01v-.03h-.01v-.04l-.01-.02v-.01l-.01-.01v-.01h-.01v-.01l-.01-.01v-.01h-.01v-.03l.01-.03.02-.04v-.02l-.23.03-.03.01h-.01l-.04.01-.06.01h-.03l-.03.01h-.04l-.02.01h-.04l-.01.03-.01.03v.02l-.01.01v.01l-.14-.07-.06-.03-.07-.03-.12-.06.01.19.01.07-.37.13.01-.12.02-.2-.13-.08-.12-.06v-.02l.01-.03V719.29l.01-.06v-.19l.01-.02v-.11l-.34-.21-.01-.01-.17-.1-.06-.03.01.01v.02l.01.01v.05l.01.01v.03l.01.01-.01.01v.01h.01v.02l.01.01v.02l-.01.02-.01.01v-.01h-.01v-.01h-.01l-.07-.03v-.01l-.04-.02-.05-.02-.04-.02-.01-.01v.03h.01v.03l-.21-.12v.01l-.06-.03v-.05l-.01-.01-.01-.13v-.01l-.01-.06.05.02.01-.02.02.01.02-.02-.11-.1h-.01l-.08-.11-.01-.01v-.01h-.01v-.01l-.01-.02-.01-.01-.01-.03h-.01v-.2l.01-.03v-.11h-.01v-.03h-.01v-.01l.21.12.13.07v-.03l.13.07v-.03h-.01v-.04l-.01-.01-.01-.03v-.01l-.01-.01v-.03h-.01v-.02l-.05-.13-.02-.09-.05-.13-.02-.07-.02-.04-.03-.1-.01-.01-.01-.04-.01-.02-.1-.06-.13-.08-.05-.19-.03-.12.01-.12.01-.26.08-.16.02-.13.04.02.07.04.01.01.11.06.01-.54-.03-.02-.16-.08-.31-.17.01-.07-.02-.01-.01-.03v-.01l-.05-.03-.04-.02-.09-.04.01-.03v-.06l.03-.1-.15-.08-.25-.15.01-.13.01-.01v-.01l.02-.05v-.01h.01v-.01h.01v-.01h.01l-.03-.03.07-.07-.04-.1-.01-.19V714h.01v.01l.13.07v-.04l-.01-.03.04.02.03.02.03.02.02-.12-.02-.26v-.05l-.02-.43.1.06.01-.01.09-.14.09-.15.04-.08.06.03.14.07.01.12.18.11-.01-.1v-.03l.06-.01.03-.01.01.01.08-.01h.09v.03l.18-.02.09-.01.01.11.26-.01.03.01.01-.02.02-.04v-.13l.01-.06-.02-.06.04-.01.21-.01v-.04l-.01-.09v-.3l.06.03.12.06.1.05.16.07.04.03.08.04.08.04.04.03.03.01.02.18.1.05.06.04.04.02.04.02.06.03.2.11.16.08.14.07.01.01.05.03.04.02.05.03.03.01.01.01.07.04.17.09.04.02.1.05.04.02.19.11.06.03.06.03.09.05.09.05.11.06h.01v.01l.05.02.07.04.04.02v-.01l.09-.16.03-.06.01-.01.06-.11.01.01h.01l.04.02.05.02.03.01.15.06.06.03h.01l.12.05.04-.11.05-.11.04-.08v-.01l.02-.06.01-.02.04-.08.01-.04.02-.04.02-.05.01-.02.01-.01v-.01l.03-.07.01-.03.18.07.06.03.11.04.02.01-.01.02v.01l-.01.01.02.01.18.09.03.01-.01.02-.07.16-.03.07.05.03h.01l.04.01.04.02h.01v.01h.01l.02.01.03.01h.01l.01.01.03.01h.01l.02.01.01.01h.01l.03.01v.01h.03v.01h.01l.02.01h.02l.01.01.02.01.02.01h.01l.02.01.04.02.04.01.01.01h.01l.01.01h.02l.01.01.03.01.01.01h.01l.02.01h.01l.02.01.01.01h.01l.02.01.02.01h.02l.01.01h.01l.02.01.01.01h.01l.06.03.05.01.1.05.04.01.02.01.05.02.03.02h.01l.02.01.02.01.06.02.01.01.02.01.03.01.02.01h.01l.02.01h.01l.02.01.02.01.02.01h.01l.02.01.06.02.02.02h.01l.03.01h.01v.01l.05.02h.01l.01.01h.01l.03.01.08.04.1.04.13.05.06.03.09.04.24.09.04.02.03.01.06.03h.02l.02.01.01.01h.01l.02.01h.01l.01.01.02.01h.01l.04.02.04.01.01.01h.01v.01h.02l.3.12.05.03.42.17.1.04Z"/>
+<path data-riding-id="3" onclick="info_show(this,3)" d="m599.76 721.9-.17.05v.01l.01.01.01.04.01.06v.01h-.01l-.05.03-.01.01-.02.01h-.01l-.01.01-.02.02-.02.01-.01.01h-.01l-.04.03h-.01l-.01.01h-.01v.01h-.02l-.04.01-.01.01h-.03l-.02.01h-.03v.01h-.01l-.01.01v.01l.08.22.04.02.06.03.01.01h.02l.05.03.04.02.02.01.04.02.04.02.04.03h.01l.03.02.03.01.01.01h.02l.01.01h.01l.01-.01v.01l.01.05.01.06.04.17-.01-.01-.15-.08-.28-.14.01.07.03.17.01.01-.01.01v.02l.04.15-.13-.07.03.12-.06-.02v.01l.01.03v.01l.01.03v.01l.01.01v.03h.01v.04l.01.01v.02l.01.01v.02l.01.03v.03l.01.01.01.04v.04l-.01-.01-.03-.02.08.27.01.01-.02-.01h-.01l-.02.03-.01.02.11.08.03.02.01.01.08.05.02.01-.11.15-.04.06-.08.1-.07.1.04.02.04.03.03.1.03.06v.02l.05.14-.27.09-.21.07-.15-.39-.06-.16h-.01l-.2.07-.3.09.09.26-.24.07-.15.05.03.02.01.01.02.01.01.01-.27.07.01.04.01.02.01.02.01.03v.02l.01.01v.02l.01.02v.02l.01.02v.01l.01.01v.03l-.17.05-.05.02h-.01l-.09.03.02.06.06.14.03.09.02.07.01.09.02.02.01.01.03.03v.01l.01.02.01.06.01.04-.01.02v.02l-.01.04-.01.02-.03.06-.04.07-.03.05h-.01l-.01.03v.09l-.15.12v.01l-.02.06-.02.06-.02.03-.02.03-.02.02-.01.01-.02.01-.03.04-.02.05-.01.04-.01.03-.02.04v.02l-.01.02v.05l.02.04.01.01V727.36l-.02.02-.02.04-.01.01v.03l-.01.01v.03l.01.01v.01l.01.01v.01l.02.02.01.02.02.02v.03l.01.03.01.11-.01.06v.01l-.01.08-.02.09v.1l.06.26-.09.02-.01.01-.17.06-.03.01h-.02l-.02.01-.03.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03l-.01.01h-.02l-.01.01h-.03v.01h-.03l-.02.01-.05.02-.04.01-.07-.21-.1-.31.24-.07v-.01h-.01v-.03l-.01-.01v-.03h-.01v-.03l-.01-.01v-.02l-.01-.03v-.01l-.01-.01v-.01l-.01-.02v-.02l-.01-.01v-.01l-.01-.03v-.01l-.01-.03v-.01l-.01-.01v-.02l-.01-.03-.01-.02v-.01l-.02-.05-.01-.05-.01-.02-.01-.03v-.01l-.01-.02v-.02l-.06-.18v.01h-.02l-.04.01-.01.01h-.02l-.07-.21-.01-.03h.02v-.01h.03v-.01h.01l.04-.01-.07-.24h.03l.01-.01h.02l.01-.01h.04v-.01h.03l.01-.01-.02-.09-.02-.09.15-.04.05-.01h.01l.03-.01-.06-.21-.03-.13-.06-.22-.16-.16-.02-.01-.01-.08-.01-.23-.02-.01-.02-.01-.03-.02-.02-.01h-.01l-.01-.01-.02-.01h-.01l-.02-.01-.02-.01-.01-.01h-.01l-.03-.02-.07-.03-.01-.01.12-.22-.01-.01h-.01l.04-.06.01-.03.06-.11.01-.03-.08-.04-.07-.03-.07-.03-.01-.01v-.01l-.09-.04-.02-.01-.14-.08h-.02v-.02h.01v-.02h.01v-.01l-.02.01-.28.16.06-.21.13-.07.02-.12.02-.08.01-.04v-.02l-.06-.11-.01.01v-.03l-.01-.03-.01-.02-.01-.02.03-.03-.01-.02-.01-.02-.01-.02.05-.03-.02-.03.03-.01v-.01l-.01-.01.02-.02-.01-.02v-.03l.01-.03-.01-.04h-.01l-.02-.01-.08-.02h-.02l-.04-.01-.1-.03-.02-.01h-.02l-.01-.01-.2-.05-.03-.05v-.04h.01v-.07l-.01-.02v-.04l-.01-.07v-.02l.02-.03.04-.02.03-.02.01-.01v-.03l.01-.02v-.03l.01-.01v-.04l.01-.01v-.02l-.06-.01-.04-.09v-.01l-.04-.09-.05-.01.03-.08.02-.07.02-.05-.01-.03v-.03l-.02-.13-.01-.02-.01-.03v-.01l-.01-.01.04-.01.02-.03-.02-.01-.18-.09.03-.01.07-.02-.02-.03-.01-.01.06.03.02.01h.01v.01h.02l.11.06v.01l.02.01.06.03.07.04.19.11v-.08l.08.04.04.01h.14l.01-.09v-.02l-.01-.02v-.03l.09-.19.01-.02-.01-.04.01-.02h.01l.03.02.03.01.01.01.04.02.02.01.02.01.03.02.04.02h.01l.04.02.02.02.19.09v.01h.02l.03-.01h.01l.04-.01.02-.01.04-.01.03-.01h.02l.02-.04v-.01l.01-.01h.01l.05.06.03-.03v.01h.01l.01.01h.02l.01.01.02.01.01.01.01.01h.02v.01l.02.01.01.01h.02l.02.01v.01h.02v.01h.02l.01.01h.01l.01.01.01.01h.01l.01.01.02.01.02.01.01.01.02.01h.01l.01.01.02.01h.01v-.03l-.01-.01v-.02l-.01-.01-.01-.02-.01-.03-.01-.02-.01-.01-.01-.02v-.01l.01-.02.02-.03.11.06.08-.15.16-.29.22.11.08.05.15.07.01.01.23.11v-.01l.01-.01v-.01l.01-.02.02-.03.01-.03.01-.02.01-.01v-.01h.01v-.01l.01-.02v-.01l.01-.01v-.01h.01v-.01l.01-.01h.01l.02.01.02.01.05.03.07.03v.01h.01v-.01h.01v-.01h-.01v-.04l-.01-.01v-.01l.24.13.02-.05v-.01h.01v-.02h.01v-.02l.01-.01v-.02h.01v-.02h.01v-.02l.01-.01v-.02h.01v-.02h.01v-.02l.01-.01v-.02h.01v-.02h.01v-.02l.01-.02.01-.01v-.02l.01-.02v-.01h.01v-.02l.01-.01v-.01l.01-.01v-.01l.01-.01.01-.01h.01v-.02h.01v-.01l.01-.01v-.01h.01v-.02h.01v-.01l.01-.01v-.01h.01v-.01l.01-.01v-.02h.01v-.02h.01v-.01h.01v.01h.02l.01.01.01.01.02.01.02.01h.01l.01.01.01.01h.01l.02.01.02.01h.01v.01h.02v.01h.05v.01h.01l.01.01h.01v.01l.01.02h.01l.04-.02.02-.02.01-.01h.01l.08-.05.07.06.06.23.03.15.07.03.05.03.09.05Z"/>
+<path data-riding-id="4" onclick="info_show(this,4)" d="M592.05 719.79h.01l.02.02.03.01v.02l.01.01v.01l-.01.02.01.01-.03.04h.01-.03v.01h-.01v.01h-.02l-.01-.01v.04l-.01.01v.03l-.01.02v.02l-.01.04-.01.01v.03h-.01v.03l-.01.01v.03l-.01.01v.02h-.01l-.04-.01-.04-.01-.04-.01-.03-.02h-.01v.01l-.04-.01v.03l-.01.01v.02l-.01.01v.03l-.01.01v.02l-.01.01v.02l-.01.02v.02l-.01.01v.02l-.01.02v.02h-.01v.01l-.01.01-.01.02-.01.01-.01.01-.01.01h-.01v.01h-.02l-.01-.01h-.03l-.02-.01h-.01l-.03-.01-.04-.01-.03-.01-.02-.01h-.03l-.01-.01h-.03l-.02-.01h-.01v-.03l.01-.02v-.02l.01-.02v-.03l.01-.01v-.01l.01-.03v-.03l.01-.01.01-.03v-.04l.01-.01v.01-.02l.01-.01v-.02l.02-.02h-.01v-.01h-.01.01v-.04l.03-.1v-.01l.01-.01v-.02l.01-.03v-.01l.01-.04v-.02h.01l.01-.04v-.02l.01-.03v-.03l.01-.04.01-.01v-.02l.01-.01v-.01l.01-.02v-.01h.01l.01.02.01-.01v-.02h.02l.11.04h.02l.04.01.04.01h.01l.03.01.02.01h.03l.03.01.04.02h.02l.01.01h.03l.01.03.02.02.02.05Z"/>
+<path data-riding-id="5" onclick="info_show(this,5)" d="m567.08 669.07.21.11.5.29.33.16h.02l.02.02.09.04.06.04.43.23h.02l.11.06.06.04.24.13.04.01.23.13.03.01.79.43h.01l.01.01h.01l.05.03.05.03.04.02.05.02.05.03.25.13.01.01.06.03.42.22.05.03.02.01.24.13.01.01.07.03.07.04.11.06.02.01.01.01h.01l.2.11.08.04.39.21.23.12.06.03.04.03.11.05.04.03.03.01.24.13.51.27.05.03.03.02.23.11.02.02.29.15.01.01.35.18.02.01.45.24.43.24.31.16.1.05.05.03.57.3.35.19.02.01.19.1.39.21.06.03.44.24.02.01.05.03.05.02.04.02.22.12.01.01.02.01.03.01.16.09.03.01v.01l.06.02.32.18.02.01.05.03.05.02.08.04.21.12.06.03.04.02.07.04.08.04.11.06.07.04.02.01.1.05.03.02.18.09.05.03h.01l.03.02.1.05.17.09.16.09.1.05.01.01.14.07.16.09.03.02.47.25.32.16.13.08.02.01.02.01.1.05.05.02.03.02.01.01.6.32.02.01.24.12.02.02.05.02.17.09.18.1.2.1.02.02.01.01.25.13.02.01.09.04.48.26.03.02.08.04.03.02.1.05.58.31.02.01.09.05.15.08.04.02.04.02.11.06.01.01.03.01.33.18.05.03.03.01.16-.05h.02l.01-.01.13-.04.16-.05.05-.01.23-.07.15-.05h.02v-.01h.02l.02-.01.56-.17h.02l.35-.11.23-.07.25-.08.22-.07.37-.11.02-.01.19-.06.59-.18.06-.02 1.07-.35.02-.01.37-.11.2-.07h.01l.17-.06h.01l.18-.06.04-.01.09-.03.12-.04.04-.01.19-.06 1.12-.33.79-.27.05-.02.11-.03.02-.01.28-.08.12-.04.03-.01.01-.01h.01l.34-.11.08-.02.2-.06.34.25.23.19.05.04.16.12.08.06.01.02.06.04.04.03.06.05.34.26.1.08.22.17.02.01.04.03.07.06.11.08.13.1.05.04.35.27.02.01.31.24.03.03.28.21.01.01.51.39-.04.07-.16.32-.01.01v.02l-.03.05-.04.07-.07.15-.1.18-.08.18-.09.17-.06.12-.07.13-.01.02-.02.03-.07.15-.07.13-.07.15-.06.11-.16.32-.01.02-.01.01-.01.03-.05.09-.03.06-.01.02-.01.01-.04.1-.16.3v.01l-.04.08-.06.12-.05.08-.01.04-.08.14v.01l-.02.04-.12.24-.1.19-.15.31-.02.02-.06.13-.04.07-.03.06-.01.02-.11.22-.06.12v.01l-.01.01.02.01.03.01.05.02.01.01.03.02.03.03v.02l.03.03h.05l.01.01.01.01.01.01h.01l.02.02.01.01v.01l.01.01.02.01.02.01.01.01v.03l.01.01.01.01h.01l.02.02.05.04.02.02.02.02.01.02.01.01h.03v-.01h.01l.01-.01.01-.01h.01v-.01h.03v.01h.01v.01h.01v.01l.01.01v.02l.01.01v.01h.01V684.74l-.01.01h-.02v.05h-.01v.05l.01.01v.01h.01l.01.01v-.01l.01.01h.03v.01h.03l.01.01H597.96v-.01l.01.01h.01v.01h.02l.01.01.01.01.02.01.01.01.02-.01.01-.02.01-.01h.01l.03-.01.01.01h.02l.03.01.04.03.05.04.02.01.03.04.02.03-.02.01-.05.01-.03.04v.08l.01.02.02.03.01.02h.01l.02.01.01.03v.01l-.01.03.01.06v.01l.01.01v.03l-.01.03v.02l.03.01.03.02.02.03.04.05h.04l.01.01.01.03.02.02.04.04.01.01.02.01.02-.01h.1l.03.01h.02v.01l.01.02.02.01.01.04.02.02.01.03-.01.05-.01.05.01.04.01.02-.01.02-.02.02-.01.01-.02.03-.01.03-.05.06v.02l.01.01.01.02-.01.02.01.02v.01l-.01.01-.01.01-.01.01h-.01l-.01.01v.01l-.01.01v.01l-.01.01v.02l-.01.01-.01.02v.01l-.01.01-.01.01v.03l-.01.02v.03l-.01.02v.02l-.01.01-.01.01V686.72h-.02l-.04.05-.01.02-.03.02-.01.01-.04.03v.13l.01.03.02.03.03.01.01.03v.03l-.01.06v.05l.01.01v.03l.02.05v.03l.02.03-.01.03.01.03-.01.02v.04l-.01.04-.01.02V687.64l-.01.01-.01.02v.03l-.02.03-.01.03v.02l-.01.01v.05l-.01.05-.01.03h-.04l-.01.02v.01l-.01.01.01.02.01.03v.05l-.01.02v.03l-.01.02-.01.01-.01.03v.01l-.01.01v.01h-.01l-.03.01-.02.01-.02.01-.01.02-.01.02-.01.03-.01.02.01.02.01.02.01.01.01.01h.01l.03.01.02.01.03.01.02.01.01.01.01.01v.02l-.01.02-.01.01-.01.02v.04l-.01.01V688.62h-.01l-.01-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.02v-.01h-.01v.01h-.01l-.01.01h-.02l-.01-.02-.01-.01-.01.01h-.01v.01h-.01.01v.01h-.01v-.01.02h-.01v.01h-.01l-.01.01-.03.02-.12.02-.46-.15-.03-.01-.05.02h-.02l-.14.05-.34.02h-.08l-.29.02h-.05l-.14-.01H596.31v-.09l.01-.57v-.28l-.05-.03-.03-.02-.04-.02-.38-.22-.01-.01-.02-.01-.12-.07v-.03l-.01-.12-.01-.11-.12.19-.19.31.03.06.01.01v.02l.01.02.01.01.02.05.13.32.01.01.01.03.07.14v.01h-.01l-.12.1-.13.11-.02.02-.01.01-.01.02-.02.01-.08.09-.19.2-.09.09-.01.01.09.26.01.04.04.11v.02l.02.07.02.06.03.09.02.06.01.04.02.05.01.03.03.09v.02l.13.41.1.32.22.29.38.53.05.02.16-.05.06-.02.04-.01.02-.01.29-.09.12-.03.1-.03.26.12.05.03.01.01.02-.01h.01l.07-.02.19-.05.09.09.03.03.14.13.02.01.09.09-.21.41-.04.08-.02.04v.01l-.11.21-.1.18.25.13.03.01.03.02.1.05.04.02.34.17.38.19.05.03.05.02.01.02.15.07.11.06.09.05.06.03.04.02.06.03.05.03.01.01.1.05.11.06.25.13.01.01v-.01h.01l.17.09.43.22.23.12h.01v.01h.02l.15.08.04.02.09.05.07.03.12.07.11.05.02.01.02.01.01.01h.01l.01.01-.07.12-.02.03-.01.03-.1.17-.03.06-.18.34-.04.07v.02l-.02-.01-.03-.02-.02-.01-.07.12-.04.09-.17-.1-.02-.01-.02-.01-.04-.03-.02-.01-.07-.04-.01-.01-.02.04-.12.22-.01.01v.01l-.05.08-.02.03v.01l-.01-.01-.02-.01-.04-.03-.01-.01h-.01l-.11.2-.02.04-.04.09-.04.06-.03-.02-.04-.02-.03-.01-.02-.02-.04-.02-.04.08-.02.02v.02l-.01.01v.02h-.01l-.05.1-.04.06-.03.05-.17.29.08.05.02.01.02.01.26.13.12.07h.01l.06.04.09.05h.01l.14.08.05.02.13.07.06.04h.02l.03.02h.01l.01.01.03.01.08.05.15.08h.01l.11.06.04.02.36.2.05.03.14.08.02.01.12.06.08.04.13.07.11.06.06.03.08.05.14.07h.01l.38.22.02.01.02.01.27.14.05.03.27.15.01.01.04.02.16.08.17.09.31.17-.34.14-.03.01-.08.04-.05.03-.06.04-.02.01-.01.01-.03.03-.04.04-.02.02-.02.02-.15.14-.09.12-.06.08-.04.09-.01.02-.02.03-.06.12-.02.05-.03.08-.02.12-.02.08-.02.11-.01.1-.01.09v.03l.01.21v.04l.03.16.01.08.01.31v.1l-.03.07-.05.11-.01.02-.03.03v.02l-.02.02-.04.05-.06.05-.05.04-.11.08-.07.06h-.01l-.06.05-.03.03-.03.02-.03.02-.11.09-.03.02-.14.11-.01.01-.04.03-.04.04-.08.06-.02.02-.17.04-.07.07.03.05-.07.06-.06.05-.06.05-.03.03-.16.14-.02.02-.03.02-.15.11-.07.03-.06.02-.02.01-.06.15-.03.07-.02.05-.02.05h-.01l-.14-.08h-.01l-.02-.01v.02l-.01.01v.02l-.02-.02-.04-.02-.03-.01-.01-.01-.11-.06-.03-.01-.04-.03-.01.02v.02h-.02l-.09-.04-.01-.01-.04-.02v.01l-.01.01-.13-.07-.01-.01v.01l-.01-.01v-.02h-.01l-.01-.02-.01-.02v-.02h-.01l-.01-.02-.01-.03v-.01.01l-.03.07-.02-.01-.07.13-.02-.01-.03-.01-.03-.01-.03-.02v.09l.01.23V703.72l.01.07v.05h.02v.02h.01v.01h.01v.04h.01l-.01.02h-.05l-.03-.01-.03-.01-.03-.01h-.04l-.02-.01h-.06l-.04.01-.04.02-.04.01h-.02l-.01-.01-.01-.02-.02-.02-.04-.06-.02-.03-.08-.05-.04-.02-.03-.02-.06-.05-.04.02-.02.02-.05.05-.05.04-.05.01-.01-.01h-.02l-.06-.04-.09-.06-.04-.01-.05-.01-.09-.01-.1-.04-.07-.07-.03-.03-.03-.01-.02-.01-.01-.01-.08.01H597.55l-.09-.02-.04-.01-.03-.02-.01-.02-.01-.01-.04-.04-.04-.03-.05-.03-.04-.02-.08-.07-.07-.04-.01-.01-.05-.02-.13-.05-.09-.04-.02-.02-.03-.03-.05-.08-.04-.05-.05-.04-.01-.04-.02-.07-.02-.1-.03-.08-.01-.03-.03-.08v-.02l-.01-.03-.01-.08v-.1l-.01-.02-.02-.02-.05-.04-.02-.03-.02-.03-.01-.03-.01-.01-.01-.03.01-.03.01-.04.02-.01h.01l-.01-.01h-.01l-.04-.02-.03-.01-.03-.01.01-.05v-.01h.01l.12-.05-.14-.08-.07-.05-.03-.01h-.01l-.14-.08-.43-.23-.1-.06-.02-.01h-.02l-.01-.01-.02-.01-.04-.03h-.01l-.01-.01h-.01v-.01h-.02l-.2-.13-.09-.04-.15-.08.02-.02.01-.03.03-.04.09-.17.01-.01-.09-.05-.55-.28h-.01l-.01-.01v-.01h-.01v.01l.01-.05.02.01.09.03.07.04.03-.06.09-.05.07.03.04-.06-.03-.02-.05-.03-.15-.08-.02.04-.18-.22-.02-.02-.14-.15-.15-.2-.11-.12-.04-.01-.08-.03-.02-.01-.02-.01-.02-.01-.05-.02h-.08l-.23.01h-.04l-.29.01-.13.01-.04.01-.04.06-.02.03-.07.11.02.04.24.36.11.18.08.1.03.04.03.05.02.05.01.04.06.17-.01.12-.02.09v.04l-.01.04v.01l-.01.03h-.01l-.33.03h-.05l-.18-.21-.06-.08-.13-.16-.04-.06-.03-.02-.02-.04-.13-.17-.25.1-.25.09-.52-.28-.32-.16-.01-.01-.02-.01-.1-.05-.02-.01.02-.14v-.05l.01-.06.09-.07.16-.11.02-.09.03-.24-.03-.07-.03-.11-.04-.13-.1-.3-.01-.05-.01-.03-.04-.02-.06-.04-.04-.01-.01.01h-.02l-.02-.01h-.06l-.01-.01v-.01l-.01-.01-.01-.01-.01-.01h-.01l-.01-.01h-.01l-.02.01h-.04l-.02.01h-.07l-.01.01-.02.01-.02.01-.02.03-.01.01-.01.02-.01.02-.01.03v.01l-.02.01h-.01l-.01.01h-.01l-.01.01-.03.01-.02.01h-.05l-.02-.01h-.04l-.02-.01-.01-.01h-.04l-.01-.01-.01-.01h-.02l-.02-.02v-.01l-.02-.01-.02-.01-.04-.01-.01-.01-.01-.01h-.02l-.01.01-.01.02h-.03l-.03-.02v-.01l-.01-.02v-.01l.01-.01-.01-.02-.01-.03-.01-.03-.02-.02-.02-.01h-.02l-.04-.01h-.02l-.04.01-.01.01h-.02l-.02.01-.01.01h-.01l-.02-.01h-.02l-.01-.01v-.04l-.01-.01v-.05l.01-.01.01-.04V698h-.01l-.02-.01h-.11l-.02.01h-.01l-.09-.02-.06.01h-.03l-.02.01v.03l-.01.01v.02l.01.02.01.03v.01h-.01v.01h-.03l-.02.01h-.01l-.01-.01h-.03l-.03.02-.02.01-.01.01v.03l-.01.01-.01.01-.01.01h-.01v.01l-.01.01-.01.02v.03l-.01.03v.02l-.03.04-.03.01h-.05l-.07-.02-.06-.01-.04-.02-.03-.05h-.03l-.03.02-.06.01h-.05l-.02.01h-.03l-.09-.01h-.03l-.03-.01h-.03l-.02-.01-.04-.02-.02.01h-.01l-.01.01-.02.01v.02h-.02l-.01.01h-.02l-.04-.01-.03-.01-.02.02v.01l.01.02-.01.01v.02h-.01l-.01.01v.01h-.01v.01h-.04l-.02.01-.01.01-.03.01-.01.01h-.02v.01h-.03l-.02.01-.01.01-.02.01-.01.04-.02.02h-.05l-.03-.02-.03-.02-.01-.02-.01-.01-.03-.04-.01-.02h-.01l-.01-.01-.02-.01h-.19l-.03-.01-.04-.01-.04-.02-.04-.02-.04-.04-.04-.02-.04-.02-.03.01-.06.03-.03.02-.03.01-.04.02h-.02l-.04.01-.04-.02-.06-.01-.03-.01-.01-.01h-.02l-.01.01.01.07-.01.01v.01l.01.01v.01l.01.01.01.01V698.54l-.01.02-.03.02-.02.01h-.02l-.01.01-.02.01-.02.02-.02.01v.02l.01.05-.01.02-.01.02-.01.02v.01l-.02.03v.02l-.01.05-.02.04-.01.03.01.01.01.03.02.03.01.02-.01.03-.01.03v.01l.03.05.01.02.02.01.02.01h.02v.02l-.01.02-.03.02h-.02l-.02-.01-.02-.02-.01-.01h-.08l-.02.02h-.04l-.05-.04-.05-.03-.02-.01-.01-.01h-.01l-.01-.01-.02-.02-.01-.01v-.04l-.01-.01-.01-.01-.01-.01-.01-.01h-.05l-.02.01-.01.01-.01.02-.01.02-.01.05.02.03.01.03v.03l-.01.03-.01.01-.02.01h-.03l-.02.01-.03-.01h-.02l-.02-.01h-.03l-.02.01h-.01l-.02.01h-.04v-.01h-.02v.01l-.02.01-.01.01-.01.01-.01.01-.01.02.01.03.01.05.01.02.01.02.01.01v.05l-.02.03-.02.02-.02.01h-.06l-.02.01h-.03l-.01-.01-.02-.01-.01-.02-.01-.02-.01-.01h-.02l-.02-.01-.02-.01h-.01l-.02.02-.03.02-.03.01-.02.02-.02.01-.02.01-.02-.01-.01.01h-.01l-.01.01h-.01l-.01-.01h-.01v-.01l-.01.01-.03.02-.02.01-.02.01v.02l-.01.01v.01h-.01v.02H585v-.05h-.01v-.03h-.02v-.02l-.01.01v-.01h-.01l-.01.01v.01h-.01v.01h-.01v.01h.01v.02-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01v.01l-.01-.01h.01l-.01-.01h-.01v-.01.01h-.01v-.01.01-.01l-.01.01v-.01h-.01v-.01h-.01v-.01.01h-.01v-.02l-.01-.01v-.01l-.01-.03-.01-.02v-.03l.01-.01v-.02l.01-.01v-.02h.01v-.01l.01.01v-.01h.01l.01-.01h.02v.01h.02v-.02l-.01-.01v-.02h-.02l-.01-.01v.01h-.01v-.03h-.01v-.01l-.01.01v.01h-.01l-.01-.01h-.01v-.01h.01l.01-.01v-.01h-.01v-.01h.01v-.01h.03l.02-.01v-.01l.01-.01h.02v-.02h-.01v-.02l-.01-.02-.01-.01-.01-.01h-.01l-.01-.01h-.01v-.01l-.01-.01-.01-.02-.02-.02-.12-.42.11-.21h.03v.01h.01v.01l.01.01h.01v-.01l-.01-.01h.01l-.01-.01v-.01h-.01v-.01h-.01v-.01h.01-.01v-.01h-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.02l-.42-.42-.11-.1-.11-.1-.13-.12-.03-.03-.11-.09-.04-.03-.06-.06-.1-.09-.48-.38-.11-.08v-.03h.01v-.02l.01-.02-.05-.05-.03-.03-.13-.11-.04-.04-.04-.02-.09-.08-.42-.27-.25-.16-.18-.08-.02-.01-.05-.02-.04-.02-.17-.07-.05.09-.02.04-.27.53-.01.03-.08.16-.01.01-.21-.13-.26-.14-.06-.03-.55-.3h-.01l-.02-.01v-.01l-.02-.01-.05-.02-.24-.14-.16-.08-.07-.04-.04-.02-.33-.19-.01-.01h-.01v-.01l-.02-.01-.1-.05-.08-.05-.02-.02h-.02l-.06-.03-.35-.21-.23-.11-.18-.1-.41-.22-.07-.04-.07-.04-.02-.01-.04-.02-.03-.02-.1-.06-.04-.02-.17-.09-.07-.04-.1-.06-.05-.03-.23-.13-.06-.03-.14-.08-.06-.03-.03-.02-.11-.06-.02-.01-.04-.02-.37-.21-.03-.02-.3-.17-.28-.15-.1-.06-.02-.01-.13-.07-.06-.04-.16-.09h-.01l-.55-.31-.01-.01-.52-.29h.01v-.01h.01v-.04h.02v-.01h.01v-.05h.01v-.09h-.03v.01h-.01l-.01-.01v-.01h-.01v-.01h-.01V692.19h.01v-.01h.01v-.04l.01-.01V692.06l.01-.01v-.02l.01-.01v-.01h.01V691.91h.01v-.02h.01v-.01h.01V691.82l.01-.01v-.04h-.01v-.02h.01v.01h.02v-.02h-.01v-.01h.01v-.02h-.01v-.03l-.01-.01v-.03h.02v-.02h.01v-.01h.01v-.01h.01v-.01h-.01.02l.01-.01v-.01h-.01v-.01h.01v-.01h-.01v-.01h.02v-.01l.01-.01-.01-.01v.02h-.01v.01h-.01v-.01h.01-.02v.02h.01v.01l-.01.01h-.01v.01h.01-.01l.01-.01v.01h-.01v.02h.01-.02v.02h-.01v-.01l-.01.01.01.01h-.02v.04l-.01.01v.01h.01v.02h-.01v.03l-.01.01h-.01v.01h-.01l-.01-.01v.01l-.01-.01h-.01v.01h-.01l-.01-.01-.01.01h-.03v.01l-.01.01h.01v.01h-.01v.01-.01h-.01v-.01h-.01v-.01h-.07v-.01h.01v-.01h.01v-.01h.02v-.02.01h-.01v-.01l.01-.01h-.01v-.01h-.01v-.02h-.01l.01-.01h.03l.01-.01h.02v-.01l.01-.01.01.01h.01v-.03l-.01-.01h-.04v-.01h.01v-.01h-.03v.01l-.01.01v.01h.01-.01v.01h-.02v.01h-.03v.01h.01-.01v.01l-.01.01h.01v.02h.01v.02h-.01v.04h.01l.01.01h-.01v.01h-.01v.02l-.01.01v.02h-.02v.02h-.01l-.01.01v.04h-.01l.01.01v.01h-.01v.02h-.03v-.01h-.01l-.01.01h-.01v.01l-.01-.01-.04-.01-.04-.01-.04-.01-.02.02v-.01l.01-.01v-.01h.01v-.01l-.01-.01v-.02h-.02v.03l-.01.01-.01.01v.02h-.01v-.01h-.01v.01h-.01l-.01.01v-.02h-.03v-.01l-.01-.01-.01-.01h-.01v.01h-.01v.01H573l-.02.02v.01l-.04.03-.04.06-.05.08-.06-.03h.01l-.01.01h.01l.01.01v.01h.01l-.01.01h.01v.01h.01-.01v.01h-.02v-.02h-.02v-.01H572.72v.01h-.01v-.01h-.01v-.01h-.01l-.02-.01h-.01v-.01h-.02v-.01h-.01v.01-.01h-.02l-.01-.01h-.07l-.01-.01H572.46v-.01h-.01.01-.01v-.01h-.02v.02h-.01v.01h-.01v-.03h-.01v-.01l-.01-.01v-.01h-.01v-.01h-.01l-.01-.01-.01-.01h-.02v-.01h-.02v-.01h-.02l-.01-.01h-.03v-.01h-.02v-.01h-.02v-.01l-.01-.01h-.01v-.01l-.01-.01h-.01v-.05l-.01-.01h.01v-.01l.01-.01v-.01h-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.03v-.01h-.02v-.01h.02v-.01h.01v-.01h-.01v.01h-.01v-.01h-.01.01v-.01h-.02v-.01h-.01v-.01h-.01v.01H572l-.01-.01-.01-.01h-.03v.01h-.04l-.01.01h-.02l-.01-.01h-.02v-.01h-.01v.01h-.02v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.04h-.01v-.01h-.01v-.02h-.01l-.01-.01v-.01h-.01l-.01-.01h-.01l-.01-.01h.01v-.01h-.01v-.01h-.02v-.01h-.01v-.01h-.02l.01.01v.02-.01l-.01.01-.01-.01h-.01v-.01h-.01l-.01-.01h-.04v-.01l-.01-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01l-.01-.01v-.01h-.03v-.03h-.01v-.01h-.01l-.01-.01-.01-.01h.01v-.01h-.03v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.02v-.01h-.01v-.01h-.01v-.01h-.01l-.02-.02h-.01l-.05-.03-.05-.03-.07-.04v-.01h-.01v-.02h-.01v-.02h-.01l-.01-.02-.03-.03-.01-.02h-.02v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01v-.02h-.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.02v-.01h-.01l-.01-.01h-.02v-.01h-.01l-.05-.03-.04-.03v-.01h-.01v-.02h-.01v-.03h-.01v-.02h-.01v-.01h-.01l-.01-.01h-.02v.01h-.04v-.01h-.03v-.01h-.04v-.01h-.01v.01h-.01v-.01h-.05l-.01-.01H570.35v-.01h-.05v-.01h-.02v-.01h-.02v-.01h-.01v-.01h-.01v-.03h-.01v-.02h-.01v-.01l-.01-.01v-.01l-.01-.01h.01v-.01h-.01v.01h-.02v.01h-.01v.01l-.01.01v.01h-.01l-.01.01v.01l-.2-.1-.02-.02-.04-.02-.06-.03-.16-.09-.18-.1-.12-.07-.04-.03-.25-.14-.02-.01-.02-.01-.13-.07-.01-.01-.17-.1-.01-.01-.11-.06-.04-.02-.14-.08-.19-.11-.04-.02-.06-.03-.11-.07-.04-.02-.22-.12-.02-.02h-.01l-.06-.03-.08-.05-.07-.04-.05.01-.13.03-.19.05-.23.06-.05.02h-.02l-.1.03-.17.05-.09.02-.18.05-.07.02-.04.01h-.02l-.23.06-.08.02-.04.02-.04.01h-.02l-.1.03-.19.05-.48.13h-.03v.01l-.05.01-.24.06-.04.01-.01.01h-.01l-.11.03-.19.05-.45.12h-.02l-.46.12-.03.01-.1.03h-.02l-.07.02-.03.01-.16.04-.01.01h-.02l-.09.02-.24.07-.02.01-.05.01-.17.04-.08.02-.17.05-.08.02-.04.01-.37.09-.03.01-.56.13h-.02l-.15.04-.19.04-.05.02-.09-.32-.04-.17-.01-.02-.05-.22-.03-.11-.06-.25-.05-.24-.02-.07-.05-.2-.02-.06-.02-.08-.05-.18v-.03l-.02-.05v-.03l-.02-.06-.01-.05-.01-.02-.06-.23-.05-.2-.01-.04-.01-.05-.01-.02v-.02l-.01-.04-.09-.34-.08-.29-.04-.14-.02-.09-.01-.03-.02-.07-.02-.08v-.01l-.03-.11-.02-.06-.14-.54-.01-.02-.1-.39-.01-.03-.05-.21-.01-.02-.01-.03-.01-.05-.01-.05-.01-.02v-.01l-.02-.08-.06-.23-.03-.08-.01-.07-.03-.09-.01-.02v-.04l-.07-.23-.02-.08-.03-.12v-.02l-.04-.15-.02-.07-.07-.24-.02-.11-.03-.09-.03-.12-.01-.02-.01-.04v-.02l-.01-.04-.01-.04-.01-.03-.01-.04-.01-.04-.01-.04-.01-.03-.05-.19-.01-.05-.02-.05-.01-.04-.01-.05-.03-.12-.2-.72-.04-.15v-.02l-.01-.03-.14-.54-.01-.02-.04-.18-.01-.02-.02-.07-.01-.03-.08-.29v-.04l-.01-.03-.01-.01v-.01l-.01-.04-.04-.16-.02-.05-.12-.46-.01-.07-.01-.04-.01-.02v-.01l-.02-.05-.01-.06-.02-.05-.02-.1-.02-.06-.06-.25-.04-.13-.01-.03v-.02l-.01-.03-.08-.3-.04-.16-.01-.02-.01-.06-.06-.2-.07-.27-.05-.17-.04-.16-.02-.09-.08-.3-.04-.16-.02-.07-.07-.27-.03-.12-.02-.07-.01-.04-.01-.03-.02-.07-.01-.03-.06-.22-.01-.04-.02-.1-.02-.07h-.01.01l-.01-.01V676l-.04-.15-.03-.11-.01-.04-.02-.08-.07-.25-.02-.08-.07-.25v-.02l-.01-.03-.12-.46-.01-.04v-.01l-.02-.05-.01-.04v-.01l-.01-.02v-.02l-.02-.06-.03-.11v-.01l-.02-.06-.01-.04-.02-.1-.09-.33-.19-.7-.08-.32-.01-.03-.09-.35-.12-.46-.02-.06-.02-.06-.03-.12-.08-.29v-.01l-.05-.2.14-.04.12-.03.17-.04.02-.01.05-.01.14-.04.04-.01.48-.13.08-.02.1-.03.05-.01.86-.23.57-.15.07-.02 2.49-.67.08-.02.05-.01.01-.01.08-.02h.01l.02-.01.48-.13h.03l1.05-.29.51-.14.33-.09.04-.01.07-.02h.01l.51-.15h.03v-.01l.06-.01.16-.05h.01l.01.04.02.04.24.13.01.01.02.01.01.01.03.01.14.07.15.09.04-.08.03-.07.06-.05.05.03.02.11.09.01.07-.08.04-.04.02-.01h.01l.06.09h.03l.05-.09.05-.12v-.01l.12-.07.13-.15.03-.07.06-.1.01-.08.09-.1.03-.01h.01l.02.03.04.04.03.1.1.07.01.01.02.01.02.02.01.01.06.1v.01l.01.01.1.02h.04l.07.03.03.01h.01l.09.03.08.02h.03l.05-.01.07-.06.03-.02.03-.01h.04l.03.01.03.01v.05l-.02.04-.09.06-.06.1-.02.1.08.1.09.04Z"/>
+<path data-riding-id="6" onclick="info_show(this,7)" d="m589.93 724.49.02.05.03.04.03.05.02.06.01.01.02.02v.01l.01.01.01.01h.05l.03-.01.02-.01h.05v.01l.01.01v.02l-.02.05.06.04.01.01.04.03.02.01.01.01.05.02.03.02.01.01.11.06.04.03-.01.01.01.01-.01.01.03.08.01.01-.01.02v.01l-.01.01v.03h-.01v.04l-.01.03v.02l.01.04v.02l-.01.03-.01.03-.01.03v.06l.02.01.01.01.02.01-.03.09v.01h.04l.05-.01v.02l.01.01-.01.03h-.01l-.02.14-.04.23-.04.23-.01.11-.02.11h-.01v-.01h-.01l-.01-.01-.02-.01-.02-.01h-.01v-.01h-.01l-.01-.01h-.01l-.01-.01-.01.04-.02.15.13.08.15.09.02.01h.01l.01-.01v-.1l.01-.02v-.01l.01-.02v-.01h.03l.01.01.02.02h.02l.01.01h.02l.01.01v.01h.01l.01-.01.01.01h.01v.02l-.01.01-.01.01v.01l-.01.01.03.01.23.13.02-.05.06-.1.06.03.04.03.05.03.07.04.09.04-.1.17.17.09.16.09.1-.15.09.06.16.1.08.04.01-.01v-.01h.01v-.01l.18.1.06.04.16.07v.01h.02v.01h.02l.01.01.01.01h.01l.01.01.03.01.01.01.04.02-.06.12.17.1.27.15.02.01.04.03.02.01.14-.12.23-.21.05-.05.04-.04.02-.01.01-.01v-.01h.01l.01-.01.01-.01.01-.01h.01v-.01h.01v-.01h.01v-.01l.12-.1.12-.11v-.01h.01v-.01h.01v-.01h.01v-.01h.01l.02-.02.08-.08.04-.03v.01h.01l.02.01v.01l.03.01.01.01h.01l.01.01.01.01h.01l.02.01v.01h.01l.02.01.01.01.01.01h.01l.01.01.01.01h.02v.01h.02l.01.01.01.01h.01l.01.01h.01v.01l.02.01.02.01.04.02.01.01h.01v.01h.02l.01.01.01.01.02.01.02.01.02.01.01.01.01.01.02.01h.01l.01.01.01.01h.01l.01.01h.01l.01.01h.01l.01.01.15.08.13.08.02.26.01.12v.2l.01.05v.1l.01.1.02.45.01.12-.31.11-.16.05h-.01l-.26.09-.17.06-.23.08-.14.05-.25.08-.25.07-.1.02-.2.06-.3.09-.15.04-.32.1-.15.05-.05.01-.02.01-.12.03-.18.06-.18.06-.02.01-.08.02-.5.18-.41.13-.37.13-.12.05h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.03v.01h-.02l-.13.05-.22.07-.2.07-.01.01-.03.01-.08.03-.22.07-.08.03-.03.01-.22.08-.21.07-.2.06-.07.03h-.01l-.13.04h-.01l-.22.06-.22.06-.21.05-.1.03-.34.09-.21.06-.21.07-.32.09-.06.02-.04.01-.25.05-.04.02-.14.02-.14.03-.2.04-.11.03-.17.04-.24.05-.21.06-.08.02-.13.02-.06.02-.11.03-.07.01h-.02l-.09.03h-.02l-.42.12-.15.03-.48.13H583l-.03.01-.11.03-.13.03-.13.04h-.01v.01h-.04v.01h-.02l-.04.01-.04.01-.04.01h-.01v.01h-.03v.01h-.03l-.02.01-.02.01-.09-.07.06-.19v-.01l.03-.05.02-.04.09-.08.06-.06.01-.01.03-.03.05-.06.04-.03.06-.06.05-.05.06-.05v-.01l.03-.02.07-.08.05-.02.09-.03.06-.03.03-.01.03-.01.02-.02.06-.01.01-.01h.04l.04-.02.04-.02.02-.02.08-.06.01-.01.14-.12.1-.11v-.01h.01l.15-.16.01-.01v-.01l.01-.02v-.01h.05l.03-.01v-.01l.01-.03.02-.07v-.01l.05-.2.01-.05.01-.03.01-.06.01-.02.01-.05.02-.1h.01v-.02l.05-.23h.01l.01-.08h.01l.02-.1v-.02l.01-.03.01-.05.02-.05.06-.07V730l.01-.01.06-.07.04-.04.03-.04.03-.02v-.01l.03-.02.03-.02.03-.03h.01l.09-.07v-.01h.01l.04-.04.05-.03v-.01l.05-.04.06-.04v-.02h.01l.03-.05.04-.05.01-.02.05-.07.02-.03.02-.03.01-.01.03-.05.02-.02.04-.06.03-.04v-.01l.04-.06h.01l.01-.02.03-.04v-.01l.05-.06v-.01l.05-.06v-.01l-.17-.1-.05-.03-.14-.09-.05-.04h-.01l-.37-.22-.02-.02-.03-.01-.16-.1-.02-.01v-.01l-.21-.12-.12-.08-.05-.03-.18-.11-.03-.02-.07-.04-.09-.06-.02-.01h-.01l-.01-.01-.01-.01h-.01l-.13-.08-.06-.04-.07-.03-.16-.11h-.01v-.04l-.01-.03v-.54l-.01-.31v-.23l-.01-.16V725.75l-.01-.14v-.39l-.01-.18v-.03l.01-.01.06-.03.02-.02h.01l.02-.02.15-.09.1-.06.01-.01h.01l.03-.02.03-.02.04-.03h.01l.14-.09.06-.04.05-.03.1-.06.04-.03h.01l.01.02h.01v.01l.01.01.02.04.01.02.04.05.01.01v.01l.01.01v.02l.03-.01h.15l.04-.01h.01l.11-.01.13-.01h.06l.49-.03v-.01h.02l.01-.01h.08l.07-.01v.02l.01.12v.05l.01.16v.02l.01.04v.11l.01.03.01.16.04-.01h.07l.04-.01h.02l.03-.01h.05l.06-.01h.02l.04-.01H585.77v-.01h.09l.02-.01h.03l.15.14.04.04.04.04.05.05.02.02.02.02.11.1.01.01.02.02.02.02.01.01-.01.01v.01l.1.09.01-.01.02.02.03.03.04.04.03.02.02.02-.01.01.05.06.01-.01.03.03h.01l.01.01h.01l.03.04.01.01.03.02.06.06.06.06.04.03.09.08.03.03.06-.04.07-.05.07-.03h.01l.05-.02h.05l.06.01.05.02.01.01.02.01.01.01.04.01h.08l.03-.02.02-.03.05-.03h.01l.02-.01h.01l.01.01h.01v.01h.01l.01.01.03.01.01-.01.02-.01v-.02l-.01-.03v-.01l.02.01h.1l.01-.01h.01l.01-.01.03-.04v-.01l.02-.03.01-.03.01-.04.02-.02.01-.01.02-.01h.03l.01-.01.02-.01.03-.02.02-.02.01-.01.01-.01.02-.02.03-.02.03-.02.03-.01.05-.02.03-.02.03-.02.04-.05.04-.04.01-.01.05-.06.03-.03.08-.08.17-.06h.02l.05-.02.05-.03.07-.06.15-.23.02-.01.06-.02.04-.02.02-.01.06-.04h.02v-.01h.01l.04-.03.04-.03.01-.01.04-.03.03-.02.01-.01.03-.03.03-.03v-.01l.03-.03.01-.01.03-.03.03-.05.03-.05.03-.04.02-.03Z"/>
+<path data-riding-id="7" onclick="info_show(this,7)" d="M55.41 610.08h.03l.01.01h.15l.02-.01.01.01h.01l.01-.01h.02l.01-.01h.01l.01-.01h.01l.02-.01h.04l.02-.01h.01l.03-.01.01-.01h.02l.02-.01.02-.01v-.01h.02l.03.02.03.03h-.01l-.01.01-.02.01-.02.02h-.01l-.03.03-.04.03-.01.01-.02.02-.01.01-.02.01v.01l-.03.02v.01l.03.01v.01l.02.01h.03l.01.01v.01h.01l.02.01.01.01h.01l.02.01.05.03.04.02.01.01.02.01.03.01.01.01-.01.01-.01.02h-.01v.01l-.01.02-.01.02-.01.01v.01l-.01.01-.01.02-.01.02-.02.05-.01.01v.01l-.02.03-.01.01-.01.02v.01l-.01.01-.03.06-.01.01-.02.04-.03.06v.01l-.02.02-.01.03-.03.05-.02.04-.01.03-.02.03-.01.02-.02.03-.01.02-.01.02-.01.02-.02.05h-.01l-.02.05-.01.02-.01.01v.01l-.01.02-.02.03-.01.02-.01.01v.01l-.02.02v.02l-.01.01v.01l-.01.02-.06.13h-.01l-.01.01-.02.04-.01.02-.05.09-.03.06-.02.04-.1.18-.02.01-.02.01-.19.08-.17.06-.21.09-.05.01-.1.04-.15.06-.16.06v.02l-.05.09-.4-.21-.19-.1-.03-.02-.12-.06h-.01l-.01-.01-.02-.01-.01-.01-.13-.06-.03-.02-.06-.03-.02-.01-.02-.01-.01-.01-.09-.05-.1-.05h-.01v-.01h-.01l-.16-.09-.03-.02-.16-.08-.16-.09-.18-.09-.35-.19-.05-.12-.2-.47-.23-.53-.06-.13-.16-.39-.14-.32.62-.04H51.58l.68-.05.09.01.11.01.03.02.05.07.04.06.08.12.05.07.02.03.01.01.02.01.01.02.02.02v.01l.02.01.01.01v.01l.01.01h.01v.01h.01v.01l.01.01.01.01v.01h.01v.01h.01v.01h.01v.01h.01l.01.02.02.02.01.02.01.01.02.01.01.01v.01l.01.01h.01v.01l.01.01.04.03.02.02.01.01.01.1.01.29v.01l.01.01.01.01.02.02.02.02.02.01.03.02.04.02h.01l.02.01.04.01H53.39l.02-.01.03-.04.03-.03.03-.02.01-.02.01-.01.05-.04.06-.06.03-.03.02-.02.02-.03.02-.03.01-.02h.13l.04-.01h.04l.03-.01.04-.01.04-.01h.01l.06-.01h.01l.02-.01.03-.01.02-.01.02-.02.04-.02.03-.01.03-.01.04-.01.03-.01h.06l.05.01.01.01h.05l.04.01.04.01.02.01.12.03H54.84l.02.01h.03l.01.01h.02l.04.01v-.01l.01-.02.02-.01v-.01H55l.02-.01h.01v-.01h.01l.02-.01h.01l.01-.01.04.01h.06l.05.01h.02l.01.01.01-.01h.03v-.01h.01l.02-.01.01-.01.01-.01.01-.01h.04v-.01h.01Z"/>
+<path data-riding-id="8" onclick="info_show(this,8)" d="m58.34 611.24-.01.02-.01.02h-.01v.01l-.04.01h-.03l-.02.01h-.05l-.01.03-.01.01-.02.04v.01h-.01v.01h-.01l-.01.02v.01l-.01.01v.01h-.01v.02l-.01.01v.01l-.01.01v.01l-.01.01-.02.04-.01.05v.01l-.01.01-.03.03-.02-.01h-.01l-.01-.01-.03-.01-.01-.01-.02-.01h-.01l-.02-.01-.01-.01h-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.01l-.02-.01-.02-.01-.01-.01h-.01l-.02-.01-.01-.01h-.01v-.01l-.02-.01-.11-.05-.11-.05-.11.21-.04.08h-.01v.01h-.01l-.02.01-.01.01h-.13l-.01.01h-.11l-.03.01h-.04l-.01-.01h-.01l-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.01-.02-.01-.01H56.72l-.01.01-.01-.01-.01.01h-.02v-.01h-.02v.02-.01h-.02l-.05-.03-.04-.02-.01-.01-.03-.01-.03-.02-.02-.01-.02-.01-.01-.01h-.01l-.02-.01-.02-.01-.02-.01-.02-.01-.02-.01.01-.02.02-.03.01-.02.02-.04.01-.01.01-.03.01-.01v-.02l.02-.02v-.02h.01v-.01l.01-.01v-.02h.01v-.01l.01-.01v-.01l.02-.03.01-.03h.01v-.01l.01-.02.01-.01.01-.02.01-.02v-.01l.01-.01v-.01h.01v-.01l.01-.03h.01v-.02l.01-.01v-.01l.03.02.03.01.01.01h.01l.03.02.01-.03.02-.02.01-.03.01-.01v-.01l.01-.01.02-.04v-.01l.02-.02v-.01l.01-.01v-.01l.01-.02.02-.03.01-.01v-.02h.01v-.01l.01-.01h.01v.01h.01l.01.01.02.01.03.01.02.01.01.01.01-.03.02-.04.02-.04.02-.03v-.01l.01-.01.01-.02v-.01h.01l.01-.01.01-.01h.01v-.01h.01l.01-.01.01-.01-.01-.02v-.08l-.01-.06v-.02l-.01-.02v-.03l.01-.01v-.02l.01-.02v-.01l.01-.02v-.03l.02.01.01.01h.01v.01h.02v.01h.01l.01.01h.02l.01.03.03.05.05.04.03.04h.01l.04.04h.01l.07.05.02.01h.02l.12.04.04.01.01.01.01.01.01.01h.01l.02.02.03.03.02.03h.01v.01l.03.04v.01h.01l.01.01.01.01h.01l.01.01.03.02.03.02.01.01.03.02.02.02.02.03.02.03.01.02.01.01.01.03h.01l.01.02.01.02.01.01.02.03v.01l.01.01.01.02h.01l.01.02.01.01v.01h.01l.01.01.01.02.02.02.01.01.03.03.01.01.03.02v.01l.02.01Z"/>
+<path data-riding-id="9" onclick="info_show(this,9)"  d="M792.34 587.29v.02l.01.01v.07l-.01.01v.01h-.01l-.01.01v.01h-.01v.02l.01.02v.01l.01.01v.05l.01.01v.04l.01.01v.04l.01.01.01.05v.03h-.01l-.02.01-.01.01-.01.01-.01.01h-.02v.01h-.01v.01h-.01l-.01.01-.01.01v.01l-.01.01-.01.01-.02.03-.01.02-.02.03-.02.03-.01.02-.01.01-.01.02-.01.01-.01.02-.03.04v.01l-.02.02-.01.01h-.01l-.02.01-.01.01-.04.01-.04.01h-.02l-.05.01-.02.01h-.02v.03l.01.08v.02l-.01.01v.02l.03.06.01.03.01.03v.01l.02.03.04.13v.02l-.1.13-.04.05-.07.1-.03.04-.03.03-.03.05h-.01v.01h-.01v.01l-.06.01-.06.03-.14.02-.01.02-.01.01-.03.03-.06.02h-.01l-.01.02-.02.06-.01.04-.01.02-.03.12h-.01l-.02.07v.01l.14.18.03-.02.01-.02h.01l.01.01h.01v.01h.02l.01.01h.01l.01-.01.02-.01h.01l.01-.01v.01h.05v-.01h.04l-.01.01h.01v-.01h.03v-.01h.01v.01h.02l.01-.01h.01l.01.01v.01h.01v.01h.01v-.02H791.68l.01.01v-.01l.01.01h.01v.01h.01v-.06h.05l.02-.01h.05v-.01l.01-.01h.04l.01.01h.01v.02h.01-.01v.01h.04l.01-.01.02-.01h.01l.02-.01.02-.01h.01l.01-.01.01-.01h.02l.02-.01h.01l.01-.01.01-.01h.02l.01-.01h.03v.01h.02l.02.01v.01h.02v.01h.04l.01.01.01.01.01.01v.02h.01v.01h.04l.01.01v.02h.01l.01.01.01.01h.05l.01.01.01.01.01.01v.01h.01l.01.01h.02v.01h.01v.01h.04l.01-.01.01.01h.02v.01h.01v.01h.01v.05l.01.01v.05l.01.01v.02h.01l.01.01.01.01.01.01h.01V589.9l.01-.01v-.01h.01v-.01l.01-.01h.01v-.01h.02l.01-.01h.02v.01h.03v.01h.01l.01.01h.01l.01.01h.02v.01h.02v-.01.01l.03.01H793l.02.01.01-.01h.02l.01-.01h.01l.01-.01.01-.01v-.01h.01l.01-.01h.04v-.01h.01v-.07l-.01-.01v-.02l-.01-.01v-.02l-.01-.01v-.04l-.01-.01v-.04l.01-.01V589.54l-.01-.01v-.02l.01-.01v-.02h-.01v-.01l-.01-.02-.01-.01v-.04l.01-.01.01-.01.01-.01.01-.01.01-.01.01-.01.01-.01.01-.01v-.01h.01v-.01h.01l.01-.01h.03l.01.01h.04l.01.01h.05l.02.01h.04l.01.01h.03l.02.01h.09l.03-.01h.08l.01-.01h.07l.01-.01H793.85l.02.04.01.02.01.01.01.02.01.01v.01l.01.01v.01l.01.01v.01l.01.01v.02l.01.01.01.01v.01l.02.03.01.01v.01h.04l.01-.01.02-.01.1-.04.01-.01.05-.01.08.06.01.05h-.03l-.01-.01v.01l-.01.01v.02h.01v.02h.01l-.01.17-.02.1v.05l-.01.1.01.01.01.02.01.01.02.02.01.02.01.01.01.01.01.01.01.01.01.01v.01l.02.01v.02l.01.02.01.02v.02l.01.02v.01l.01.03.02.04v.02h.01v.02l.01.04.02.04v.01l.01.03.01.03.01.01v.01l.05.16.07.17.09.09.01-.01.01.01h.01l.02-.01.01-.01h.01l.01-.01h.03v-.01h.01l.01-.01.01-.01h.01l.01-.01v-.03l-.01-.01h.04v.01l.15.02h.05l.05.01.12.01.02.01h.15l.47-.24.15.23.15.2.44.63.16.23.04.07.13.18.25.35.03.05.2.28.06.09.29.39.36.48.05.07.38.51.19.27.1.83.09.88.02.18-.15.58-.2.8-.21.79-.11.15-.03.06.25.49.02.15.22 1.9-.09.24-.69.5-1.35.91-.58.27-.89.43-.3.29-1.1 1.09-.75-.03-.95-.03-.08-.01-.32-.16-.43-.22-.22-.12-.22-.11-.13-.06-.16-.08-.07-.04-.05-.01h-.02l-.01-.01h-.1l-.18.11-1.28.95-.02.01-.64.31-.81.42-.63.01h-.16l-.29-.07-.38-.3-.33-.55-.29-.62-.2-.58-.27-.79-.01-.01-.01-.03-.01-.02-.08-.15-.3-.91-.24-.75-.06-.28-.13-.61v-.01l-.03-.26.01-.01-.09-.88-.02-.18-.15-.17-.04-.04-.01-.01-.11-.09-.04-.04-.67-.57-.27-.22-.14-.12-.25-.4-.06-.28-.08-.31-.09-.44.84-.69.72.17.15-.17.23-.26.1-.11.32-.36-.02-.01-.01.01h-.02l-.01.01h-.01v-.01l.01-.01v-.01l-.01-.03v-.02l.01-.01v-.01l-.01-.02.01-.01-.01-.01h.01v.01l.01.01h.01v-.02l.01-.01v-.02l.01-.01.01-.02v-.02h.01l.01.01v.01l.01.01.01-.01-.01-.02v-.01h.01v-.01l.01-.01v-.02l.01-.01h-.01v-.02l.01-.02v-.02h-.02v-.01h-.01v-.01h.02-.02v-.01h.02v.01h.01v-.03h.01v-.03l.01-.01v-.02h.01l.01-.01h.01v-.03l-.01.01v.01h-.01v-.01l-.01.01h-.01v.02l-.01.01h-.01v.01h-.01v.01h-.01v.02l-.01.01v.02h-.01v.01l-.01.01v.01l-.01.01v.01l-.01.01.01.01h-.01v.01h-.01l-.01.01h.01v.02l-.01.01v.02h-.01l-.01.02h-.01v.05l-.01.01v.01l-.01.01h-.01v.01l-.01.03v.01l-.01.01v.01l-.01.01-.01.02-.01.01v.01l-.01.01-.01.01h-.02.01v-.04h-.01l-.01.01v.02h-.01v.01l-.01.01v.01l-.01.01-.01.02h-.01v.01l-.01.01-.01.01h-.03l-.02.01H783.89l-.01.01v.01l-.01.01v.01h-.01v.01l-.01.01h-.01l-.02.01h-.01l-.01.01-.01.01h-.01l-.01.01h-.01v.03h-.01v.01h-.01l-.01-.01h-.01l-.01-.01h-.01v-.09l-.01-.01v-.01l-.01-.01v-.02l.01-.01.18-.07.02-.01.05-.02.13-.17.02-.03.01-.01.03-.04.04-.07.01-.01.01-.01.05-.09.06-.09.14-.22.01-.01v-.23l-.01-.01v-.29l.02.02v.01l.01.01.01.01v.01l.01.01v.01l.02.03v.01h.01v.01h.01l.01-.01h.03l.02-.01h.04l.02.01h.01v.01h.01l.02-.01.01-.01h.01l.02-.01h.01v-.01l.01-.01.01-.01.01-.01.01-.01h.01l.01-.01h.02-.01v.02h-.01.01l-.01.01h-.02v.03l.01.02v.02l-.01.01h-.01l-.01-.01v.03l.01.01h-.02v.01h-.01v.01h.01v.01h.01v.01l-.01.01.01.01v.02l-.01.01v.01h-.01v.02h-.01v.01l-.01.01v.02l.01.01-.01.02v.04h.01v.02h-.01l.01.01v.03h-.01v.03h.01l.01-.01v.04l-.01.01v.03l.43.32.5-.29.06-.03.88-.5.09-.07.03-.03.02-.01.03-.02.01-.02h.01l.01-.01.02-.01v-.01h.01l.01-.02h.01l.06-.05.02-.01.02-.02.02-.01.03-.03v.01l.01.01v.02l.01.01.02-.01.02-.02h.01l.02-.02.01-.01.04-.03v-.01l.13-.09v-.01h.01l.06-.05h.01l-.05-.06-.01-.02h-.01l-.06-.07-.02-.03-.05-.07-.01-.01-.04-.05-.26-.31v-1.19l.01-.97v-.24l-.01-.06-.03-.08-.01-.03h-.01l-.23-.18h-.21l-.04-.07-.02-.19-.05-.06-.01-.01v-.04l.02-.03.04-.05.02-.02.01-.02-.01-.02-.02-.03-.03-.06-.01-.01v-.01l-.02-.01-.04-.02-.01-.01-.02-.02-.01-.02v-.02l-.02-.03v-.02l-.05-.08-.06-.1-.14-.24-.08-.13-.01-.01-.01-.02-.02-.04v-.01l-.03-.04-.11-.18-.11-.18-.08-.14-.03-.05-.3-.51-.05-.08.15-.28.01-.01v-.01l.01-.02.12-.21.17-.31.04-.08.08-.13.09-.16.01-.02.08-.15.2-.36.17.16.2.17.08.08.17.15v.01l.01.02.06.04.02.02h.01l.01-.01h.01l.01-.01v-.01h.02l.01-.01v-.01h.03v.01l.02.01.01.01h.01v-.01l.06-.07.01-.04.01-.03v-.01l.02-.03.08-.14.03-.06.02-.04.01-.04v-.01l-.01-.01-.06-.03 1.55-.82v.08h.01v.08h.01V585.49h-.01v.01h-.01l-.01.01h-.01v.01h-.01v.01h-.01v.01l-.01.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01l-.01.01-.01.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.01h-.01v.02l.01.01v.01l.01.01v.02h.01v.02h.01v.02h.01v.02h.01v.02h.01v.02h.01l.18.4.27.58.04.09.22.52.02.09.08.49 1.14.38.12.04.05-.01.38-.07.24-.05v-.02l.03-.13.01-.03.01-.05-.01-.05v-.08l.01-.01.01-.04.03-.03.03-.03h.01v-.01l.01-.03v-.01l.02-.05.01-.02.04-.02.01-.01.02-.02.02-.02.02-.06.01-.05-.01-.05-.02-.04-.02-.03v-.02l.01-.02.02.04v-.03h-.01v-.01l-.01-.03v-.03h-.01v-.02l-.01-.01v-.02l-.01-.01v-.04h-.01v-.12h-.01v-.01l-.01-.01v-.01h-.01v-.08h-.01v-.04l-.01-.01v-.04h-.01v-.02h.04l.01.01h.01v.01l.06.02.06.03.06.03.02.02.02.03.02.01.01.01.02.03.03.04.03.01.06.04h.01l.02-.03h.01v.02h.01v.01h.01v.01l-.01.01h.03v.01h-.01l.01.02h.01v.02h.01l-.01.01v.01-.01h-.01l-.01.01v.02h-.01.01v.02h.01v.01h.01v.01h.01v.01l.01-.01h.02l.01-.01h.01v.01h.02v.01h.01v.01h.08v.01h.01l.02-.01.01.01h.01l.03.01.01.01h.01l.01-.01.02-.01.01-.01h.01v-.01h.01v-.02l.02-.03v-.01l.01-.01v-.01h.01v-.01l.01-.01.01-.01h.01l.01-.01h.02l.01-.01h.01l.02-.01h.01l.03-.01h.02Z"/>
+<path data-riding-id="10" onclick="info_show(this,10)" d="m740.49 562.24-.62.81-.46.62-.23.31-.66.89-1.03 1.44-.34.46-.01.02-.48.66-.33 1.65-.05.24-.28 1.36v.04h-.01l-.12 2.31-.02.35.14 1.47.01.13.05.52v.01l.03.28.24 2.6.03.29v.17l.01.66v.77l.14.54.06.26.1.41.15.63.01.05.04.45v.11l.02.22.02.28h-.01l-.04.02h.01v.01l.01.01v.02l.01.01v.08h-.04v.01h-.01v.01h-.01v.03l-.01.01v.09l.01.01.01.01v.01h.01v.03l.01.01v.02h.01v.09l.01.02v.01l.01.01v.05h-.01v.05h.01l.02.04h.01v-.02h.03v-.01l.01-.01v-.01l.01-.01v-.01l.01-.01h-.01v-.02h.01v-.01h.01v-.03h.02l.01-.01.01-.01v.01h-.01.02v-.09l.06-.03h.02v.02l.01.01v.01l.01.01v.02l.01.01.01.01v.01l.01.01v.02l.01.01v.01l.01.01v.01l.01.01v.02l.01.01.01.02.01.01.01.01.02.04.01.04h.01v.02l.01.01.01.02.03.05.11.21.48 1.21.29.75.06.14.47 1.2.01.02.3.75.15.39.43 1.09 1.14 2.91.41 1.98.49 2.44.02.11.46 2.38.07.22.01.04.01.05v.02l.04.12.16.64.04.16.07.29.14.54.04.18.21.82.03.09.05.2.48 1.9.16.6.01.02v.01l.37 1.36 1.09 3.8h.01l-.01.01h.02v.01h.01v.01l.26.94h.01v.02l3.98-.76 2.3-.45 1.45-.26 1.06-.19h.01v.04l.08.07.07.09.05.05.1.07.18-.06.08.01.04.05.01.17.1.08.27.07.31-.03 3.78.4-.02.01-.25.3-.12.16-.06.11-.05.09-.36.33-.09.08-.48.6-.57.67-.04.04-.89 1.08-.17.12-.32.16-.52.27-.28.15-.59.12-.12.02-.69.1-.12.02-.84.25-1.38.41-1.35.41-1.17.34-.01.01-.19.05-1.81.54-.03.01-.36.09-2.46.4-.93.15-.02.01-1.33.84-1.78 1.14-.45.28-.16.1-.28.18-.43.28-.33.2-.24.16-1.31.82-.3.19-1.43.9-.03.04-.23.34-.04.06-.19.27-.06.09-.28.42-.28.38-.01.01-.26.14-.05.03-.06.03-.06.03-.07.04-.07.04-.07.04-.07.04-.07.04-.02.01-.05.03-.07.05-.08.04-.07.05-.07.05-.08.04-.02.02-.04.03-.07.05-.07.04-.06.05-.07.05-.07.05-.05.04-.02.02-.07.06-.07.06-.08.07-1.04-.43-.73-.28-.08-.04-.04-.02-.39-.21-.17-.23-.16-.21-.19-.28-.45-.7-.24-.4-.03-.12-.11-.07-.15-.11-.24-.17-.11-.09-.27-.24-.09-.09-.18-.15-.2-.17-.05-.04-.01-.01-.24-.2-.03-.02-.12-.11-.2-.27-.1-.13-.02-.02-.15-.49-.82-.52-.01.01-.02.01-.03-.2v-.12l.01-.12.01-.06v-.06l.01-.12.01-.11v-.11l.01-.11v-.03l.04-.17.02-.12.03-.12.02-.12.02-.11.03-.1.03-.13.03-.12.04-.12v-.01l.01-.05.02-.05.04-.12.03-.11.04-.12.03-.1.03-.1.25-.72.6-1.19.4-.78.13-.26.06-.09-.03.02-.07.04-.05-.01-.02-.02-.32-.13-.52-.12-.27-.06-.13-.04-.37-.14-.36-.13-.32-.11-.15-.04-.3-.09-.25-.15-.3-.21-.15-.17-.11-.12-.14-.16-.16-.1-.05-.05-.03-.06-.01-.09.04-.3.02-.21v-.02l-.01-.08-.04-.16-.12-.22-.08-.2-.06-.18-.03-.07-.05-.23-.03-.22-.01-.38-.01-.49.01-.18.01-.25.02-.16.02-.07.15-.31.17-.31.02-.03.12-.13.14-.14.05-.04.45-.48.12-.13v-.01l.1-.16.08-.15.22-.41.22-.4.02-.24.03-.39.1-.54.06-.27.01-.03.22-.93.35-.75.44-.89.14-.52.04-.15.25-1.17-.07-.13-.14-.24-.14-.23-.14-.24-.14-.24-.14-.24-.02-.04-.11-.2-.14-.24-.14-.24-.07-.11-.06-.11-.01-.02-.14-.23.02-.65-.04-.61-.01-.02-.09-1.71-.16-2.9-.12-2.03.12-.95.24-1.89.01-.06v-.01l-.26-.48-.24-.45-.17-.56-.08-.31-.09-.31-.22-.8-.08-.29-.03-.12-.02-.09-.16-.59-.03-.12.32-1.2.13-.55-.53-1.99v-.03l-.2-.71-.05-.2.02-.54.05-.99.03-1.77v-.08l.01-.79h.01-.01l-.77.37-.09-.32-.49-1.71-.15-.49-.06-.22-.02-.08v-.01l-.07-.3-.06-.29-.1-.4-.08-.36-.06-.28-.02-.11.08-.84.01-.13.07-.6.02-.15.04-.47.04-.4.04-.37.03-.37.03-.27.04-.41.03-.37.03-.23.01-.12.02-.24v-.01l-.01-.01-.17-.3-.16-.11-.15-.08-.05-.02-.02-.01-.06-.02-.08-.04-.88-.27-.24-.01-.28-.02-1.15.01h-.15l-1.15.01H716.87l.17-.21 1.27-1.52.25-.3.14-.17.44-.52.34-.4.29-.35.67-.81h.16l1.62.02-.1-.4-.04-.16.04-.12.11-.34.07-.18.16-.5.05-.15.02-.06.06-.17.03-.07.07-.21.05-.15.04-.13.1-.28.04-.14.04-.11.07-.21.07-.19.14-.41.01-.05.19-.56.13-.4.29-.85.35-1.02.01-.03.95-2.81.49-1.58.1-.31 1.73-1.22 1.53-1.1.25-.18.28-.2.16-.11 2.16-1.56.03.06.03.07.85 1.81.26.56.14.28.12.27.37.78.03.05.14.29.06.22.25.83.11.34.1.32.19.6.15.47.21.69.08.29.09.33.93 3.08.27.42.1.16.07.1 1.43 2.15.1-.02.38-.08.64 1.06.01.02.01.01-.25.48.07.12.7.98.95 1.58Z"/>
+<path data-riding-id="11" onclick="info_show(this,11)"  d="M787.93 581.08v.02h.01v.04h.01v.04h.01v.04l.01.01v.04h.01v.04h.01v.04h.01v.05h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04l.01.01v.03l.01.01v.03l.01.01v.03l.01.01v.03l.01.01v.04h.01v.04l.01.01v.04h.01v.05h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04l.01.01v.03l.01.01v.04h.01v.04h.01v.04h.01v.04h.01v.04h.01v.04l.01.01v.04h.01v.04h.01v.04h.01v.04h.01v.05h.01v.05h.01v.05h.01V583.58h.01V583.86h.01V584.1h.01V584.29l.01.01v.15h.01V584.7h.01V584.97l-1.55.82.06.03.01.01v.01l-.01.04-.02.04-.03.06-.08.14-.02.03v.01l-.01.03-.01.04-.06.07v.01h-.01l-.01-.01-.02-.01v-.01h-.03v.01l-.01.01h-.02v.01l-.01.01h-.01l-.01.01h-.01l-.02-.02-.06-.04-.01-.02v-.01l-.17-.15-.08-.08-.2-.17-.17-.16-.2.36-.08.15-.01.02-.09.16-.08.13-.04.08-.17.31-.12.21-.01.02v.01l-.01.01-.15.28.05.08.3.51.03.05.08.14.11.18.11.18.03.04v.01l.02.04.01.02.01.01.08.13.14.24.06.1.05.08v.02l.02.03v.02l.01.02.02.02.01.01.04.02.02.01v.01l.01.01.03.06.02.03.01.02-.01.02-.02.02-.04.05-.02.03v.04l.01.01.05.06.02.19.04.07h.21l.23.18h.01l.01.03.03.08.01.06v.24l-.01.97V592.75l.26.31.04.05.01.01.05.07.02.03.06.07h.01l.01.02.05.06h-.01l-.06.05h-.01v.01l-.13.09v.01l-.04.03-.01.01-.02.02h-.01l-.02.02-.02.01-.01-.01v-.02l-.01-.01v-.01l-.03.03-.02.01-.02.02-.02.01-.06.05h-.01l-.01.02h-.01v.01l-.02.01-.01.01h-.01l-.01.02-.03.02-.02.01-.03.03-.09.07-.88.5-.06.03-.5.29-.43-.32v-.03l.01-.01v-.04l-.01.01h-.01v-.03h.01v-.03l-.01-.01h.01v-.02h-.01v-.04l.01-.02-.01-.01v-.02l.01-.01v-.01h.01v-.02h.01v-.01l.01-.01v-.02l-.01-.01.01-.01v-.01h-.01v-.01h-.01v-.01h.01V594h.02l-.01-.01v-.03l.01.01h.01l.01-.01v-.02l-.01-.02v-.03h.02l.01-.01h-.01.01v-.02h.01-.02l-.01.01h-.01l-.01.01-.01.01-.01.01-.01.01v.01h-.01l-.02.01h-.01l-.01.01-.02.01h-.01v-.01h-.01l-.02-.01h-.04l-.02.01h-.03l-.01.01h-.01v-.01h-.01v-.01l-.02-.03v-.01l-.01-.01v-.01l-.01-.01-.01-.01v-.01l-.02-.02V594.11l.01.01v.23l-.01.01-.14.22-.06.09-.05.09-.01.01-.01.01-.04.07-.03.04-.01.01-.02.03-.13.17-.05.02-.02.01-.18.07-.01.01v.02l.01.01v.01l.01.01V595.35h.01l.01.01h.01l.01.01h.01v-.01h.01v-.03h.01l.01-.01h.01l.01-.01.01-.01h.01l.02-.01h.01l.01-.01v-.01h.01v-.01l.01-.01v-.01l.01-.01H783.95l.02-.01h.03l.01-.01.01-.01v-.01h.01l.01-.02.01-.01v-.01l.01-.01v-.01h.01v-.02l.01-.01h.01v.04h-.01.02l.01-.01.01-.01v-.01l.01-.01.01-.02.01-.01v-.01l.01-.01v-.01l.01-.03V595h.01l.01-.01v-.01l.01-.01v-.05h.01l.01-.02h.01v-.02l.01-.01v-.02h-.01l.01-.01h.01v-.01h.01l-.01-.01.01-.01v-.01l.01-.01v-.01l.01-.01v-.01h.01v-.02l.01-.01v-.02h.01v-.01h.01v-.01h.01l.01-.01v-.02h.01l.01-.01v.01h.01v-.01l.01-.01v.03h-.01l-.01.01h-.01v.02l-.01.01v.03h-.01v.03h-.01v-.01h-.02v.01h.02-.02v.01h.01v.01h.02v.02l-.01.02v.02h.01l-.01.01v.02l-.01.01v.01h-.01v.01l.01.02-.01.01-.01-.01v-.01l-.01-.01h-.01v.02l-.01.02-.01.01v.02l-.01.01v.02h-.01l-.01-.01v-.01h-.01l.01.01-.01.01.01.02v.01l-.01.01v.02l.01.03v.01l-.01.01v.01h.01l.01-.01h.02l.01-.01.02.01-.32.36-.1.11-.23.26-.15.17-.72-.17-.84.69.09.44.08.31.06.28.25.4.14.12.27.22.67.57.04.04.11.09.01.01.04.04.15.17.02.18.09.88-.01.01.03.26v.01l.13.61.06.28.24.75.3.91.08.15-1.79.94.01.21.01.04.07.89.1 1.2.06.69-.02.11-.02.06-.01.02-.07.06-.23.24-.36.54-.08.11-.08.13-.21.32-.26.41-.65.41-.82.52-.09.06-.14.09-.15.09-.65.42-.14.09-.13.09-.13.08-.15.1-.01.01-.03.01-1.13.75v.01l-.59.38-.44.29-.65.42-.61.41-.81.52-.45.3-.1.06-.27.17-.67.45-.46.3-.5.33-.69.46-1.12.74-.66.44-.84-.41-.44-.7-.97-1.53v-.01l-.12-.18-1.79-2.87.74-.5 1-.69.19-.13.28-.59.1-.22.76-1.6.2-.43.33-.69.19-.39.53-1.21.78-1.75.06-.72.14-1.42-.1-.34-.07-.18-.16-.21-.02-.41.07-.07v-.08l-.1-.16.1-.54v-.08l-.12-.34-.08-.13.09-.46-.05-.31.01-.05.05-.22-.05-.31.01-.13-.04-.15-.01-.08-.82-4.15v-.01l-.01-.02-.01-.08-.19-.94-.06-.33-.5-2.46-.07-.35-.13-.73v-.01l-.05-.24-.2-1.08-.38-2.07v-.02l-.04-.21-.01-.06-.02-.11-.33-1.69-.1-.57-.19-.97-.07-.44-.06-.31-.15-.81-.01-.09-.02-.09v-.01h.01v-.01h-.01v-.01l.01-.01h-.01l-.04-.11-.01-.04-.01-.03-.06-.2-.04-.15-.04-.14-.45-1.51v-.01l-.06-.2-1.54-.95-.94-.59-.53-.33-.14-.27-.41-.99-.09-.23-.43-1.04-.11-.27-.08.06-.15.09-.03.01-.12.08-.07.04-.45.28-.01.01-.04.02-.34.18-.13.07-.05-.14-.05-.14-.01-.03-.01-.02-.02-.04-.13-.25-.02-.06-.22-.44-.12-.25-.16-.34-.24-.47.29-.24.55-.45.32-.27.58-.48.09-.08.09-.07.06-.06.08-.1.03-.03.06-.07.04-.07v-.01l.03-.09.11-.39.03-.12.16-.68.15-.56.09-.39.03-.09.06-.23.03-.14.12-.45.18-.75.05-.21.06-.27.01-.05.11-.31.17-.43.33-.88.05-.15.01-.59.02-.93.02-.92.02-.72.39-.06 2.07-.18 2.48-.56.26.19.06.09.74 1.12.42.77.01.02.39.73.45.98.61 1.31.51 1.38.5 1.23.34.84.22.53.19.46.35.88.13.32-.14.17-.22.25-.34.38-.32.41-.21.35-.09.28-.01.12v.1l.01.04.03.15.08.28.05.19.04.15.07.19.09.21.1.17.19.37.33.54.03.04.2.3.21.29.39.58.03.06.09.13.07.1.21.31.2.3.23.22.1.05.15.05h.02l.05-.03.11-.07.05-.04.02-.01.29-.39.26-.33.17-.24.32-.41.49-.64.08-.11 1.07-1.41.38-.2.12-.05.52-.25h.16l.06.08.13.16.3.4.28.38.16.21.09.14.1.13.02.03.1.12.03.04.09.12.25.33.03.04.04.07.07.12.06.09.08.13.06.09.03.04.06.11.02.03.02.05.07.12.03.05.03.07.46.67 1.64 2.34.22.3.06.09.37-.27.02-.01.13-.09.24.02 1.82-.19.12.15.7.89.26.92.04.14.11.38.06.22.05.16.03.11.01.06Z"/>
 <path onclick="info_show(this,12)"  d="m765.49 611.54-.23-.37-.06-.1-.46-.73-.06-.1-.01-.02-.06-.09h-.04l-.59.06-.31.04-.93.16-3.45.66-3.78-.4-.31.03-.27-.07-.1-.08-.01-.17-.04-.05-.08-.01-.18.06-.1-.07-.05-.05-.07-.09-.08-.07v-.04h-.01l-1.06.19-1.45.26-2.3.45-3.98.76v-.02h-.01l-.26-.94v-.01h-.01v-.01h-.02l.01-.01h-.01l-1.09-3.8-.37-1.36v-.01l-.01-.02-.16-.6-.48-1.9-.05-.2-.03-.09-.21-.82-.04-.18-.14-.54-.07-.29-.04-.16-.16-.64-.04-.12v-.02l-.01-.05-.01-.04-.07-.22-.46-2.38-.02-.11-.49-2.44-.41-1.98-1.14-2.91-.43-1.09-.15-.39-.3-.75-.01-.02-.47-1.2-.06-.14-.29-.75-.48-1.21-.11-.21-.03-.05-.01-.02-.01-.01v-.02h-.01l-.01-.04-.02-.04-.01-.01-.01-.01-.01-.02-.01-.01v-.02l-.01-.01v-.01l-.01-.01v-.01l-.01-.01v-.02l-.01-.01v-.01l-.01-.01-.01-.01v-.02l-.01-.01v-.01l-.01-.01v-.02h-.02l-.06.03v.09h-.02.01v-.01l-.01.01-.01.01h-.02v.03h-.01v.01h-.01v.02h.01l-.01.01v.01l-.01.01v.01l-.01.01v.01h-.03v.02h-.01l-.02-.04h-.01v-.05h.01v-.05l-.01-.01v-.01l-.01-.02v-.09h-.01v-.02l-.01-.01v-.03h-.01v-.01l-.01-.01-.01-.01v-.09l.01-.01v-.03h.01v-.01h.01v-.01h.04v-.08l-.01-.01v-.02l-.01-.01v-.01h-.01l.04-.02h.01l-.02-.28-.02-.22v-.11l-.04-.45-.01-.05-.15-.63-.1-.41-.06-.26-.14-.54v-.77l-.01-.66v-.17l-.03-.29-.24-2.6-.03-.28v-.01L736 575l-.01-.13-.14-1.47.02-.35.12-2.31h.01v-.04l.28-1.36.05-.24.33-1.65.48-.66.01-.02.34-.46 1.03-1.44.66-.89.23-.31.46-.62.62-.81.34.52 1.8 2.8.43.66.47.73.67 1.05.32.49.34.54.08.12.35.54 1.49-.96.62 1.68.09-.1.36-.39.51-.56.47-.5.35-.39.31-.35.43-.39.3-.21.28-.21.57-.41.37-.28.43-.32.39-.29.05-.04.41-.3.3-.22.67-.5.54-.41.25-.19.02-.01.25-.14 1.66-.98 1.63-.96 1.04-.62h.01l.35-.17 2.6-1.31.96-.48.58-.29-.02.72-.02.92-.02.93-.01.59-.05.15-.33.88-.17.43-.11.31-.01.05-.06.27-.05.21-.18.75-.12.45-.03.14-.06.23-.03.09-.09.39-.15.56-.16.68-.03.12-.11.39-.03.09v.01l-.04.07-.06.07-.03.03-.08.1-.06.06-.09.07-.09.08-.58.48-.32.27-.55.45-.29.24.24.47.16.34.12.25.22.44.02.06.13.25.02.04.01.02.01.03.05.14.05.14.13-.07.34-.18.04-.02.01-.01.45-.28.07-.04.12-.08.03-.01.15-.09.08-.06.11.27.43 1.04.09.23.41.99.14.27.53.33.94.59 1.54.95.06.2v.01l.45 1.51.04.14.04.15.06.2.01.03.01.04.04.11h.01l-.01.01v.01h.01v.01h-.01v.01l.02.09.01.09.15.81.06.31.07.44.19.97.1.57.33 1.69.02.11.01.06.04.21v.02l.38 2.07.2 1.08.05.24v.01l.13.73.07.35.5 2.46.06.33.19.94.01.08.01.02v.01l.82 4.15.01.08.04.15-.01.13.05.31-.05.22-.01.05.05.31-.09.46.08.13.12.34v.08l-.1.54.1.16v.08l-.07.07.02.41.16.21.07.18.1.34-.14 1.42-.06.72-.78 1.75-.53 1.21-.19.39-.33.69-.2.43-.76 1.6-.1.22-.28.59-.19.13-1 .69-.74.5Z"/>
 <path onclick="info_show(this,13)"  d="m597.24 465.99 1.24.03.96.32 1.52 1.11 1.03.75 1.15.84 1.01.74 1.57 1.11.5.36.99.78 2.06 1.62 1.06.83.09.08 1.01.78 1.38 1.07.05.03 1.5.88 2.4 1.6.03.02.6.43 2.75 1.97.37.26 1.05.74 1.16.99 1.06 1.14.05.06 1.43 1.82.96 1.42.11-.06 1.91-.97 1.91-.98.07.13.05-.03 2.54 2.31.55.47 2.54 2.24.69.64 2.54 2.36.31.29.28.27 2.73 2.59.36.35 2.8 2.79.21.2 2.77 2.7.27.27.25.25.02.01.73.71.46.44 1.06 1.25.34.4.18.2 1.49 1.79 1.04 1.14h.02l2.56.67 1.34.27h.01l1.35-.21 2.4-.41.25-.03.66-.37.15.28 2.58-.27 1.11-.11 1.32-.08 1.22-.07 2.12-.02h.05l.12.02.79.15 1.18.21.41.08 3.56.81 2.09.48h.1l2.14-.1 1.82-.02 1.13-.02h.44l3.25-.1 1.24-.02.76.05h.04l.4.03.93.26.32.13.01.01 1.11.47 3.26 1.34.24.11.95.45 1.25.58 2.07 1.11 1.21.63 2.32 1.22.62.35.95.54.28.16 1.31.71 1.42.64.24.11.36.16 1.1.49.75.42 1.45 1.25.11.11.75.82 1.02 1.24.03.03 1.05.93.71.62.07.06 1.14 1.79.52.82.91 1.4.76 1.19.54.85.12.18.11.17 1.19 1.84.23.36.57.89.08.13 1.41 2.2.17.27.32.49.22.35 2.07 3.22.06-.04 2.71-1.81.13.29 1.68 3.63-2.16 1.56-.16.11-.28.2-.25.18-1.53 1.1-1.73 1.22-.1.31-.49 1.58-.95 2.81-.01.03-.35 1.02-.29.85-.13.4-.19.56-.01.05-.14.41-.07.19-.07.21-.04.11-.04.14-.1.28-.04.13-.05.15-.07.21-.03.07-.06.17-.02.06-.05.15-.16.5-.07.18-.11.34-.04.12.04.16.1.4-1.62-.02h-.16l-.67.81-.77-1.3v.01l-.12-.19-.07-.13-.09-.15-.03-.05h-.01l-.04-.07-.12-.21-.11-.18-.11-.19-.07-.1-.01-.03-.02-.03-.02-.04-.02-.03-.01-.02-.05-.07-.02-.04-.04-.07-.02-.02-.04-.08-.01-.01-.01-.02-.05-.08-.03-.05-.01-.02-.01-.02-.04-.07-.02-.02v-.01h-.01v-.01l-.14-.22-.01-.03-.04-.06-.14-.24-.09-.13-.01-.02-.13-.21-.03-.06.01-.02-.12-.21-.09-.14-.03-.04-.13-.23-.18-.29-.01-.02-.26-.43-.26-.42-.04-.05-.1-.16-.09-.15-.03-.05-.02-.03-.02-.04-.09-.15-.07-.11-.02-.03-.14-.23-.43-.69-.72-1.17-.18-.3-.16-.27-.19-.3-.05-.09-.06-.09-.23.14-.29.18-.42.25-.32.2h-.01v.01l-.1.06-.11.06-.34.21-1.07.65-.06.03-.35.21-.09.06-.36.21-.4.25-.38.22-.43.26-.21.13-.7.42-.2.12h-.01l-.62.38-.1.06-.62.37-.06.04-.24.14-1.45.84-1.38.8-1.55.9-.2.11-.96.55-.42.24-.93.54-1.71.98-.16.1-.31.17-10.32 5.73-.11.06-2.02 1.11-.52.27-2.56 1.36-.87.46-1.04.56-1.02.55-.14.07-.46.24-.26.14-.03.01-.07.03-.17.1-1.15.59-.14.07-.75.4-.29.14-1.29.67-.09.05-.68.36-.16.08-.53.27-1.75.88-.01.01-.19.09-1.09.54-.04.03-.12.06-1.56.78-.12.06-1.39.69-.13.07-.34.16-1.34.66-1.31.66-.24.11-.22.11-.23.11-.24.12-.12.06-.37.18-1.06.51-.8.39-.2.09-1.05.51-.4.19-1.05.51-.18.08-.12.06-.07.03-.22.11-1.03.48-.47.22-.26.13-.4.19-.07-.02v-.02h-.01v-.02h.01v-.05l.01-.01v-.03h-.01v-.03h-.01v-.01h-.01v-.01l-.01-.01-.01-.01v-.02h-.01v-.01l-.01-.01-.01-.01h-.02l-.01-.01h-.03l-.01-.01h-.04v-.01l-.01-.01h-.01l-.01-.01-.01-.01-.01-.01v-.01l-.01-.01-.01-.01-.01-.04v-.03l-.01-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.01l-.01.01v-.01l-.01.01h-.01v.01h-.01v.01l-.01.01v.02l.01.02.01.02v.05h-.01l-.03-.01-.01-.02h-.01v-.01l-.01-.01v-.01l-.01-.01v-.01l-.01-.02-.01-.02-.01-.01v-.02h-.01l-.01-.02v-.01l-.01-.01-.01-.01-.01-.01v-.01h-.01l-.01-.01v-.01h-.01l-.01-.01-.01-.01h-.01l-.01-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01l-.01-.01-.01-.01v-.01h-.03v-.01h-.01v.01h-.02v-.01l-.01.01-.04-.12v-.03h-.01v-.01l-.01-.02-.03-.08h.01v-.01l.01-.01v-.04l-.01-.01-.01-.01h-.01l-.01-.01v-.01h-.01v-.01h-.01v-.03h.01v-.01h.01v-.01h.02l-.01-.01.01-.01v-.01h.01l.01-.01h.01v-.01l-.01-.01v-.01h.03l.01-.01-.01-.01v-.01l.01-.01v-.01h.01l.01-.01h.01v-.01h.01v.01h.02-.01v-.01h.05v.01h.01l.01-.01h.01v.01h.01v-.01l.01.01v-.03.01l.01-.01v.01l.01.01h.01l.01.01v-.01h.01l.01.01h.02v.01h.02v-.01l-.01-.01.01-.01h.01v-.01h.02v-.02h.01v-.01h.01v.01h-.01v.03h-.01.01v.01h.01v-.02h.01v.02l.01.02h.01v-.01h.02v.01l.01.01h.01v-.01l.01-.01-.01-.01v-.01h-.01l-.01-.01h.03-.01v-.01h.01v-.01h-.01l.01-.01h-.01v-.02h-.02v-.01h-.01l-.01-.01.01.01v.01h-.02v-.01h-.01v-.01h.01v-.02l-.01-.01v-.01l.01.01h.03v-.01h.01v.01h.01v.03h.03v-.01h.04v-.02h.01l.01-.01h.01l.01.01h.01v.01h.02v.02H653.9l.01.01h.02v.01h.04l.02.01.01.01h.02l.01.01h.05l.01.01h.01v-.01h.01v.01h.02l.01.01.01-.01.01.01h.01v.01l.01.01h.01v.02-.01h.01v-.01h.02v.01h.01l.01.01h.01v-.01l.01.01v-.03h.01l.01.01h.01l-.01.01.02.01h.02v-.01h.01v-.01h.01v-.01l.01.01h.01v-.01h.01-.01v.02l-.01.01h.01v-.01h.01v.01-.01h.01v-.01h-.01l.01-.01h.03v.03h-.01l.01.01h.01v-.01l-.01-.01h.02v.01h.04v-.01h.02v.03h-.01v.01h.02v-.01l.01.01v-.01h.01v.02h.01v.01l.01-.01h.01v.01h.01v.01h.03v.01l.01-.01v.01l.01-.01v.01h.03l.01.01h.02l.01.01h.01l.01.01.01.01h.02v-.01h.01v-.01l.01-.01v-.03l-.01-.01v-.01h.05v-.01l.01-.01v-.07l.01-.01h.01v-.01h.01l.01-.01v-.03l-.01-.01v-.01.01h.01l.01-.01v.01h.01-.01v.01H654.91v-.01h.01V581.47l.02.02h.03l.02-.01h.01l.01-.01h.02v.01H655v.03h.03l.01-.01.01.01.01.01h.02l.01.01h.04l-.01.01h.03l.01-.01v-.01h-.01l-.01.01-.01.01v-.01h.01v-.01l.01-.01v-.01h.01v-.01h.04v-.04l-.01-.01-.01.01h-.01l-.01-.02v-.01h.07v-.01h.01v-.01l-.01-.01h-.01v-.01h.01l.01-.01v-.01h-.01v.01h-.01l-.01-.01h-.02l-.01.01-.03-.01h-.01l-.01-.01h-.02l-.01-.02h-.03l-.01-.01h-.01v-.01l-.01-.01v-.02h-.03v-.01H655l-.01-.01-.01-.01v-.02l-.01-.01-.01.01-.01-.01-.01-.01v-.01h-.01v-.04l-.01-.01h-.02v-.01h-.05l-.01-.01-.01-.01h-.01v-.01l-.01-.01-.01-.01h-.02l-.01-.01h-.02v-.01h-.01l-.01-.01-.01-.02.01-.01h.01v-.01l-.01-.01V581v.01l-.01-.01v-.01h-.02l-.01-.01h-.08l-.01-.01v-.01h-.03l-.01-.01h-.01l-.02-.01h-.01l-.01-.01h-.02v.01l-.01.01v.02h.01v.01l.01.01h.02l.01.01h.01v.01h.02v.01h.02v.01l.01.01v.02h-.01v.01l-.01.01.01.01.01.01v.02h-.05v-.01h-.04v-.01h-.02v-.01h-.01v-.02h.01l-.01-.01.01-.01h-.03v.01h-.01l-.01.01v.01h-.01v.01h-.01v.01h-.01v-.01h-.01v.01h-.01v-.02h.01l.01-.01h-.01v-.01l.01.01h.01v.01h.01l-.01-.01h-.01v-.03h.01l-.01-.01v-.01l-.01-.01-.01-.01v-.01l-.01.01v-.01h-.01v-.01h-.02l-.01-.02h-.01v-.01h.01-.01v-.01h.01v-.01.01l.01-.01v.01h.01l-.01-.01-.01-.01h-.02v-.01h.01v-.03h.01v-.03h-.01v-.01l-.01-.01v-.01h.01v-.01l.01-.01v-.03h.01v-.01l.01-.01.01-.01h-.01v-.02l-.01.01h-.03v-.05h-.01v-.01h-.01v-.01h.02-.01l-.01-.01v-.01h-.01v-.04h-.01v-.01h-.01l.01-.01h-.01l.01-.01h-.02v-.03l.01-.01v-.01h.01v-.03h-.01v-.01l.01-.01v-.03h-.02v-.01l-.01-.01.01-.01v-.01h-.01v-.03l-.01-.01v-.01h-.01l-.01-.01v-.01h.01l-.01-.02-.01.01v-.01h-.02l-.01-.01v.01h-.01v-.01l.01-.01.01-.01v-.01h.01v.01h.01v-.01h-.01.01v-.01h.01-.05l-.01-.01h.01-.01v.02h-.01l-.01-.01h-.01v-.01h-.01v-.01l-.01.01v-.02l-.01-.01h-.01v-.01.01h-.01v-.01h.01v-.01h-.01v-.01h-.02v-.01l-.01-.01-.01.01-.01-.01-.01-.01v-.01H654v-.01h-.01v-.02l-.01-.01v-.01h-.01v-.02h-.01v-.01h-.01l-.01-.01v-.01h-.01v-.01h.01-.02v-.01h-.01v-.01h.01-.02v-.01l-.01-.01v-.03l-.01-.01v.02l-.01-.01h-.01v-.05h.01v-.02h.01v.01h.01v-.01h.01v-.01l-.01-.01.01-.01v-.02h-.02v-.01h-.01l-.01-.01v-.01h-.01v-.01h-.02.01v-.01l-.01.01-.01-.01-.01.01-.01-.01v-.01h.01l-.01-.01v-.01h-.03v.01l-.01-.01h.01l-.01-.01v-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.01l-.01-.01-.01-.01h-.01v-.01h-.02v-.01h-.01l-.01-.01h-.01l-.01-.01h-.01l-.01-.01h-.01v-.02h.03v-.01h.01v-.01h.01l-.01-.01v-.05h-.01v-.02h-.01v-.01h-.01l-.01-.01v-.02h.01l-.01-.01h-.02v-.02h.01l-.01-.01-.01.01v-.02l-.01-.01h-.03l-.01-.01h-.01v-.01l-.01-.02h-.02v-.01h-.02l-.01-.02h-.01.01v-.01h-.01v-.01h-.01v-.01h-.02l-.01-.01-.01-.01v-.01h-.01v-.01l-.01-.01v-.01h-.02v-.01h.01l-.01-.01v-.01h-.01v-.01h-.02l-.01-.01h-.02v-.01h-.01v-.01h-.01l-.01-.01h-.02v-.01h-.02v-.01h-.02v-.01l-.01.01v-.01h-.02l-.01-.01h-.03l-.01-.01h-.02l-.01-.01h-.02l-.01-.01h-.05l-.01-.01v-.03h-.02l-.01-.01-.01.01v-.01h.01l-.01-.01h-.01v-.01l-.02-.01v-.02h-.04l.01.01v.02l-.01-.01v-.02l-.01-.01v-.01h-.01l-.02-.04h.01v-.02h.01l.01-.01h-.01l-.01-.01h-.02v-.01l-.01-.01h-.01l-.01-.01v.01l-.01-.01h-.02l-.01-.01h-.01l-.01-.01v-.01h.01v-.01h.01l.01.01h.04l.01-.01.02-.01v.01-.02h-.01l-.01-.01v-.01h-.01v-.01h.02v.01h.01v.01h.02v-.01h-.01v-.02h.01v.01-.02h-.01l-.01-.01h-.01v-.01l.01-.01v-.01h-.03l-.01-.01-.01-.01h.01v-.01l.01-.01-.01.01h-.03l-.01-.01h-.05v-.01h-.01l-.01-.01h-.02v-.01l-.01-.01h-.02v.01h-.03v-.02h-.01v-.01l-.02-.01h-.01l-.01.01-.02-.01h-.01l-.01-.01-.01-.01H652.44v-.01h-.03l-.01.01h-.01v.01l.01.01h-.01v-.01h-.01v.01l-.01.01h-.01v.01l-.03.01h-.04l-.01-.01v.01h-.01.01v.01h-.04l-.01-.01h-.01l-.01.01v-.01h-.01l-.01-.01v-.01l-.01-.01v.01-.01h-.01v-.01l-.01-.01v-.04.01h.01v-.01l.01.02.01.01h.02l.02.01h.01l.01-.01h.02l.01.01h.04v-.02l.01-.01v-.02h-.01v-.01h.01l.01.01h.02l.01-.01v-.01l-.01-.01h.01v-.01h.04v-.01h-.02v-.01h-.01l.01-.01h.03v-.01h.04v.01-.01h-.01l-.01-.01-.01-.01v.01h-.01v-.02h-.01v-.01l-.01-.01h-.02v-.01h-.01v-.01H652.3v-.01h-.05l-.02.01-.01-.01v-.02h-.03l-.01-.01-.01-.01-.01.01h-.01v-.02h-.08l-.01-.01h-.02v-.01h.01-.02l-.01-.01v-.01H652v-.01h-.01l-.01.01-.01-.01h-.02v.01l-.01-.01v.01l.01.01h-.05l-.01-.01h-.03l-.01-.01h-.03l-.01.01.01.01H651.76l-.01-.01h-.02l-.03-.01h-.03l-.01-.01-.02-.01v-.01h-.02l-.01-.01v-.03h-.01v-.02l-.01-.01h.04l.01.01h.03l.01.01h.03l.02.01h.02l.03.01h.03l-.01-.01v-.01h.02l.01-.01.01-.01-.01-.01v-.01l-.01-.01h-.01l-.01-.01v-.01h-.04l-.02-.01h-.02l-.01-.01-.01-.01-.01-.01h-.01v-.01l-.01-.01h.02l.02.01h.01l.01-.01h.02l.02.01h.02l.01.01.02.01.01.01h.02v.01h.01v.01h.01l-.01.01v.01h.01l.01.01.02.01v-.01h.01v-.01l.01-.01h.04v-.02h.01l-.01-.01h.01v-.01h-.01l.01-.01v-.01.01l.01-.01h-.01l.01-.01v-.01h.01-.01v-.01h-.01l-.01-.01-.01-.01h.02l.01.01h.03l.01.01h.02l.01.01H652.11l-.01-.01h.01l.01-.01v-.02h-.01v-.02h-.01.02l-.01-.01h.02l.01-.01h.02v.01h.02l.03.01h.03l.01.01h.03l.02.01.01-.01.01-.01h-.01v-.02h.01v.01h.01l.01-.01h.03v-.02l.01-.01h.03v-.01l.02-.02.01.01v-.01.01l.01-.01h.01v-.01h-.01v-.01h-.02v-.01h-.01v-.01l.01-.01.01-.01h-.01l.01-.01-.01-.02v-.01h-.01v-.01h-.03l-.01-.01h-.05v-.01h-.02l-.02-.01h-.03l-.01-.01h-.02l-.02-.01v-.01h-.01l-.01-.01h-.09v.01h-.01v.01h-.04l-.01.01v-.02h-.01l-.03.01h-.02v.01h-.02v-.01l-.01.01H651.88l-.01.01h.01v.01h-.01.01l.01.01v.02l-.01.01h-.04l-.01.01v-.01.01l-.01-.01h-.01l-.02.01h-.02l-.01.01h-.04v.01h-.03l-.01.01-.01.01h-.02l-.01.01h-.07v.01h-.01v-.01l-.02.01h-.01v.01l-.01.01h-.04l-.01.01v.01h-.01.01l.01-.01.01-.01h.01l.01.01v.01l-.01.01h.01l-.01.01v.03l.01.01V578v.02l.01.01.01.01h.01l.01.01h.02l.01.01h.01l.01.01.01.01.01.01.02.01h.01l.01.01h.01v.01h-.06l-.01.01H651.54v-.01h-.03l-.02-.01-.03.01-.01.01h-.01v.01h-.01v.01h-.01v.01l-.01.01h-.01.01v.01l-.01.01h.01l.01.01v.01h-.02l.01.01h-.01v.01h-.03v.01l-.01.01h-.01v.02H651.23l-.01.01-.01-.01H651.1v.02h-.01v-.02h-.02l-.01-.01h-.02v.01l-.01.01h-.04l-.01.01h-.03.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01-.03-.01h-.02l-.01-.01h-.01v.02h-.01l-.01-.01-.01-.01-.01-.01-.01-.01v-.01l-.01-.01h-.01l-.01-.01v-.01h-.01l-.01-.01h-.01l-.01.01v.01h-.01v-.01h-.03v-.01h-.01v-.01h-.04v.05h-.02v.01h-.02v.01-.01h-.01v-.01.01h-.01v.01h-.01l-.01.01h-.02l-.01.01h-.01v.02l-.01-.02h-.01l-.01-.01h-.03v-.01h-.01l-.01-.01-.01-.01h-.01l-.01-.01h-.03v.01h-.01l.01.01-.01.01v-.01h-.02v.01h-.08l-.01-.01-.01-.01h-.01l-.01-.01h-.01l-.03-.02h-.03v-.01h-.05v.01h-.02v-.01h-.01l-.01.01h-.01l-.01.01v.02h-.01v.04h-.01l-.01.01h-.01l-.01-.01h-.06v-.01l-.01.01v-.01h-.02v.01l-.02-.01h-.03l-.03-.01h-.02l-.01-.01h-.05l-.01-.01H649.68l-.01-.01h-.02l-.01-.01h-.01v.01h.01l.01.01.01.01h.02l.01.01h.02v.01h.01l.01-.01.01.01h.02l.01.01h.01v.01h-.01v.01h-.01v.01-.01h-.01v.02h-.01v-.01l-.01-.01h-.03v.01H649.64v-.01h-.01v-.01h-.01v-.01h-.02v-.01l-.01-.01v-.01h-.02l-.01-.01-.02-.01h-.01v-.01l-.05-.06v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01-.01-.01h-.01v-.01h-.02v-.01h-.02v-.01h-.02V578h-.01v-.01h-.02v-.01h-.02v-.01h-.02v-.01l-.01-.01h-.01v-.01h-.01v-.02l-.01-.01v-.04h.01v-.02h.01l.01-.01h.01v-.01h.01v-.01h.03l.01-.01v-.04h-.01v-.01l-.03-.04v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.02l-.01-.01-.01-.01h-.02l-.01-.01h-.01v-.01h-.03v-.01h-.03l-.01-.01h-.03l-.01-.01h-.04v-.01h-.01v-.01h-.01l-.01-.01v-.01h-.01v-.01h-.01v-.02h-.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.03v-.01h-.01v.01h-.05v-.01h-.02v-.03h-.01v-.01h-.04v.01h-.03v.01h-.05v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.01h-.02l-.01-.01h-.02l-.01-.01h-.03v.01h-.07l-.01-.01h-.02v-.01h-.01v-.01h-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.01v-.01h-.02l-.01-.01h-.02v-.01h-.01l-.01-.01v-.01l-.01-.01v-.01l-.01-.01v-.02h-.01v-.02h-.01v-.01l-.01-.01v-.01h-.01v-.02l-.01-.01v-.01l-.01-.01v-.02l-.01-.01v-.03l-.01-.01v-.01h-.01v-.01l-.01-.01v-.02h-.01v-.05l-.01-.01v-.08l-.01-.01v-.08l-.01-.01v-.02h-.01v-.03h-.01v-.02h-.01v-.03h-.01v-.02h-.01v-.04h-.01v-.03h-.01v-.01l-.01-.01-.01-.02v-.01H648v-.02h-.01v-.03H648.1v.01h.01v.01h.02v-.04h-.01v-.01h-.01v-.01l-.01-.01-.01-.01h-.01v-.01h-.01v-.01l-.01-.01v-.01h-.01v-.01h.01v-.02h.01v-.01h.01v-.01h.01v-.02l-.01-.01-.01-.02v-.03h-.01v-.01h-.01l.01-.01h-.01v-.01h.01v-.04h.01v-.02h.01V576.04h-.01v-.02h.02l.01-.01V576l.01-.01v-.02l-.01-.01v-.02h-.02v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.02h-.01v-.05h.01v-.01h.01v-.02h.01v-.01h.01v-.01h.01v-.01l.01-.01v-.03h.01v-.03l-.01-.01v-.02l-.01-.01v-.01h-.01v-.01l-.01-.01v-.01h-.01v-.02h-.01l-.01-.01-.01-.01v-.03l-.01-.01v-.02H648h.01l-.01-.02v-.03l.01-.04.02-.01v-.02l.01-.01v-.05h-.01V575.29h.01v-.02h.01l.01-.01h.03l.04-.09.02-.06.04-.04h.01l.06-.06.04-.09.01-.02.01-.01v-.02h.01v-.01h.01v-.01h.05l.01-.01h.01l.01-.01v-.01h.01v-.02l.01-.01v-.04h.01v-.01h-.01v-.04h.01l.01-.06.02-.01h.01v-.01l.01.01.01-.01h.01v-.05h.02v-.01h.01v.01h.01v.01h.01v.01h.01v-.01h.01v-.01l.01-.01.01-.01v-.08l-.01-.01v-.01l-.01-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.02l.01-.01h.03l.07-.03h.03v.01h.01v.01h.03l.01.01h.01l.01.01h.04l.06.01.01-.06v-.05l.01-.01v-.05l.01-.01v-.01h.01l.02-.01.01-.01v-.01h.01v-.03l.01-.01v-.02l-.01-.04v-.01l.01-.01v.01l.01.01h.02v-.01l.01-.01v-.04h.01V574v.04h.01v-.01h.01l.01-.01h.01v.02h.01v.05h.01v-.01h.01l-.01-.01v.01h-.01l.01-.01v-.03l.01-.01v-.01l.01-.01v-.03h.02l.01-.01.01-.01V573.9l.01-.01h-.01v-.01h.02v-.01h.01v.01l.01-.01.01-.01h.01l.01-.01h-.03v.02l-.01-.01.01-.01v-.01l.01-.01v-.01l.01.01h.02l.01-.01h.01v.01h.01v-.02h.03v-.01h.01l-.01-.01v-.01h.01l.01-.01v-.03l-.01-.01h.01l.01-.01v-.01l.01-.01.01-.01h.03v-.01h.03l.02-.01.01.01h.01l.01-.01.01-.01h.04l.01-.01v.01l.01-.01v-.01h.02l.01-.01.01-.02v-.01.01h.01v.02-.01h.01-.01v-.02l.01-.01h.01v-.01h.01l.01-.03.01-.01v-.02h.01v-.01l.01-.01v.02l-.01.01v.01h.02-.01v-.02l.01-.01v-.01l.01-.01v.01-.01h.01l.01-.01h.01v-.01l.01-.01h-.01v-.01h.03l.01-.01.01-.01h.02l.01-.01h.01v-.01h.01v.01h.02l.01-.01h.02l.01-.01v.01l.01-.01h.02l.01-.01v-.01h.01l.01-.01v-.01l.01-.01h.01v-.01h.01v-.01l.01-.01v-.02h.02l.01-.01h.01v-.01h-.01v-.01.01l.01-.01.01-.01.01-.01h.02v.01l.01-.01h.01v-.01l-.01.01v-.02h.01v-.01h.01v-.01h.01l.01-.01v-.01h.01v.01h-.01v.02-.01h.01l.02-.01h.01v-.01l.01-.01h.01v.01h.01l.01-.01h-.01.01v-.01l.01-.01h.02v-.01h-.01l-.01.01v-.01h-.01l-.01.01h-.01l-.01.01v-.01.01l-.01.01h-.01v.01h-.01v-.01h.01l.01-.01.01-.01h.01l.01-.01.02-.01h.01l-.01-.01.01-.01v.01h.02l.01.01h.08l.01-.01v-.01h.01v-.01h.01v.01l-.01.01.01.01v-.01h.01l.01-.01h.02v-.01l.01-.01.01-.01v-.01l.01-.01h.03v-.01h.03l.01.01v-.01h.01l.01-.01h.01l.02-.01.02-.01.01-.02h.01V573h.01l.02-.02v-.01l.01-.01h.01l.01-.01.01-.01v-.02h.01v-.01h.02v-.01h.01v.01l.01-.01h.01v-.01h.01v-.02h.01l.01-.01v-.02h.01v-.01h.04v-.02h.01l.01-.01.02-.01v.01l.01-.01.01-.01h.01v.01h.01l.01-.01.01-.01h.02l.02-.01v-.01h.02v-.01l.01-.01v-.01h.01v-.01l.01-.01h.01l.01-.01h.01l.01-.01h.01v-.02h.02l.01-.01v-.01l.01-.01.01-.01.01-.01v-.01l.01-.01h.01v-.03h.01v-.01l.01-.01.01-.01.01-.01h.01l.01-.01h.01l.02-.01v-.01h.01l.01.01h.01l.01-.01v-.03h.02l.01.01.02-.01.01-.01v-.02h.03l.02-.01h.02v-.01h.01v-.02l.01-.02v-.01h.01l-.01-.01h.01l.01.01h.01v-.01h.02v-.01l.01-.01.02-.01v-.01l.01-.01.01-.01v-.01h.01v-.01h.01l.01.01.01-.01v-.01l.01-.01.01.01.02-.01h.01l.02-.01v-.01h.01l.01-.01h.01v-.01l.01.01.01-.01h.01l.01.01h.02l.01-.01.01-.01h.03v-.01h.04v-.01h.01v-.01h.01v-.01l-.01-.01h.01l.01-.01.01-.01.01-.01v-.01l.01-.01.01-.01v.01l.01-.01v-.01h.02v-.01h.03l.01-.01.01-.01.01.01h.01v-.01h.02l.01-.01h.01v-.01l.01-.02h.02l.01-.02h-.01l.01-.01.01-.01.02-.01h.01v-.01h.01v.01h.01-.01v.03l.01-.01v-.03h.04l-.01.01v.01h-.01l-.01.01h.01l.01-.01h.04v-.01.01h.01l.01-.01.01.01-.01.01h-.02l-.01.01h.02l.01-.01h.03v-.01h.01v-.01h.01v.01l.01-.01v-.01h.01v-.02l.01.01v-.03h-.01l.01-.01.01-.01v-.01h.01v-.01h.01l.01-.01v-.01l.01-.01h.05l.01.01.03-.01h.03v-.01h.02v-.01h.01v-.02l.01-.02.02-.01.01-.01.01-.01h.05v-.01.01h.02l-.01.01h-.01v.01h.02v-.02h.01v.01l-.01.01.02-.01h-.01v-.01h.01l.03-.01h.01l.01-.01h.01l.01.01h.01v-.01h.03l.01-.01h.01v-.01l.01.01h.01v-.01h.07v-.01h.02l.01-.01h.01v-.01.01h.01l.01-.01h.01v-.01l.01-.01h.01l-.01-.01h.02v-.01h.03v-.01l.04-.01v-.01h.01l.01-.01v-.03l-.01-.01v-.03l.01-.01v-.01h-.01v-.01h.01v-.02h.04v-.01.01h.01l.02.01v-.02l.01-.01v-.03h-.01v-.02h.01v-.04l-.01-.01-.01-.01v-.01h-.01v-.02h.01v-.01l.01-.01v-.01h.05v-.01h.01l.01-.01v-.01l.01-.01.01-.01.01-.01h.04v.01h.02v.01h.03l.01.01v-.01h.01l.01.01.01-.01h.01v-.07h.01v-.01l.01-.03v-.01l-.01-.01-.01-.01v-.01h-.01v-.01h-.02v-.01h-.03v-.01h-.02l-.02-.01h-.02v-.01l-.01-.01-.01-.03-.01-.01h-.02l-.01-.01h-.01l-.01-.01h.01v-.01l-.01-.01-.04-.01-.02-.01h-.01l-.01-.01-.07.02-.01-.01v.01h-.03l-.01-.01h-.01l-.01-.01h-.02v-.01h-.04v-.01h-.03l-.01-.01h-.03v-.01h-.01l-.01.01h-.04v-.01h-.02v-.01h-.04l-.01-.01v.01l-.01-.01h-.02l-.01-.01h-.03l-.01-.01h-.01v-.01h-.02v-.01h-.01l-.01-.01-.01-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.01v-.01l-.01-.01v-.03h-.04v-.01h-.04l-.01.01v-.01h-.01v-.01h-.01l-.01-.01h-.01v-.01h-.02l-.01-.01h-.01l-.01-.01h-.05v.01h-.01v-.01h-.02l-.03.01h-.03l-.01.01v.01h-.01v.01h-.02v.01h-.05v.01h-.03v.01h.01v.01h.01l-.01.01h-.01l-.01-.01-.01.01h-.04l-.01.01h-.04v-.01h-.01v-.02h-.04l-.01.01h-.01l-.01.02v.01h-.02v.01h-.05l-.01-.01h-.02l-.01.01v.02l-.02.03h-.04l-.01.01-.03-.01-.01.01-.03.01-.01-.03v-.01l-.01-.01-.12-.04h-.04l-.01.02-.01-.01-.01.01-.07-.03-.04-.02-.08-.06-.02-.02-.01-.01-.02-.01.01-.01h-.01l-.08-.04-.05-.02h-.05v-.01h-.01v-.01h-.01v-.01h-.01v-.01h-.05v.01-.01h-.03l-.01.01v.01h-.02l-.01-.01h-.01v-.01H650.58v.01h-.01l-.03.03-.03-.01h-.02v-.01h-.01l-.01.01v-.01h-.03l-.02.02h-.02l-.01-.01h-.01l-.01-.01v-.01l-.01-.02-.03-.05h-.01v-.01h-.01v-.01h-.01v-.01h.01v-.01l-.06-.17h.01l.02-.04h.02l.01.01.03-.01v-.02l.01-.04.06-.04-.02-.01-.09-.07-.02-.02v-.02h.03l.01-.03.01-.01v-.01h-.01v-.01l-.01-.01.02-.02.01-.02-.08-.08-.1-.11v-.03l.01-.01v-.01h.03v-.1l-.01-.01v-.05l-.01-.11-.06-.01h-.02v-.01.01-.01h-.01v-.03h-.01l-.01-.01h-.01l-.01-.01h-.01v-.01h-.02v-.01h-.01l-.01-.01h-.02v-.01h-.01l-.01-.01v-.01h-.04l-.01.01h-.04v-.01h-.04v-.01h-.01v-.01l-.01-.02-.01-.01V569.13h-.01v-.05l.01-.01v-.02h-.05l-.01.03-.08-.11-.05.02-.01.05.07.06.01.13.09.04.09.01.06.06.01.1-.04.06-.02.01-.11-.02-.1.03-.02-.01-.15-.02-.05.04-.14.01-.02.07.03.04h.02l.17.01.2.02.04.04.01.04.02.13-.01.17-.04.08-.11.07-.05.06-.09.04-.07-.08-.03.02.05.07.03.06-.04.04-.1.06-.04.05v.04l.05.06.09.1-.09.04-.07.02-.02.02.01.03.04.04.07.01.08.01.02.1-.02.01-.05.03-.05.03-.04.05-.09.04h-.04l-.07-.03h-.05l-.06.04-.03.08-.04.04-.12.1-.04.06-.02.08-.07.06-.18-.01-.19-.04-.05-.02-.04.03-.07.03-.06.01v.14l-.03.05-.09.05.09.06.08.05-.03.07-.03.02h-.12l-.13-.02-.05.02v.02l.03.08.02.02.03.04-.03.02.02.03.07.04v.08l-.11.14-.18.12-.08.08-.11.07h-.04l-.17-.04-.09-.03-.06.02h-.03l-.12.07-.07.02v.03l.06.05.01.11-.11.1-.1.02-.23-.1-.03.02-.04.07-.13.06-.17.1-.1.1-.01.05.02.13.01.09.08.04.12.04.1.05.05.08.02.11-.03.06-.03.08-.02.1-.07.07-.12-.01-.04-.01-.02.02.03.12.21.12.05.08.08.06.04.1.01.09-.01.15-.03.08.04.1.05.06.09.03.1.04-.02.12-.05.05.01.04.01.07.03.08h-.03l-.16-.03-.1-.04-.03.03-.01.11.09.08v.04l-.03.06h-.18l-.03.01.02.02.17.04.2.15.11.06.16.03.11.04-.01-.01.09.1v.07l.05.04.2.07.02.07v.12l.04.07.08.03.04.03.08.07.05.12.07.09.06.13.13.15.1.16.11.09.03.04-.02.11.02.07.04.02h.05l.04-.05.08.01.09.06.06.08-.07.12.02.02.13.08.01.04-.02.07-.06.04-.02.08.02.29-.15.14-.09.02.01.05.13.25.05.03.06.01v.09l-.19.06.01.05.11-.02.05.04-.02.06.08.05.07.07.01.09v.04l-.09.05-.04.03.03.02.02.12v.13l-.04-.01-.07-.09-.08-.11-.11-.06-.04-.01-.05.03-.02.05-.03.07.04.08.07.02h.07l.09.02.04.16-.03.06-.08.01-.03-.01-.1-.01-.01.02.03.05v.11l-.06.06.06.04.11.09.05.01.11-.03.06.04.02.06v.06l.01.04.04.11.05.03-.02.15-.02.11.03.01.01-.05.02-.08h.04l.08.02.08.08.04.1.07.13.09.06.11.1.05.08.01.11.13.09.07.05.14.05.13.05.11.05.01.12-.08.13.19.09.04.13-.04.07h-.08l-.08-.02-.06-.02-.05-.04-.06-.01-.16-.03-.15-.01-.14-.01-.06-.01-.09.01.01.04.11.03.11.1-.04.11-.04.03-.02.05.03.14.17.1-.06.13.02.02.05.03.06.07.04.12-.08.07h-.07l-.04.02-.04.08-.11-.01-.02.04.05.05.08.11.12.12.12.05.05.03v.06l-.03.12.04.03.08.06.11.1.18.11.15.11v.01l.02.04.1.01.06.03.05.1.01.11-.22.13-.15.1h-.09l-.09-.07-.08-.02-.1.01-.06-.02h-.08l-.03-.01-.06-.04-.02-.03-.01-.02.04-.03-.02-.03h-.09l-.07.03-.11.06-.07.03-.02.03h.06l.09.01.02.01.03.03.05.06.06.04.01.06-.03.04-.04.05-.05.03.01.05.05.01.11.02.06.07.05.13.05.13v.12l.03.02.06.06-.01.08-.04.08.01.04.1.05.07.06.05.06.03.06.04.06.06.1.06.09-.1.07v.04l.04.06.07.15.06.13.03.09.02.06.04.07.08.06.08.07.11.11.09.07.09.04.09.04.07.02.11.03.06.02.05.06.01.04V588.06l.03.03.05.07.03.11.03.06.06.1.07.07.04.02.11.02h.03l.04.02h.07l.07.04.01.1-.02.12-.03.11-.01.05.01.05.03.1-.03.06-.05.03.06.04v.05l-.05.07-.07.09v.07l.04.05.06.07-.01.12-.02.13.02.11-.06.02-.08-.01-.1-.01-.05.07-.03.03-.04.09-.06.05-.06.03h-.05l-.14-.03-.14-.04-.06.01v.15l.01.09.03.04.02.02.01.12-.03.13.01.18-.02.14-.09.21-.11.2-.07.07-.06.06-.08.18-.07.16-.03.09v.09l.02.12h-.07l-.05-.05-.09-.07-.09-.05-.14-.13-.09-.04-.08-.02-.08-.12-.13-.11-.07-.06v.04l-.02.06-.06.05h-.11l-.04-.11-.05-.08-.05-.06.01-.05.04-.06v-.01l-.02-.04-.05-.09-.08-.09-.06-.01-.07.01-.09-.01-.01-.09-.08-.1-.07-.05-.02-.13-.02-.09-.06.05-.05.06-.11.06-.11.04-.01-.02-.08-.09-.03.02-.05.06-.02-.04-.01-.12-.1-.01-.08-.02v-.05l-.02-.03-.04.03-.03-.02-.04-.05-.05-.08-.05-.1v-.1l-.02-.05-.04-.01-.05.04-.07.06-.05.05-.06-.01-.04-.06-.04-.04-.04.06-.09.05-.05.07-.01.02-.07.07h-.16l-.08-.03-.1-.09-.08-.09-.04-.03-.06.03-.07.08-.12.16-.04.14-.12.03-.1-.01-.06-.03-.04.03-.06.05-.08.03h-.36l-.02.06-.02.09v.1l.03.04.03-.03.06-.02.08-.01.05.08v.05l-.02.05V591.31l.05.01.07-.02.06.03.05.05-.05.05v.08l.03.08v.12l-.03.09-.06.03-.07.01-.06.03-.07.01-.17-.01-.1-.04-.11-.05-.09-.06-.06-.06-.01-.06-.04-.01h-.02l-.01-.04-.01.01-.08.03h-.01l-.07-.04-.09-.04-.02-.04.04-.05.05-.02-.02-.03-.05.03-.11.1-.13.02-.07-.05h-.03l-.09.11-.06.09-.01.09.01.11V591.96l-.08.04-.08.01-.09.01h-.04l-.04-.01-.07-.01-.13.01-.1.02-.08-.02-.08.02-.08-.02-.07.04-.1.02-.09-.03-.03-.09.04-.18.03-.11-.04-.11-.07-.1-.07-.07-.01-.12-.04-.08-.06-.01-.04.04-.02.08-.02.04-.09-.03-.03.17-.05.02-.14-.03-.09-.02-.09.01-.03.02-.14-.1v.07l-.01.05-.04.04-.04-.03v-.01h-.01v-.01h-.01l.01-.01h-.02v-.02l-.01-.01-.01-.01h-.01l-.01-.01v-.01h-.01v-.02h.01v-.02l-.01-.01v-.01h-.01v-.01l-.01-.01v-.01l-.01.01-.01-.11v.01h.02v-.02l-.01-.01v-.02l-.01-.01.01-.01h-.01l.01-.01-.01-.02V591l-.03-.06-.17-.03-.19-.03-.02.06-.02.03-.14-.08-.14.15-.02.06.13.18.05.09-.02.14.03.11v.13l-.01.11-.06.09-.1.02-.05-.01v-.13l-.05-.08-.06-.13-.1-.16-.09-.11-.05.01-.07-.01-.09-.04-.06-.01-.11-.08-.12-.13-.09-.16-.03-.22.09-.06.08-.03.02-.07-.02-.15.01-.15-.01-.11.05-.02-.01-.03-.11-.06-.07-.07-.04-.11-.07-.18-.04-.09-.18-.09-.03-.08-.04.06-.03.1.23.04-.07.1.08.08.02.05-.05.07-.1.06-.11.01-.12-.02-.03-.01-.06-.13-.03-.11-.08-.02-.09-.02-.08-.09-.02-.02.06-.03-.05-.02-.08.01-.1.02-.08.01-.06-.02-.63-.43.07-.14h-.14l-.05-.08v-.08l-.09-.24-.07-.26-.07-.02h-.04l-.03-.07-.01.01-.03.02.03.09.07.08-.01.11-.01.17-.03.12-.04.13.06.15v.05l-.02.14v.02l.05.07-.05.12-.11.14-.13.07-.19.05-.16-.01-.1-.02.02.12.03.15-.01.11.02.15.02.09.08.08.01.13-.05.11-.03.02h-.1l-.12-.04-.07-.07-.03-.02-.07-.07-.04-.09.01-.11-.01-.12-.04-.08-.16-.1.08-.1.07-.11.02-.11-.03-.08-.07-.1-.02-.15-.02-.07-.1-.05-.1-.06-.06-.07-.08-.13-.03-.14-.05-.01-.06.02v.1l-.02.15-.03.04-.04.03-.08.08-.05.08-.02.08-.04.12v.05l-.04.03-.06-.02-.13-.18-.04-.03-.09-.12h-.02l-.01.05-.02.03-.03.06-.08-.04-.05-.03-.02.02.02.08v.02l-.09.05-.12.02-.09-.01-.02-.04-.02-.06-.03-.05-.04.01-.01.05-.02.07-.01.04-.02.02h-.13l-.09-.01-.13.06-.09.07-.07.1-.03.14.01.11.07.13.01.12-.02.1-.08-.03-.1.01-.12-.12-.1-.02-.13.02-.07-.03-.06.03-.03.01-.09-.05.01.09.01.11.02.05.09.09.05.07v.12l.03.13.02.1-.05.1-.09.03h-.09l-.06-.09-.03-.03-.05-.04-.1.02-.06-.05-.02-.05-.02-.06-.1-.01-.12.01-.08.04-.05.01-.05-.01-.08-.03-.11-.07-.04-.01-.05.06-.05.09-.04.06.03.07h-.02l-.07-.05-.03-.05-.01-.07-.02-.06-.04-.08.02-.09v-.08l.03-.06.01-.09-.02-.1-.05-.09-.04-.06-.03-.1-.02-.07-.02-.05-.05-.1-.1-.1-.06-.07-.09-.09-.12-.12-.04-.04-.08-.02-.07-.03-.1-.02-.12-.03-.12-.1-.07-.08-.08-.03h-.09l-.08.01-.01.08.01.08.02.12-.02.04-.04.03-.04-.03-.08-.02-.09-.03-.1-.04-.08-.04-.03-.03-.01-.09-.03-.07-.06-.06-.02-.02-.07-.05-.05-.02-.06.01h-.08l-.07-.02-.11-.07-.08-.05-.06-.09-.02-.08-.01-.07-.04-.06-.06-.04-.01-.03-.03-.07-.04-.04-.05-.01-.07.01-.04.05-.14.05.08.06-.01.07-.01.06.12.04.01.04v.07l-.05.04-.07.04h-.06l-.06.01-.03.02.03.06.06.07.09.07.05.05.05.06.03.04.01.04v.06l.02.04.02.04.03.06.05.06.08.08.08.12.05.09.04.05.04.07.07.08.07.1.06.07.06.05.08.09.06.06.04.05.05.06.02.08.03.08v.11l-.05.01-.14.11-.06.14-.02.07-.06.04-.06.1-.09-.03-.12-.22-.14.13-.07.03-.21-.02-.08-.07-.01-.06.12-.17.02-.07-.02-.06-.2-.11-.11-.15-.07-.04-.06-.07-.09-.05-.15-.01-.05-.06-.01-.09-.05-.04-.05.02-.04.07-.01.11v.03-.01h-.01l-.01-.01h-.04v-.01h-.02l-.01-.01h-.01l-.01-.01-.01-.01h-.01l-.01-.01v-.01h-.01v-.01l-.01-.01h-.01v-.01h-.03v-.01h.01l-.01-.01v-.01h-.01v-.01h-.01v-.01h-.01l-.01-.01v-.01h-.01l-.01-.02-.01-.01-.02-.02h-.02l-.14-.05-.09-.03-.02-.01-.1-.04.09-.17.11-.05.06-.04.02-.05-.13-.14-.06-.03h-.05l-.07.06h-.07l-.07-.02-.03-.05.03-.08.05-.05.03-.04.04-.07-.03-.02h-.02l-.01-.01h-.01v.01h-.02v-.01h-.04v-.01h-.02v.01h-.01l-.01.01v.03h-.01v-.01l-.01-.01h-.01v-.02h-.02v-.01h-.01v-.02h.01-.01v-.01h-.01v.01h-.01v-.02h-.01v-.01h-.01l-.01.01h-.01v-.01h.01v-.02h-.01v-.01h-.01v-.01h-.01v.01-.01h-.01v-.02l-.02-.01-.01-.01v.01l-.01.01h-.01l.01-.01h-.02V589h-.01v-.01h.01v-.01h-.01v-.01.02l-.01-.01h-.01v.01l-.01-.01.01-.01v-.01h-.01v.01-.01h-.03v-.01l-.01.01v-.01h-.01v-.02l-.01-.01v-.02h-.01v-.01h-.01l-.01-.01-.05-.04-.03-.03-.1-.13.04-.08.03-.12.04-.06.03-.02h.04l.12.03.04-.04.04-.11.01-.07-.15-.24.15-.19h.06l.02.05.07.04.05.01.11-.01.08-.02.07.01.08.04v.01l.11.12.07.01.07-.07.04-.06.02-.08-.09-.22-.07-.08-.01-.2-.05-.07-.17-.03-.22-.08-.02-.06.05-.18-.01-.09-.26-.2-.18-.13-.08-.07-.09-.15-.07-.15.13-.01.15.13.09.04.07.01v-.12l-.12-.22-.09-.06-.04-.07-.01-.02-.04-.11-.03-.03-.06-.03-.07-.02-.08-.02-.07-.01-.09-.02-.04-.03-.02-.03.02-.04.05-.03.05-.02.08-.03.07-.03.03-.01-.01-.04v-.01l-.01-.02-.02-.02v-.03l-.01-.01v-.01h.01v.01-.03l-.01-.01H627v-.01l-.01-.01-.03-.03-.01-.02-.02-.01v-.02l-.01-.02v.01l-.01-.01h.01l-.01-.01h.01v-.01l.01.01v-.01l-.01-.01v-.01h-.01l.01-.01-.01-.01-.01-.02v-.01l-.02-.01-.01-.02h-.01v-.01h-.01l-.01-.01-.01-.02-.03-.03-.01-.01v-.02h-.01l-.01-.01-.01-.01-.01-.02-.03-.02v-.01l-.01-.01-.01-.01h-.02v-.01h-.01v-.01h-.02l-.02-.01-.02-.01h-.01v-.01l-.02-.01h-.02l-.01-.01v-.01h-.01.01-.02l-.01-.01h-.01v-.01h.03l-.01-.01-.01-.01v-.02h-.03l-.01-.01-.01-.01v-.01h-.01l-.01-.01h-.01v-.01h-.01v-.01h-.02l-.02-.01-.01-.01h-.01l-.01-.01.01-.02v-.01l-.01-.01h-.02l-.01-.01h-.02v-.01h-.02v-.01l-.01-.01h-.01l.01-.01h-.04v-.01l.01-.01h-.01l-.01-.01h-.01v-.02h-.02v.01l-.01-.01h-.02l-.02-.01-.01-.01v-.01h-.02v.01l-.01.01.01-.01h-.02v-.01h-.02v-.01h-.01v-.01l-.01-.01h-.01.01v-.01h-.01v-.01h.02-.01l.01.01v-.01h.01l.01-.01h-.02v-.01h-.01l-.01-.01v-.01.01h-.01v-.01h-.01v-.01h.01v-.01l-.01.01v-.01h-.01v-.01h-.01l-.02-.01h-.02l-.01-.01h-.02l-.01-.01v-.02h-.02l-.01-.01v-.01h-.01l-.03-.02-.14-.08-.02-.01.05-.08.07-.06.06-.04-.07-.13v-.16l.01-.13-.01-.12.03-.1.04-.07.07.01.11.05.12.08.01.02.07.08.09.04.08.05.12.04.31.29.07.05.02.06.15.09.03-.01.04.02.13-.01.03-.09-.04-.21-.05-.1-.04-.17-.16.07h-.01l-.08-.01-.01-.06.02-.09-.06-.06-.1-.04-.06-.05v-.07l-.09-.08-.18-.05-.12-.05-.03-.03v-.07l-.08-.12-.01-.07.05-.22-.01-.1.02-.06.05-.08-.02-.06-.22-.05-.08-.05-.02-.14-.01-.05-.08-.11-.27-.19-.07-.08.02-.09-.03-.1-.06-.06-.07-.01-.2.22-.07-.06-.02-.06.02-.08v-.04l-.02-.07-.1-.07-.08-.08-.22-.14-.06-.03-.09-.06-.08-.13-.04-.24.07-.14.18-.05.08.07.05.07.06.03.13.02.05-.03.08-.11.12-.01.1.04.07.07.17.11.17.03h.08l.02-.04.01-.1-.03-.09-.07-.05-.11-.01-.06-.03-.04-.04.02-.06.07-.02.1-.1.09-.04v-.06l-.06-.06-.11-.04-.09-.05-.05-.19-.13-.11-.1-.04-.11-.11-.12-.04-.09-.02-.08-.09-.09-.05-.04-.06-.07-.12-.05-.06-.04-.11-.02-.08-.04-.06-.18-.11-.06-.05-.05-.08-.09-.08h-.01l-.02.01-.02.01-.14-.2-.16-.12v.08l-.08.05-.1.02-.16-.06-.25-.14-.11-.06h-.01l-.09.05-.04-.01-.07-.02-.09-.02.01.05.02.08-.02.07-.07.05.05.06.04.05.05.08v.11l.13.16.04.08.08.05v.11l-.01.05h-.01l-.17-.04-.07.04.08.07.03.09-.04.04.01.05.04.04.05.04.06.13.04.08v.05l.01.13-.03.06v.02h-.01l-.07-.04-.07-.08-.07-.05-.07-.03v.01l-.04.06.02.11.02.1-.03.09-.08.09-.08.02-.05.04-.04.08-.07.03-.09-.01-.08.01-.13-.1-.25.02v.01l-.02.12.1.25-.1.15v.06l.12.08.18.16.02.06-.09.03h-.08l-.01.08-.06.11.03.08.08.02.1.04.07.06-.05.06-.01.07.06.08.08.03.04.06.01.08-.03.15-.02.17.1.25.08.09.16.13.1.1.02.08-.01.06h-.01l-.09.01-.1-.07-.08-.01-.06.02-.01.06v.08l.1.18.03.12-.05.05-.25.08-.31-.05-.15-.07-.14-.13-.1-.06h-.1l-.03.05.13.13.12.16.34.28.01.02.08.22.09.24.09.07.03.08.06.08-.13.1-.05.1.13.15.09.07.06.07v.06l-.02.07h-.01l-.08.01-.15-.03-.08-.06-.05-.09-.24-.33-.05-.05v.01l-.11.06-.15-.14-.18-.21-.06-.1-.07-.05-.12-.08-.1-.09-.07-.03-.03.09.03.06.1.13.03.03.08.17.14.21.01.07-.11.02-.19-.08-.12-.04-.03.04v.06l.28.13.07.05.24.2.17.19v.05l-.11.07-.07-.02-.06-.06-.04.04v.05l-.05.05-.08.01-.12-.08-.02-.07-.31-.35-.2-.16-.09-.01-.09-.05-.11-.14-.02-.04-.06-.15-.01.01-.08.09-.12.1-.03.01-.15-.09-.07.08-.04.18-.02.11-.07-.02.01-.06v-.04l-.04-.03-.05.01-.02.11-.01.05-.04-.04-.05-.07-.03-.05-.06-.13-.13-.06-.17.05-.03-.03.02-.12-.04-.12-.06-.23-.09-.12-.02-.05.01-.17v-.17l-.06-.13-.14-.14-.05-.17-.13-.08-.1.04-.16.17-.07.1-.04.04h-.01l-.02.03-.06.04-.04.22-.06.01-.1-.01-.02.1.01.05.06.13.1.22-.03.11-.06.01-.09-.02-.16-.12-.09.01h-.1l-.05-.03-.1-.05-.05.06-.05.02-.08-.08-.12-.06-.02-.08-.17-.09-.1-.05-.11-.03-.33.01-.04.11-.06.09-.09-.01-.02-.06-.15-.07-.1-.08.02-.2-.11-.11-.03.01-.12-.07-.08-.07-.02-.14.04-.1v-.32l.06-.12.12-.11.1.01.09-.01.12-.04.08-.13.1-.16.01-.06-.1.04-.15.01-.13.02-.08.09-.11.1-.14.04-.22.04-.11-.05-.15-.11-.05-.04-.04-.03.07-.09.02-.06-.07-.05-.07-.09-.04-.08-.08-.05-.1-.1-.1-.1-.12-.19-.09-.15-.07-.09-.06-.15-.05-.07-.06-.13v-.12l-.08-.1-.04-.09v-.19l.1-.1.11.01.03.1.01.07.08-.19.02-.04.1.02.02.12v.07l.06-.14.09-.14.08-.17.1-.05.03-.05-.01-.05-.13-.08-.11-.09.05-.11.04-.16.05-.16.09-.06.1.02.08.08.04.09.15.03.15.07.08.02.13-.03.27-.11.2-.06.09.03.14.04.04.04-.04.07v.05h.17l.07.06.08.17.05.04-.03-.11.08-.15.07-.16.02-.11.02-.14.11-.09.13-.01.01.11.06.11.08.09v.15l-.08.1-.01.1.06.1.05.06.01.1.02.07.11-.05.15-.01.15-.1.06-.02.03-.08.08-.08h.01l.09-.04.03-.08-.06-.1-.05-.1-.08-.1-.05-.12.02-.1.07-.13.09-.12-.01-.06-.15.06-.19.05-.06-.02-.09-.02-.11-.09-.04-.13v-.15h.01l.04-.07.03-.07.08-.09.13-.1.06-.04-.09-.13-.15-.1-.12-.18-.07-.2-.06-.17-.06-.13-.01-.07-.03-.2-.03-.2.03-.18-.03-.11-.09-.11-.06-.11-.1-.07-.21-.05h-.1l-.03.02-.04.04-.15.08-.1-.07-.06-.12v-.14l.1-.16.04-.05.02-.03-.03-.07-.03.01-.08.03-.07-.05.03-.12.04-.07.02-.04.1-.04.11.03.05.06.06-.04.03-.1.03-.07-.06-.17.02-.13.07-.04.04-.02v-.11l.04-.05.09-.01.04.04.05-.02v-.08l.05-.2-.02-.05-.08-.09-.03.07-.06.06-.08.01-.09-.01-.04-.06-.05-.12-.03-.05-.06-.02-.06-.06-.01-.13.02-.1-.07-.02-.05-.04-.04-.1-.07-.07-.08-.02-.07.08-.06.09-.05.07-.11.08-.1.05-.08-.13-.05-.18.01-.07.05-.09-.03-.05-.13.05-.03-.06-.06.03-.03-.03-.07-.1-.11-.03-.11-.1-.06-.06-.06-.01-.05.06h-.11l-.05-.06-.08-.03-.07.07-.05.1-.03.04-.08.06-.04.03-.15.01h-.05l-.03.02-.06.03-.12.01-.18-.02-.15-.08-.14-.07-.07.06.02.1.05.08.04.1-.07.05h-.09l-.04.04-.05.05-.13-.04-.15-.08-.14-.08-.1-.06-.05.05-.05.08-.03.07-.04.11-.11.05-.11-.01-.13-.06-.08-.08-.03-.12-.02-.14v-.11l-.02-.04-.11.03-.1.01-.06-.04-.09-.03h-.06l-.09.03-.14.03-.05-.06.03-.08-.02-.04h-.1l-.12-.02-.03-.06.01-.1v-.08l-.08-.08-.04-.06.01-.06-.1-.08-.13-.11-.13-.09-.06-.12.08-.05.07-.05-.04-.08-.09-.05-.11-.01-.11-.06-.08-.1-.07-.13.04-.11-.03-.11-.07.04-.13.06.08.07.06.08.03.09-.11.05-.18.03h-.43l-.03-.09-.12-.02-.05-.1.05-.18.04-.04-.03-.06-.04-.11-.06.03-.08.05-.12.01-.1.03-.07.05-.07.04-.09.05-.13.03-.11.04h-.08l-.05-.04.01-.07.12-.06.14-.13.05-.09-.01-.09h-.08l-.1.04h-.16l-.14-.02-.02-.08.13-.08.24-.1.13-.07.06-.08.01-.13.02-.14.07-.11.07-.13v-.01l.01-.09-.06-.06h-.02l-.03.01-.03.07h-.09l-.11-.01-.08.01-.07.07-.09.05-.14-.01-.05-.06v-.12l.04-.08-.05-.02-.09.03-.06-.02-.01-.09-.05-.01-.02.06-.05.07-.06.01-.13-.05-.05-.08.04-.06-.05-.04-.08-.04-.05-.09v-.07l.12-.03.06-.01-.01-.04-.1-.01-.08-.03.02-.13v-.12l-.02-.09-.09.02-.07-.03-.07.01-.07.05-.05.02-.07-.06-.05.03-.08.06-.08.04-.06-.03-.07-.07-.09-.05-.02-.07.06-.07.03-.04.01-.04-.08-.04-.11-.05-.1-.04-.01-.1-.06-.02-.13.01-.08.02-.07.04-.08.02h-.09l-.06-.02-.07-.05-.07-.07-.11-.1-.07.03v.11l-.08.06-.05-.02v-.1l-.09.04-.02-.14-.05.01-.08.01h-.2l-.07-.06-.04-.09.02-.12.05-.06.05-.1.06-.06-.06-.08-.05-.11.05-.09v-.12l-.02-.1-.1-.1-.07-.08.12-.05.12-.05v-.1l-.07-.08-.07-.01-.04.05-.06.06-.09.04-.09-.03-.09-.08.01-.11-.02-.11-.07-.04-.1-.06.05-.12.08-.29.1-.18.15-.07.15.02.05.01.05-.07.1-.17.08-.05.21-.02.14-.11.12-.03.02-.05-.09-.04-.07-.02-.03-.12-.07-.08-.01-.08.05-.11.1-.04.09.01.06-.04-.01-.06-.06-.02-.1.01-.05-.01-.04-.04.04-.08.07-.03-.07-.04-.08-.03-.09.01-.09-.03-.05-.04h-.01l-.06-.04-.06-.05-.08-.04-.09-.05-.06-.06-.03-.05-.01-.03-.05-.08-.05-.08-.09-.13.01-.02v-.02h.01l.01-.01h.01l.01.01h.01l.01.01h.01v.01h.01l-.01.01h.01v.01h.01v.01h.01l.01.02h.01v-.02l-.01-.01-.02-.02v-.05h-.01v-.02h-.01v-.02l.01.01h.01v.01-.01l-.01-.02v-.02l-.01-.01v-.01l-.01-.08-.02-.04-.07-.07-.06-.1-.05-.11-.03-.06-.01-.11-.09-.07-.08-.03-.08-.01-.12-.01-.06-.01-.12-.01-.09-.03-.02-.02-.16-.04.03-.15.03-.12-.01-.07-.03-.06-.05-.08.03-.09-.02-.06-.1-.09-.12-.05-.11-.08-.04-.05-.01-.02h-.04l-.09-.01-.07-.04-.05-.06-.11-.15-.01-.12.06-.06h.14l.08-.04.04-.07.01-.14-.03-.08.2-.06.03.02-.01.09.04.07.1-.02.08-.08.05-.07.06-.11v-.08l-.1-.02.01-.05.05-.09-.1-.15-.05-.07h-.01V560.58h-.01v-.01h-.01v-.01l-.01-.01.01-.01v-.03h.01l.01-.01v-.02h.01V560.42h-.01l.01-.01v-.01h.01v-.01h.01v-.01h.01V560.24l.05.01.04.04.04.06.01.01.06.1.08.1.03.05.08.1.1.06h.11l.08-.04.05-.07v-.1l-.01-.07v-.01l.02-.07-.08-.09.01-.08.13-.03.17.01.02.04.07-.06.08-.08.07.05.09.02.08-.01.09-.04.01-.05-.01-.07-.07-.07-.01-.01-.03-.08-.05-.1v-.01l.03-.08.08-.13.05-.08-.07-.15-.05-.05-.11-.12-.03-.02-.03.03-.08.02-.05-.02-.11-.04-.06-.04-.05-.09-.09-.05-.05-.04-.01-.08.05-.03.04-.04.1-.05.01-.02.03-.12.22-.07.22.06.21.03.07.04.05.11.09.03.09-.02.15.08.03.06h.08l.04.04.02.04.06.02.09-.02.06.04.09.07.02.04.08-.03.03-.07.06-.04.07.02.03.07.01.08v.07h.04l.05-.04v-.08l.04-.04.1-.06.12.05.07.03.02.05.02.06.05.08.06.03.09-.02.01-.04-.03-.1.03-.06.07-.01.06-.02.02-.07v-.01l-.06-.06-.04-.08.01-.08.06-.03.06-.04v-.06l-.04-.09-.08-.02-.06.02h-.08l-.11-.01-.09-.04-.04-.06.01-.1-.01-.05-.04.06-.08.03-.13-.01h-.07l-.06-.01-.02-.05.08-.04.1-.06.05-.04.03-.07-.04-.06-.1-.09-.08-.11-.05-.1.11-.03.16-.02.11.01.08-.02v-.05l-.05-.1-.08-.13-.06-.13.03-.07.07-.07.13-.03.11-.03.1.03h.1l.05-.08.04-.07v-.01l.02-.02v-.09l.08-.04.04-.05-.06-.08-.05-.08.06-.12.06-.09-.05-.05-.05-.05-.03-.07.08-.09.07-.12.13-.1.09-.07.03-.06-.08-.04-.06-.02.02-.1.06-.08.02-.08-.09-.03-.05-.03-.03-.09-.16-.07-.17-.12-.16-.08-.19-.1-.07-.03-.09-.04-.13-.03h-.07l-.03-.04-.06-.01-.06.02-.08-.01-.02-.07-.01-.05-.07-.05-.15-.05-.15-.05-.09-.04-.12-.09-.08-.1-.01-.11.02-.06-.03-.06-.05-.03-.06.01-.06.03-.08.01-.03-.04h-.09l-.06-.01-.07-.08-.06-.03-.03-.1-.08-.08-.14-.06-.03-.08-.11-.03-.14-.04-.07-.02-.03-.1-.07-.06-.04-.05-.22-.05-.02-.09-.1-.09-.1-.09-.1-.06-.04-.09-.05-.05-.12.01-.08-.05-.11-.05-.09-.01-.08-.03v-.06l-.04-.05-.07-.04-.09-.01-.04-.06.01-.11.03-.08-.01-.05-.07-.02-.07-.02-.03-.03-.06-.01-.01-.01-.03-.03-.05-.04-.1.01-.08.01-.03-.1-.03-.09.01-.11-.04-.08-.12-.06-.16-.04-.09-.04-.03-.13.01-.11.07-.04.06-.01.03-.05-.02-.1-.01-.11.05-.13.06-.06.07-.07h.07l.08.01.05-.03.05-.08.09-.09h.12l.1-.01.07-.07.12-.04.13.01.15.01h.09l.14-.01.11.04.12.06.12.05.14.09.02.12-.06.03-.13.01-.05.03.05.09.02.08-.01.11-.04.03.03.05.15-.01.08.02.1.05.11.03.07.03.1.05v.01l.04.06.05.06.09.08.11-.01.1-.01.18.09.1.06.13.1.19.02.14.11.16.11.22.09.2.09.11.06.03.01.09.04.11.04.1.06.01.01.11.07.04.09.06.11.01.01.08.06.13.02.1.03.12.06.04.03.04.02.11.04.13.03.18.03.14.03.11.06.08.08.06.06.05.03.08-.04.02-.05-.01-.08.08-.04.04-.01h.02l.06-.05.04-.07.02-.04.01-.01h.01l.05.03.14.04.16.05.03.01.03.02.09.06.07.02.07.03.13.06h.13l.06.02.08.03.15.01.05.04.05.09.1.04.05.03.03.03.02-.01.01-.01-.01-.03-.01-.02-.01-.02-.04-.04-.05-.05.02-.02h.04l.18.07.05.04.15.09.06.03h.05l.02-.03.03-.04.03-.01.03.01.01.02.02.04.04.07.07.05.12.06.1.06.03.01.02-.03.01-.03-.01-.03-.03-.04.01-.04-.04-.08v-.1l-.14-.08-.03-.01-.08-.09-.09-.04h-.01l-.14-.03-.12-.01-.07-.01-.12-.08-.09-.18-.01-.05.07-.05-.02-.06-.06-.05-.1-.07-.09-.08-.08-.03v-.07l.05.01.1.04.21.07.21.1.27.11.11.03.01-.08.06-.1-.01-.03-.05-.05-.02-.07.01-.06.02-.06h.05l.11.03.05.02-.12-.15.02-.03.06-.06.03-.04-.01-.08.01-.07v-.02l-.06-.02-.14-.06-.07-.06-.13-.09-.05-.08-.03-.08-.05-.02-.05.02-.08.02-.02-.03-.02-.09-.06-.05-.05-.09-.02-.04-.06-.07-.07-.07-.08-.05-.1-.03-.08-.03-.07-.04-.02-.07-.02-.08-.02-.04-.02-.04-.01-.06.02-.05-.02-.07-.07-.05-.11-.06-.11-.07-.11-.07-.07-.07v-.04l-.14-.04-.15-.04-.05-.03-.01-.09.03-.03-.01-.03-.09-.09-.1-.04-.14-.05-.07-.04h-.01l.14-.06h.01l-.05-.1.01-.05.07.01.05.07.02.02.22-.08v-.09l.1.04.09-.04.03-.01.06.06.12.03.09.01.11.08.09.03.03-.03.04-.05.03-.04.02-.04.02-.03-.03-.04-.11-.08-.1-.05-.12-.05-.04-.03-.05-.05-.03-.05-.07-.06-.09-.04-.06-.02-.06-.01-.05.02-.04.02-.03.04h-.09l-.05-.02h-.06l-.03-.03-.05-.04-.04-.01h-.1l-.04-.08-.01-.07-.03-.08-.03-.01-.13-.06-.02-.02-.03-.09-.06-.06-.1-.1-.01-.07.05-.04.08.03.12.07.13.05.26.11.05.01.02-.02-.07-.1-.16-.08-.2-.08-.11-.05-.06-.07-.08-.06-.12-.07-.06-.04-.08.01-.04.02-.03.03-.05.07-.12-.08v-.07l.05-.13.03-.12-.03-.02h-.1v-.09l.03-.11.07-.04.07-.01h.04l-.01-.08-.04-.08-.13-.11-.04-.05-.04-.08-.09-.15.1-.03.05-.04.02-.06-.03-.04-.21-.12-.06-.11v-.03l.05-.03.29-.01.11.03.23.14.12.07.13.1.04-.01v-.03l-.04-.05-.25-.27-.08-.09-.22-.17-.04-.03-.22-.06-.2-.13-.03-.02-.02-.01-.14-.04-.12-.05-.16-.06-.08-.04-.13-.09-.19-.13-.16-.12-.05-.03-.03-.11-.11-.15-.02-.02.12-.02h.01l.13-.02v-.01l-.03-.07-.04-.05-.17-.09-.07-.1-.05-.1.09-.06.18-.01.1-.03.04.02.11.05.06.05.09.05.18.06.09.08.07.01.06-.02.12-.02.1.04.07.09.06.2v.05l.05.04.1.05.24.1.1.09.09.09.03-.04.02-.19.03-.04.05-.01h.07l.03-.06-.03-.06v-.09l.11.01.08.07.16.09.13.08.03.03.19.12.1.02.09-.04.08.06.14.12.04.05.13.12.06.07.05.07h.05l-.04-.09.01-.08.03-.04h.03l.04-.01.03.02.08.07.14.19.05.07.13.13.1.09.2.12.11.09.13.05h.15l.13.11.13.1.22.09.16.1.22.09.12.08.17.08.16.11.14.14.06.06.09.05.09-.01.11-.01v.01h.01l.01.01h.01v.01h.01l.01.01.01.01.01.01.01.01h.02v.02l.14.11.16.19h.01l.1.04.09.14.04.1.03.04h.05v-.06l-.06-.22.21.04.04.04.05.01.04-.03.06-.05.08-.02.12.04h.11l.03-.05-.01-.07-.06-.12h.09l.1.01.08.05.18.05.06.02.07.04.07.05.1.04.12.03.18.11.09.06.07.05.06.03.13.04h.07l.02-.04v-.04l-.07-.06-.08-.05-.05-.06.03-.07.09-.07.07-.02.23.05h.03l.04.01.08-.04.09-.04.11-.01.03-.14h.1l.05-.06.04-.09v.01h.03v-.01l.03-.02.06.02.06.01.29.06.15-.04.09-.08.07-.05.18.15.05.09-.01.11-.06.13v.05l.16.06.09.03.05.11.01.23-.01.06-.02.05.05.07.2.17.11.05.14.06.37.1.12.06.09.07.1.09h.09l.07.06.1.08.07.07.12.05.03.06.13.1.01.01.14.09.02.03v.07l-.01.05v.02l.11.09.1.06.17.1.01-.07.13-.18.03-.11.03-.07v-.1l.01-.05-.05-.07-.05-.11v-.09l.12-.07.06.05.01.01.13.13.17-.06.03-.04.02-.07.28-.07.04.1.06.02.08-.01.11-.07.04-.07.11-.1.08-.04h.07l.04.03.09.02.14-.05.07-.02.06-.05v-.06l-.04-.08V548.68l.05-.08.08-.02.01-.04-.02-.03-.07-.12-.1-.17-.09-.19-.19-.1-.08-.01-.13-.04-.09-.05-.14-.1-.06-.04-.07-.1-.03-.11.04-.08.09-.06.03-.05-.01-.09.02-.06.44-.06.01.05.05.14.06.09.05.03.07-.01.03-.13.03-.09.06-.02h.06l.05.02.09.05h.07l.02-.05v-.01l.01-.03.01-.05v-.06l-.01-.05-.01-.05-.01-.05-.02-.05-.03-.07-.03-.02.02-.08.11.01.08.07.09.1.11.09.09.09.05.03.03-.03.02-.03.02-.04v-.03l-.02-.04-.02-.03-.02-.03-.04-.06-.04-.09.04-.1.11-.12.2-.11.14-.05h.1l.06-.05.01-.07v-.11l-.02-.07-.01-.02-.07-.03h-.02l.03-.07-.03-.04-.04-.1v-.03l.02-.1-.01-.11v-.11l.02-.11-.01-.15-.03-.06-.08-.08-.06-.08.04-.07.13-.02.11-.01.08-.02.05-.02.01-.11v-.13l-.03-.08-.08-.12-.05-.08.08-.06.08-.07.09-.11.04-.04.06-.01h.03l.06.09.06.08.03.02.07-.05.06-.05.04-.01.07.03.02.03.03.04.03.04.05.03.1.02.12.03.05-.01h.03l.03-.02.03-.02.01-.01.01-.01h.01l.03-.04.03-.01.03-.04.03-.03.07-.06.18.01.12.02.19.04.11-.03.08.11h.05l.05.07.05.05.08.02.02.01.02.02.04.01h.03l.03-.01.03-.01.04-.02.03-.01.06.03.03.01.03.02.03.01.05.01.04.03.04.02.03.02.03.03V544.78l.07.08-.01.04-.04.02.01.03.03.02.03.02.05-.01.07-.1.04-.05.03.02.02.06.05.03.04-.01.02-.02-.01-.06-.03-.08.02-.04.04-.04.04.02.1.07.06.07.04.03.05-.01.02-.02.01-.04-.03-.05-.01-.03v-.04l.01-.02.03-.01.06.01.08.03.14.07.01.01.03.02.11.09.07.06.01.05v.13l-.02.07-.02.03-.02.02-.03.03.04.05.01.03.01.01-.03.03-.02.04.07.07.09.07.03.02.09.04.06.01-.05.06-.05.04-.03.05-.09.03.01.07.02.08-.06.02h-.08l-.01.02.06.02.04.03.02.02.06.04.06.06.08.04.03.03.09.01.06-.01.05-.04.15-.17.07.09.04.05.08-.01.1-.03.1-.05.08-.08-.02-.13.03-.05.09-.02.1-.01.09-.01.11.02.07.01h.09l.03-.01.02-.02.02-.05.03-.04.04-.04.03-.04.03-.01H628.42l.07.01.12.03.08.02.06.01.02-.04-.01-.08.01-.06.05-.14.02-.08-.01-.07-.08.01h-.11l-.08-.01.01-.11.05-.22.02-.01.03.01.06.03.07.03.06.01.12-.06h.02l.19-.11-.02-.02-.16-.16-.04-.05.01-.03.12-.02-.04-.04-.09-.03-.03-.08H628.77v-.01l.01-.01h-.01.01v-.02h-.01v-.01h-.01v.01h-.01v-.01h.01l.01-.01.02-.01v-.02l.02-.03v-.01l.07-.01.1-.03h.05l.01-.01.01-.01h.02l.01-.01h.02v-.01l.07-.02.07-.01.05-.01.11-.05.1-.08.09-.06.07.01.09.08.02.01h.05l.03-.02.12-.03h.1l.1.01.09.02h.06l.09.01.05.01h.05l.07.01.05.01.09.03v.09l.03.11.08.07.1.03h.13l.09-.06.12-.07.09-.04.05.01.01.07.01.05.05.03.06-.06.06-.11.07-.11.05-.05h.07l.05.04.03.02.07-.01.02.06-.02.07-.01.06.1.06.06.04.02.09-.01.04h.1l.09.04.09.06.15.01.04.03v.07l.05.03.12-.04.1-.01h.13l.06.06.04.14.03.13v.09l.05.1.08.1.05.08.08-.03.01-.1.03-.1h.06l.1.03.26.17.06-.03.02-.05.04-.09.07.01.04-.02h.02l.13-.02.04-.02.02-.05.07-.04.03-.08.01-.12v-.09l.08-.02.13.02.13.01.1.03.1-.04.11-.02h.14l-.05-.07.03-.1.06-.07.05-.03.02-.05-.06-.04.03-.09.06-.02.09-.12.01-.01.1-.09.01-.06-.06-.04-.03-.06.07-.06h.06l-.01-.08v-.09l.11-.02.15.02.09.01.16-.01.14.03.12.04.11.01.01-.08.15-.03-.3-.34-.04-.13-.25-.06-.18.02-.11-.12.05-.07-.18-.17-.41-.11-.06-.13-.32-.04-.3-.11-.05-.02-.18.04-.07-.03-.11.02v-.14l-.36-.02.05-.2.16-.08-.2-.13.16-.07.12-.05-.02-.11.18-.08-.04-.08.15-.08.08-.11-.09-.17-.21-.23-.29-.14v-.16l-.12-.03-.06-.13.13-.03-.15-.14.11-.16-.17-.16.18-.18.06-.15-.26-.02-.11-.09.04-.12.19-.24.12.09.31-.05.16.05.14.02.12.04.17-.08.13.22.11.04.23-.03-.09-.14h.19l.1-.12.16.1.26-.07-.19-.11-.15-.15.02-.12.19-.05.01-.11-.14-.03-.13-.01.01-.12-.16.01.09-.08-.04-.13-.2-.08-.04-.12.23-.05.08-.13-.09-.12.14-.1-.07-.15h-.01l-.22.04-.24.03v-.23l.14-.15.1-.2-.22-.04-.06-.18-.17-.04-.16.07-.13-.08.06-.16-.18-.18v-.13l.14-.01-.01-.15-.09-.18-.23-.12.21-.18.03-.14-.18-.19.24-.2.09-.18-.11-.07-.2.13-.16-.19.19-.17.17-.16.04-.13.03-.01.1-.01.3-.18-.01-.15.12-.07-.06-.24.06-.16-.15-.1.12-.17v-.01l-.06-.11-.23.15-.08.11-.17.01-.02.11-.01.09-.13.07-.03.14-.03.12-.28.25-.26-.2-.08.16-.17.05-.04.17-.17-.03-.03-.1.1-.1.01-.09.01-.02-.28.04-.03.11-.13.04-.13-.04-.2-.07.06-.13.05-.12.14-.08-.1-.12.18-.24.19-.2h.19l.12-.12.02-.17.1.02.07-.1-.06-.04-.03-.06-.11-.09-.14.15-.31.16-.1-.05.01-.14.08-.06.01-.1.12-.04.04-.12.2-.05.15-.17.06-.04.14-.09.12.01.25-.09.28-.32.29-.28.1.05.04-.12.11-.12-.2-.23-.05-.27-.03-.19-.13.1-.18-.07-.12.21-.13.15h-.11l-.21.24-.03-.13-.17.01-.07-.12-.16.1-.13-.11-.14.17-.07.09-.25-.01-.07.15-.19-.02-.05.14-.27-.01-.24.08-.07.15-.17.09-.25.03-.45.03-.08-.13-.14-.06-.15.07-.18-.11-.12.03.06-.15-.01-.13.16-.08.06-.21.11-.08v-.2l.18-.16-.03-.17-.07-.09-.04-.2.11-.05-.02-.14-.09-.19-.05-.13-.19-.05-.05-.24.04-.18-.15-.08-.09.01-.15-.22-.01-.17.14-.11h.13l-.01-.13-.28-.06-.43.11-.14.19-.22.09-.06-.1.11-.06-.08-.19.12-.08.06-.14.15-.06-.11-.13-.19-.03v-.18l-.11-.14.09-.08-.01-.05-.13.03-.04-.05.19-.09v-.08l-.27.01.09-.06.08-.11-.07-.1-.05-.07.21-.05.02-.13-.15-.19.01-.25-.1-.03-.22.19-.04.14-.21.06-.12-.03-.16.03.01-.13h-.17l.02-.13-.12-.03v-.16l.15-.05.01-.08-.08-.11-.15-.04.06-.16-.17.05-.07-.11-.21.01-.16.04-.38-.11-.04-.13.05-.18-.02-.14-.28.04v-.12l.11-.1.17-.14.08-.2.19-.05.14-.14.18.01.07-.07v-.13l.07-.08-.01-.1-.1.01-.03-.08.24-.02.01-.11-.09-.1.09-.04v-.14l.1-.09.2.02.08-.07-.07-.08.09-.12.09-.12-.1-.05.02-.08.14-.04.01-.18v-.02l.05-.11.31-.14.2-.03.03.02.02.01.02.01.01.01.16.09.13-.07-.06-.16-.04-.01-.22-.07v-.11l.19-.02-.01-.17.08-.18-.5.05-.03.04-.07.08h-.1l-.18.22-.19.2-.09-.03-.11.11-.05-.07-.09.12-.13.13-.59-.09-.04-.26-.15-.02-.16.04-.04-.08-.12.09-.1.19-.14.22-.14.08-.21.23-.11.06v-.34l-.08-.14.02-.2-.09-.04-.13.09-.12-.18-.14.22-.12.15-.08-.07.09-.33.11-.29-.06-.04-.02-.01-.17-.1-.23.11-.09.24-.06.14-.05.17.03.24-.04.13-.02.06-.11.02-.04.01.01.08-.1.23-.04.06-.11.16-.15.02-.1-.17.01-.08.02-.14.02-.14.09-.07-.14-.23-.13-.09-.03-.18h-.15l-.19-.14.11-.13-.02-.11.04-.15.03-.03.14-.16.2-.19.31-.4.21-.34-.18-.13-.15.11-.19-.06-.12-.19-.03-.08-.09-.2-.23-.03-.11.15-.05.19-.32.02-.21.02-.36.38-.1.03-.18-.33-.23-.05-.11-.09-.14-.03-.16.05-.01-.14.1-.15.1-.14.02-.21-.14-.1v-.16l-.23-.15-.12-.01.03-.3-.15-.22-.14.07-.12-.01-.21-.15-.2-.01.07-.14.03-.19.17.06h.18l.23-.02.25-.12.19-.01.21-.07.13.07.1-.02.06-.01.09-.07.12-.07.04-.21.27-.48.18.06.04-.18-.04-.11-.17-.1-.06-.15-.11.05-.08.15-.09.04-.08-.02-.06-.13-.24-.21-.01-.12-.01-.04-.08-.12-.07-.37-.29-.1-.14-.12-.2-.04-.23-.13-.02-.01-.11-.17-.47-.04-.09-.13.04-.33-.11-.09.04-.13v-.1l-.24.03-.3.2-.09-.11-.41-.17-.13-.16-.12-.02.05-.46-.02-.17.04-.19.17-.13-.02-.06-.03-.08-.13-.04.01-.11.46-.42-.05-.32-.12-.11-.2-.42-.01-.02-.11-.18-.01-.21.03-.01.13-.05.24-.23.21-.16.12-.17.22-.05.16.03-.01-.07-.16-.12-.06-.21-.17-.04-.18.05-.01.15-.13-.06-.08-.19v-.19l-.13-.16-.09-.23-.17-.32.01-.12.18-.03.11-.38h-.02l-.35-.07-.21-.49-.13-.1.01-.14-.1-.18-.06-.17.06-.06.39-.04.19-.01.04-.08-.05-.19-.04-.26.03-.21.01-.41-.27-.26-.12-.26-.05-.28.08-.27.01-.23-.16-.26-.19-.08-.03-.01-.21-.04-.26.07-.02.14.01.08.02.15-.04.29.13.21.01.12-.1.09-.03.18-.12-.02v-.23l-.07-.27-.16-.21-.08-.1-.14-.2-.1-.18-.03-.34-.08-.25-.06-.34.21-.19.23.02-.02-.14v-.23l.1-.14.21-.09.18-.18.07-.13-.17-.21-.21-.14-.07-.41-.15-.2-.04.22-.3-.07h-.02l-.08-.23-.13-.12-.28-.39-.02-.11-.06-.23.1-.06-.12-.31-.29-.31-.17-.25-.1-.19.12-.04.18.13.04-.18-.07-.19.14-.32.2.11-.01-.31.17-.06-.06-.22.12-.2-.01-.15.05-.26-.12-.33-.16-.04-.01-.27-.03-.08-.04-.1-.17-.32-.19.13v.19l-.18.01-.06.19.12.09.1.2-.04.19-.13-.02.09.2.16.47-.16-.12-.25.14-.18-.12-.07-.23-.13-.14-.16-.29-.01.37-.04.25-.1.09-.1-.04-.17-.2-.3-.1-.09.18-.15.04-.44-.46-.01-.02-.03-.19-.16-.17-.11-.33-.08-.01-.07.16-.05.12-.08-.02-.12-.09-.14.07-.28-.09-.01.03-.04.16-.12-.07-.03.11.05.2.17.15.08.22-.4.09-.32-.29-.02-.04-.02-.05-.01-.02v-.01h-.01l-.05.02h-.09l-.11-.05-.14-.21-.32-.36-.39-.45-.19-.37-.08-.08-.2.03-.07-.05-.09-.13-.32-.44-.28-.16-.08-.15-.03-.08-.11-.08-.01-.01-.04-.03-.06-.13.08-.24-.16-.02-.03.03-.02.02-.06.06-.12-.11-.02-.02-.16-.14.04.24-.15.12-.28-.18-.32.01-.26.12-.14.21-.22-.06-.07-.29-.14-.11-.1-.27-.03-.24-.22-.36-.05-.29-.09-.19.19-.26.04-.23.35-.34.36-.21.14-.18-.03-.17.12-.24-.02-.03-.07-.18-.03-.23-.15-.14.12-.16-.14-.27.04-.06.01-.02.02-.04-.04-.22-.11-.06.04-.15-.1-.27.04-.18.17-.05h.18l.08-.26.27.07.12.04.2-.19.03-.1-.17-.25-.08-.31-.04-.25.09-.07.01-.01-.04-.31h.21l.17-.11.1-.13h.13l.3.07.12-.42-.09-.27.12-.17v-.28l-.17-.05h-.12l-.2.02-.12-.25v-.21l-.1-.19-.14-.04-.04-.18-.28-.01-.17.04-.2.36.08.27-.08.25-.21.08-.07.03-.14.2-.18-.12-.15.08-.15-.16-.34-.13-.17-.25.1-.15-.28-.13-.07-.28-.12-.3.12-.31-.06-.18v-.32l-.03-.32.01-.01.04-.03.04-.04.2.07H606.31l.13-.11.15.02.04-.29.09-.22.3-.05.22.06.07-.12-.02-.15.17-.12.19.07.07-.12.14-.22.15-.03.11.09.09-.04.08-.27.21-.06.01-.15.31.04.02-.17.3-.28.11.02.02-.12.29-.3.01-.12v-.09l.15-.21-.23-.01-.13-.12-.22-.2-.3-.22-.16-.03-.11-.21-.48-.14-.15.11-.1.16-.23.01-.22-.11-.08-.18-.29-.01-.05.2-.44.08.03.48-.04.19-.18.05-.03.26-.06.09-.31.04-.38.37-.16.01-.03.32-.04.01-.17.03-.15.18.11.1.02.21-.15.18.12.2-.05.26-.06.01-.16.2-.09.11-.08-.03-.16-.07-.13-.13-.24-.25-.1.21-.25.05-.2-.29-.11-.38-.09-.25-.18-.25-.12-.02-.41-.07-.1-.2-.39.05-.05.25-.29-.08-.16.09.04.2-.11.05-.14-.18-.25.04-.12.15-.1.25-.04.09-.32.15-.11-.12-.23-.03-.28.08-.31-.32-.21-.09-.26.04-.15.1-.24.03-.12.25.08.07-.05.2-.37.29-.12-.03-.15-.2-.11.12-.04-.08-.11-.01-.13.12-.02-.23.23-.12.1-.11-.15-.12-.07-.2-.21-.01-.14-.15v-.03l-.07-.24.16-.09.08-.11-.17-.14.05-.07-.02-.24.09-.3.06-.22.23-.03.18-.18.32-.12.22.39.12.09.13-.1.16-.06.15.05.15-.09.24.03.31.17.22.02v-.3l.06-.02.01-.01.34.19v.21l.2.03.09-.27.12-.01.1-.2.08-.14.32-.13.42-.11.16-.3-.15-.09-.3-.24-.31-.25-.35.13-.16-.28-.13-.04-.28.22-.35-.11-.28.2-.1-.09.02-.22-.18-.24-.07-.25-.08-.46-.3-.1-.04-.02-.14.05-.21-.65.03-.17v-.04l.02-.14-.14-.09-.22-.14-.41-.36-.05-.12.11-.07.02-.28.04-.13.02-.07-.02-.08-.07-.01-.26-.05-.15-.09.01-.26-.11-.14.04-.16.12-.06.03-.02.21-.24-.13-.05-.23.05-.1.02.04-.14.12-.41v-.16l.2-.2.05-.25.18-.01-.02-.17.05-.11.04-.22.01-.06h.11l.09.01-.01-.04-.06-.2-.54.05-.3-.02-.18-.08-.04.21-.05.16-.26.15-.02.02v.13l.11.17-.13.08-.05.04-.14.27-.02.31-.05.1-.38-.1-.04.1.07.29-.19.3-.19-.11-.19.03-.12-.04-.16-.18-.17-.05-.13-.09-.02-.05-.11-.22-.36-.01-.06-.14-.19-.03-.21-.13-.17.2-.28-.16-.38.1-.04-.22-.01-.03v-.02l-.03-.16.48-.1.03-.1-.3-.21-.32-.4-.07-.33.09-.15.3-.27.01-.03.15-.34.11-.3.01-.19-.23-.03-.2.09-.1-.04.03-.13v-.01l.01-.03-.05-.18-.04-.17-.33-.25-.08-.18.08-.1.05-.1-.09-.12-.33-.09v-.16l.17-.06-.06-.09.06-.24.28-.18-.06-.09-.25-.02-.03-.28.08-.09.32-.05.19.03.06-.22-.04-.22.09-.15-.04-.18v-.2l-.1-.06-.16.22-.06-.01v-.17l-.09-.19-.27.01-.09.13-.15.13-.14-.01-.02-.18-.1-.11-.31.03-.08.16-.01.02-.02.04-.24.12-.32-.3-.05-.06-.17-.22-.1-.11-.05-.05-.03-.03-.11-.13-.39-.16-.01-.08.18-.09.28.02.39-.04.1-.08.12-.14.3-.12.13-.2.02-.18-.08-.15-.21-.09-.26.01h-.01l-.06-.03-.05-.01v-.03l.22-.13.23-.07.14-.06.02-.01.02-.01.03-.11.12-.02h.22l.19-.16.02-.14-.21-.36-.01-.11-.11-.07-.01-.05-.06-.11-.11-.02-.18.14-.16.03-.23-.09-.06.05v.12l.01.03-.01.01-.04.03-.16.17-.12-.02-.16-.27-.27-.02-.09-.1-.53-.09h-.21l-.13-.1-.01-.12.04-.12.02-.06-.11-.05-.01-.19.07-.08.23-.17.32-.34.18-.16.04-.23.07-.02.17.03.2-.06.06-.08.32-.2.07-.16.14-.04.31.04.01-.07.01-.02.02-.07v-.02l-.02-.03-.06-.1-.25-.23-.04-.1.08-.48.02-.12.39-.27.03-.02 1.78-.77 1.06 1.72.66 1.08 1.25 1.43.06.04.86.56h.01v.01l.03-.01Z"/>
 <path onclick="info_show(this,14)"  d="M792.34 587.29h-.02l-.03.01h-.01l-.02.01h-.01l-.01.01h-.02l-.01.01h-.01l-.01.01-.01.01v.01h-.01v.01l-.01.01v.01l-.02.03v.02h-.01v.01h-.01l-.01.01-.02.01-.01.01h-.01l-.01-.01-.03-.01h-.01l-.01-.01-.02.01h-.01v-.01h-.08v-.01h-.01v-.01h-.02v-.01h-.01l-.01.01h-.02l-.01.01v-.01h-.01v-.01h-.01v-.01h-.01v-.02h-.01.01v-.02l.01-.01h.01v.01-.01l.01-.01h-.01v-.02h-.01l-.01-.02h.01v-.01h-.03l.01-.01v-.01h-.01v-.01h-.01v-.02h-.01l-.02.03h-.01l-.06-.04-.03-.01-.03-.04-.02-.03-.01-.01-.02-.01-.02-.03-.02-.02-.06-.03-.06-.03-.06-.02V587h-.01l-.01-.01h-.04v.02h.01v.04l.01.01v.04h.01v.08h.01v.01l.01.01v.01h.01V587.33h.01v.04l.01.01v.02l.01.01v.02h.01v.03l.01.03v.01h.01v.03l-.02-.04-.01.02v.02l.02.03.02.04.01.05-.01.05-.02.06-.02.02-.02.02-.01.01-.04.02-.01.02-.02.05v.01l-.01.03v.01h-.01l-.03.03-.03.03-.01.04-.01.01v.08l.01.05-.01.05-.01.03-.03.13v.02l-.24.05-.38.07-.05.01-.12-.04-1.14-.38-.08-.49-.02-.09-.22-.52-.04-.09-.27-.58-.18-.4h-.01v-.02h-.01v-.02h-.01v-.02h-.01v-.02h-.01v-.02h-.01v-.02l-.01-.01v-.01l-.01-.01v-.02h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01l.01-.01.01-.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01h.01v-.01l.01-.01v-.01h.01v-.01h.01v-.01h.01l.01-.01h.01v-.01h.01V585.13h-.01v-.08h-.01V584.7h-.01V584.45h-.01v-.15l-.01-.01V584.1h-.01V583.86h-.01V583.58h-.01V583.52h-.01v-.05h-.01v-.05h-.01v-.05h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04l-.01-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01V583h-.01v-.04l-.01-.01v-.03l-.01-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.05h-.01v-.04l-.01-.01v-.04h-.01v-.04l-.01-.01v-.03l-.01-.01v-.03l-.01-.01v-.03l-.01-.01v-.03l-.01-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01V582h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.04H788v-.05h-.01v-.04h-.01v-.04h-.01v-.04l-.01-.01v-.04h-.01v-.04h-.01v-.04h-.01v-.02l.01.01.85 1.11.32.34 1.07.42.76.24.64.19.34.11.88.27.79 1.7.04.1-.22.11-.02.01-.13.07-.01.03v.01l-.01.02v.01l-.01.01v.01l-.01.01v.01h.01l-.01.02v.02h-.01v.15l-.01.01v.03h.01v.03l-.01.01h-.03v-.01h-.01v-.01h-.01v.01h-.01v-.04l-.01-.01-.01.01v.01h-.01v.01h-.01l-.01.01-.02.01v.01h-.01l-.01.02h-.01l-.01.01h-.01v.01l-.01.01H793v.01h-.01l-.01.01-.03.01-.01.01-.01.01-.01.01h-.01l-.01.02-.01.02-.01.02v.01h-.01v.01l-.01.01v.01l-.01.01v.01l-.01.01v.01l-.01.01-.01.01-.01.02-.01.01-.01.02-.01.01-.01.02-.02.04-.01.01v.01h-.01v.01l-.01.01v.01l-.01.02v.01l-.01.02v.01h-.01v.02l-.01.01v.02l-.01.01v.02h-.01l-.01.04h-.01v.01l-.01.02-.01.03-.01.01-.01.02v.01l-.01.02-.02.04v.01l-.02.05v.01h-.01l-.01.03v.01l-.01.02-.01.01-.01.01-.03.03-.02.03-.01.01-.01.01-.01.01-.01.01-.01.01-.01.02-.01.02-.02.03-.01.01v.01l-.01.01v.01Z"/>
@@ -532,28 +1947,37 @@ function calcResize() {
     <div class="data_holder">
         <h5 class="riding_name"></h5>
         <h6 class="riding_inc"></h6>
-        <h6 class="riding_note">Click on a riding to get started   
-        </h6>
-        <span class="riding_note_text"></span>
-        <div class="article_section">
-            <h6 class="article_section_title"></h6>
-            <a class="riding_art1_link" href="#" target="_blank">
-                <h6 class="riding_art1"></h6>
-            </a>
-            <a class="riding_art2_link" href="#" target="_blank">
-                <h6 class="riding_art2"></h6>
-            </a>
-            <a class="riding_art3_link" href="#" target="_blank">
-                <h6 class="riding_art3"></h6>
-            </a>
-        </div>
+        <div class="riding_info_grid">
+            <div>
+                <h6 class="riding_note">Click on a riding to get started   
+                </h6>
+                <span class="riding_note_text"></span>
+            </div>
 
+            <div class="article_section">
+                <h6 class="article_section_title"></h6>
+                <a class="riding_art1_link" href="#" target="_blank">
+                    <h6 class="riding_art1"></h6>
+                </a>
+                <a class="riding_art2_link" href="#" target="_blank">
+                    <h6 class="riding_art2"></h6>
+                </a>
+                <a class="riding_art3_link" href="#" target="_blank">
+                    <h6 class="riding_art3"></h6>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
    
 
       <style>
+        .riding_info_grid {
+            border: 2px solid red;
+            grid-template-columns: 1fr 1fr;
+        }
+
         path:hover {
             fill:rgb(241, 132, 132);
             cursor: pointer;
@@ -564,6 +1988,129 @@ function calcResize() {
 
 <script src="zoom.js"></script>
 <script>
+
+function clearArt() {
+    let artSection = document.querySelector(".article_section")
+    artSection.innerHTML=""
+}
+
+function loadArt(ridingID) {
+    fetch("fed_articles_by_candidate_csv.csv")
+    .then(response => response.text())
+    .then(csvText => {
+        //console.log("test"+ ridingID)
+        const rows = csvText.split("\n").map(row => row.split(","));
+        let artSection = document.querySelector(".article_section")
+        //console.log(artSection)
+        rows.forEach((row) => {
+            if (row[1] == ridingID) {
+                //console.log(row)
+                //create a div
+                let artDiv = document.createElement("div")
+                artDiv.innerHTML = row[4]
+                artSection.appendChild(artDiv)
+            }
+        })
+    })
+    .catch(error => console.error("Error loading dataCSV:", error));
+
+
+}
+
+
+function info_show_search(riding) {
+    clearArt()
+    //use argument to pass in data-attr from the specific riding
+    fetch("CAN_electoral_map_data1.csv")
+    .then(response => response.text())
+    .then(csvText => {
+        const rows = csvText.split("\n").map(row => row.split(","));
+        //console.log(rows); // Array of arrays
+        rows.forEach(row => {
+            if (row[1] == riding) {
+                cardData = row
+                //console.log(cardData)
+            } 
+        })
+
+        loadArt(cardData[0])
+
+        let rName = document.querySelector(".riding_name")
+        let rInc = document.querySelector(".riding_inc")
+        let rNote = document.querySelector(".riding_note_text")
+        let rNoteTitle = document.querySelector(".riding_note")
+        //Articles
+        //console.log(cardData)
+        let rArt1 = document.querySelector(".riding_art1_link")
+        rName.innerHTML = cardData[1]
+        rInc.innerHTML = `Incumbent: ${cardData[2]} ${cardData[3]}`
+        rNote.innerHTML = cardData[4]
+        rNoteTitle.innerHTML = 'Notes'
+
+        //console.log(rArt1)
+        rArtSectTitle = document.querySelector(".article_section_title")
+        if (rArt1!="") {
+            rArtSectTitle.innerHTML = "Related Articles"
+            rArtSectTitle.style.marginTop = '0.5rem'
+        }
+        
+    })
+    .catch(error => console.error("Error loading CSV:", error));
+}
+
+
+
+function info_show(element, riding) {
+    clearArt()
+    let cardData;
+    try{
+            //remove fill from all other ridings
+        let svgRdg = document.querySelectorAll("path")
+        svgRdg.forEach(elem => {
+            elem.style.fill = ""
+        })
+        //show active riding
+        element.style.fill = "red"
+    } catch {
+        console.log('no element data')
+    }
+    //If no element data add something for search 
+    
+    //use argument to pass in data-attr from the specific riding
+    fetch("CAN_electoral_map_data1.csv")
+    .then(response => response.text())
+    .then(csvText => {
+        const rows = csvText.split("\n").map(row => row.split(","));
+        //console.log(rows); // Array of arrays
+        rows.forEach(row => {
+            if (row[0] == riding) {
+                cardData = row
+                console.log(cardData)
+            } 
+        })
+        let rName = document.querySelector(".riding_name")
+        let rInc = document.querySelector(".riding_inc")
+        let rNote = document.querySelector(".riding_note_text")
+        let rNoteTitle = document.querySelector(".riding_note")
+        //Articles
+        //console.log(cardData)
+        loadArt(cardData[0])
+
+        let rArt1 = document.querySelector(".riding_art1_link")
+        rName.innerHTML = cardData[1]
+        rInc.innerHTML = `Incumbent: ${cardData[2]} ${cardData[3]}`
+        rNote.innerHTML = cardData[4]
+        rNoteTitle.innerHTML = 'Notes'
+        //console.log(rArt1)
+        rArtSectTitle = document.querySelector(".article_section_title")
+        if (rArt1!="") {
+            rArtSectTitle.innerHTML = "Related Articles"
+            rArtSectTitle.style.marginTop = '0.5rem'
+        }
+    })
+    .catch(error => console.error("Error loading CSV:", error));
+}
+
 
 
 window.onload = calcResize;

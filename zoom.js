@@ -23,6 +23,16 @@ svg.addEventListener("wheel", (event) => {
     zoom(event.offsetX, event.offsetY, event.deltaY > 0 ? zoomFactor : 1 / zoomFactor);
 });
 
+//reset
+let reset_button = document.querySelector(".reset")
+reset_button.addEventListener("click", (event) => {
+    resetZoom(viewBox)
+});
+function resetZoom(viewBox) {
+    //svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+    window.location.reload();
+}
+
 function zoom(clientX, clientY, scale) {
     let { width, height } = viewBox;
     let svgRect = svg.getBoundingClientRect();
@@ -37,6 +47,7 @@ function zoom(clientX, clientY, scale) {
     viewBox.y = mouseY - (mouseY - viewBox.y) * scale;
 
     svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+    console.log(scale)
 }
 
 // Panning with mouse
