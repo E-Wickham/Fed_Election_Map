@@ -55,17 +55,30 @@ function calcResize() {
 <style>
 
     .map-btn {
-        padding: 0.5rem;
+        padding: 0.75rem;
         border-radius:0.5rem;
         background-color:#c9c9c9;
-        border: 1px solid #969696;
         width: fit-content;
+        font-family: arial;
+        font-weight: 500;
+        transition: 0.2s;
     }
     .map-btn:hover {
         filter: brightness(0.9);
         cursor: pointer;
     } 
 
+    .button-grid .map-btn:first-of-type {
+      background-color: #1d1d1d;
+      color: #fffdfd;
+    }
+
+    .map-btn:active {
+      transform: translateY(2px);
+    }
+    .button-grid .map-btn:first-of-type:hover {
+      background-color:blue;
+    }
     .mcg:hover path {
         fill:rgb(241, 132, 132);
         cursor: pointer;
@@ -119,7 +132,20 @@ function calcResize() {
     .article_section a {
         text-decoration: none;
     }
+
+    .container.mx-auto, .button-grid {
+      display: flex;
+      flex-wrap:wrap;
+      gap: 1rem;
+    }
+    .button-grid {
+      gap: 0.5rem;
+    }
 </style>
+
+<h1>Get to know your Candidates</h1>
+
+
 <div class="search_ridings">
     <script>
         const ridingData = [
@@ -1524,12 +1550,19 @@ function calcResize() {
             
         </datalist>
     </datalist>
-    <div class="search_riding map-btn" onclick="riding_search()">
-        Search
+    <div class="button-grid">
+      <div class="search_riding map-btn" onclick="riding_search()">
+          Search
+      </div>
+      <div class="clear_search_riding map-btn" onclick="clear_riding_search()">
+          Clear Search
+      </div>
+      <div class="reset map-btn">
+        Reset Map    
+      </div>
+
     </div>
-    <div class="clear_search_riding map-btn" onclick="clear_riding_search()">
-        Clear Search
-    </div>
+
 <script>
     riding_datalist_create()
     function riding_datalist_create() {
@@ -1582,7 +1615,6 @@ function calcResize() {
 	</div>
 </div>
 </div>
-<div class="reset map-btn">Reset Map    </div>
 <div class="page-flex" >
     <?xml version="1.0"?>
     <svg id="canada_map" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="800" height="809" viewBox="0 0 800 868" stroke-linecap="round" stroke-linejoin="round"  fill="#cacaca" fill-opacity="0.7"

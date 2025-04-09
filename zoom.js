@@ -2,16 +2,20 @@ const svg = document.getElementById("canada_map");
 let viewBox = { x: 0, y: 0, width: 800, height: 868 };
 let zoomFactor = 1.1;
 
-/*svg1.addEventListener("wheel", (event) => {
-    event.preventDefault();
-    let { width, height } = viewBox;
-    let scale = event.deltaY > 0 ? zoomFactor : 1 / zoomFactor;
+// ADD ZOOM IN AND ZOOM OUT BUTTONS ON THE SVG. GIVE THE BUTTON STYLING
+const zoom_in = document.querySelector('.zoom-in')
+const zoom_out = document.querySelector('.zoom-out')
 
-    viewBox.width *= scale;
-    viewBox.height *= scale;
+zoom_in.addEventListener("click", (event) => {
+    event.preventDefault
+    zoom(0, 0, event.deltaY > 0 ? zoomFactor : 1 / zoomFactor);
+})
 
-    svg1.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
-});*/
+zoom_out.addEventListener("click", (event) => {
+    event.preventDefault
+    zoomOut(0, 0, event.deltaY > 0 ? zoomFactor : 1 / zoomFactor);
+})
+
 
 let isPanning = false, startX, startY;
 let touchStartDist = 0;
@@ -47,7 +51,24 @@ function zoom(clientX, clientY, scale) {
     viewBox.y = mouseY - (mouseY - viewBox.y) * scale;
 
     svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
-    console.log(scale)
+    //console.log(`clientX: ${clientX} \n clientY: ${clientY}`)
+    //console.log(`scale: ${scale} \n viewBox.width: ${viewBox.width}\n viewBox.height: ${viewBox.height} \n viewBox.x: ${viewBox.x}\n viewBox.y: ${viewBox.y}`)
+}
+function zoomOut(clientX, clientY, scale) {
+    let { width, height } = viewBox;
+    let svgRect = svg.getBoundingClientRect();
+
+    // Convert screen coordinates to SVG coordinates
+    let mouseX = (clientX - svgRect.left) / svgRect.width * width + viewBox.x;
+    let mouseY = (clientY - svgRect.top) / svgRect.height * height + viewBox.y;
+
+    viewBox.width *= scale+0.25;
+    viewBox.height *= scale+0.25;
+    viewBox.x = mouseX - (mouseX - viewBox.x) * scale;
+    viewBox.y = mouseY - (mouseY - viewBox.y) * scale;
+
+    svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+    //console.log(scale)
 }
 
 // Panning with mouse
