@@ -209,6 +209,12 @@ function calcResize() {
     .button-grid {
       gap: 0.5rem;
     }
+
+    @media (width < 400px)   {
+      #canada_map {
+        max-height: 380px;
+      }
+    }
 </style>
 
 <h1>Conservative Candidate Tracker</h1>
@@ -2673,8 +2679,8 @@ function calcResize() {
     
     function riding_search() {
         let input = document.querySelector("#riding_input")
-        console.log(input.value)
-        console.log(input)
+        //console.log(input.value)
+        //console.log(input)
         //limit the input
         let datalist = document.querySelectorAll("option")
         //console.log(input.value)
@@ -3165,7 +3171,7 @@ function clearArt() {
 }
 
 function loadArt(rID) {
-    console.log("testing", rID)
+    //console.log("testing", rID)
     let ridingID = rID.toString()
     fetch("fed_articles_by_candidate_csv.csv")
     .then(response => response.text())
@@ -3214,11 +3220,11 @@ function createSubmitLink(target) {
     submitBtn.innerHTML = "Submit Story"
     //5 date, 6 Pub ,7 link
     let link = document.createElement("a")
-    link.setAttribute("href", "forms.google.com")
+    link.setAttribute("href", "https://docs.google.com/forms/d/e/1FAIpQLSc_BNdBNmxd4kqNPjtdqMYebl6xEjoZDnSfsoZcU0nP8SVcWw/viewform?usp=header")
     link.setAttribute("target", '_blank')
     link.appendChild(submitBtn)
     submitMsg.appendChild(submitDiv)
-    submitMsg.appendChild(submitBtn)
+    submitMsg.appendChild(link)
     target.appendChild(submitMsg)
 
 }
@@ -3230,14 +3236,6 @@ function paint_info(cData) {
         let rInc = document.querySelector(".riding_inc")
         let rNote = document.querySelector(".riding_note_text")
         let rNoteTitle = document.querySelector(".riding_note")
-
-        /*{
-        "riding_id": 313,
-        "riding_name": "Kelowna",
-        "inc_fname": "",
-        "inc_lname": "",
-        "con_can": "Tracy Gray"
-        }*/
 
         //Articles
         console.log(ridingData)
