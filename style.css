@@ -1,0 +1,239 @@
+
+
+.article-card {
+    padding: 0.25rem;
+    text-decoration: none;
+    border: 1px solid #c9c9c9;
+    border-radius: 0.25rem;
+    color: #000;
+    transition: 0.1s;
+    margin-bottom: 0.25rem;
+  }
+
+  .article-card h7 {
+    font-weight: 700;
+  }
+
+  .article_section a:nth-child(even) {
+    background-color: #c9c9c9;
+  }
+
+  .article-card:hover {
+    backdrop-filter: brightness(0.9);
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  .map-legend {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .data_holder {
+    color:#1d1d1d;
+  }
+
+  .leg-ctn {
+    border: 2px solid #cacaca;
+    margin: 0.5rem 0;
+    display: block;
+    border-radius: 0.25rem;
+    font-family: sans-serif;
+    font-size: 0.85rem;
+  }
+
+  .leg-ctn h5 {
+    text-align: center;
+    margin: 0.25rem;
+  }
+
+  .leg-item  div:first-of-type {
+    height: 20px;
+    width: 20px;
+    border: 1px solid #cacaca;
+  }
+  .leg-act {
+    background-color: rgb(77, 150, 86);
+  } 
+  .leg-dis {
+    background-color: #cacaca;
+  }
+
+  .leg-item {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  #riding_137, #riding_130, #riding_182, #riding_230, #riding_162, #riding_78, #riding_241, #riding_248, #riding_17, #riding_32, #riding_293, #riding_225, #riding_296, #riding_321, #riding_76, #riding_277, #riding_301, #riding_238, #riding_247, #riding_112, #riding_52, #riding_295, #riding_200, #riding_90, #riding_318, #riding_303, #riding_290, #riding_193, #riding_272, #riding_254, #riding_262, #riding_270, #riding_288, #riding_216, #riding_184, #riding_341, #riding_237, #riding_144, #riding_291, #riding_152, #riding_268, #riding_283, #riding_113, #riding_26, #riding_139, #riding_259, #riding_161, #riding_271, #riding_261, #riding_169, #riding_328, #riding_253, #riding_302, #riding_160, #riding_287, #riding_289, #riding_276, #riding_292, #riding_31, #riding_323 {
+      fill: rgb(77, 150, 86);
+  }
+
+  .riding_input {
+    border-radius: 0.25rem;
+  }
+
+  .map-btn {
+      padding: 0.75rem;
+      border-radius:0.5rem;
+      background-color:#c9c9c9;
+      width: fit-content;
+      font-family: arial;
+      font-weight: 500;
+      transition: 0.2s;
+      color: #1d1d1d;
+  }
+
+  .story-btn {
+      padding: 0.5rem;
+      border: 0;
+      border-radius: 0.25rem;
+  }
+
+  .map-btn:hover, .story-btn:hover {
+      filter: brightness(0.9);
+      cursor: pointer;
+  } 
+
+  .button-grid .map-btn:first-of-type {
+    background-color: #1d1d1d;
+    color: #fffdfd;
+  }
+
+  .map-btn:active {
+    transform: translateY(2px);
+  }
+
+  .button-grid .map-btn {
+    border: 2px solid #cacaca;
+  }
+
+  .button-grid .map-btn:first-of-type:hover {
+    background-color:blue;
+  }
+  .mcg:hover path {
+      fill:rgb(241, 132, 132);
+      cursor: pointer;
+  }
+
+  .data_holder {
+      border: 2px solid #c9c9c9;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;        
+      border-radius: 0.25rem;
+      background-color: #fffdfd;
+      font-family: "Arial";
+      padding: 0.25rem 1rem;
+  }
+
+  #canada_map {
+      border: 2px solid #c9c9c9;
+      border-radius: 0.25rem;
+      margin-right: 1rem;
+  }
+
+  .page-flex {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+  }
+
+  .riding_name {
+      font-size: 2rem;
+      margin: 0.25rem 0;
+  }
+
+  .data_holder h6:first-of-type {
+      font-size: 1.25rem;
+      margin: 0.125rem 0;
+  }
+
+  .riding_note {
+      font-family: sans-serif;
+      font-size: 1rem;
+  }
+  .riding_note_text {
+      font-weight: 400;
+      text-wrap: wrap;
+  }
+
+  .article_section a {
+      text-decoration: none;
+  }
+
+  .container.mx-auto, .button-grid {
+    display: flex;
+    flex-wrap:wrap;
+    gap: 1rem;
+  }
+  .button-grid {
+    gap: 0.5rem;
+  }
+
+  .art-count h5 {
+    padding: 0.45rem 0.25rem;
+    margin: 0;
+  }
+
+
+  .page-width-limit {
+    max-width: 600px;
+  }
+  .zoom-btns {
+    display: flex;
+    height: 45px;
+  }
+
+  .zoom-btns div {
+    padding: 0.5rem;
+    border: 1px solid #cacaca;
+    background-color: #f2f2f2;
+    border-radius: 0.25rem;
+    text-align: center;
+    width: 20px;
+    font-weight: 700;
+    margin:0.25rem;
+    color: #1d1d1d;
+  }
+  .zoom-btns div:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
+  .riding_info_grid {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  path:hover {
+      cursor: pointer;
+      filter: brightness(0.8);
+      transition: 0.1s;
+  }
+
+  body {
+    background-color: rgb(29, 29, 29);
+  }
+
+  body, .leg-item {
+    color: var(--offwhite);
+
+  }
+
+  .page-title {
+    color: var(--teal);
+  }
+
+  @media (width < 400px)   {
+    #canada_map {
+      max-height: 380px;
+      width: calc(100% - 100px)!important;
+
+    }
+  }
+
+  :root {
+    --teal: #12ABB8;
+    --offwhite: #F8F0E3;
+    --font: "adelle", serif;
+    --font-sans: "adelle-sans", sans-serif;
+  }
