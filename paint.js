@@ -1039,6 +1039,26 @@ const candStories =
    "pub_date": "2016-07-20",
    "publication": "PressProgress",
    "link": "https://pressprogress.ca/conservative_mp_agrees_100_with_ben_carson_absurd_rnc_speech_denouncing_the_secular_agenda/"
+ },
+ {
+   "riding_name": "Cariboo—Prince George",
+   "riding_id": 301,
+   "candidate": "Todd Doherty",
+   "party": "Conservative",
+   "news_story": "More Than Half of Andrew Scheer’s Elected Conservative MPs Were Supported by Anti-Abortion Groups",
+   "pub_date": "2019-10-25",
+   "publication": "PressProgress",
+   "link": "https://pressprogress.ca/more-than-half-of-andrew-scheers-elected-conservative-mps-were-supported-by-anti-abortion-groups/"
+ }
+ {
+   "riding_name": "Cariboo—Prince George",
+   "riding_id": 301,
+   "candidate": "Todd Doherty",
+   "party": "Conservative",
+   "news_story": "Here is a List of 67 Conservative Candidates Who Will Vote Against Women’s Reproductive Rights",
+   "pub_date": "2019-10-16",
+   "publication": "PressProgress",
+   "link": "https://pressprogress.ca/here-is-a-list-of-67-conservative-candidates-who-will-vote-against-womens-reproductive-rights/"
  }
 ]
 
