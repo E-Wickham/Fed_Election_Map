@@ -3543,7 +3543,7 @@ function info_show_search(riding) {
     searchPaint(cardData)
     // scroll to info section
     let dataHolder = document.querySelector(".data_holder").getBoundingClientRect()
-    window.scrollTo(0, dataHolder.y)
+    window.scrollTo({top: dataHolder.y, behavior: 'smooth'})
 }
 
 
@@ -3571,7 +3571,7 @@ function info_show(element, riding) {
         paint_info(cardData)
     // scroll to info section
     let dataHolder = document.querySelector(".data_holder").getBoundingClientRect()
-    window.scrollTo(0, dataHolder.y)
+    window.scrollTo({top: dataHolder.y, behavior: 'smooth'})
 }
 
 function searchPaint(cData) {

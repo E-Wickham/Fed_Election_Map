@@ -79,7 +79,7 @@
   .map-btn {
       padding: 0.75rem;
       border-radius:0.5rem;
-      background-color:#c9c9c9;
+      background-color:#f2f2f2;
       width: fit-content;
       font-family: arial;
       font-weight: 500;
@@ -108,7 +108,7 @@
   }
 
   .button-grid .map-btn {
-    border: 2px solid #cacaca;
+    border: 1px solid #cacaca;
   }
 
   .button-grid .map-btn:first-of-type:hover {
@@ -132,6 +132,7 @@
       border: 2px solid #c9c9c9;
       border-radius: 0.25rem;
       margin-right: 1rem;
+      max-height: 600px;
   }
 
   .page-flex {
