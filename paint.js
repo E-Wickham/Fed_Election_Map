@@ -1049,7 +1049,7 @@ const candStories =
    "pub_date": "2019-10-25",
    "publication": "PressProgress",
    "link": "https://pressprogress.ca/more-than-half-of-andrew-scheers-elected-conservative-mps-were-supported-by-anti-abortion-groups/"
- }
+ },
  {
    "riding_name": "Cariboo—Prince George",
    "riding_id": 301,
