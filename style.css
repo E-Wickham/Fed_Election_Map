@@ -64,6 +64,8 @@
   .leg-item {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+
   }
 
   #riding_137, #riding_130, #riding_182, #riding_230, #riding_162, #riding_78, #riding_241, #riding_248, #riding_17, #riding_32, #riding_293, #riding_225, #riding_296, #riding_321, #riding_76, #riding_277, #riding_301, #riding_238, #riding_247, #riding_112, #riding_52, #riding_295, #riding_200, #riding_90, #riding_318, #riding_303, #riding_290, #riding_193, #riding_272, #riding_254, #riding_262, #riding_270, #riding_288, #riding_216, #riding_184, #riding_341, #riding_237, #riding_144, #riding_291, #riding_152, #riding_268, #riding_283, #riding_113, #riding_26, #riding_139, #riding_259, #riding_161, #riding_271, #riding_261, #riding_169, #riding_328, #riding_253, #riding_302, #riding_160, #riding_287, #riding_289, #riding_276, #riding_292, #riding_31, #riding_323 {
@@ -110,7 +112,7 @@
   }
 
   .button-grid .map-btn:first-of-type:hover {
-    background-color:blue;
+      background-color: #313131;
   }
   .mcg:hover path {
       fill:rgb(241, 132, 132);
@@ -177,8 +179,9 @@
   }
 
 
-  .page-width-limit {
+  .page-width-limit, .page-header {
     max-width: 600px;
+    margin: auto;
   }
   .zoom-btns {
     display: flex;
@@ -211,23 +214,22 @@
   }
 
   body {
-    background-color: rgb(29, 29, 29);
+    background-color: var(--offwhite);
   }
 
   body, .leg-item {
-    color: var(--offwhite);
+    color: #1d1d1d;
 
   }
 
   .page-title {
-    color: var(--teal);
+    color: #1d1d1d;
   }
 
-  @media (width < 400px)   {
+  @media (width < 600px)   {
     #canada_map {
       max-height: 380px;
       width: calc(100% - 100px)!important;
-
     }
   }
 

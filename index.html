@@ -12,39 +12,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <div><img src="https://pressprogress.ca/wp-content/themes/pressprogress/assets/images/pressprogress-logo-new.svg" alt=""></div>
-<h1 class="page-title">2025 CANDIDATE STORY MAP</h1>
-
-<div class="search_ridings">
-  <script src="paint.js"></script>
-<div class="container mx-auto">
-    <input list="riding_list" id="riding_input" name="riding_input" placeholder="Find a riding"
-    autocomplete="off"  
-    on/>   
-    <datalist id="riding_list">
-        <datalist id="riding">
-        </datalist>
-    </datalist>
-    <div class="button-grid">
-      <div class="search_riding map-btn" onclick="riding_search()">
-          Search
+<div class="page-header">
+  <div style="padding-top:1rem; ">
+    <img src="https://pressprogress.ca/wp-content/themes/pressprogress/assets/images/pressprogress-logo-new.svg" alt="">
+  </div>
+  
+  <h1 class="page-title">2025 CANDIDATE STORY MAP</h1>
+  
+  <div class="search_ridings">
+    <script src="paint.js"></script>
+  <div class="container mx-auto">
+      <input list="riding_list" id="riding_input" name="riding_input" placeholder="Find a riding"
+      autocomplete="off"  
+      on/>   
+      <datalist id="riding_list">
+          <datalist id="riding">
+          </datalist>
+      </datalist>
+      <div class="button-grid">
+        <div class="search_riding map-btn" onclick="riding_search()">
+            Search
+        </div>
+        <div class="clear_search_riding map-btn" onclick="clear_riding_search()">
+            Clear Search
+        </div>
+        <div class="reset map-btn">
+          Reset Map    
+        </div>
+  
       </div>
-      <div class="clear_search_riding map-btn" onclick="clear_riding_search()">
-          Clear Search
-      </div>
-      <div class="reset map-btn">
-        Reset Map    
-      </div>
-
+      
+  
+  <script>
+      riding_datalist_create()
+  </script>    
+  
     </div>
-    
-
-<script>
-    riding_datalist_create()
-</script>    
-
-	</div>
+  </div>
 </div>
+
 
 </div>
 <div class="page-width-limit">

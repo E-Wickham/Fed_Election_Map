@@ -3530,6 +3530,7 @@ function paint_info(cData) {
 
 function info_show_search(riding) {
     clearArt()
+
     //use argument to pass in data-attr from the specific riding
     let cardData;
     ridingData.forEach((r_data) => {
@@ -3568,9 +3569,9 @@ function info_show(element, riding) {
             }
         })
         paint_info(cardData)
-
-    /*})
-    .catch(error => console.error("Error loading CSV:", error));*/
+    // scroll to info section
+    let dataHolder = document.querySelector(".data_holder").getBoundingClientRect()
+    window.scrollTo(0, dataHolder.y)
 }
 
 function searchPaint(cData) {
