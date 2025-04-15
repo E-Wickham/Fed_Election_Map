@@ -91,12 +91,28 @@
       padding: 0.5rem;
       border: 0;
       border-radius: 0.25rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.75rem;
+      transition: 0.2s;
   }
 
   .map-btn:hover, .story-btn:hover {
       filter: brightness(0.9);
       cursor: pointer;
   } 
+
+  .submit-div {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #cacaca;
+    border-radius: 0.25rem;
+  }
+  .submit-div div{
+    font-size: 0.75rem;
+    text-transform:uppercase;
+    padding-bottom: 0.5rem;
+  }
 
   .button-grid .map-btn:first-of-type {
     background-color: #1d1d1d;
@@ -109,6 +125,9 @@
 
   .button-grid .map-btn {
     border: 1px solid #cacaca;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
   }
 
   .button-grid .map-btn:first-of-type:hover {
