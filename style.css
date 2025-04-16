@@ -115,7 +115,7 @@
   }
 
   .button-grid .map-btn:first-of-type {
-    background-color: #1d1d1d;
+    background-color: #29363b;
     color: #fffdfd;
   }
 
@@ -131,7 +131,7 @@
   }
 
   .button-grid .map-btn:first-of-type:hover {
-      background-color: #313131;
+      background-color: #1d1d1d;
   }
   .mcg:hover path {
       fill:rgb(241, 132, 132);
@@ -255,7 +255,7 @@
 
   :root {
     --teal: #12ABB8;
-    --offwhite: #F8F0E3;
+    --offwhite: rgb(237,237,237);
     --font: "adelle", serif;
     --font-sans: "adelle-sans", sans-serif;
   }
