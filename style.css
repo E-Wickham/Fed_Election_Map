@@ -113,7 +113,7 @@
   #riding_328, #riding_253, #riding_302, #riding_160, #riding_287, #riding_289, #riding_276, #riding_292, #riding_31, #riding_323,
   #riding_38, #riding_326, #riding_299, #riding_340, #riding_177, #riding_109, #riding_337, #riding_151, #riding_208, #riding_158, 
   #riding_316 {
-      fill: rgb(77, 150, 86);
+      fill: var(--teal);
   }
 
   .cand-tbl {
