@@ -6,9 +6,19 @@ const candStories =
    "candidate": "Andrew Lawton",
    "party": "Conservative",
    "news_story": "Conservative Candidate Used a Secret Signal Group Chat With Freedom Convoy Leaders, Right-Wing Media and Far-Right Influencers ",
-   "pub_date": "",
+   "pub_date": "2025-04-04",
    "publication": "PressProgress",
    "link": "https://pressprogress.ca/conservative-candidate-used-a-secret-signal-group-chat-with-freedom-convoy-leaders-right-wing-media-and-far-right-influencers/"
+ },
+ {
+  "riding_name": "Elgin—St. Thomas—London South",
+  "riding_id": 137,
+  "candidate": "Andrew Lawton",
+  "party": "Conservative",
+  "news_story": "Hundreds of People Protested Outside Conservative Candidate Andrew Lawton’s Office. Here’s Why Local Voters are Speaking Out.",
+  "pub_date": "2025-04-15",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/hundreds-of-people-protested-outside-conservative-candidate-andrew-lawtons-office-heres-why-local-voters-are-speaking-out/"
  },
  {
    "riding_name": "Elgin—St. Thomas—London South",
@@ -16,7 +26,7 @@ const candStories =
    "candidate": "Andrew Lawton",
    "party": "Conservative",
    "news_story": "Ontario PC candidate Andrew Lawton: gender and racial discrimination should be legal ",
-   "pub_date": "",
+   "pub_date": "2018-05-23",
    "publication": "PressProgress",
    "link": "https://pressprogress.ca/ontario-pc-candidate-andrew-lawton-gender-and-racial-discrimination-should-be-legal/"
  },
@@ -26,7 +36,7 @@ const candStories =
    "candidate": "Andrew Lawton",
    "party": "Conservative",
    "news_story": "Here are PC candidate Andrew Lawton’s worst moments (so far) ",
-   "pub_date": "",
+   "pub_date": "2018-05-07",
    "publication": "PressProgress",
    "link": "https://pressprogress.ca/here-are-pc-candidate-andrew-lawtons-worst-moments-so-far/"
  },
@@ -1040,6 +1050,196 @@ const candStories =
    "publication": "PressProgress",
    "link": "https://pressprogress.ca/conservative_mp_agrees_100_with_ben_carson_absurd_rnc_speech_denouncing_the_secular_agenda/"
  },
+ {
+  "riding_name": "Beauce",
+  "riding_id": 38,
+  "candidate": "Maxime Bernier",
+  "party": "PPC",
+  "news_story": "People’s Party of Canada Leader goes on Christian Nationalist web show, echoes Trump policies",
+  "pub_date": "2025-03-14",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/peoples-party-of-canada-leader-goes-on-christian-nationalist-web-show-echoes-trump-policies/"
+},
+{
+  "riding_name": "Beauce",
+  "riding_id": 38,
+  "candidate": "Maxime Bernier",
+  "party": "PPC",
+  "news_story": "Canada’s Foreign Interference Inquiry Asked to Examine Far-Right Media Outlet Allegedly Funded by Russia",
+  "pub_date": "2024-09-10",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/canadas-foreign-interference-inquiry-asked-to-examine-far-right-media-outlet-allegedly-funded-by-russia/"
+},
+{
+  "riding_name": "Saanich—Gulf Islands",
+  "riding_id": 326,
+  "candidate": "Elizabeth May",
+  "party": "Green Party",
+  "news_story": "Green Party MPs Defended Top Staffer Who Helped Cover-Up Sexual Abuse at Previous Job, Leaked Email Shows",
+  "pub_date": "2020-10-05",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/green-party-mps-defended-top-staffer-who-helped-cover-up-sexual-abuse-at-previous-job-leaked-email-shows/"
+},
+{
+  "riding_name": "Saanich—Gulf Islands",
+  "riding_id": 326,
+  "candidate": "Elizabeth May",
+  "party": "Green Party",
+  "news_story": "We Asked Dozens of Green Party Candidates What They Think About Abortion. Many Are Out of Step With Elizabeth May.",
+  "pub_date": "2019-10-02",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/we-asked-dozens-of-green-party-candidates-what-they-think-about-abortion-many-are-out-of-step-with-elizabeth-may/"
+},
+{
+  "riding_name": "Saanich—Gulf Islands",
+  "riding_id": 326,
+  "candidate": "Elizabeth May",
+  "party": "Green Party",
+  "news_story": "Green Party Leader Elizabeth May Called Out After Endorsing Tweet Downplaying Seriousness of Blackface",
+  "pub_date": "2019-09-20",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/green-party-leader-elizabeth-may-called-out-after-endorsing-tweet-downplaying-seriousness-of-blackface/"
+},
+{
+  "riding_name": "Burnaby Central",
+  "riding_id": 299,
+  "candidate": "Jagmeet Singh",
+  "party": "NDP",
+  "news_story": "Here’s What Canada’s 3 Major Parties’ Climate Platforms Mean for Workers",
+  "pub_date": "2021-09-17",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/heres-what-canadas-3-major-parties-climate-platforms-mean-for-workers/"
+},
+{
+  "riding_name": "Nepean",
+  "riding_id": 177,
+  "candidate": "Mark Carney",
+  "party": "Liberal",
+  "news_story": "As Pierre Poilievre Tanks in the Polls, Disgruntled Conservatives are Floating the Idea of Alberta Joining the United States",
+  "pub_date": "2025-04-16",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/as-pierre-poilievre-tanks-in-the-polls-disgruntled-conservatives-are-floating-the-idea-of-alberta-joining-the-united-states/"
+},
+{
+  "riding_name": "Ville-Marie—Le Sud-Ouest—Île-des-Soeurs",
+  "riding_id": 109,
+  "candidate": "Marc Miller",
+  "party": "Liberal",
+  "news_story": "Rise of Anti-Immigrant Rhetoric to Blame for Liberals’ Delay on Giving Undocumented Workers’ Status, Advocates Say",
+  "pub_date": "2024-07-25",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/rise-of-anti-immigrant-rhetoric-to-blame-for-liberals-delay-on-giving-undocumented-workers-status-advocates-say/"
+},
+{
+  "riding_name": "Vancouver Quadra",
+  "riding_id": 337,
+  "candidate": "Wade Grant",
+  "party": "Liberal",
+  "news_story": "The Liberal Party of Canada Wants to Regulate Truth Online. Even Justin Trudeau Thinks It’s a Bad Idea.",
+  "pub_date": "2023-05-10",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/the-liberal-party-of-canada-wants-to-regulate-truth-online-even-justin-trudeau-thinks-its-a-bad-idea/"
+},
+{
+  "riding_name": "Humber River—Black Creek",
+  "riding_id": 151,
+  "candidate": "Judy Sgro",
+  "party": "Liberal",
+  "news_story": "Liberal Candidate Says Black People ‘Love’ Justin Trudeau Even More After Seeing Him in Blackface",
+  "pub_date": "2019-10-09",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/liberal-candidate-says-black-people-love-justin-trudeau-even-more-after-seeing-him-in-blackface/"
+},
+{
+  "riding_name": "Parkland",
+  "riding_id": 291,
+  "candidate": "Jason Lavigne",
+  "party": "PPC",
+  "news_story": "Farmer Denies Giving ‘Save the Children Convoy’ Land to Build a ‘Permanent Community’ Outside Ottawa",
+  "pub_date": "2023-10-27",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/farmer-denies-giving-save-the-children-convoy-land-to-build-a-permanent-community-outside-ottawa/"
+},
+{
+  "riding_name": "Parkland",
+  "riding_id": 291,
+  "candidate": "Jason Lavigne",
+  "party": "PPC",
+  "news_story": "‘Save the Children Convoy’ Finally Ends, Leaving Farmer With Piles of Garbage, Rancid Food and Unpaid Bills",
+  "pub_date": "2024-06-21",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/save-the-children-convoy-finally-ends-leaving-farmer-with-piles-of-garbage-rancid-food-and-unpaid-bills/"
+},
+{
+  "riding_name": "Simcoe—Grey",
+  "riding_id": 208,
+  "candidate": "Giorgio Mammoliti",
+  "party": "PPC",
+  "news_story": "12 Times Giorgio Mammoliti Proved He’s the Most Embarrassing City Councillor in Toronto",
+  "pub_date": "2018-10-21",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/12-times-giorgio-mammoliti-proved-hes-the-most-embarrassing-city-councillor-in-toronto/"
+},
+{
+  "riding_name": "Simcoe—Grey",
+  "riding_id": 208,
+  "candidate": "Giorgio Mammoliti",
+  "party": "PPC",
+  "news_story": "Toronto Councillor’s Campaign Accused of Stealing Leaflets Criticizing Him For Not Showing Up To Work",
+  "pub_date": "2018-10-15",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/toronto-councillors-campaign-accused-of-stealing-leaflets-criticizing-him-for-not-showing-up-to-work/"
+},
+{
+  "riding_name": "Simcoe—Grey",
+  "riding_id": 208,
+  "candidate": "Giorgio Mammoliti",
+  "party": "PPC",
+  "news_story": "Toronto City Councillor Giorgio Mammoliti: ‘The Devil’ is Responsible for Youth Crime in Toronto",
+  "pub_date": "2018-09-17",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/toronto-city-councillor-giorgio-mammoliti-the-devil-is-responsible-for-youth-crime-in-toronto/"
+},
+{
+  "riding_name": "Simcoe—Grey",
+  "riding_id": 208,
+  "candidate": "Giorgio Mammoliti",
+  "party": "PPC",
+  "news_story": "Toronto City Councillor Poses With Sledgehammer, Declares He Will Literally Destroy ‘Social Housing’",
+  "pub_date": "2018-09-02",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/toronto-city-councillor-poses-with-sledgehammer-declares-he-will-literally-destroy-social-housing/"
+},
+{
+  "riding_name": "Kitchener Centre",
+  "riding_id": 158,
+  "candidate": "Mike Morrice",
+  "party": "Green Party",
+  "news_story": "Canadian MPs Want to Verify People Watching Internet Porn. They Admit They’re Not Sure How Their Law Would Actually Work.",
+  "pub_date": "2023-12-22",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/canadian-mps-want-to-verify-people-watching-internet-porn-they-admit-theyre-not-sure-how-their-law-would-actually-work/"
+},
+{
+  "riding_name": "Nanaimo—Ladysmith",
+  "riding_id": 316,
+  "candidate": "Paul Manly",
+  "party": "Green Party",
+  "news_story": "Green Party MPs Defended Top Staffer Who Helped Cover-Up Sexual Abuse at Previous Job, Leaked Email Shows",
+  "pub_date": "2020-10-05",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/green-party-mps-defended-top-staffer-who-helped-cover-up-sexual-abuse-at-previous-job-leaked-email-shows/"
+},
+{
+  "riding_name": "Saanich—Gulf Islands",
+  "riding_id": 326,
+  "candidate": "Elizabeth May",
+  "party": "Green Party",
+  "news_story": "Elizabeth May Is Standing Behind Four Green Party Candidates Who Promoted Racist, Anti-Muslim Views",
+  "pub_date": "2019-10-16",
+  "publication": "PressProgress",
+  "link": "https://pressprogress.ca/elizabeth-may-is-standing-behind-four-green-party-candidates-who-promoted-racist-anti-muslim-views/"
+}
 ]
 
 
@@ -5217,6 +5417,9 @@ function createArtElem(aData,target) {
     else if (aData.party == "PPC") {
       candSubHead.style.color = "navy"
     }
+    else if (aData.party == "Green Party") {
+      candSubHead.style.color = "green"
+    }
 
     candSubHead.innerHTML = `${aData.candidate} - ${aData.party}`
     artHead.appendChild(candSubHead)
@@ -5258,16 +5461,85 @@ function paint_info(cData) {
         console.log(cData);
         //Articles
         //console.log(ridingData)
+        paintCndTbl(cData,rNoteTitle)
         loadArt(cData.riding_id)
 
         let rArt1 = document.querySelector(".riding_art1_link")
         rName.innerHTML = cData.riding_name
         rInc.innerHTML = `Incumbent: ${cData.inc_fname} ${cData.inc_lname}`
-        rNoteTitle.innerHTML = `${cData.cpc_can} - ${cData.gp_can}`
 }
 
-function paintCndTbl(cData){
-  //Take the cData of all the candidates and push them into a table
+function paintCndTbl(cData,target){
+        target.innerHTML = ""
+        //Take the cData of all the candidates and push them into a table
+        /*
+
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dom</td>
+                    <td>6000</td>
+                </tr>
+                <tr class="active-row">
+                    <td>Melissa</td>
+                    <td>5150</td>
+                </tr>
+                <!-- and so on... -->
+            </tbody>
+        </table>
+
+
+
+        */
+       let tbl = document.createElement("table")
+       tbl.setAttribute("class","cand-tbl")
+       let tbl_h = document.createElement("thead")
+       let tbl_h_r = document.createElement("tr")
+       let tbl_h_th1 = document.createElement("th")
+       tbl_h_th1.innerHTML = "Party"
+       let tbl_h_th2 = document.createElement("th")
+       tbl_h_th2.innerHTML = "Candidate"
+       tbl_h_r.appendChild(tbl_h_th1)
+       tbl_h_r.appendChild(tbl_h_th2)
+       tbl_h.appendChild(tbl_h_r)
+       tbl.appendChild(tbl_h)
+       let tbl_body = document.createElement("tbody")
+       tbl.appendChild(tbl_body)
+       //if liberal party
+       if (cData.cpc_can != "") 
+        createTblRow(['CPC', cData.cpc_can],tbl_body)
+       if (cData.lib_can != "") 
+        createTblRow(['LPC', cData.lib_can],tbl_body)
+       if (cData.ndp_can != "") 
+        createTblRow(['NDP', cData.ndp_can],tbl_body)
+       if (cData.bq_can != "") 
+        createTblRow(['BQ', cData.bq_can],tbl_body)
+       if (cData.gp_can != "") 
+        createTblRow(['GP', cData.gp_can],tbl_body)
+       if (cData.ppc_can != "") 
+        createTblRow(['PPC', cData.ppc_can],tbl_body)
+       
+
+
+       target.appendChild(tbl)
+}
+
+function createTblRow(cData,tbody) {
+  let tbl_row = document.createElement("tr")
+  let tbl_d1 = document.createElement("td")
+  let tbl_d2 = document.createElement("td")
+  tbl_d1.innerHTML = cData[0]
+  tbl_d2.innerHTML = cData[1]
+  tbl_row.appendChild(tbl_d1)
+  tbl_row.appendChild(tbl_d2)
+  tbody.appendChild(tbl_row)
 }
 
 function info_show_search(riding) {

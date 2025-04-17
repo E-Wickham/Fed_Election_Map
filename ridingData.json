@@ -2,6 +2,8 @@
     {
       "riding_id": 298,
       "riding_name": "Abbotsford—South Langley",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Aeriol Alderking",
       "ndp_can": "Dharmasena Yakandawela",
@@ -12,6 +14,8 @@
     {
       "riding_id": 33,
       "riding_name": "Abitibi—Baie-James—Nunavik—Eeyou",
+      "inc_fname": "Sylvie",
+      "inc_lname": "Bérubé",
       "bq_can": "Sylvie Bérubé",
       "ppc_can": "",
       "ndp_can": "Thai Higashihara",
@@ -22,6 +26,8 @@
     {
       "riding_id": 34,
       "riding_name": "Abitibi—Témiscamingue",
+      "inc_fname": "Sébastien",
+      "inc_lname": "Lemire",
       "bq_can": "Sébastien Lemire",
       "ppc_can": "",
       "ndp_can": "Jérémie Juneau",
@@ -32,6 +38,8 @@
     {
       "riding_id": 12,
       "riding_name": "Acadie—Annapolis",
+      "inc_fname": "Chris",
+      "inc_lname": "d'Entremont",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Ingrid Deon",
@@ -42,6 +50,8 @@
     {
       "riding_id": 23,
       "riding_name": "Acadie—Bathurst",
+      "inc_fname": "Serge",
+      "inc_lname": "Cormier",
       "bq_can": "",
       "ppc_can": "Randi Raynard",
       "ndp_can": "Ty Boulay",
@@ -52,6 +62,8 @@
     {
       "riding_id": 35,
       "riding_name": "Ahuntsic-Cartierville",
+      "inc_fname": "Mélanie",
+      "inc_lname": "Joly",
       "bq_can": "Nabila Ben Youssef",
       "ppc_can": "",
       "ndp_can": "Idil Issa",
@@ -62,6 +74,8 @@
     {
       "riding_id": 261,
       "riding_name": "Airdrie—Cochrane",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Sarah Zagoda",
@@ -72,6 +86,8 @@
     {
       "riding_id": 111,
       "riding_name": "Ajax",
+      "inc_fname": "Mark",
+      "inc_lname": "Holland",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Kyle Forster",
@@ -82,6 +98,8 @@
     {
       "riding_id": 36,
       "riding_name": "Alfred-Pellan",
+      "inc_fname": "Angelo",
+      "inc_lname": "Iacono",
       "bq_can": "Isabel Dion",
       "ppc_can": "Ludovic Claude Mbany",
       "ndp_can": "Jordan Larochelle",
@@ -92,6 +110,8 @@
     {
       "riding_id": 112,
       "riding_name": "Algonquin—Renfrew—Pembroke",
+      "inc_fname": "Carol",
+      "inc_lname": "Hughes",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Eileen Jones Whyte",
@@ -102,6 +122,8 @@
     {
       "riding_id": 37,
       "riding_name": "Argenteuil—La Petite-Nation",
+      "inc_fname": "Stéphane",
+      "inc_lname": "Lauzon",
       "bq_can": "Martin Héroux",
       "ppc_can": "",
       "ndp_can": "Michel Welt",
@@ -112,6 +134,8 @@
     {
       "riding_id": 113,
       "riding_name": "Aurora—Oak Ridges—Richmond Hill",
+      "inc_fname": "Leah",
+      "inc_lname": "Taylor Roy",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Danielle Maniuk",
@@ -122,6 +146,8 @@
     {
       "riding_id": 1,
       "riding_name": "Avalon",
+      "inc_fname": "Ken",
+      "inc_lname": "McDonald",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Judy Vanta",
@@ -132,6 +158,8 @@
     {
       "riding_id": 114,
       "riding_name": "Barrie South—Innisfil",
+      "inc_fname": "John",
+      "inc_lname": "Brassard",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Andrew Harrigan",
@@ -142,6 +170,8 @@
     {
       "riding_id": 115,
       "riding_name": "Barrie—Springwater—Oro-Medonte",
+      "inc_fname": "Doug",
+      "inc_lname": "Shipley",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Gabriela Trujillo",
@@ -152,6 +182,8 @@
     {
       "riding_id": 262,
       "riding_name": "Battle River—Crowfoot",
+      "inc_fname": "Damien",
+      "inc_lname": "Kurek",
       "bq_can": "",
       "ppc_can": "Jonathan Bridges",
       "ndp_can": "James MacKay",
@@ -162,6 +194,8 @@
     {
       "riding_id": 247,
       "riding_name": "Battlefords—Lloydminster—Meadow Lake",
+      "inc_fname": "Rosemarie",
+      "inc_lname": "Falk",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "William Petryk",
@@ -172,6 +206,8 @@
     {
       "riding_id": 116,
       "riding_name": "Bay of Quinte",
+      "inc_fname": "Ryan",
+      "inc_lname": "Williams",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Kate Crothers",
@@ -182,6 +218,8 @@
     {
       "riding_id": 117,
       "riding_name": "Beaches—East York",
+      "inc_fname": "Nathaniel",
+      "inc_lname": "Erskine-Smith",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Shannon Devine",
@@ -192,6 +230,8 @@
     {
       "riding_id": 38,
       "riding_name": "Beauce",
+      "inc_fname": "Richard",
+      "inc_lname": "Lehoux",
       "bq_can": "Gaétan Mathieu",
       "ppc_can": "Max Bernier",
       "ndp_can": "Annabelle Lafond-Poirier",
@@ -202,6 +242,8 @@
     {
       "riding_id": 39,
       "riding_name": "Beauharnois—Salaberry—Soulanges—Huntingdon",
+      "inc_fname": "Claude",
+      "inc_lname": "DeBellefeuille",
       "bq_can": "Claude DeBellefeuille",
       "ppc_can": "Martin Lévesque",
       "ndp_can": "Tyler Jones",
@@ -212,6 +254,8 @@
     {
       "riding_id": 40,
       "riding_name": "Beauport—Limoilou",
+      "inc_fname": "Julie",
+      "inc_lname": "Vignola",
       "bq_can": "Julie Vignola",
       "ppc_can": "Andrée Massicotte",
       "ndp_can": "Raymond Côté",
@@ -222,6 +266,8 @@
     {
       "riding_id": 24,
       "riding_name": "Beauséjour",
+      "inc_fname": "Dominic",
+      "inc_lname": "LeBlanc",
       "bq_can": "",
       "ppc_can": "Eddie Cornell",
       "ndp_can": "Alex Gagné",
@@ -232,6 +278,8 @@
     {
       "riding_id": 41,
       "riding_name": "Bécancour—Nicolet—Saurel—Alnôbak",
+      "inc_fname": "Louis",
+      "inc_lname": "Plamondon",
       "bq_can": "Louis Plamondon",
       "ppc_can": "",
       "ndp_can": "Tommy Gagnon",
@@ -242,6 +290,8 @@
     {
       "riding_id": 42,
       "riding_name": "Bellechasse—Les Etchemins—Lévis",
+      "inc_fname": "Dominique",
+      "inc_lname": "Vien",
       "bq_can": "Gaby Breton",
       "ppc_can": "Mario Fréchette",
       "ndp_can": "Marie-Philippe Gagnon-Gauthier",
@@ -252,6 +302,8 @@
     {
       "riding_id": 43,
       "riding_name": "Beloeil—Chambly",
+      "inc_fname": "Yves-François",
+      "inc_lname": "Blanchet",
       "bq_can": "Yves-François Blanchet",
       "ppc_can": "Nicholas Manes",
       "ndp_can": "Marie-Josée Béliveau",
@@ -262,6 +314,8 @@
     {
       "riding_id": 44,
       "riding_name": "Berthier—Maskinongé",
+      "inc_fname": "Yves",
+      "inc_lname": "Perron",
       "bq_can": "Yves Perron",
       "ppc_can": "Elia Gomez-Gnali",
       "ndp_can": "Ruth Ellen Brosseau",
@@ -272,6 +326,8 @@
     {
       "riding_id": 45,
       "riding_name": "Bourassa",
+      "inc_fname": "Emmanuel",
+      "inc_lname": "Dubourg",
       "bq_can": "Jency Mercier",
       "ppc_can": "Jean-Marc Lamothe",
       "ndp_can": "Catherine Gauvin",
@@ -282,6 +338,8 @@
     {
       "riding_id": 263,
       "riding_name": "Bow River",
+      "inc_fname": "Martin",
+      "inc_lname": "Shields",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Louisa Gwin",
@@ -292,6 +350,8 @@
     {
       "riding_id": 118,
       "riding_name": "Bowmanville—Oshawa North",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Elenor Marano",
@@ -302,6 +362,8 @@
     {
       "riding_id": 119,
       "riding_name": "Brampton Centre",
+      "inc_fname": "Shafqat",
+      "inc_lname": "Ali",
       "bq_can": "",
       "ppc_can": "Simmi Hundal",
       "ndp_can": "Anil Boodhai",
@@ -312,6 +374,8 @@
     {
       "riding_id": 121,
       "riding_name": "Brampton East",
+      "inc_fname": "Maninder",
+      "inc_lname": "Sidhu",
       "bq_can": "",
       "ppc_can": "Jeff Lal",
       "ndp_can": "Haramrit Singh",
@@ -322,6 +386,8 @@
     {
       "riding_id": 122,
       "riding_name": "Brampton North—Caledon",
+      "inc_fname": "Ruby",
+      "inc_lname": "Sahota",
       "bq_can": "",
       "ppc_can": "Sat Anand",
       "ndp_can": "Ruby Zaman",
@@ -332,6 +398,8 @@
     {
       "riding_id": 123,
       "riding_name": "Brampton South",
+      "inc_fname": "Sonia",
+      "inc_lname": "Sidhu",
       "bq_can": "",
       "ppc_can": "Vijay Kumar",
       "ndp_can": "Rajni Sharma",
@@ -342,6 +410,8 @@
     {
       "riding_id": 124,
       "riding_name": "Brampton West",
+      "inc_fname": "Kamal",
+      "inc_lname": "Khera",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Zaigham Javed",
@@ -352,6 +422,8 @@
     {
       "riding_id": 120,
       "riding_name": "Brampton—Chinguacousy Park",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Jayesh Brahmbhatt",
       "ndp_can": "",
@@ -362,6 +434,8 @@
     {
       "riding_id": 233,
       "riding_name": "Brandon—Souris",
+      "inc_fname": "Larry",
+      "inc_lname": "Maguire",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Quentin Robinson",
@@ -372,6 +446,8 @@
     {
       "riding_id": 125,
       "riding_name": "Brantford—Brant South—Six Nations",
+      "inc_fname": "Larry",
+      "inc_lname": "Brock",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Anne Gajerski-Cauley",
@@ -382,6 +458,8 @@
     {
       "riding_id": 46,
       "riding_name": "Brome—Missisquoi",
+      "inc_fname": "Pascale",
+      "inc_lname": "St-Onge",
       "bq_can": "Jeff Boudreault",
       "ppc_can": "Jack McLeod",
       "ndp_can": "Zoe Larose",
@@ -392,6 +470,8 @@
     {
       "riding_id": 47,
       "riding_name": "Brossard—Saint-Lambert",
+      "inc_fname": "Alexandra",
+      "inc_lname": "Mendès",
       "bq_can": "Soledad Orihuela-Bouchard",
       "ppc_can": "Hector Huerta",
       "ndp_can": "Zeinab Akkaoui",
@@ -402,6 +482,8 @@
     {
       "riding_id": 126,
       "riding_name": "Bruce—Grey—Owen Sound",
+      "inc_fname": "Alex",
+      "inc_lname": "Ruff",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Chris Neudorf",
@@ -412,6 +494,8 @@
     {
       "riding_id": 127,
       "riding_name": "Burlington",
+      "inc_fname": "Karina",
+      "inc_lname": "Gould",
       "bq_can": "",
       "ppc_can": "Michael Bator",
       "ndp_can": "Michael Beauchemin",
@@ -422,6 +506,8 @@
     {
       "riding_id": 128,
       "riding_name": "Burlington North—Milton West",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Naveed Ahmed",
@@ -432,6 +518,8 @@
     {
       "riding_id": 299,
       "riding_name": "Burnaby Central",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Richard Farbridge",
       "ndp_can": "Jagmeet Singh",
@@ -442,6 +530,8 @@
     {
       "riding_id": 300,
       "riding_name": "Burnaby North—Seymour",
+      "inc_fname": "Terry",
+      "inc_lname": "Beech",
       "bq_can": "",
       "ppc_can": "Jesse Fulton",
       "ndp_can": "Michael Charrois",
@@ -452,6 +542,8 @@
     {
       "riding_id": 264,
       "riding_name": "Calgary Centre",
+      "inc_fname": "Greg",
+      "inc_lname": "McLean",
       "bq_can": "",
       "ppc_can": "Robert Hawley",
       "ndp_can": "Beau Shaw",
@@ -462,6 +554,8 @@
     {
       "riding_id": 265,
       "riding_name": "Calgary Confederation",
+      "inc_fname": "Len",
+      "inc_lname": "Webber",
       "bq_can": "",
       "ppc_can": "Artyom Ovsepyan",
       "ndp_can": "Keira Gunn",
@@ -472,6 +566,8 @@
     {
       "riding_id": 266,
       "riding_name": "Calgary Crowfoot",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Jim Samuelson",
@@ -482,6 +578,8 @@
     {
       "riding_id": 267,
       "riding_name": "Calgary East",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Harry Dhillon",
       "ndp_can": "Jennifer Geha",
@@ -492,6 +590,8 @@
     {
       "riding_id": 268,
       "riding_name": "Calgary Heritage",
+      "inc_fname": "Shuvaloy",
+      "inc_lname": "Majumdar",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Becki Zimmerman",
@@ -502,6 +602,8 @@
     {
       "riding_id": 269,
       "riding_name": "Calgary McKnight",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Najeeb Butt",
       "ndp_can": "Arlington Antonio Santiago",
@@ -512,6 +614,8 @@
     {
       "riding_id": 270,
       "riding_name": "Calgary Midnapore",
+      "inc_fname": "Stephanie",
+      "inc_lname": "Kusie",
       "bq_can": "",
       "ppc_can": "Colin Kindret",
       "ndp_can": "Austin Mullins",
@@ -522,6 +626,8 @@
     {
       "riding_id": 271,
       "riding_name": "Calgary Nose Hill",
+      "inc_fname": "Michelle",
+      "inc_lname": "Rempel Garner",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Ahmed Khan",
@@ -532,6 +638,8 @@
     {
       "riding_id": 272,
       "riding_name": "Calgary Shepard",
+      "inc_fname": "Tom",
+      "inc_lname": "Kmiec",
       "bq_can": "",
       "ppc_can": "Donald Legere",
       "ndp_can": "Tory Tomblin",
@@ -542,6 +650,8 @@
     {
       "riding_id": 273,
       "riding_name": "Calgary Signal Hill",
+      "inc_fname": "Ron",
+      "inc_lname": "Liepert",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Khalis Ahmed",
@@ -552,6 +662,8 @@
     {
       "riding_id": 274,
       "riding_name": "Calgary Skyview",
+      "inc_fname": "George",
+      "inc_lname": "Chahal",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Rajesh Angral",
@@ -562,6 +674,8 @@
     {
       "riding_id": 129,
       "riding_name": "Cambridge",
+      "inc_fname": "Bryan",
+      "inc_lname": "May",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "José de Lima",
@@ -572,6 +686,8 @@
     {
       "riding_id": 13,
       "riding_name": "Cape Breton—Canso—Antigonish",
+      "inc_fname": "Mike",
+      "inc_lname": "Kelloway",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Joanna Clark",
@@ -582,6 +698,8 @@
     {
       "riding_id": 2,
       "riding_name": "Cape Spear",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Brenda Walsh",
@@ -592,6 +710,8 @@
     {
       "riding_id": 8,
       "riding_name": "Cardigan",
+      "inc_fname": "Lawrence",
+      "inc_lname": "MacAulay",
       "bq_can": "",
       "ppc_can": "Adam Harding",
       "ndp_can": "Lynne Thiele",
@@ -602,6 +722,8 @@
     {
       "riding_id": 301,
       "riding_name": "Cariboo—Prince George",
+      "inc_fname": "Todd",
+      "inc_lname": "Doherty",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Angie Bonazzo",
@@ -612,6 +734,8 @@
     {
       "riding_id": 130,
       "riding_name": "Carleton",
+      "inc_fname": "Pierre",
+      "inc_lname": "Poilievre",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Beth Prokaska",
@@ -622,6 +746,8 @@
     {
       "riding_id": 248,
       "riding_name": "Carlton Trail—Eagle Creek",
+      "inc_fname": "Kelly",
+      "inc_lname": "Block",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Cheryl Loadman",
@@ -632,6 +758,8 @@
     {
       "riding_id": 3,
       "riding_name": "Central Newfoundland",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Darian Vincent",
@@ -642,6 +770,8 @@
     {
       "riding_id": 14,
       "riding_name": "Central Nova",
+      "inc_fname": "Sean",
+      "inc_lname": "Fraser",
       "bq_can": "",
       "ppc_can": "Charlie MacEachern",
       "ndp_can": "Jesiah MacDonald",
@@ -652,6 +782,8 @@
     {
       "riding_id": 48,
       "riding_name": "Charlesbourg—Haute-Saint-Charles",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Bladimir Laborit Infante",
       "ppc_can": "Paul Cyr",
       "ndp_can": "Dominique Harrisson",
@@ -662,6 +794,8 @@
     {
       "riding_id": 9,
       "riding_name": "Charlottetown",
+      "inc_fname": "Sean",
+      "inc_lname": "Casey",
       "bq_can": "",
       "ppc_can": "Robert Lucas",
       "ndp_can": "Joe Byrne",
@@ -672,6 +806,8 @@
     {
       "riding_id": 49,
       "riding_name": "Châteauguay—Les Jardins-de-Napierville",
+      "inc_fname": "Brenda",
+      "inc_lname": "Shanahan",
       "bq_can": "Patrick O’Hara",
       "ppc_can": "Nicolas Guérin",
       "ndp_can": "Hannah Wolker",
@@ -682,6 +818,8 @@
     {
       "riding_id": 131,
       "riding_name": "Chatham-Kent—Leamington",
+      "inc_fname": "Dave",
+      "inc_lname": "Epp",
       "bq_can": "",
       "ppc_can": "Trevor Lee",
       "ndp_can": "",
@@ -692,6 +830,8 @@
     {
       "riding_id": 50,
       "riding_name": "Chicoutimi—Le Fjord",
+      "inc_fname": "Richard",
+      "inc_lname": "Martel",
       "bq_can": "Marc St-Hilaire",
       "ppc_can": "François Sabourin",
       "ndp_can": "Raphaël Émond",
@@ -702,6 +842,8 @@
     {
       "riding_id": 302,
       "riding_name": "Chilliwack—Hope",
+      "inc_fname": "Mark",
+      "inc_lname": "Strahl",
       "bq_can": "",
       "ppc_can": "Jeff Galbraith",
       "ndp_can": "Teri Westerby",
@@ -712,6 +854,8 @@
     {
       "riding_id": 234,
       "riding_name": "Churchill—Keewatinook Aski",
+      "inc_fname": "Niki",
+      "inc_lname": "Ashton",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Niki Ashton",
@@ -722,6 +866,8 @@
     {
       "riding_id": 303,
       "riding_name": "Cloverdale—Langley City",
+      "inc_fname": "Tamara",
+      "inc_lname": "Jansen",
       "bq_can": "",
       "ppc_can": "Jim McMurtry",
       "ndp_can": "Vanessa Sharma",
@@ -732,6 +878,8 @@
     {
       "riding_id": 304,
       "riding_name": "Columbia—Kootenay—Southern Rockies",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Laurie Baird",
       "ndp_can": "Kallee Lins",
@@ -742,6 +890,8 @@
     {
       "riding_id": 51,
       "riding_name": "Compton—Stanstead",
+      "inc_fname": "Marie-Claude",
+      "inc_lname": "Bibeau",
       "bq_can": "Nathalie Bresse",
       "ppc_can": "Paul Lehmann",
       "ndp_can": "Valerie Laliberté",
@@ -752,6 +902,8 @@
     {
       "riding_id": 305,
       "riding_name": "Coquitlam—Port Coquitlam",
+      "inc_fname": "Ron",
+      "inc_lname": "McKinnon",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Laura Dupont",
@@ -762,6 +914,8 @@
     {
       "riding_id": 52,
       "riding_name": "Côte-du-Sud—Rivière-du-Loup—Kataskomiq—Témiscouata",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Diane Sénécal",
       "ppc_can": "Jean-François Morin",
       "ndp_can": "Iseult L'Heureux-Hubert",
@@ -772,6 +926,8 @@
     {
       "riding_id": 53,
       "riding_name": "Côte-Nord—Kawawachikamach—Nitassinan",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Marilène Gill",
       "ppc_can": "",
       "ndp_can": "Marika Lalime",
@@ -782,6 +938,8 @@
     {
       "riding_id": 306,
       "riding_name": "Courtenay—Alberni",
+      "inc_fname": "Gord",
+      "inc_lname": "Johns",
       "bq_can": "",
       "ppc_can": "Thomas Gamble",
       "ndp_can": "Gord Johns",
@@ -792,6 +950,8 @@
     {
       "riding_id": 307,
       "riding_name": "Cowichan—Malahat—Langford",
+      "inc_fname": "Alistair",
+      "inc_lname": "MacGregor",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Alistair MacGregor",
@@ -802,6 +962,8 @@
     {
       "riding_id": 15,
       "riding_name": "Cumberland—Colchester",
+      "inc_fname": "Stephen",
+      "inc_lname": "Ellis",
       "bq_can": "",
       "ppc_can": "Paul Church",
       "ndp_can": "Larry Duchesne",
@@ -812,6 +974,8 @@
     {
       "riding_id": 16,
       "riding_name": "Dartmouth—Cole Harbour",
+      "inc_fname": "Darren",
+      "inc_lname": "Fisher",
       "bq_can": "",
       "ppc_can": "Michelle Lindsay",
       "ndp_can": "Keith Morrison",
@@ -822,6 +986,8 @@
     {
       "riding_id": 132,
       "riding_name": "Davenport",
+      "inc_fname": "Julie",
+      "inc_lname": "Dzerowicz",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Sandra Sousa",
@@ -832,6 +998,8 @@
     {
       "riding_id": 308,
       "riding_name": "Delta",
+      "inc_fname": "Carla",
+      "inc_lname": "Qualtrough",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Jason McCormick",
@@ -842,6 +1010,8 @@
     {
       "riding_id": 249,
       "riding_name": "Desnethé—Missinippi—Churchill River",
+      "inc_fname": "Gary",
+      "inc_lname": "Vidal",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Doug Racine",
@@ -852,6 +1022,8 @@
     {
       "riding_id": 133,
       "riding_name": "Don Valley North",
+      "inc_fname": "Han",
+      "inc_lname": "Dong",
       "bq_can": "",
       "ppc_can": "Ivan Milivojevic",
       "ndp_can": "Naila Saeed",
@@ -862,6 +1034,8 @@
     {
       "riding_id": 134,
       "riding_name": "Don Valley West",
+      "inc_fname": "Robert",
+      "inc_lname": "Oliphant",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Linnea Löfström-Abary",
@@ -872,6 +1046,8 @@
     {
       "riding_id": 54,
       "riding_name": "Dorval—Lachine—LaSalle",
+      "inc_fname": "Anju",
+      "inc_lname": "Dhillon",
       "bq_can": "Pauline Postel",
       "ppc_can": "Michael Patterson",
       "ndp_can": "Angélique Soleil Lavoie",
@@ -882,6 +1058,8 @@
     {
       "riding_id": 55,
       "riding_name": "Drummond",
+      "inc_fname": "Martin",
+      "inc_lname": "Champoux",
       "bq_can": "Martin Champoux",
       "ppc_can": "",
       "ndp_can": "François Choquette",
@@ -892,6 +1070,8 @@
     {
       "riding_id": 135,
       "riding_name": "Dufferin—Caledon",
+      "inc_fname": "Kyle",
+      "inc_lname": "Seeback",
       "bq_can": "",
       "ppc_can": "Dympna Carolan",
       "ndp_can": "Viktor Karklins",
@@ -902,6 +1082,8 @@
     {
       "riding_id": 275,
       "riding_name": "Edmonton Centre",
+      "inc_fname": "Randy",
+      "inc_lname": "Boissonnault",
       "bq_can": "",
       "ppc_can": "John Ross",
       "ndp_can": "Trisha Estabrooks",
@@ -912,6 +1094,8 @@
     {
       "riding_id": 276,
       "riding_name": "Edmonton Gateway",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Paul McCormack",
       "ndp_can": "Madeline Mayes",
@@ -922,6 +1106,8 @@
     {
       "riding_id": 277,
       "riding_name": "Edmonton Griesbach",
+      "inc_fname": "Blake",
+      "inc_lname": "Desjarlais",
       "bq_can": "",
       "ppc_can": "Thomas Matty",
       "ndp_can": "Blake Desjarlais",
@@ -932,6 +1118,8 @@
     {
       "riding_id": 278,
       "riding_name": "Edmonton Manning",
+      "inc_fname": "Ziad",
+      "inc_lname": "Aboultaif",
       "bq_can": "",
       "ppc_can": "Robert Bard",
       "ndp_can": "Lesley Thompson",
@@ -942,6 +1130,8 @@
     {
       "riding_id": 279,
       "riding_name": "Edmonton Northwest",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Albert Carson",
       "ndp_can": "Omar Abubakar",
@@ -952,6 +1142,8 @@
     {
       "riding_id": 280,
       "riding_name": "Edmonton Riverbend",
+      "inc_fname": "Matt",
+      "inc_lname": "Jeneroux",
       "bq_can": "",
       "ppc_can": "Dwayne Dudiak",
       "ndp_can": "Susan Cake",
@@ -962,6 +1154,8 @@
     {
       "riding_id": 281,
       "riding_name": "Edmonton Southeast",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Harpreet Grewal",
@@ -972,6 +1166,8 @@
     {
       "riding_id": 282,
       "riding_name": "Edmonton Strathcona",
+      "inc_fname": "Heather",
+      "inc_lname": "McPherson",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Heather McPherson",
@@ -982,6 +1178,8 @@
     {
       "riding_id": 283,
       "riding_name": "Edmonton West",
+      "inc_fname": "Kelly",
+      "inc_lname": "McCauley",
       "bq_can": "",
       "ppc_can": "Brent Kinzel",
       "ndp_can": "Sean McQuillan",
@@ -992,6 +1190,8 @@
     {
       "riding_id": 136,
       "riding_name": "Eglinton—Lawrence",
+      "inc_fname": "Marco",
+      "inc_lname": "Mendicino",
       "bq_can": "",
       "ppc_can": "Timothy Gleeson",
       "ndp_can": "Allison Tanzola",
@@ -1002,6 +1202,8 @@
     {
       "riding_id": 10,
       "riding_name": "Egmont",
+      "inc_fname": "Robert",
+      "inc_lname": "Morrissey",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Carol Rybinski",
@@ -1012,6 +1214,8 @@
     {
       "riding_id": 137,
       "riding_name": "Elgin—St. Thomas—London South",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Stephen R. Campbell",
       "ndp_can": "Paul Pighin",
@@ -1022,6 +1226,8 @@
     {
       "riding_id": 235,
       "riding_name": "Elmwood—Transcona",
+      "inc_fname": "Leila",
+      "inc_lname": "Dance",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Leila Dance",
@@ -1032,6 +1238,8 @@
     {
       "riding_id": 309,
       "riding_name": "Esquimalt—Saanich—Sooke",
+      "inc_fname": "vacant",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Maja Tait",
@@ -1042,6 +1250,8 @@
     {
       "riding_id": 138,
       "riding_name": "Essex",
+      "inc_fname": "Chris",
+      "inc_lname": "Lewis",
       "bq_can": "",
       "ppc_can": "Jason Henry",
       "ndp_can": "Lori Wightman",
@@ -1052,6 +1262,8 @@
     {
       "riding_id": 139,
       "riding_name": "Etobicoke Centre",
+      "inc_fname": "Yvan",
+      "inc_lname": "Baker",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Ji Won Jung",
@@ -1062,6 +1274,8 @@
     {
       "riding_id": 141,
       "riding_name": "Etobicoke North",
+      "inc_fname": "Kirsty",
+      "inc_lname": "Duncan",
       "bq_can": "",
       "ppc_can": "Andy D'Andrea",
       "ndp_can": "Cory Wagar",
@@ -1072,6 +1286,8 @@
     {
       "riding_id": 140,
       "riding_name": "Etobicoke—Lakeshore",
+      "inc_fname": "James",
+      "inc_lname": "Maloney",
       "bq_can": "",
       "ppc_can": "Thomas Fanjoy",
       "ndp_can": "Benjamin Abis",
@@ -1082,6 +1298,8 @@
     {
       "riding_id": 142,
       "riding_name": "Flamborough—Glanbrook—Brant North",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Nikita Mahood",
       "ndp_can": "Peter Werhun",
@@ -1092,6 +1310,8 @@
     {
       "riding_id": 310,
       "riding_name": "Fleetwood—Port Kells",
+      "inc_fname": "Ken",
+      "inc_lname": "Hardie",
       "bq_can": "",
       "ppc_can": "John Hetherington",
       "ndp_can": "Shannon Permal",
@@ -1102,6 +1322,8 @@
     {
       "riding_id": 284,
       "riding_name": "Foothills",
+      "inc_fname": "John",
+      "inc_lname": "Barlow",
       "bq_can": "",
       "ppc_can": "Paul O'Halloran",
       "ndp_can": "Kaitte Aurora",
@@ -1112,6 +1334,8 @@
     {
       "riding_id": 285,
       "riding_name": "Fort McMurray—Cold Lake",
+      "inc_fname": "Laila",
+      "inc_lname": "Goodridge",
       "bq_can": "",
       "ppc_can": "Alan Clarke",
       "ndp_can": "You-Ju Choi",
@@ -1122,6 +1346,8 @@
     {
       "riding_id": 25,
       "riding_name": "Fredericton—Oromocto",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Heather Michaud",
       "ndp_can": "Nicki Lyons-Macfarlane",
@@ -1132,6 +1358,8 @@
     {
       "riding_id": 26,
       "riding_name": "Fundy Royal",
+      "inc_fname": "Rob",
+      "inc_lname": "Moore",
       "bq_can": "",
       "ppc_can": "Alastair MacFarlane",
       "ndp_can": "Cindy Andrie",
@@ -1142,6 +1370,8 @@
     {
       "riding_id": 56,
       "riding_name": "Gaspésie—Les Îles-de-la-Madeleine—Listuguj",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Alexis Deschênes",
       "ppc_can": "Christian Rioux",
       "ndp_can": "Denise Giroux",
@@ -1152,6 +1382,8 @@
     {
       "riding_id": 57,
       "riding_name": "Gatineau",
+      "inc_fname": "Steven",
+      "inc_lname": "MacKinnon",
       "bq_can": "Richard Nadeau",
       "ppc_can": "Mathieu Saint-Jean",
       "ndp_can": "Daniel Simoncic",
@@ -1162,6 +1394,8 @@
     {
       "riding_id": 286,
       "riding_name": "Grande Prairie",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Shawn McLean",
       "ndp_can": "Jennifer Villebrun",
@@ -1172,6 +1406,8 @@
     {
       "riding_id": 143,
       "riding_name": "Guelph",
+      "inc_fname": "Lloyd",
+      "inc_lname": "Longfield",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Janice Folk-Dawson",
@@ -1182,6 +1418,8 @@
     {
       "riding_id": 144,
       "riding_name": "Haldimand—Norfolk",
+      "inc_fname": "Leslyn",
+      "inc_lname": "Lewis",
       "bq_can": "",
       "ppc_can": "Henry Geissler",
       "ndp_can": "Shannon Horner-Shepherd",
@@ -1192,6 +1430,8 @@
     {
       "riding_id": 145,
       "riding_name": "Haliburton—Kawartha Lakes",
+      "inc_fname": "Jamie",
+      "inc_lname": "Schmale",
       "bq_can": "",
       "ppc_can": "Michael Penman",
       "ndp_can": "Aylea Teel",
@@ -1202,6 +1442,8 @@
     {
       "riding_id": 17,
       "riding_name": "Halifax",
+      "inc_fname": "vacant",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Maricar Aliasut",
       "ndp_can": "Lisa Roberts",
@@ -1212,6 +1454,8 @@
     {
       "riding_id": 18,
       "riding_name": "Halifax West",
+      "inc_fname": "Lena Metlege",
+      "inc_lname": "Diab",
       "bq_can": "",
       "ppc_can": "Adam LeRue",
       "ndp_can": "Rae Tench",
@@ -1222,6 +1466,8 @@
     {
       "riding_id": 146,
       "riding_name": "Hamilton Centre",
+      "inc_fname": "Matthew",
+      "inc_lname": "Green",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Matthew Green",
@@ -1232,6 +1478,8 @@
     {
       "riding_id": 147,
       "riding_name": "Hamilton East—Stoney Creek",
+      "inc_fname": "Chad",
+      "inc_lname": "Collins",
       "bq_can": "",
       "ppc_can": "Jim Boutsikakis",
       "ndp_can": "Nayla Mithani",
@@ -1242,6 +1490,8 @@
     {
       "riding_id": 148,
       "riding_name": "Hamilton Mountain",
+      "inc_fname": "Lisa",
+      "inc_lname": "Hepfner",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Monique Taylor",
@@ -1252,6 +1502,8 @@
     {
       "riding_id": 149,
       "riding_name": "Hamilton West—Ancaster—Dundas",
+      "inc_fname": "Filomena",
+      "inc_lname": "Tassi",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Roberto Henriquez",
@@ -1262,6 +1514,8 @@
     {
       "riding_id": 150,
       "riding_name": "Hastings—Lennox and Addington—Tyendinaga",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Ava Duffy",
@@ -1272,6 +1526,8 @@
     {
       "riding_id": 58,
       "riding_name": "Hochelaga—Rosemont-Est",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Rose Lessard",
       "ppc_can": "",
       "ndp_can": "Julie Girard-Lemay",
@@ -1282,6 +1538,8 @@
     {
       "riding_id": 59,
       "riding_name": "Honoré-Mercier",
+      "inc_fname": "vacant",
+      "inc_lname": "",
       "bq_can": "Edline Henri",
       "ppc_can": "Marie-Louise Beauchamp",
       "ndp_can": "Djaouida Sellah",
@@ -1292,6 +1550,8 @@
     {
       "riding_id": 60,
       "riding_name": "Hull—Aylmer",
+      "inc_fname": "Greg",
+      "inc_lname": "Fergus",
       "bq_can": "Alice Grondin",
       "ppc_can": "Jean-Jacques Desgranges",
       "ndp_can": "Pascale Matecki",
@@ -1302,6 +1562,8 @@
     {
       "riding_id": 151,
       "riding_name": "Humber River—Black Creek",
+      "inc_fname": "Judy A.",
+      "inc_lname": "Sgro",
       "bq_can": "",
       "ppc_can": "Marek Jasinski",
       "ndp_can": "Matias de Dovitiis",
@@ -1312,6 +1574,8 @@
     {
       "riding_id": 152,
       "riding_name": "Huron—Bruce",
+      "inc_fname": "Ben",
+      "inc_lname": "Lobb",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Melanie Burrett",
@@ -1322,6 +1586,8 @@
     {
       "riding_id": 61,
       "riding_name": "Joliette—Manawan",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Gabriel Ste-Marie",
       "ppc_can": "",
       "ndp_can": "Vanessa Gordon",
@@ -1332,6 +1598,8 @@
     {
       "riding_id": 62,
       "riding_name": "Jonquière",
+      "inc_fname": "Mario",
+      "inc_lname": "Simard",
       "bq_can": "Mario Simard",
       "ppc_can": "Patrick Gaudreault",
       "ndp_can": "Lise Garon",
@@ -1342,6 +1610,8 @@
     {
       "riding_id": 311,
       "riding_name": "Kamloops—Shuswap—Central Rockies",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Michael Henry",
       "ndp_can": "Phaedra Idzan",
@@ -1352,6 +1622,8 @@
     {
       "riding_id": 312,
       "riding_name": "Kamloops—Thompson—Nicola",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Chris Enns",
       "ndp_can": "Miguel Godau",
@@ -1362,6 +1634,8 @@
     {
       "riding_id": 153,
       "riding_name": "Kanata",
+      "inc_fname": "Jenna",
+      "inc_lname": "Sudds",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Melissa Simon",
@@ -1372,6 +1646,8 @@
     {
       "riding_id": 154,
       "riding_name": "Kapuskasing—Timmins—Mushkegowuk",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Serge Lefebvre",
       "ndp_can": "Nicole Fortier Levesque",
@@ -1382,6 +1658,8 @@
     {
       "riding_id": 313,
       "riding_name": "Kelowna",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Trevor McAleese",
@@ -1392,6 +1670,8 @@
     {
       "riding_id": 155,
       "riding_name": "Kenora—Kiiwetinoong",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Bryce Desjarlais",
       "ndp_can": "Tania Cameron",
@@ -1402,6 +1682,8 @@
     {
       "riding_id": 236,
       "riding_name": "Kildonan—St. Paul",
+      "inc_fname": "Raquel",
+      "inc_lname": "Dancho",
       "bq_can": "",
       "ppc_can": "Erik Holmes",
       "ndp_can": "Emily Clark",
@@ -1412,6 +1694,8 @@
     {
       "riding_id": 157,
       "riding_name": "King—Vaughan",
+      "inc_fname": "Anna",
+      "inc_lname": "Roberts",
       "bq_can": "",
       "ppc_can": "Vageesh Sabharwal",
       "ndp_can": "Samantha Sanchez",
@@ -1422,6 +1706,8 @@
     {
       "riding_id": 19,
       "riding_name": "Kings—Hants",
+      "inc_fname": "Kody",
+      "inc_lname": "Blois",
       "bq_can": "",
       "ppc_can": "Alex Cargill",
       "ndp_can": "Paul Doerr",
@@ -1432,6 +1718,8 @@
     {
       "riding_id": 156,
       "riding_name": "Kingston and the Islands",
+      "inc_fname": "Mark",
+      "inc_lname": "Gerretsen",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Daria Juüdi-Hope",
@@ -1442,6 +1730,8 @@
     {
       "riding_id": 158,
       "riding_name": "Kitchener Centre",
+      "inc_fname": "Mike",
+      "inc_lname": "Morrice",
       "bq_can": "",
       "ppc_can": "Wasai Rahimi",
       "ndp_can": "Heather Zaleski",
@@ -1452,6 +1742,8 @@
     {
       "riding_id": 160,
       "riding_name": "Kitchener South—Hespeler",
+      "inc_fname": "Valerie",
+      "inc_lname": "Bradford",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Maya Bozorgzad",
@@ -1462,6 +1754,8 @@
     {
       "riding_id": 159,
       "riding_name": "Kitchener—Conestoga",
+      "inc_fname": "Tim",
+      "inc_lname": "Morrison",
       "bq_can": "",
       "ppc_can": "Kevin Dupuis",
       "ndp_can": "Lorne Bruce",
@@ -1472,6 +1766,8 @@
     {
       "riding_id": 63,
       "riding_name": "La Pointe-de-l'Île",
+      "inc_fname": "Mario",
+      "inc_lname": "Beaulieu",
       "bq_can": "Mario Beaulieu",
       "ppc_can": "",
       "ndp_can": "Ghada Chaabi",
@@ -1482,6 +1778,8 @@
     {
       "riding_id": 64,
       "riding_name": "La Prairie—Atateken",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Alain Therrien",
       "ppc_can": "Ruth Fontaine",
       "ndp_can": "Mathieu Boisvert",
@@ -1492,6 +1790,8 @@
     {
       "riding_id": 4,
       "riding_name": "Labrador",
+      "inc_fname": "Yvonne",
+      "inc_lname": "Jones",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Marius Normore",
@@ -1502,6 +1802,8 @@
     {
       "riding_id": 65,
       "riding_name": "Lac-Saint-Jean",
+      "inc_fname": "Alexis",
+      "inc_lname": "Brunelle-Duceppe",
       "bq_can": "Alexis Brunelle-Duceppe",
       "ppc_can": "Lorie Bouchard",
       "ndp_can": "Hugues Boily-Maltais",
@@ -1512,6 +1814,8 @@
     {
       "riding_id": 66,
       "riding_name": "Lac-Saint-Louis",
+      "inc_fname": "Francis",
+      "inc_lname": "Scarpaleggia",
       "bq_can": "Tommy Fournier",
       "ppc_can": "Mathieu Dufort",
       "ndp_can": "Gregory Evdokias",
@@ -1522,6 +1826,8 @@
     {
       "riding_id": 287,
       "riding_name": "Lakeland",
+      "inc_fname": "Shannon",
+      "inc_lname": "Stubbs",
       "bq_can": "",
       "ppc_can": "Michael Manchen",
       "ndp_can": "Des Bissonnette",
@@ -1532,6 +1838,8 @@
     {
       "riding_id": 161,
       "riding_name": "Lanark—Frontenac",
+      "inc_fname": "Scott",
+      "inc_lname": "Reid",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Danielle Rae",
@@ -1542,6 +1850,8 @@
     {
       "riding_id": 314,
       "riding_name": "Langley Township—Fraser Heights",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Sepehr Haghighat",
       "ndp_can": "Holly Isaac",
@@ -1552,6 +1862,8 @@
     {
       "riding_id": 67,
       "riding_name": "LaSalle—Émard—Verdun",
+      "inc_fname": "Louis-Philippe",
+      "inc_lname": "Sauvé",
       "bq_can": "Louis-Philippe Sauvé",
       "ppc_can": "",
       "ndp_can": "Craig Sauvé",
@@ -1562,6 +1874,8 @@
     {
       "riding_id": 68,
       "riding_name": "Laurentides—Labelle",
+      "inc_fname": "Marie-Hélène",
+      "inc_lname": "Gaudreau",
       "bq_can": "Marie-Hélène Gaudreau",
       "ppc_can": "Amélie Charbonneau",
       "ndp_can": "Michel Noël de Tilly",
@@ -1572,6 +1886,8 @@
     {
       "riding_id": 69,
       "riding_name": "Laurier—Sainte-Marie",
+      "inc_fname": "Steven",
+      "inc_lname": "Guilbeault",
       "bq_can": "Emmanuel Lapierre",
       "ppc_can": "Eugène Duplessis",
       "ndp_can": "Nimâ Machouf",
@@ -1582,6 +1898,8 @@
     {
       "riding_id": 70,
       "riding_name": "Laval—Les Îles",
+      "inc_fname": "Fayçal",
+      "inc_lname": "El-Khoury",
       "bq_can": "Catherine Dansereau-Redhead",
       "ppc_can": "",
       "ndp_can": "Étienne Loiselle-Schiettekatte",
@@ -1592,6 +1910,8 @@
     {
       "riding_id": 288,
       "riding_name": "Leduc—Wetaskiwin",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Jose Flores",
       "ndp_can": "Katherine Swampy",
@@ -1602,6 +1922,8 @@
     {
       "riding_id": 162,
       "riding_name": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+      "inc_fname": "Michael",
+      "inc_lname": "Barrett",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Paul Lancione",
@@ -1612,6 +1934,8 @@
     {
       "riding_id": 71,
       "riding_name": "Les Pays-d'en-Haut",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Ariane Charbonneau",
       "ppc_can": "George Mogiljansky",
       "ndp_can": "Eric-Abel Baland",
@@ -1622,6 +1946,8 @@
     {
       "riding_id": 289,
       "riding_name": "Lethbridge",
+      "inc_fname": "Rachael",
+      "inc_lname": "Thomas",
       "bq_can": "",
       "ppc_can": "Clara Piedalue",
       "ndp_can": "Nathan Svoboda",
@@ -1632,6 +1958,8 @@
     {
       "riding_id": 72,
       "riding_name": "Lévis—Lotbinière",
+      "inc_fname": "Jacques",
+      "inc_lname": "Gourde",
       "bq_can": "Pierre Julien",
       "ppc_can": "Pier-Olivier Roy",
       "ndp_can": "Molly Cornish",
@@ -1642,6 +1970,8 @@
     {
       "riding_id": 163,
       "riding_name": "London Centre",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Dave Annis",
       "ndp_can": "Dirka Prout",
@@ -1652,6 +1982,8 @@
     {
       "riding_id": 165,
       "riding_name": "London West",
+      "inc_fname": "Arielle",
+      "inc_lname": "Kayabaga",
       "bq_can": "",
       "ppc_can": "Tyson Moore",
       "ndp_can": "Shinade Allder",
@@ -1662,6 +1994,8 @@
     {
       "riding_id": 164,
       "riding_name": "London—Fanshawe",
+      "inc_fname": "Lindsay",
+      "inc_lname": "Mathyssen",
       "bq_can": "",
       "ppc_can": "Daniel Buta",
       "ndp_can": "Lindsay Mathyssen",
@@ -1672,6 +2006,8 @@
     {
       "riding_id": 5,
       "riding_name": "Long Range Mountains",
+      "inc_fname": "Gudie",
+      "inc_lname": "Hutchings",
       "bq_can": "",
       "ppc_can": "Pamela Geiger",
       "ndp_can": "Sarah Parsons",
@@ -1682,6 +2018,8 @@
     {
       "riding_id": 73,
       "riding_name": "Longueuil—Charles-LeMoyne",
+      "inc_fname": "Sherry",
+      "inc_lname": "Romanado",
       "bq_can": "Beritan Oerde",
       "ppc_can": "Tiny Olinga",
       "ndp_can": "Marie-Andrée Gravel",
@@ -1692,6 +2030,8 @@
     {
       "riding_id": 74,
       "riding_name": "Longueuil—Saint-Hubert",
+      "inc_fname": "Denis",
+      "inc_lname": "Trudel",
       "bq_can": "Denis Trudel",
       "ppc_can": "",
       "ndp_can": "Nesrine Benhadj",
@@ -1702,6 +2042,8 @@
     {
       "riding_id": 75,
       "riding_name": "Louis-Hébert",
+      "inc_fname": "Joël",
+      "inc_lname": "Lightbound",
       "bq_can": "Valérie Savard",
       "ppc_can": "Vatthana Maholy",
       "ndp_can": "Jean-Paul Lussiàà-Berdou",
@@ -1712,6 +2054,8 @@
     {
       "riding_id": 76,
       "riding_name": "Louis-Saint-Laurent—Akiawenhrahk",
+      "inc_fname": "Gérard",
+      "inc_lname": "Deltell",
       "bq_can": "Martin Trudel",
       "ppc_can": "Anthony Leclerc",
       "ndp_can": "Colette Amram Ducharme",
@@ -1722,6 +2066,8 @@
     {
       "riding_id": 27,
       "riding_name": "Madawaska—Restigouche",
+      "inc_fname": "René",
+      "inc_lname": "Arseneault",
       "bq_can": "",
       "ppc_can": "Nancy Mercier",
       "ndp_can": "Daisy Petersen",
@@ -1732,6 +2078,8 @@
     {
       "riding_id": 11,
       "riding_name": "Malpeque",
+      "inc_fname": "Heath",
+      "inc_lname": "Gill",
       "bq_can": "",
       "ppc_can": "Hilda Baughan",
       "ndp_can": "Cassie MacKay",
@@ -1742,6 +2090,8 @@
     {
       "riding_id": 77,
       "riding_name": "Marc-Aurèle-Fortin",
+      "inc_fname": "Yves",
+      "inc_lname": "Robillard",
       "bq_can": "Claude Tousignant",
       "ppc_can": "",
       "ndp_can": "",
@@ -1752,6 +2102,8 @@
     {
       "riding_id": 166,
       "riding_name": "Markham—Stouffville",
+      "inc_fname": "Helena",
+      "inc_lname": "Jaczek",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Serena Cheung",
@@ -1762,6 +2114,8 @@
     {
       "riding_id": 167,
       "riding_name": "Markham—Thornhill",
+      "inc_fname": "Mary",
+      "inc_lname": "Ng",
       "bq_can": "",
       "ppc_can": "Mimi Lee",
       "ndp_can": "Aftab Qureshi",
@@ -1772,6 +2126,8 @@
     {
       "riding_id": 168,
       "riding_name": "Markham—Unionville",
+      "inc_fname": "Paul",
+      "inc_lname": "Chiang",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Sameer Qureshi",
@@ -1782,6 +2138,8 @@
     {
       "riding_id": 290,
       "riding_name": "Medicine Hat—Cardston—Warner",
+      "inc_fname": "Glen",
+      "inc_lname": "Motz",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Jocelyn Johnson",
@@ -1792,6 +2150,8 @@
     {
       "riding_id": 78,
       "riding_name": "Mégantic—L’Érable—Lotbinière",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Réjean Hurteau",
       "ppc_can": "",
       "ndp_can": "Gabriel D'Astous",
@@ -1802,6 +2162,8 @@
     {
       "riding_id": 169,
       "riding_name": "Middlesex—London",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Taylor McIntosh",
@@ -1812,6 +2174,8 @@
     {
       "riding_id": 170,
       "riding_name": "Milton East—Halton Hills South",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Walter Hofman",
       "ndp_can": "Muhammad Riaz-Sahi",
@@ -1822,6 +2186,8 @@
     {
       "riding_id": 79,
       "riding_name": "Mirabel",
+      "inc_fname": "Jean-Denis",
+      "inc_lname": "Garon",
       "bq_can": "Jean-Denis Garon",
       "ppc_can": "Christian Montpetit",
       "ndp_can": "Albert Batten",
@@ -1832,6 +2198,8 @@
     {
       "riding_id": 28,
       "riding_name": "Miramichi—Grand Lake",
+      "inc_fname": "Jake",
+      "inc_lname": "Stewart",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "",
@@ -1842,6 +2210,8 @@
     {
       "riding_id": 315,
       "riding_name": "Mission—Matsqui—Abbotsford",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Jules Côte",
@@ -1852,6 +2222,8 @@
     {
       "riding_id": 171,
       "riding_name": "Mississauga Centre",
+      "inc_fname": "Omar",
+      "inc_lname": "Alghabra",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Brandon Nguyen",
@@ -1862,6 +2234,8 @@
     {
       "riding_id": 172,
       "riding_name": "Mississauga East—Cooksville",
+      "inc_fname": "Peter",
+      "inc_lname": "Fonseca",
       "bq_can": "",
       "ppc_can": "Amit Gupta",
       "ndp_can": "Khawar Hussain",
@@ -1872,6 +2246,8 @@
     {
       "riding_id": 173,
       "riding_name": "Mississauga—Erin Mills",
+      "inc_fname": "Iqra",
+      "inc_lname": "Khalid",
       "bq_can": "",
       "ppc_can": "Michael Bayer",
       "ndp_can": "Ehab Mustapha",
@@ -1882,6 +2258,8 @@
     {
       "riding_id": 174,
       "riding_name": "Mississauga—Lakeshore",
+      "inc_fname": "Charles",
+      "inc_lname": "Sousa",
       "bq_can": "",
       "ppc_can": "Fahad Rao",
       "ndp_can": "Evelyn Butler",
@@ -1892,6 +2270,8 @@
     {
       "riding_id": 175,
       "riding_name": "Mississauga—Malton",
+      "inc_fname": "Iqwinder",
+      "inc_lname": "Gaheer",
       "bq_can": "",
       "ppc_can": "Nathan Quinlan",
       "ndp_can": "Inderjeetsingh Ailsinghani",
@@ -1902,6 +2282,8 @@
     {
       "riding_id": 176,
       "riding_name": "Mississauga—Streetsville",
+      "inc_fname": "Rechie",
+      "inc_lname": "Valdez",
       "bq_can": "",
       "ppc_can": "Logan Araujo",
       "ndp_can": "Bushra Asghar",
@@ -1912,6 +2294,8 @@
     {
       "riding_id": 29,
       "riding_name": "Moncton—Dieppe",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Serge Landry",
@@ -1922,6 +2306,8 @@
     {
       "riding_id": 81,
       "riding_name": "Mont-Saint-Bruno—L’Acadie",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Noémie Rouillard",
       "ppc_can": "Patrick Rochon",
       "ndp_can": "Mirabelle Leins",
@@ -1932,6 +2318,8 @@
     {
       "riding_id": 82,
       "riding_name": "Montcalm",
+      "inc_fname": "Luc",
+      "inc_lname": "Généreux",
       "bq_can": "Luc Thériault",
       "ppc_can": "",
       "ndp_can": "Denis Perreault",
@@ -1942,6 +2330,8 @@
     {
       "riding_id": 83,
       "riding_name": "Montmorency—Charlevoix",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Caroline Desbiens",
       "ppc_can": "Bart Cortenbach",
       "ndp_can": "",
@@ -1952,6 +2342,8 @@
     {
       "riding_id": 250,
       "riding_name": "Moose Jaw—Lake Centre—Lanigan",
+      "inc_fname": "Fraser",
+      "inc_lname": "Tolmie",
       "bq_can": "",
       "ppc_can": "Chey Craik",
       "ndp_can": "Britt Baumann",
@@ -1962,6 +2354,8 @@
     {
       "riding_id": 80,
       "riding_name": "Mount Royal",
+      "inc_fname": "Anthony",
+      "inc_lname": "Housefather",
       "bq_can": "Yegor Komarov",
       "ppc_can": "",
       "ndp_can": "Adam Frank",
@@ -1972,6 +2366,8 @@
     {
       "riding_id": 316,
       "riding_name": "Nanaimo—Ladysmith",
+      "inc_fname": "Lisa Marie",
+      "inc_lname": "Barron",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Lisa Marie Barron",
@@ -1982,6 +2378,8 @@
     {
       "riding_id": 177,
       "riding_name": "Nepean",
+      "inc_fname": "Chandra",
+      "inc_lname": "Pasma",
       "bq_can": "",
       "ppc_can": "Eric Fleury",
       "ndp_can": "Shyam Shukla",
@@ -1992,6 +2390,8 @@
     {
       "riding_id": 179,
       "riding_name": "New Tecumseth—Gwillimbury",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Paul Montague",
       "ndp_can": "Nancy Morrison",
@@ -2002,6 +2402,8 @@
     {
       "riding_id": 317,
       "riding_name": "New Westminster—Burnaby—Maillardville",
+      "inc_fname": "Peter",
+      "inc_lname": "Julian",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Peter Julian",
@@ -2012,6 +2414,8 @@
     {
       "riding_id": 178,
       "riding_name": "Newmarket—Aurora",
+      "inc_fname": "Tony",
+      "inc_lname": "Badawey",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Anna Gollen",
@@ -2022,6 +2426,8 @@
     {
       "riding_id": 180,
       "riding_name": "Niagara Falls—Niagara-on-the-Lake",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Dinah Althorpe",
       "ndp_can": "Shannon Mitchell",
@@ -2032,6 +2438,8 @@
     {
       "riding_id": 181,
       "riding_name": "Niagara South",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Chantal McCollum",
@@ -2042,6 +2450,8 @@
     {
       "riding_id": 182,
       "riding_name": "Niagara West",
+      "inc_fname": "Dean",
+      "inc_lname": "Allison",
       "bq_can": "",
       "ppc_can": "Ryan Anderson",
       "ndp_can": "Justin Abando",
@@ -2052,6 +2462,8 @@
     {
       "riding_id": 183,
       "riding_name": "Nipissing—Timiskaming",
+      "inc_fname": "Anthony",
+      "inc_lname": "Rota",
       "bq_can": "",
       "ppc_can": "John Janssen",
       "ndp_can": "Valerie Kennedy",
@@ -2062,6 +2474,8 @@
     {
       "riding_id": 318,
       "riding_name": "North Island—Powell River",
+      "inc_fname": "Rachel",
+      "inc_lname": "Blaney",
       "bq_can": "",
       "ppc_can": "Paul Macknight",
       "ndp_can": "Tanille Johnston",
@@ -2072,6 +2486,8 @@
     {
       "riding_id": 319,
       "riding_name": "North Vancouver—Capilano",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Ehsan Arjmand",
       "ndp_can": "Tammy Bentz",
@@ -2082,6 +2498,8 @@
     {
       "riding_id": 184,
       "riding_name": "Northumberland—Clarke",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Lisa Bradburn",
       "ndp_can": "Ava Becker",
@@ -2092,6 +2510,8 @@
     {
       "riding_id": 342,
       "riding_name": "Northwest Territories",
+      "inc_fname": "Michael",
+      "inc_lname": "McLeod",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Kelvin Kotchilea",
@@ -2102,6 +2522,8 @@
     {
       "riding_id": 84,
       "riding_name": "Notre-Dame-de-Grâce—Westmount",
+      "inc_fname": "Anna",
+      "inc_lname": "Gainey",
       "bq_can": "Félix-Antoine Brault",
       "ppc_can": "Marc Perez",
       "ndp_can": "Malcolm Lewis-Richmond",
@@ -2112,6 +2534,8 @@
     {
       "riding_id": 343,
       "riding_name": "Nunavut",
+      "inc_fname": "Lori",
+      "inc_lname": "Idlout",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "ᓘᕆ ᐃᓪᓚᐅᖅ Lori Idlout",
@@ -2122,6 +2546,8 @@
     {
       "riding_id": 185,
       "riding_name": "Oakville East",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Henry Karabela",
       "ndp_can": "Hailey Ford",
@@ -2132,6 +2558,8 @@
     {
       "riding_id": 186,
       "riding_name": "Oakville West",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "JD Meaney",
       "ndp_can": "Diane Downey",
@@ -2142,6 +2570,8 @@
     {
       "riding_id": 320,
       "riding_name": "Okanagan Lake West—South Kelowna",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Harpreet Badohal",
@@ -2152,6 +2582,8 @@
     {
       "riding_id": 187,
       "riding_name": "Orléans",
+      "inc_fname": "Marie-France",
+      "inc_lname": "Lalonde",
       "bq_can": "",
       "ppc_can": "Tafiqul Abu Mohammad",
       "ndp_can": "Oulai B. Goué",
@@ -2162,6 +2594,8 @@
     {
       "riding_id": 188,
       "riding_name": "Oshawa",
+      "inc_fname": "Colin",
+      "inc_lname": "Carrie",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Sara Labelle",
@@ -2172,6 +2606,8 @@
     {
       "riding_id": 189,
       "riding_name": "Ottawa Centre",
+      "inc_fname": "Yasir",
+      "inc_lname": "Naqvi",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Joel Harden",
@@ -2182,6 +2618,8 @@
     {
       "riding_id": 190,
       "riding_name": "Ottawa South",
+      "inc_fname": "David",
+      "inc_lname": "McGuinty",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Hena Masjedee",
@@ -2192,6 +2630,8 @@
     {
       "riding_id": 192,
       "riding_name": "Ottawa West—Nepean",
+      "inc_fname": "Anita",
+      "inc_lname": "Vandenbeld",
       "bq_can": "",
       "ppc_can": "Glen Armstrong",
       "ndp_can": "Josh Bizjak",
@@ -2202,6 +2642,8 @@
     {
       "riding_id": 191,
       "riding_name": "Ottawa—Vanier—Gloucester",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Tristan Oliff",
@@ -2212,6 +2654,8 @@
     {
       "riding_id": 85,
       "riding_name": "Outremont",
+      "inc_fname": "Rachel",
+      "inc_lname": "Bendayan",
       "bq_can": "Rémi Lebeuf",
       "ppc_can": "",
       "ndp_can": "Ève Péclet",
@@ -2222,6 +2666,8 @@
     {
       "riding_id": 193,
       "riding_name": "Oxford",
+      "inc_fname": "Arpan",
+      "inc_lname": "Khanna",
       "bq_can": "",
       "ppc_can": "Steven Beausoleil",
       "ndp_can": "Matthew Chambers",
@@ -2232,6 +2678,8 @@
     {
       "riding_id": 86,
       "riding_name": "Papineau",
+      "inc_fname": "Justin",
+      "inc_lname": "Trudeau",
       "bq_can": "Sophy Forget Bélec",
       "ppc_can": "Noah Cherney",
       "ndp_can": "Niall Ricardo",
@@ -2242,6 +2690,8 @@
     {
       "riding_id": 291,
       "riding_name": "Parkland",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Jason Lavigne",
       "ndp_can": "Keri Goad",
@@ -2252,6 +2702,8 @@
     {
       "riding_id": 194,
       "riding_name": "Parry Sound—Muskoka",
+      "inc_fname": "Scott",
+      "inc_lname": "Aitchison",
       "bq_can": "",
       "ppc_can": "Isabel Pereira",
       "ndp_can": "",
@@ -2262,6 +2714,8 @@
     {
       "riding_id": 292,
       "riding_name": "Peace River—Westlock",
+      "inc_fname": "Arnold",
+      "inc_lname": "Viersen",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Landen Tischer",
@@ -2272,6 +2726,8 @@
     {
       "riding_id": 195,
       "riding_name": "Perth—Wellington",
+      "inc_fname": "John",
+      "inc_lname": "Nater",
       "bq_can": "",
       "ppc_can": "Wayne Baker",
       "ndp_can": "Kevin Kruchkywich",
@@ -2282,6 +2738,8 @@
     {
       "riding_id": 196,
       "riding_name": "Peterborough",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Jami-Leigh McMaster",
       "ndp_can": "Heather Ray",
@@ -2292,6 +2750,8 @@
     {
       "riding_id": 197,
       "riding_name": "Pickering—Brooklin",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Lisa Robinson",
       "ndp_can": "Jamie Nye",
@@ -2302,6 +2762,8 @@
     {
       "riding_id": 87,
       "riding_name": "Pierre-Boucher—Les Patriotes—Verchères",
+      "inc_fname": "Xavier",
+      "inc_lname": "Barsalou-Duval",
       "bq_can": "Xavier Barsalou-Duval",
       "ppc_can": "Alexandre Blais",
       "ndp_can": "",
@@ -2312,6 +2774,8 @@
     {
       "riding_id": 88,
       "riding_name": "Pierrefonds—Dollard",
+      "inc_fname": "Sameer",
+      "inc_lname": "Zuberi",
       "bq_can": "Katrina Archambault",
       "ppc_can": "Gordon Nash",
       "ndp_can": "Kakou Richard Kouassi",
@@ -2322,6 +2786,8 @@
     {
       "riding_id": 321,
       "riding_name": "Pitt Meadows—Maple Ridge",
+      "inc_fname": "Marc",
+      "inc_lname": "Dalton",
       "bq_can": "",
       "ppc_can": "Chris Lehner",
       "ndp_can": "Daniel Heydenrych",
@@ -2332,6 +2798,8 @@
     {
       "riding_id": 293,
       "riding_name": "Ponoka—Didsbury",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Larry Gratton",
       "ndp_can": "Logan Hooley",
@@ -2342,6 +2810,8 @@
     {
       "riding_id": 89,
       "riding_name": "Pontiac—Kitigan Zibi",
+      "inc_fname": "Sophie",
+      "inc_lname": "Chatel",
       "bq_can": "Suzanne Proulx",
       "ppc_can": "Todd Hoffman",
       "ndp_can": "Gilbert W. Whiteduck",
@@ -2352,6 +2822,8 @@
     {
       "riding_id": 322,
       "riding_name": "Port Moody—Coquitlam",
+      "inc_fname": "Bonita",
+      "inc_lname": "Zarrillo",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Bonita Zarrillo",
@@ -2362,6 +2834,8 @@
     {
       "riding_id": 237,
       "riding_name": "Portage—Lisgar",
+      "inc_fname": "Branden",
+      "inc_lname": "Leslie",
       "bq_can": "",
       "ppc_can": "Kevin Larson",
       "ndp_can": "Lisa Tessier",
@@ -2372,6 +2846,8 @@
     {
       "riding_id": 90,
       "riding_name": "Portneuf—Jacques-Cartier",
+      "inc_fname": "Joël",
+      "inc_lname": "Godin",
       "bq_can": "Christian Hébert",
       "ppc_can": "Simon Frenette",
       "ndp_can": "",
@@ -2382,6 +2858,8 @@
     {
       "riding_id": 198,
       "riding_name": "Prescott—Russell—Cumberland",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Deborah Perrier",
       "ndp_can": "Ryder Finlay",
@@ -2392,6 +2870,8 @@
     {
       "riding_id": 251,
       "riding_name": "Prince Albert",
+      "inc_fname": "Randy",
+      "inc_lname": "Hoback",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Virginia Kutzan",
@@ -2402,6 +2882,8 @@
     {
       "riding_id": 323,
       "riding_name": "Prince George—Peace River—Northern Rockies",
+      "inc_fname": "Bob",
+      "inc_lname": "Zimmer",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Cory Longley",
@@ -2412,6 +2894,8 @@
     {
       "riding_id": 238,
       "riding_name": "Provencher",
+      "inc_fname": "Ted",
+      "inc_lname": "Falk",
       "bq_can": "",
       "ppc_can": "Noel Gautron",
       "ndp_can": "Brandy Schmidt",
@@ -2422,6 +2906,8 @@
     {
       "riding_id": 91,
       "riding_name": "Québec Centre",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "Simon Bérubé",
       "ppc_can": "Daniel Brisson",
       "ndp_can": "Tommy Bureau",
@@ -2432,6 +2918,8 @@
     {
       "riding_id": 294,
       "riding_name": "Red Deer",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Kyla Courte",
       "ndp_can": "Elias Assefa",
@@ -2442,6 +2930,8 @@
     {
       "riding_id": 252,
       "riding_name": "Regina—Lewvan",
+      "inc_fname": "Warren",
+      "inc_lname": "Steinley",
       "bq_can": "",
       "ppc_can": "Godwin Ezizor",
       "ndp_can": "Ray Aldinger",
@@ -2452,6 +2942,8 @@
     {
       "riding_id": 253,
       "riding_name": "Regina—Qu'Appelle",
+      "inc_fname": "Andrew",
+      "inc_lname": "Scheer",
       "bq_can": "",
       "ppc_can": "Dionne Fehler",
       "ndp_can": "Chris Simmie",
@@ -2462,6 +2954,8 @@
     {
       "riding_id": 254,
       "riding_name": "Regina—Wascana",
+      "inc_fname": "Michael",
+      "inc_lname": "Kram",
       "bq_can": "",
       "ppc_can": "Peter Bruce",
       "ndp_can": "Kaitlyn Stadnyk",
@@ -2472,6 +2966,8 @@
     {
       "riding_id": 92,
       "riding_name": "Repentigny",
+      "inc_fname": "Monique",
+      "inc_lname": "Pauzé",
       "bq_can": "Patrick Bonin",
       "ppc_can": "Benoit Lanoue",
       "ndp_can": "Nathalie Gagnon",
@@ -2482,6 +2978,8 @@
     {
       "riding_id": 324,
       "riding_name": "Richmond Centre—Marpole",
+      "inc_fname": "Wilson",
+      "inc_lname": "Miao",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Martin Li",
@@ -2492,6 +2990,8 @@
     {
       "riding_id": 325,
       "riding_name": "Richmond East—Steveston",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Keefer Pelech",
@@ -2502,6 +3002,8 @@
     {
       "riding_id": 199,
       "riding_name": "Richmond Hill South",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Ebrahim Astaraki",
@@ -2512,6 +3014,8 @@
     {
       "riding_id": 93,
       "riding_name": "Richmond—Arthabaska",
+      "inc_fname": "Alain",
+      "inc_lname": "Rayes",
       "bq_can": "Daniel Lebel",
       "ppc_can": "Philippe D'Arcangeli",
       "ndp_can": "Nataël Bureau",
@@ -2522,6 +3026,8 @@
     {
       "riding_id": 239,
       "riding_name": "Riding Mountain",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Jim Oliver",
       "ndp_can": "Andrew Maxwell",
@@ -2532,6 +3038,8 @@
     {
       "riding_id": 94,
       "riding_name": "Rimouski—La Matapédia",
+      "inc_fname": "Maxime",
+      "inc_lname": "Blanchette-Joncas",
       "bq_can": "Maxime Blanchette-Joncas",
       "ppc_can": "Taraneh Javanbakht",
       "ndp_can": "Salomé Salvain",
@@ -2542,6 +3050,8 @@
     {
       "riding_id": 95,
       "riding_name": "Rivière-des-Mille-Îles",
+      "inc_fname": "Luc",
+      "inc_lname": "Desilets",
       "bq_can": "Luc Desilets",
       "ppc_can": "",
       "ndp_can": "",
@@ -2552,6 +3062,8 @@
     {
       "riding_id": 96,
       "riding_name": "Rivière-du-Nord",
+      "inc_fname": "Rhéal Éloi",
+      "inc_lname": "Fortin",
       "bq_can": "Rhéal Éloi Fortin",
       "ppc_can": "",
       "ndp_can": "",
@@ -2562,6 +3074,8 @@
     {
       "riding_id": 97,
       "riding_name": "Rosemont—La Petite-Patrie",
+      "inc_fname": "Alexandre",
+      "inc_lname": "Boulerice",
       "bq_can": "Olivier Gignac",
       "ppc_can": "",
       "ndp_can": "Alexandre Boulerice",
@@ -2572,6 +3086,8 @@
     {
       "riding_id": 326,
       "riding_name": "Saanich—Gulf Islands",
+      "inc_fname": "Elizabeth",
+      "inc_lname": "May",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Colin Plant",
@@ -2582,6 +3098,8 @@
     {
       "riding_id": 20,
       "riding_name": "Sackville—Bedford—Preston",
+      "inc_fname": "Darrell",
+      "inc_lname": "Samson",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Isaac Wilson",
@@ -2592,6 +3110,8 @@
     {
       "riding_id": 30,
       "riding_name": "Saint John—Kennebecasis",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "",
@@ -2602,6 +3122,8 @@
     {
       "riding_id": 31,
       "riding_name": "Saint John—St. Croix",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Andrew Hill",
@@ -2612,6 +3134,8 @@
     {
       "riding_id": 98,
       "riding_name": "Saint-Hyacinthe—Bagot—Acton",
+      "inc_fname": "Simon-Pierre",
+      "inc_lname": "Savard-Tremblay",
       "bq_can": "Simon-Pierre Savard-Tremblay",
       "ppc_can": "Sylvain Pariseau",
       "ndp_can": "Raymonde Plamondon",
@@ -2622,6 +3146,8 @@
     {
       "riding_id": 99,
       "riding_name": "Saint-Jean",
+      "inc_fname": "Christine",
+      "inc_lname": "Normandin",
       "bq_can": "Christine Normandin",
       "ppc_can": "Tchad Deschenes",
       "ndp_can": "Danielle Dubuc",
@@ -2632,6 +3158,8 @@
     {
       "riding_id": 100,
       "riding_name": "Saint-Laurent",
+      "inc_fname": "Emmanuella",
+      "inc_lname": "Lambropoulos",
       "bq_can": "Marielle Gendron",
       "ppc_can": "Manon Chevalier",
       "ndp_can": "Ryan Byrne",
@@ -2642,6 +3170,8 @@
     {
       "riding_id": 101,
       "riding_name": "Saint-Léonard—Saint-Michel",
+      "inc_fname": "Patricia",
+      "inc_lname": "Lattanzio",
       "bq_can": "Laurie Lelacheur",
       "ppc_can": "Caroline Mailloux",
       "ndp_can": "Marwan El Attar",
@@ -2652,6 +3182,8 @@
     {
       "riding_id": 102,
       "riding_name": "Saint-Maurice—Champlain",
+      "inc_fname": "François-Philippe",
+      "inc_lname": "Champagne",
       "bq_can": "Thierry Bilodeau",
       "ppc_can": "David Rioux",
       "ndp_can": "",
@@ -2662,6 +3194,8 @@
     {
       "riding_id": 200,
       "riding_name": "Sarnia—Lambton—Bkejwanong",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Brian Everaert",
       "ndp_can": "Lo-Anne Chan",
@@ -2672,6 +3206,8 @@
     {
       "riding_id": 255,
       "riding_name": "Saskatoon South",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Jacob Gadzella",
@@ -2682,6 +3218,8 @@
     {
       "riding_id": 257,
       "riding_name": "Saskatoon West",
+      "inc_fname": "Brad",
+      "inc_lname": "Redekopp",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Melissa McGillivray",
@@ -2692,6 +3230,8 @@
     {
       "riding_id": 256,
       "riding_name": "Saskatoon—University",
+      "inc_fname": "Corey",
+      "inc_lname": "Tochor",
       "bq_can": "",
       "ppc_can": "Jaxson Boot",
       "ndp_can": "Rachel Loewen Walker",
@@ -2702,6 +3242,8 @@
     {
       "riding_id": 201,
       "riding_name": "Sault Ste. Marie—Algoma",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Laura Mayer",
@@ -2712,6 +3254,8 @@
     {
       "riding_id": 203,
       "riding_name": "Scarborough Centre—Don Valley East",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Peter Koubakis",
       "ndp_can": "Alyson Koa",
@@ -2722,6 +3266,8 @@
     {
       "riding_id": 205,
       "riding_name": "Scarborough North",
+      "inc_fname": "Shaun",
+      "inc_lname": "Chen",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Karishma Manji",
@@ -2732,6 +3278,8 @@
     {
       "riding_id": 206,
       "riding_name": "Scarborough Southwest",
+      "inc_fname": "Bill",
+      "inc_lname": "Blair",
       "bq_can": "",
       "ppc_can": "Michael Poulin",
       "ndp_can": "Fatima Shaban",
@@ -2742,6 +3290,8 @@
     {
       "riding_id": 202,
       "riding_name": "Scarborough—Agincourt",
+      "inc_fname": "Jean",
+      "inc_lname": "Yip",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "George Wedge",
@@ -2752,6 +3302,8 @@
     {
       "riding_id": 204,
       "riding_name": "Scarborough—Guildwood—Rouge Park",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Kingsley Kwok",
@@ -2762,6 +3314,8 @@
     {
       "riding_id": 207,
       "riding_name": "Scarborough—Woburn",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Dan Lovell",
@@ -2772,6 +3326,8 @@
     {
       "riding_id": 241,
       "riding_name": "Selkirk—Interlake—Eastman",
+      "inc_fname": "James",
+      "inc_lname": "Bezan",
       "bq_can": "",
       "ppc_can": "Byron Gryba",
       "ndp_can": "Josef Estabrooks",
@@ -2782,6 +3338,8 @@
     {
       "riding_id": 103,
       "riding_name": "Shefford",
+      "inc_fname": "Andréanne",
+      "inc_lname": "Larouche",
       "bq_can": "Andréanne Larouche",
       "ppc_can": "Susanne Lefebvre",
       "ndp_can": "",
@@ -2792,6 +3350,8 @@
     {
       "riding_id": 104,
       "riding_name": "Sherbrooke",
+      "inc_fname": "Élisabeth",
+      "inc_lname": "Brière",
       "bq_can": "Pierre-Étienne Rouillard",
       "ppc_can": "Alexandre Lépine",
       "ndp_can": "Jean-Pierre Fortier",
@@ -2802,6 +3362,8 @@
     {
       "riding_id": 295,
       "riding_name": "Sherwood Park—Fort Saskatchewan",
+      "inc_fname": "Garnett",
+      "inc_lname": "Genuis",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Chris Jones",
@@ -2812,6 +3374,8 @@
     {
       "riding_id": 209,
       "riding_name": "Simcoe North",
+      "inc_fname": "Adam",
+      "inc_lname": "Chambers",
       "bq_can": "",
       "ppc_can": "Stephen Makk",
       "ndp_can": "Melissa Lloyd",
@@ -2822,6 +3386,8 @@
     {
       "riding_id": 208,
       "riding_name": "Simcoe—Grey",
+      "inc_fname": "Terry",
+      "inc_lname": "Dowdall",
       "bq_can": "",
       "ppc_can": "Giorgio Mammoliti",
       "ndp_can": "Jasleen Bains",
@@ -2832,6 +3398,8 @@
     {
       "riding_id": 327,
       "riding_name": "Similkameen—South Okanagan—West Kootenay",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Barry Dewar",
       "ndp_can": "Linda Sankey",
@@ -2842,6 +3410,8 @@
     {
       "riding_id": 328,
       "riding_name": "Skeena—Bulkley Valley",
+      "inc_fname": "Taylor",
+      "inc_lname": "Bachrach",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Taylor Bachrach",
@@ -2852,6 +3422,8 @@
     {
       "riding_id": 258,
       "riding_name": "Souris—Moose Mountain",
+      "inc_fname": "Robert",
+      "inc_lname": "Kitchen",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Sheena Muirhead Koops",
@@ -2862,6 +3434,8 @@
     {
       "riding_id": 21,
       "riding_name": "South Shore—St. Margarets",
+      "inc_fname": "Rick",
+      "inc_lname": "Perkins",
       "bq_can": "",
       "ppc_can": "Patrick Boyd",
       "ndp_can": "",
@@ -2872,6 +3446,8 @@
     {
       "riding_id": 329,
       "riding_name": "South Surrey—White Rock",
+      "inc_fname": "Kerry-Lynne",
+      "inc_lname": "Findlay",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Jureun Park",
@@ -2882,6 +3458,8 @@
     {
       "riding_id": 210,
       "riding_name": "Spadina—Harbourfront",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Gilbert Jubinville",
       "ndp_can": "Norm Di Pasquale",
@@ -2892,6 +3470,8 @@
     {
       "riding_id": 296,
       "riding_name": "St. Albert—Sturgeon River",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Brigitte Cecelia",
       "ndp_can": "Dot Anderson",
@@ -2902,6 +3482,8 @@
     {
       "riding_id": 240,
       "riding_name": "St. Boniface—St. Vital",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Gilles Pelletier",
       "ndp_can": "Thomas Linner",
@@ -2912,6 +3494,8 @@
     {
       "riding_id": 211,
       "riding_name": "St. Catharines",
+      "inc_fname": "Chris",
+      "inc_lname": "Bittle",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Karen Orlandi",
@@ -2922,6 +3506,8 @@
     {
       "riding_id": 6,
       "riding_name": "St. John's East",
+      "inc_fname": "Joanne",
+      "inc_lname": "Thompson",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Mary Shortall",
@@ -2932,6 +3518,8 @@
     {
       "riding_id": 212,
       "riding_name": "Stormont—Dundas—Glengarry",
+      "inc_fname": "Eric",
+      "inc_lname": "Duncan",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Mario Leclerc",
@@ -2942,6 +3530,8 @@
     {
       "riding_id": 213,
       "riding_name": "Sudbury",
+      "inc_fname": "Viviane",
+      "inc_lname": "Lapointe",
       "bq_can": "",
       "ppc_can": "Nicholas Bonderoff",
       "ndp_can": "Nadia Verrelli",
@@ -2952,6 +3542,8 @@
     {
       "riding_id": 214,
       "riding_name": "Sudbury East—Manitoulin—Nickel Belt",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Andréane Chénier",
@@ -2962,6 +3554,8 @@
     {
       "riding_id": 330,
       "riding_name": "Surrey Centre",
+      "inc_fname": "Randeep",
+      "inc_lname": "Sarai",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Dominic Denofrio",
@@ -2972,6 +3566,8 @@
     {
       "riding_id": 331,
       "riding_name": "Surrey Newton",
+      "inc_fname": "Sukh",
+      "inc_lname": "Dhaliwal",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Raj Singh Toor",
@@ -2982,6 +3578,8 @@
     {
       "riding_id": 259,
       "riding_name": "Swift Current—Grasslands—Kindersley",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Alex McPhee",
@@ -2992,6 +3590,8 @@
     {
       "riding_id": 22,
       "riding_name": "Sydney—Glace Bay",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Jeffrey Evely",
       "ndp_can": "Kimberly Losier",
@@ -3002,6 +3602,8 @@
     {
       "riding_id": 215,
       "riding_name": "Taiaiako'n—Parkdale—High Park",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Bhutila Karpoche",
@@ -3012,6 +3614,8 @@
     {
       "riding_id": 7,
       "riding_name": "Terra Nova—The Peninsulas",
+      "inc_fname": "Churence",
+      "inc_lname": "Rogers",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Liam Ryan",
@@ -3022,6 +3626,8 @@
     {
       "riding_id": 105,
       "riding_name": "Terrebonne",
+      "inc_fname": "Nathalie",
+      "inc_lname": "Sinclair-Desgagné",
       "bq_can": "Nathalie Sinclair Desgagné",
       "ppc_can": "Maria Cantore",
       "ndp_can": "Maxime Beaudoin",
@@ -3032,6 +3638,8 @@
     {
       "riding_id": 106,
       "riding_name": "Thérèse-De Blainville",
+      "inc_fname": "Louise",
+      "inc_lname": "Chabot",
       "bq_can": "Marie-Noëlle Closson-Duquette",
       "ppc_can": "Chantal Lavoie",
       "ndp_can": "Michel Lacroix",
@@ -3042,6 +3650,8 @@
     {
       "riding_id": 216,
       "riding_name": "Thornhill",
+      "inc_fname": "Melissa",
+      "inc_lname": "Lantsman",
       "bq_can": "",
       "ppc_can": "Amir Hart",
       "ndp_can": "",
@@ -3052,6 +3662,8 @@
     {
       "riding_id": 217,
       "riding_name": "Thunder Bay—Rainy River",
+      "inc_fname": "Marcus",
+      "inc_lname": "Powlowski",
       "bq_can": "",
       "ppc_can": "Sabrina Ree",
       "ndp_can": "Yuk-Sem Won",
@@ -3062,6 +3674,8 @@
     {
       "riding_id": 218,
       "riding_name": "Thunder Bay—Superior North",
+      "inc_fname": "Patty",
+      "inc_lname": "Hajdu",
       "bq_can": "",
       "ppc_can": "Amos Bradley",
       "ndp_can": "Joy Wakefield",
@@ -3072,6 +3686,8 @@
     {
       "riding_id": 32,
       "riding_name": "Tobique—Mactaquac",
+      "inc_fname": "Richard",
+      "inc_lname": "Bragdon",
       "bq_can": "",
       "ppc_can": "Vern Brundle",
       "ndp_can": "Michael Winter",
@@ -3082,6 +3698,8 @@
     {
       "riding_id": 219,
       "riding_name": "Toronto Centre",
+      "inc_fname": "Marci",
+      "inc_lname": "Ien",
       "bq_can": "",
       "ppc_can": "Nathen Mazri",
       "ndp_can": "Samantha Green",
@@ -3092,6 +3710,8 @@
     {
       "riding_id": 220,
       "riding_name": "Toronto—Danforth",
+      "inc_fname": "Julie",
+      "inc_lname": "Dabrusin",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Clare Hacksel",
@@ -3102,6 +3722,8 @@
     {
       "riding_id": 221,
       "riding_name": "Toronto—St. Paul's",
+      "inc_fname": "Don",
+      "inc_lname": "Stewart",
       "bq_can": "",
       "ppc_can": "Joseph Frasca",
       "ndp_can": "Bruce Levy",
@@ -3112,6 +3734,8 @@
     {
       "riding_id": 107,
       "riding_name": "Trois-Rivières",
+      "inc_fname": "René",
+      "inc_lname": "Villemure",
       "bq_can": "René Villemure",
       "ppc_can": "Yan Patry",
       "ndp_can": "Matthew Sévigny",
@@ -3122,6 +3746,8 @@
     {
       "riding_id": 222,
       "riding_name": "University—Rosedale",
+      "inc_fname": "Chrystia",
+      "inc_lname": "Freeland",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Serena Purdy",
@@ -3132,6 +3758,8 @@
     {
       "riding_id": 332,
       "riding_name": "Vancouver Centre",
+      "inc_fname": "Hedy",
+      "inc_lname": "Fry",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Avi Lewis",
@@ -3142,6 +3770,8 @@
     {
       "riding_id": 333,
       "riding_name": "Vancouver East",
+      "inc_fname": "Jenny",
+      "inc_lname": "Kwan",
       "bq_can": "",
       "ppc_can": "Meghan Murphy",
       "ndp_can": "Jenny Kwan",
@@ -3152,6 +3782,8 @@
     {
       "riding_id": 334,
       "riding_name": "Vancouver Fraserview—South Burnaby",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Desiderio Magtanggol Reyes",
       "ndp_can": "Manoj Bhangu",
@@ -3162,6 +3794,8 @@
     {
       "riding_id": 335,
       "riding_name": "Vancouver Granville",
+      "inc_fname": "Taleeb",
+      "inc_lname": "Noormohamed",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Sukhi Singh Sahota",
@@ -3172,6 +3806,8 @@
     {
       "riding_id": 336,
       "riding_name": "Vancouver Kingsway",
+      "inc_fname": "Don",
+      "inc_lname": "Davies",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Don Davies",
@@ -3182,6 +3818,8 @@
     {
       "riding_id": 337,
       "riding_name": "Vancouver Quadra",
+      "inc_fname": "Joyce",
+      "inc_lname": "Murray",
       "bq_can": "",
       "ppc_can": "John Ede",
       "ndp_can": "Alim Fakirani",
@@ -3192,6 +3830,8 @@
     {
       "riding_id": 108,
       "riding_name": "Vaudreuil",
+      "inc_fname": "Peter",
+      "inc_lname": "Schiefke",
       "bq_can": "",
       "ppc_can": "Jean Boily",
       "ndp_can": "Kalden Rangdrol Dhatsenpa",
@@ -3202,6 +3842,8 @@
     {
       "riding_id": 223,
       "riding_name": "Vaughan—Woodbridge",
+      "inc_fname": "Francesco",
+      "inc_lname": "Sorbara",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Ali Bahman",
@@ -3212,6 +3854,8 @@
     {
       "riding_id": 338,
       "riding_name": "Vernon—Lake Country—Monashee",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Leah Main",
@@ -3222,6 +3866,8 @@
     {
       "riding_id": 339,
       "riding_name": "Victoria",
+      "inc_fname": "Laurel",
+      "inc_lname": "Collins",
       "bq_can": "",
       "ppc_can": "David Mohr",
       "ndp_can": "Laurel Collins",
@@ -3232,6 +3878,8 @@
     {
       "riding_id": 109,
       "riding_name": "Ville-Marie—Le Sud-Ouest—Île-des-Soeurs",
+      "inc_fname": "Marc",
+      "inc_lname": "Miller",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "",
@@ -3242,6 +3890,8 @@
     {
       "riding_id": 110,
       "riding_name": "Vimy",
+      "inc_fname": "Annie",
+      "inc_lname": "Koutrakis",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "",
@@ -3252,6 +3902,8 @@
     {
       "riding_id": 224,
       "riding_name": "Waterloo",
+      "inc_fname": "Bardish",
+      "inc_lname": "Chagger",
       "bq_can": "",
       "ppc_can": "Douglas Ross",
       "ndp_can": "Héline Chow",
@@ -3262,6 +3914,8 @@
     {
       "riding_id": 225,
       "riding_name": "Wellington—Halton Hills North",
+      "inc_fname": "Michael",
+      "inc_lname": "Chong",
       "bq_can": "",
       "ppc_can": "Syl Carle",
       "ndp_can": "Andrew Bascombe",
@@ -3272,6 +3926,8 @@
     {
       "riding_id": 340,
       "riding_name": "West Vancouver—Sunshine Coast—Sea to Sky Country",
+      "inc_fname": "Patrick",
+      "inc_lname": "Weiler",
       "bq_can": "",
       "ppc_can": "Peyman Askari",
       "ndp_can": "Jäger Rosenberg",
@@ -3282,6 +3938,8 @@
     {
       "riding_id": 226,
       "riding_name": "Whitby",
+      "inc_fname": "Ryan",
+      "inc_lname": "Turnbull",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Kevin Goswell",
@@ -3292,6 +3950,8 @@
     {
       "riding_id": 227,
       "riding_name": "Willowdale",
+      "inc_fname": "Ali",
+      "inc_lname": "Ehsassi",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Christy Kheirallah",
@@ -3302,6 +3962,8 @@
     {
       "riding_id": 229,
       "riding_name": "Windsor West",
+      "inc_fname": "Brian",
+      "inc_lname": "Masse",
       "bq_can": "",
       "ppc_can": "Jacob Bezaire",
       "ndp_can": "Brian Masse",
@@ -3312,6 +3974,8 @@
     {
       "riding_id": 228,
       "riding_name": "Windsor—Tecumseh—Lakeshore",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Nick Babic",
       "ndp_can": "Alex Ilijoski",
@@ -3322,6 +3986,8 @@
     {
       "riding_id": 242,
       "riding_name": "Winnipeg Centre",
+      "inc_fname": "Leah",
+      "inc_lname": "Gazan",
       "bq_can": "",
       "ppc_can": "Donald Grant",
       "ndp_can": "Leah Gazan",
@@ -3332,6 +3998,8 @@
     {
       "riding_id": 243,
       "riding_name": "Winnipeg North",
+      "inc_fname": "Kevin",
+      "inc_lname": "Lamoureux",
       "bq_can": "",
       "ppc_can": "Jessica Bailon",
       "ndp_can": "Adebayo Akinrogunde",
@@ -3342,6 +4010,8 @@
     {
       "riding_id": 244,
       "riding_name": "Winnipeg South",
+      "inc_fname": "Terry",
+      "inc_lname": "Duguid",
       "bq_can": "",
       "ppc_can": "Johann Rempel Fehr",
       "ndp_can": "Joanne Bjornson",
@@ -3352,6 +4022,8 @@
     {
       "riding_id": 245,
       "riding_name": "Winnipeg South Centre",
+      "inc_fname": "Ben",
+      "inc_lname": "Carr",
       "bq_can": "",
       "ppc_can": "Jaclyn Cummings",
       "ndp_can": "Jorge Requena Ramos",
@@ -3362,6 +4034,8 @@
     {
       "riding_id": 246,
       "riding_name": "Winnipeg West",
+      "inc_fname": "Marty",
+      "inc_lname": "Morantz",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Avery Selby-Lyons",
@@ -3372,6 +4046,8 @@
     {
       "riding_id": 297,
       "riding_name": "Yellowhead",
+      "inc_fname": "Gerald",
+      "inc_lname": "Soroka",
       "bq_can": "",
       "ppc_can": "Vicky Bayford",
       "ndp_can": "Avni Soma",
@@ -3382,6 +4058,8 @@
     {
       "riding_id": 230,
       "riding_name": "York Centre",
+      "inc_fname": "Ya'ara",
+      "inc_lname": "Saks",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Yusuf Sinan Ulukanligil",
@@ -3392,6 +4070,8 @@
     {
       "riding_id": 232,
       "riding_name": "York South—Weston—Etobicoke",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Louise James",
@@ -3402,6 +4082,8 @@
     {
       "riding_id": 231,
       "riding_name": "York—Durham",
+      "inc_fname": "",
+      "inc_lname": "",
       "bq_can": "",
       "ppc_can": "Patricia Conlin",
       "ndp_can": "Justin Graham",
@@ -3412,6 +4094,8 @@
     {
       "riding_id": 260,
       "riding_name": "Yorkton—Melville",
+      "inc_fname": "Cathay",
+      "inc_lname": "Wagantall",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Michaela Krakowetz",
@@ -3422,6 +4106,8 @@
     {
       "riding_id": 341,
       "riding_name": "Yukon",
+      "inc_fname": "Brendan",
+      "inc_lname": "Hanley",
       "bq_can": "",
       "ppc_can": "",
       "ndp_can": "Katherine McCallum",
