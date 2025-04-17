@@ -1676,10 +1676,10 @@ const candStories =
             "inc_lname": "",
             "bq_can": "",
             "ppc_can": "Jayesh Brahmbhatt",
-            "ndp_can": "",
+            "ndp_can": "Teresa Yeh",
             "cpc_can": "Tim Iqbal",
             "lib_can": "Shafqat Ali",
-            "gp_can": ""
+            "gp_can": "Mike Dancy"
           },
           {
             "riding_id": 233,
@@ -2072,10 +2072,10 @@ const candStories =
             "inc_lname": "Epp",
             "bq_can": "",
             "ppc_can": "Trevor Lee",
-            "ndp_can": "",
+            "ndp_can": "Seamus McInnis Fleming",
             "cpc_can": "Dave Epp",
             "lib_can": "Keith Pickard",
-            "gp_can": ""
+            "gp_can": "James Plunkett"
           },
           {
             "riding_id": 50,
@@ -3344,7 +3344,7 @@ const candStories =
             "inc_lname": "Robillard",
             "bq_can": "Claude Tousignant",
             "ppc_can": "",
-            "ndp_can": "",
+            "ndp_can": "Alexandrah Cardona-Fortin",
             "cpc_can": "Janina Moran",
             "lib_can": "Carlos Leitao",
             "gp_can": ""
@@ -3452,10 +3452,10 @@ const candStories =
             "inc_lname": "Stewart",
             "bq_can": "",
             "ppc_can": "",
-            "ndp_can": "",
+            "ndp_can": "Josh Floyd",
             "cpc_can": "Mike Dawson",
             "lib_can": "Lisa Harris",
-            "gp_can": ""
+            "gp_can": "Matthew Ian Clark"
           },
           {
             "riding_id": 315,
@@ -3584,10 +3584,10 @@ const candStories =
             "inc_lname": "",
             "bq_can": "Caroline Desbiens",
             "ppc_can": "Bart Cortenbach",
-            "ndp_can": "",
+            "ndp_can": "Gérard Briand",
             "cpc_can": "Gabriel Hardy",
             "lib_can": "Alex Ouellet-Bélanger",
-            "gp_can": ""
+            "gp_can": "Élie Prud'Homme-Tessier"
           },
           {
             "riding_id": 250,
@@ -3956,7 +3956,7 @@ const candStories =
             "inc_lname": "Aitchison",
             "bq_can": "",
             "ppc_can": "Isabel Pereira",
-            "ndp_can": "",
+            "ndp_can": "Heather Hay",
             "cpc_can": "Scott Aitchison",
             "lib_can": "Geordie Sabbagh",
             "gp_can": ""
@@ -4016,7 +4016,7 @@ const candStories =
             "inc_lname": "Barsalou-Duval",
             "bq_can": "Xavier Barsalou-Duval",
             "ppc_can": "Alexandre Blais",
-            "ndp_can": "",
+            "ndp_can": "Jean-François Filion",
             "cpc_can": "Vincent Kunda",
             "lib_can": "Laurent de Casanove",
             "gp_can": ""
@@ -4100,10 +4100,10 @@ const candStories =
             "inc_lname": "Godin",
             "bq_can": "Christian Hébert",
             "ppc_can": "Simon Frenette",
-            "ndp_can": "",
+            "ndp_can": "Félix Couture",
             "cpc_can": "Joel Godin",
             "lib_can": "Antonin Leroux",
-            "gp_can": ""
+            "gp_can": "Johann Queffelec"
           },
           {
             "riding_id": 198,
@@ -4115,7 +4115,7 @@ const candStories =
             "ndp_can": "Ryder Finlay",
             "cpc_can": "Julie Seguin",
             "lib_can": "Giovanna Mingarelli",
-            "gp_can": ""
+            "gp_can": "Thaila Riden"
           },
           {
             "riding_id": 251,
@@ -4135,11 +4135,11 @@ const candStories =
             "inc_fname": "Bob",
             "inc_lname": "Zimmer",
             "bq_can": "",
-            "ppc_can": "",
+            "ppc_can": "David Watson",
             "ndp_can": "Cory Longley",
             "cpc_can": "Bob Zimmer",
             "lib_can": "Peter Njenga",
-            "gp_can": ""
+            "gp_can": "Mary Forbes"
           },
           {
             "riding_id": 238,
@@ -4303,11 +4303,11 @@ const candStories =
             "inc_fname": "Luc",
             "inc_lname": "Desilets",
             "bq_can": "Luc Desilets",
-            "ppc_can": "",
-            "ndp_can": "",
+            "ppc_can": "David Santamaria Quiceno",
+            "ndp_can": "Joseph Hakizimana",
             "cpc_can": "Elia Lopez",
             "lib_can": "Linda Lapointe",
-            "gp_can": ""
+            "gp_can": "Alec Ware"
           },
           {
             "riding_id": 96,
@@ -4316,7 +4316,7 @@ const candStories =
             "inc_lname": "Fortin",
             "bq_can": "Rhéal Éloi Fortin",
             "ppc_can": "",
-            "ndp_can": "",
+            "ndp_can": "Christel Marchand",
             "cpc_can": "Patricia Morrisette",
             "lib_can": "Mary-Helen Walton",
             "gp_can": ""
@@ -4364,10 +4364,10 @@ const candStories =
             "inc_lname": "",
             "bq_can": "",
             "ppc_can": "",
-            "ndp_can": "",
+            "ndp_can": "Armand Cormier",
             "cpc_can": "Melissa Young",
             "lib_can": "Wayne Long",
-            "gp_can": ""
+            "gp_can": "David MacFarquhar"
           },
           {
             "riding_id": 31,
@@ -4436,10 +4436,10 @@ const candStories =
             "inc_lname": "Champagne",
             "bq_can": "Thierry Bilodeau",
             "ppc_can": "David Rioux",
-            "ndp_can": "",
+            "ndp_can": "Nathalie Garceau",
             "cpc_can": "Pierre-Augustin Allard",
             "lib_can": "François-Philippe Champagne",
-            "gp_can": ""
+            "gp_can": "Marie-Claude Gaudet"
           },
           {
             "riding_id": 200,
@@ -4592,7 +4592,7 @@ const candStories =
             "inc_lname": "Larouche",
             "bq_can": "Andréanne Larouche",
             "ppc_can": "Susanne Lefebvre",
-            "ndp_can": "",
+            "ndp_can": "Patrick Jasmin",
             "cpc_can": "James Seale",
             "lib_can": "Félix Dionne",
             "gp_can": ""
@@ -4691,7 +4691,7 @@ const candStories =
             "ndp_can": "",
             "cpc_can": "Rick Perkins",
             "lib_can": "Jessica Fancy-Landry",
-            "gp_can": ""
+            "gp_can": "Mark Embrett"
           },
           {
             "riding_id": 329,
@@ -4904,7 +4904,7 @@ const candStories =
             "inc_lname": "Lantsman",
             "bq_can": "",
             "ppc_can": "Amir Hart",
-            "ndp_can": "",
+            "ndp_can": "William McCarty",
             "cpc_can": "Melissa Lantsman",
             "lib_can": "Liane Kotler",
             "gp_can": ""
@@ -5130,21 +5130,21 @@ const candStories =
             "riding_name": "Ville-Marie—Le Sud-Ouest—Île-des-Soeurs",
             "inc_fname": "Marc",
             "inc_lname": "Miller",
-            "bq_can": "",
+            "bq_can": "Kevin Majaducon",
             "ppc_can": "",
-            "ndp_can": "",
+            "ndp_can": "Suzanne Dufresne",
             "cpc_can": "Steve Shanahan",
             "lib_can": "Marc Miller",
-            "gp_can": ""
+            "gp_can": "Nathe Perrone"
           },
           {
             "riding_id": 110,
             "riding_name": "Vimy",
             "inc_fname": "Annie",
             "inc_lname": "Koutrakis",
-            "bq_can": "",
+            "bq_can": "Alicia Parenteau-Malakhanian",
             "ppc_can": "",
-            "ndp_can": "",
+            "ndp_can": "Cindy Mercer",
             "cpc_can": "Grace Daou",
             "lib_can": "Annie Koutrakis",
             "gp_can": ""

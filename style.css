@@ -61,7 +61,7 @@
     border: 1px solid #cacaca;
   }
   .leg-act {
-    background-color: rgb(77, 150, 86);
+    background-color: var(--teal);
   } 
   .leg-dis {
     background-color: #cacaca;
