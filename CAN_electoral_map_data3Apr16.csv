@@ -18,7 +18,7 @@ riding_id,riding_name,inc_fname,inc_lname,bq_can,ppc_can,ndp_can,cpc_can,lib_can
 247,Battlefords—Lloydminster—Meadow Lake,Rosemarie,Falk,,,William Petryk,Rosemarie Falk,Larry Ingram,
 116,Bay of Quinte,Ryan,Williams,,,Kate Crothers,Ryan Williams,Chris Malette,
 117,Beaches—East York,Nathaniel,Erskine-Smith,,,Shannon Devine,Jocelyne Poirier,Nathaniel Erskine-Smith,
-38,Beauce,Richard,Lehoux,Gaétan Mathieu,Max Bernier,Annabelle Lafond-Poirier,Jason Groleau,Maryelle-Henriette Doumbia,
+38,Beauce,Richard,Lehoux,Gaétan Mathieu,Maxime Bernier,Annabelle Lafond-Poirier,Jason Groleau,Maryelle-Henriette Doumbia,
 39,Beauharnois—Salaberry—Soulanges—Huntingdon,Claude,DeBellefeuille,Claude DeBellefeuille,Martin Lévesque,Tyler Jones,Priska St-Pierre,Miguel Perras,
 40,Beauport—Limoilou,Julie,Vignola,Julie Vignola,Andrée Massicotte,Raymond Côté,Hugo Langlois,Steeve Lavoie,
 24,Beauséjour,Dominic,LeBlanc,,Eddie Cornell,Alex Gagné,Nathalie Vautour,Dominic LeBlanc,
@@ -144,8 +144,8 @@ riding_id,riding_name,inc_fname,inc_lname,bq_can,ppc_can,ndp_can,cpc_can,lib_can
 19,Kings—Hants,Kody,Blois,,Alex Cargill,Paul Doerr,Joel Hirtle,Kody Blois,
 156,Kingston and the Islands,Mark,Gerretsen,,,Daria Juüdi-Hope,Bryan Paterson,Mark Gerretsen,
 158,Kitchener Centre,Mike,Morrice,,Wasai Rahimi,Heather Zaleski,Kelly DeRidder,Brian Adeba,Mike Morrice
-160,Kitchener South—Hespeler,Valerie,Bradford,,,Maya Bozorgzad,Matt Strauss,Valerie Bradford,
-159,Kitchener—Conestoga,Tim,Morrison,,Kevin Dupuis,Lorne Bruce,Doug Treleaven,Tim Louis,
+160,Kitchener South—Hespeler,Valerie,Bradford,,Randall Williams,Lorne Bruce,Matt Strauss,Valerie Bradford,Ethan Russell
+159,Kitchener—Conestoga,Tim,Morrison,,Kevin Dupuis,Maya Bozorgzad,Doug Treleaven,Tim Louis,
 63,La Pointe-de-l'Île,Mario,Beaulieu,Mario Beaulieu,,Ghada Chaabi,Violetta Potapova,Viviane Minko,
 64,La Prairie—Atateken,,,Alain Therrien,Ruth Fontaine,Mathieu Boisvert,Dave Pouliot,Jacques Ramsay,
 4,Labrador,Yvonne,Jones,,,Marius Normore,Ella Wallace,Philip Earle,

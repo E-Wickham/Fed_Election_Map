@@ -3067,11 +3067,11 @@ const candStories =
             "inc_fname": "Valerie",
             "inc_lname": "Bradford",
             "bq_can": "",
-            "ppc_can": "",
-            "ndp_can": "Maya Bozorgzad",
+            "ppc_can": "Randall Williams",
+            "ndp_can": "Lorne Bruce",
             "cpc_can": "Matt Strauss",
             "lib_can": "Valerie Bradford",
-            "gp_can": ""
+            "gp_can": "Ethan Russell"
           },
           {
             "riding_id": 159,
@@ -3080,7 +3080,7 @@ const candStories =
             "inc_lname": "Morrison",
             "bq_can": "",
             "ppc_can": "Kevin Dupuis",
-            "ndp_can": "Lorne Bruce",
+            "ndp_can": "Maya Bozorgzad",
             "cpc_can": "Doug Treleaven",
             "lib_can": "Tim Louis",
             "gp_can": ""
