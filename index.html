@@ -41,11 +41,18 @@
           Don't know your riding? <a href="https://www.elections.ca/scripts/vis/FindED?L=e&PAGEID=20" target="_blank">Follow this link</a> to find out. 
         </p>
         <p x-cloak>
-          We've compiled a list of the candidates from each major party (sourced from each party's website) and included articles we have found mentioning these candidates. Are we missing a candidate? Contact us <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwlHy885OLjjNS0RT8q-cEiWe1qCNsoHEeSu39UMknUqSkTw/viewform?usp=header">here.</a> 
-        </p>
-        <p x-cloak>
           The Federal Electoral District Riding map was sourced directly from the Government of Canada Open Government Website. 
         </p>
+        <p x-cloak>
+          We've compiled a list of the candidates from each major party (sourced from each party's website) and included articles we have found mentioning these candidates. Are we missing a candidate? Contact us <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwlHy885OLjjNS0RT8q-cEiWe1qCNsoHEeSu39UMknUqSkTw/viewform?usp=header">here.</a> 
+        </p>
+        <h3 x-cloak>
+          UPDATE, APRIL 18, 2025: 
+        </h3>
+        <p x-cloak>
+          We are accepting submissions of newsworthy articles from other trustworthy, professional news sources that follow responsible journalistic standards and practices. We will not be accepting opinion pieces, blog posts or candidate bios.
+        </p>
+
     </div>
 
 
@@ -103,7 +110,7 @@
   </div>
   <div class="map-utils">
     <div class="art-count">
-      <h5>Ridings with articles: 71/343</h5>
+      <h5 class="art-count-rid">Ridings with articles: /343</h5>
     </div>
     <div class="zoom-btns">
       <div class="zoom-out">-</div>
@@ -508,7 +515,7 @@
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <script src="zoom.js"></script>
 <script>
-window.onload = calcResize();
+window.onload = calcResize();ridingCount(); 
 window.onresize = calcResize();
 
 

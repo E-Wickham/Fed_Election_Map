@@ -1239,7 +1239,79 @@ const candStories =
   "pub_date": "2019-10-16",
   "publication": "PressProgress",
   "link": "https://pressprogress.ca/elizabeth-may-is-standing-behind-four-green-party-candidates-who-promoted-racist-anti-muslim-views/"
-}
+},
+/*begin user submissions*/
+  {
+    "riding_name": "Cambridge",
+    "riding_id": 129,
+    "candidate": "Connie Cody",
+    "party": "Conservative",
+    "news_story": "Empty chair marks Conservative no-show at Cambridge election debate",
+    "pub_date": "2025-04-15",
+    "publication": "Cambridge Today",
+    "link": "https://www.cambridgetoday.ca/2025-federal-election-news/cambridge-candidates-take-aim-at-critical-local-issues-10519817"
+  },
+  {
+    "riding_name": "Haliburton—Kawartha Lakes",
+    "riding_id": 145,
+    "candidate": "Jamie Schmale",
+    "party": "Conservative",
+    "news_story": "Schmale under fire for seeking guidance from constituents on outlawing conversion therapy",
+    "pub_date": "2021-01-29",
+    "publication": "Lindsay Advocate",
+    "link": "https://lindsayadvocate.ca/schmale-under-fire-for-seeking-guidance-from-constituents-on-outlawing-conversion-therapy/"
+  },
+  {
+    "riding_name": "Hamilton West—Ancaster—Dundas",
+    "riding_id": 149,
+    "candidate": "John Paul Danko",
+    "party": "Liberal",
+    "news_story": "Hamilton councillor violated code of conduct for criticism of YWCA award winners: integrity commissioner",
+    "pub_date": "2024-06-12",
+    "publication": "CBC News",
+    "link": "https://www.cbc.ca/news/canada/hamilton/integrity-commissioner-john-paul-danko-1.7232390"
+  },
+  {
+    "riding_name": "Hamilton Mountain",
+    "riding_id": 148,
+    "candidate": "Ken Hewitt",
+    "party": "Conservative",
+    "news_story": "Mayor calls for OPP to enforce injunctions in Caledonia while demonstrators ask for time",
+    "pub_date": "2020-08-19",
+    "publication": "CBC News",
+    "link": "https://www.cbc.ca/news/canada/hamilton/hewitt-caledonia-land-back-1.5692046"
+  },
+  {
+    "riding_name": "Sault Ste. Marie—Algoma",
+    "riding_id": 201,
+    "candidate": "Hugh Stevenson",
+    "party": "Conservative",
+    "news_story": "Silence is deafening': All candidates but Conservative show at debate",
+    "pub_date": "2025-04-15",
+    "publication": "SooToday",
+    "link": "https://www.sootoday.com/2025-federal-election-news/silence-is-deafening-all-candidates-but-conservatives-show-at-debate-10529406"
+  },
+  {
+    "riding_name": "Kingston and the Islands",
+    "riding_id": 156,
+    "candidate": "Bryan Paterson",
+    "party": "Conservative",
+    "news_story": "Conversion therapy accusations resurface in Kingston federal campaign",
+    "pub_date": "2025-04-02",
+    "publication": "Kingston Whig Standard",
+    "link": "https://www.thewhig.com/news/conversion-therapy-accusations-resurface-in-kingston-federal-campaign"
+  },
+  {
+    "riding_name": "Pickering—Brooklin",
+    "riding_id": 197,
+    "candidate": "Lisa Robinson",
+    "party": "PPC",
+    "news_story": "OPP investigating after Pickering mayor, council file criminal harassment complaint against fellow councillor",
+    "pub_date": "2025-01-09",
+    "publication": "CBC",
+    "link": "https://www.cbc.ca/news/canada/toronto/ont-pickering-council-1.7427458"
+  }
+
 ]
 
 
@@ -5398,7 +5470,12 @@ function createArtElem(aData,target) {
     link.setAttribute("href", aData.link)
     link.setAttribute("target", '_blank')
     let artHead = document.createElement("h7")
-    artHead.innerHTML = `${aData.publication} - ${aData.pub_date}`
+    if (aData.publication == "PressProgress") {
+      artHead.innerHTML = `${aData.publication} - ${aData.pub_date}`
+    } else {
+      artHead.innerHTML = `${aData.publication} (Reader Submitted) - ${aData.pub_date}`
+
+    }
     let candSubHead = document.createElement("div")
     candSubHead.setAttribute("class", "cand-subhead")
 
@@ -5453,93 +5530,62 @@ function createSubmitLink(target) {
 
 /* incumbent information and candidate */
 function paint_info(cData) {
-
     let rName = document.querySelector(".riding_name")
-        let rInc = document.querySelector(".riding_inc")
-        let rNote = document.querySelector(".riding_note_text")
-        let rNoteTitle = document.querySelector(".riding_note")
-        console.log(cData);
-        //Articles
-        //console.log(ridingData)
-        paintCndTbl(cData,rNoteTitle)
-        loadArt(cData.riding_id)
-
-        let rArt1 = document.querySelector(".riding_art1_link")
-        rName.innerHTML = cData.riding_name
-        rInc.innerHTML = `Incumbent: ${cData.inc_fname} ${cData.inc_lname}`
+    let rInc = document.querySelector(".riding_inc")
+    let rNote = document.querySelector(".riding_note_text")
+    let rNoteTitle = document.querySelector(".riding_note")
+    console.log(cData);
+    //Articles
+    //console.log(ridingData)
+    paintCndTbl(cData,rNoteTitle)
+    loadArt(cData.riding_id)
+    let rArt1 = document.querySelector(".riding_art1_link")
+    rName.innerHTML = cData.riding_name
+    rInc.innerHTML = `Incumbent: ${cData.inc_fname} ${cData.inc_lname}`
 }
 
 function paintCndTbl(cData,target){
-        target.innerHTML = ""
-        //Take the cData of all the candidates and push them into a table
-        /*
-
-
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Dom</td>
-                    <td>6000</td>
-                </tr>
-                <tr class="active-row">
-                    <td>Melissa</td>
-                    <td>5150</td>
-                </tr>
-                <!-- and so on... -->
-            </tbody>
-        </table>
-
-
-
-        */
-       let tbl = document.createElement("table")
-       tbl.setAttribute("class","cand-tbl")
-       let tbl_h = document.createElement("thead")
-       let tbl_h_r = document.createElement("tr")
-       let tbl_h_th1 = document.createElement("th")
-       tbl_h_th1.innerHTML = "Party"
-       let tbl_h_th2 = document.createElement("th")
-       tbl_h_th2.innerHTML = "Candidate"
-       tbl_h_r.appendChild(tbl_h_th1)
-       tbl_h_r.appendChild(tbl_h_th2)
-       tbl_h.appendChild(tbl_h_r)
-       tbl.appendChild(tbl_h)
-       let tbl_body = document.createElement("tbody")
-       tbl.appendChild(tbl_body)
-       //if liberal party
-       if (cData.cpc_can != "") 
-        createTblRow(['CPC', cData.cpc_can],tbl_body)
-       if (cData.lib_can != "") 
-        createTblRow(['LPC', cData.lib_can],tbl_body)
-       if (cData.ndp_can != "") 
-        createTblRow(['NDP', cData.ndp_can],tbl_body)
-       if (cData.bq_can != "") 
-        createTblRow(['BQ', cData.bq_can],tbl_body)
-       if (cData.gp_can != "") 
-        createTblRow(['GP', cData.gp_can],tbl_body)
-       if (cData.ppc_can != "") 
-        createTblRow(['PPC', cData.ppc_can],tbl_body)
-       
-
-
-       target.appendChild(tbl)
+    target.innerHTML = ""
+    //Take the cData of all the candidates and push them into a table
+    let tbl = document.createElement("table")
+    tbl.setAttribute("class","cand-tbl")
+    let tbl_h = document.createElement("thead")
+    let tbl_h_r = document.createElement("tr")
+    let tbl_h_th1 = document.createElement("th")
+    tbl_h_th1.innerHTML = "Party"
+    let tbl_h_th2 = document.createElement("th")
+    tbl_h_th2.innerHTML = "Candidate"
+    tbl_h_r.appendChild(tbl_h_th1)
+    tbl_h_r.appendChild(tbl_h_th2)
+    tbl_h.appendChild(tbl_h_r)
+    tbl.appendChild(tbl_h)
+    let tbl_body = document.createElement("tbody")
+    tbl.appendChild(tbl_body)
+    //if liberal party
+    if (cData.cpc_can != "") 
+    createTblRow(['CPC', cData.cpc_can],tbl_body)
+    if (cData.lib_can != "") 
+    createTblRow(['LPC', cData.lib_can],tbl_body)
+    if (cData.ndp_can != "") 
+    createTblRow(['NDP', cData.ndp_can],tbl_body)
+    if (cData.bq_can != "") 
+    createTblRow(['BQ', cData.bq_can],tbl_body)
+    if (cData.gp_can != "") 
+    createTblRow(['GP', cData.gp_can],tbl_body)
+    if (cData.ppc_can != "") 
+    createTblRow(['PPC', cData.ppc_can],tbl_body)
+    target.appendChild(tbl)
 }
 
 function createTblRow(cData,tbody) {
-  let tbl_row = document.createElement("tr")
-  let tbl_d1 = document.createElement("td")
-  let tbl_d2 = document.createElement("td")
-  tbl_d1.innerHTML = cData[0]
-  tbl_d2.innerHTML = cData[1]
-  tbl_row.appendChild(tbl_d1)
-  tbl_row.appendChild(tbl_d2)
-  tbody.appendChild(tbl_row)
+    let tbl_row = document.createElement("tr")
+    let tbl_d1 = document.createElement("td")
+    let tbl_d2 = document.createElement("td")
+    tbl_d1.innerHTML = cData[0]
+    tbl_d2.innerHTML = cData[1]
+    tbl_row.appendChild(tbl_d1)
+    tbl_row.appendChild(tbl_d2)
+    tbody.appendChild(tbl_row)
 }
 
 function info_show_search(riding) {
@@ -5665,3 +5711,24 @@ function riding_search() {
     //get all the svg elements and regex the number for 
     info_show_search(input.value)
 }
+
+function ridingCount() {
+    //publication
+    let idArr = []
+    candStories.forEach((art) => {
+      console.log("riding id", art.riding_id);
+      // add to an array if the id isn't in there
+      if (idArr.includes(art.riding_id)) {
+        // nothing
+      } else {
+        idArr.push(art.riding_id)
+      }
+    })
+    //console.log(idArr)
+    // get the count of the array
+    console.log(idArr.length)
+    // change the number in the div
+    let artCount = document.querySelector(".art-count-rid")
+    artCount.innerHTML=`Ridings with articles: ${idArr.length}/343`
+}
+
