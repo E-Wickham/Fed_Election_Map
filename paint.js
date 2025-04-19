@@ -5546,6 +5546,9 @@ function paint_info(cData) {
 
 function paintCndTbl(cData,target){
     target.innerHTML = ""
+    let tblLbl = document.createElement("div")
+    tblLbl.innerHTML = "Notable Candidates"
+    tblLbl.setAttribute("class", "tbl-lbl")
     //Take the cData of all the candidates and push them into a table
     let tbl = document.createElement("table")
     tbl.setAttribute("class","cand-tbl")
@@ -5574,6 +5577,7 @@ function paintCndTbl(cData,target){
     createTblRow(['GP', cData.gp_can],tbl_body)
     if (cData.ppc_can != "") 
     createTblRow(['PPC', cData.ppc_can],tbl_body)
+    target.appendChild(tblLbl)
     target.appendChild(tbl)
 }
 

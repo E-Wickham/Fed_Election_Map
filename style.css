@@ -115,10 +115,14 @@
   #riding_316, #riding_129, #riding_145, #riding_149, #riding_148, #riding_201, #riding_156, #riding_197 {
       fill: var(--teal);
   }
-
+  .tbl-lbl {
+    margin-top:1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
   .cand-tbl {
       border-collapse: collapse;
-      margin: 1rem 0;
+      margin: 0.25rem 0 1rem 0;
       font-size: 0.9rem;
       font-family: sans-serif; 
       border: 1px solid #cacaca;
