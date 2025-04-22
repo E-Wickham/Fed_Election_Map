@@ -3700,8 +3700,8 @@ const candStories =
           {
             "riding_id": 177,
             "riding_name": "Nepean",
-            "inc_fname": "Chandra",
-            "inc_lname": "Pasma",
+            "inc_fname": "",
+            "inc_lname": "",
             "bq_can": "",
             "ppc_can": "Eric Fleury",
             "ndp_can": "Shyam Shukla",
