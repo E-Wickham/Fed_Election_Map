@@ -1310,11 +1310,130 @@ const candStories =
     "pub_date": "2025-01-09",
     "publication": "CBC",
     "link": "https://www.cbc.ca/news/canada/toronto/ont-pickering-council-1.7427458"
+  },
+  /*April 22, 2025*/
+  {
+    "riding_name": "Saskatoon West",
+    "riding_id": 257,
+    "candidate": "Brad Redekopp",
+    "party": "Conservative",
+    "news_story": "Tory MP says he misspoke after NDP MP accuses him of making anti-Indigenous comment",
+    "pub_date": "2024-06-06",
+    "publication": "CBC",
+    "link": "https://www.cbc.ca/news/politics/conservative-mp-apologizes-ndp-accuse-anti-indigenous-language-1.7227520"
+  },
+  {
+    "riding_name": "Nipissing—Timiskaming",
+    "riding_id": 183,
+    "candidate": "Garry Keller",
+    "party": "Conservative",
+    "news_story": "Keller ducks environmental debate",
+    "pub_date": "2025-04-16",
+    "publication": "BayToday.ca",
+    "link": "https://www.baytoday.ca/2025-federal-election-news/keller-ducks-environmental-debate-10533198#:~:text=Keller%20ducks%20environmental%20debate"
+  },
+  {
+    "riding_name": "Avalon",
+    "riding_id": 1,
+    "candidate": "Steve Kent",
+    "party": "Conservative",
+    "news_story": "Facebook chats reveal clandestine planning between Steve Kent, 2 Mount Pearl councillors",
+    "pub_date": "2021-03-25",
+    "publication": "CBC",
+    "link": "https://www.cbc.ca/news/canada/newfoundland-labrador/nl-ledwell-power-kent-facebook-messenger-conversations-1.5959312"
+  },
+  {
+    "riding_name": "Avalon",
+    "riding_id": 1,
+    "candidate": "Steve Kent",
+    "party": "Conservative",
+    "news_story": "Avalon constituents say Conservative candidate Steve Kent ignoring, blocking questions about MAGA hat selfie",
+    "pub_date": "2025-04-16",
+    "publication": "The Telegram",
+    "link": "https://www.saltwire.com/newfoundland-labrador/steve-kent-maga-hat"
+  },
+  {
+    "riding_name": "Kingston and the Islands",
+    "riding_id": 156,
+    "candidate": "Bryan Paterson",
+    "party": "Conservative",
+    "news_story": "Politician Accused of Participating in ‘Conversion Therapy’ of Young Gay Man at Former Church",
+    "pub_date": "2020-10-09",
+    "publication": "Vice",
+    "link": "https://www.vice.com/en/article/politician-bryan-paterson-accused-of-participating-in-conversion-therapy-of-young-gay-man-at-former-church/"
+  },
+  {
+    "riding_name": "Chilliwack—Hope",
+    "riding_id": 302,
+    "candidate": "Mark Strahl",
+    "party": "Conservative",
+    "news_story": "RCMP pokes holes in Conservative MPs’ claims over trucker convoy donation",
+    "pub_date": "2022-02-22",
+    "publication": "citynews",
+    "link": "https://vancouver.citynews.ca/2022/02/21/convoy-protesters-bank-accounts/"
+  },
+  {
+    "riding_name": "Middlesex—London",
+    "riding_id": 169,
+    "candidate": "Lianne Rood",
+    "party": "Conservative",
+    "news_story": "Are the new Tim Hortons Lids \"Woke\"? One Conservative MP thinks so",
+    "pub_date": "2024-05-09",
+    "publication": "CBC",
+    "link": "https://www.cbc.ca/news/politics/conservative-mp-tim-hortons-fibre-lids-1.7199306"
+  },
+  {
+    "riding_name": "Sault Ste. Marie—Algoma",
+    "riding_id": 201,
+    "candidate": "Hugh Stevenson",
+    "party": "Conservative",
+    "news_story": "Déjà Hugh: Stevenson will be a no-show again at today's debate",
+    "pub_date": "2025-04-16",
+    "publication": "SooToday.com",
+    "link": "https://www.sootoday.com/2025-federal-election-news/deja-hugh-stevenson-will-be-a-no-show-again-at-todays-debate-10532492"
+  },
+  {
+    "riding_name": "South Surrey—White Rock",
+    "riding_id": 329,
+    "candidate": "Kerry Lynn Findlay",
+    "party": "Conservative",
+    "news_story": "White Rock Muslims protest outside Conservative incumbent's office",
+    "pub_date": "2025-04-11",
+    "publication": "Piece arch news",
+    "link": "https://www.peacearchnews.com/local-news/white-rock-muslims-protest-outside-conservative-incumbents-office-7940807"
+  },
+  {
+    "riding_name": "Milton East—Halton Hills South",
+    "riding_id": 170,
+    "candidate": "Parm Gill",
+    "party": "Conservative",
+    "news_story": "Parm Gill, Conservative, triggers ethics inquiry over CRTC letters",
+    "pub_date": "2015-10-08",
+    "publication": "CBC",
+    "link": "https://www.cbc.ca/news/politics/canada-election-2015-parm-gill-crtc-letters-ethics-1.3262734"
+  },
+  {
+    "riding_name": "Brantford—Brant South—Six Nations",
+    "riding_id": 125,
+    "candidate": "Larry Brock",
+    "party": "Conservative",
+    "news_story": "Conservative candidate Larry Brock's campaign team issues apology for social media post",
+    "pub_date": "2025-04-21",
+    "publication": "The Brantford Expositor",
+    "link": "https://www.brantfordexpositor.ca/news/local-news/conservative-candidate-larry-brocks-campaign-team-issues-apology-for-social-media-post"
+  },
+  {
+    "riding_name": "Toronto Centre",
+    "riding_id": 219,
+    "candidate": "Evan Solomon",
+    "party": "Liberal",
+    "news_story": "Evan Solomon fired by CBC News in wake of alleged secret art deals",
+    "pub_date": "2015-06-10",
+    "publication": "CBC",
+    "link": "https://www.cbc.ca/news/canada/evan-solomon-fired-by-cbc-news-in-wake-of-alleged-secret-art-deals-1.3106983"
   }
 
 ]
-
-
 
 
 //replace with all incumbent data
