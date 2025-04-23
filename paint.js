@@ -1431,10 +1431,27 @@ const candStories =
       "pub_date": "2015-06-10",
       "publication": "CBC",
       "link": "https://www.cbc.ca/news/canada/evan-solomon-fired-by-cbc-news-in-wake-of-alleged-secret-art-deals-1.3106983"
+    },
+    {
+      "riding_name": "North Island—Powell River",
+      "riding_id": 318,
+      "candidate": "Aaron Gunn",
+      "party": "Conservative",
+      "news_story": "Aaron Gunn’s Residential School Views Have Become an Election Flashpoint",
+      "pub_date": "2025-04-11",
+      "publication": "Tyee News",
+      "link": "https://thetyee.ca/News/2025/04/11/Aaron-Gunn-Residential-School-Views/"
+    },
+    {
+      "riding_name": "Bowmanville—Oshawa North",
+      "riding_id": 118,
+      "candidate": "Jamil Jivani",
+      "party": "Conservative",
+      "news_story": "How JD Vance became a flashpoint in a riding in Durham Ontario",
+      "pub_date": "2025-04-19",
+      "publication": "The Local",
+      "link": "https://thelocal.to/federal-election-oshawa-bowmanville-jivani-vance/"
     }
-  
-  
-
 ]
 
 
@@ -5559,7 +5576,7 @@ const candStories =
             "cpc_can": "Ryan Leef",
             "lib_can": "Brendan Hanley",
             "gp_can": "Gabrielle Dupont"
-          }
+          },
         ]
 
 function clearArt() {
