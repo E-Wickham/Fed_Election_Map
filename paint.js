@@ -4756,7 +4756,7 @@ const candStories =
             "inc_lname": "Yip",
             "bq_can": "",
             "ppc_can": "",
-            "ndp_can": "George Wedge",
+            "ndp_can": "Dan Lovell",
             "cpc_can": "Aris Movsessian",
             "lib_can": "Jean Yip",
             "gp_can": ""
@@ -4780,7 +4780,7 @@ const candStories =
             "inc_lname": "",
             "bq_can": "",
             "ppc_can": "",
-            "ndp_can": "Dan Lovell",
+            "ndp_can": "George Wedge",
             "cpc_can": "Reddy Muttukuru",
             "lib_can": "Michael Coteau",
             "gp_can": ""
